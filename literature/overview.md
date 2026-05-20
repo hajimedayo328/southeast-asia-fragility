@@ -37,7 +37,7 @@ Danziger 2022                       Spivak Wiring Diagram系
 2. **Moeller & Vasilakopoulou 2020 "Monoidal Grothendieck Construction"** (TAC 35-31)
    — `p: 𝓘 → 𝓒` を monoidal fibration として書く理論基盤。応用が network model 止まり。
 3. **Sallach 2017 "Topos Modeling of Social Conflict"** (Springer)
-   — Heyting代数で社会システム。賈先生研究と直結、実装が思弁段階で止まっている。
+   — Heyting代数で社会システム。Jia 2024 Heyting研究と直結、実装が思弁段階で止まっている。
 
 ### 軸② リープフロッグ拡散
 1. **Mutiso et al. 2025 "Five rules for technology leapfrogging in Africa"** (Science)
@@ -62,7 +62,7 @@ Danziger 2022                       Spivak Wiring Diagram系
 
 ### 軸⑤ Higher Category 応用
 1. **Jia & Floridi (& Tohmé) 2025 "Categorical Analysis of LLMs"** (arxiv 2512.09117)
-   — **賈先生本人の論文。「人間ルート関手」vs「LLMルート関手」の並列構造がリープフロッグ=2-cellと直接同型**。
+   — **Jia, Floridi, Tohmé 2025 の論文。「人間ルート関手」vs「LLMルート関手」の並列構造がリープフロッグ=2-cellと直接同型**。
 2. **Moeller-Vasilakopoulou 2020 Monoidal Grothendieck** (軸①と重複)
 3. **Niu & Spivak 2023 "Polynomial Functors"** — 現代ACTの技術背景、open dynamical systems。
 
@@ -80,9 +80,9 @@ Danziger 2022                       Spivak Wiring Diagram系
 - 「stage-skipping = 射の合成スキップ」「path-creating = 関手による圏の置換」という形式化は無人地帯。
 - → **本プロジェクトの中心仮説 03_leapfrog_2cell.md が直接刺さる**。
 
-### 穴C: 賈先生のLLM論文構造を別ドメインに移植した研究がない
+### 穴C: Jia-Floridi 2025 のLLM論文構造を別ドメインに移植した研究がない
 - 軸⑤の最も強い発見。Jia & Floridi 2025 の「並列関手構造」を「途上国経路 vs 先進国経路」に置換すれば、ほぼそのままASEANインフラ論文の骨格になる。
-- → **賈先生研究室内研究としての正当性が最も高い線**。
+- → **圏論×Heyting 研究の延長として正当性が高い線**。
 
 ### 穴D: 多層インフラ研究の途上国データへの応用がほぼゼロ
 - 軸③（Buldyrev以来15年）、軸④（ASEAN10多機能統合）の両方から。
@@ -109,21 +109,21 @@ Danziger 2022                       Spivak Wiring Diagram系
 | draft仮説 | 既存研究との位置 | 評価 |
 |------|------|------|
 | 機能圏 𝓕 + 国の圏 𝓒 + 実装圏 𝓘 | Specker 2020（電力単独）+ Moeller-Vasilakopoulou 2020（fibration理論）の延長 | **正統な位置**。穴Aを埋める |
-| Grothendieck fibration `p: 𝓘 → 𝓒` | 賈先生 Jia-Floridi 2025 と同型 | **穴Cを直接埋める** |
+| Grothendieck fibration `p: 𝓘 → 𝓒` | Jia-Floridi 2025 と同型 | **穴Cを直接埋める** |
 | リープフロッグ = 平行射の2-cell | Mutiso 2025 の5ルールを形式化 | **穴Bを直接埋める** |
-| Heyting代数で「証拠ベースのインフラ存在」 | Sallach 2017 の延長、賈先生Heyting研究と直結 | 補助線として有効 |
+| Heyting代数で「証拠ベースのインフラ存在」 | Sallach 2017 の延長、Jia 2024 Heyting研究と直結 | 補助線として有効 |
 
 → **draft仮説は穴A, B, C を同時にカバーする**。これは想定以上に強いポジション。
 
 ## 注意点・リスク
 
 1. **Mutiso 2025 (Science) の本文未取得**。WebFetch 403。大学経由で入手必要。
-2. **賈先生Yiyang Jia の Google Scholar プロフィール未登録**。共著者経由で逆引きする必要。
+2. **Yiyang Jia (圏論×折り紙×LLM) の Google Scholar プロフィール未登録**。共著者経由で逆引きする必要。
 3. **モバイル金融データは業界レポート中心** — 学術データセットが少ないため実証パートは慎重に。
 4. **ASEAN多層データの公開は限定的** — Bui 2023 がベトナム3層を出したのは例外的、他国は手作業で構築要。
 
 ## 関連メモ参照
 
 - `.agent/memory/MEMORY.md` のインフラグラフ探索（2026/4/17）と思考プロセス記録
-- `.agent/memory/paper_thought_categorical_llm_2025-05-05.md`（賈先生LLM論文の深掘り、Jia-Floridi 2025の扱い）
+- `.agent/memory/paper_thought_categorical_llm_2025-05-05.md`（Jia-Floridi 2025 LLM論文の深掘り）
 - `.agent/memory/research_themes_2026-04-30.md`（研究テーマ全体整理）

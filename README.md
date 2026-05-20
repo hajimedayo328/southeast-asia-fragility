@@ -3,7 +3,7 @@
 **東南アジアの脆弱性は先進国の予言である**
 — 圏論×グラフ理論によるリスク構造の可視化
 
-賈伊陽研究室（東京都市大学）持ち込み用プロジェクト
+研究方向の整理・共有用プロジェクト (work in progress, draft)
 
 公開デモ: https://hajimedayo328.github.io/southeast-asia-fragility/
 
@@ -51,7 +51,7 @@ southeast-asia-fragility/
 │       ├── E_comparison.json ← ASEAN比較指標
 │       └── seed.csv         ← 80セル機能スケルトン
 ├── notes/                   ← 理論ノート
-│   ├── 01_pitch.md         ← 賈先生向けピッチ
+│   ├── 01_pitch.md         ← 1ページピッチ
 │   ├── 02_framework.md     ← 圏論的枠組み
 │   ├── 03_cases/           ← 事例詳細
 │   └── 04_directions.md    ← 深掘り方向
@@ -65,7 +65,7 @@ southeast-asia-fragility/
 - [x] ASEAN10×8機能 スケルトンデータ
 - [x] 5軸の公開データ取得
 - [x] スクロール型可視化 HTML
-- [ ] 賈先生フィードバック反映
+- [ ] 外部レビュー反映
 - [ ] 実証深掘り
 
 ## 既存研究との位置づけ
@@ -87,5 +87,4 @@ southeast-asia-fragility/
 
 ## 著者
 
-東京都市大学 情報工学系 学部3年生
-賈伊陽研究室 配属見込み (2026年5月時点)
+学部3年生 (圏論×グラフ理論を学習中)

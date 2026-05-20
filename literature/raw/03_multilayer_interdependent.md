@@ -81,7 +81,7 @@
 - venue: Nature Reviews Physics 6(2), 114–131
 - link: https://www.nature.com/articles/s42254-023-00676-y / https://hmakse.ccny.cuny.edu/wp-content/uploads/2024/05/s42254-023-00676-y-compressed.pdf.pdf
 - 要旨: パーコレーション、ネットワーク dismantling、カスケード、systemic resilience を横断的にまとめた **最新総説**。多層・時系列・higher-order を統合的に整理。
-- 本プロジェクトとの接続: 軸③現時点の **教科書代わり**。研究室準備の参考文献として必読。
+- 本プロジェクトとの接続: 軸③現時点の **教科書代わり**。準備の参考文献として必読。
 - 引っ掛かりポイント: 著者陣（De Domenico, Radicchi）は多層ネットワークの **テンソル表現** 推進派。テンソル = 多変数関手なので、圏論的接続は素直。
 
 ### [arXiv 2509.13808, 2025] Higher-order Network phenomena of cascading failures in resilient cities

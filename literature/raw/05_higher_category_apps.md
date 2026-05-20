@@ -2,13 +2,13 @@
 
 調査日: 2026-05-14
 担当: リサーチエージェント
-対象: Grothendieck fibration / Higher category / Operad / Categorical Systems Theory の応用、および賈伊陽（Yiyang Jia）先生の論文全件
+対象: Grothendieck fibration / Higher category / Operad / Categorical Systems Theory の応用、および Yiyang Jia (圏論×折り紙×LLM) の論文全件
 
 ---
 
-## A. 賈伊陽（Yiyang Jia）先生の論文
+## A. Yiyang Jia (圏論×折り紙×LLM) の論文
 
-> **注意**: Google Scholar に登録されている "Yiyang Jia" は Weizmann Institute の物理学者（SYK モデル・量子カオス専門）で **別人**。圏論×折り紙×LLM の賈先生は scholar 個別プロフィールが立っておらず、各論文の著者欄から辿る必要がある。共著者の三谷純（筑波大）から逆引きするのが安定。
+> **注意**: Google Scholar に登録されている "Yiyang Jia" は Weizmann Institute の物理学者（SYK モデル・量子カオス専門）で **別人**。圏論×折り紙×LLM の Yiyang Jia は scholar 個別プロフィールが立っておらず、各論文の著者欄から辿る必要がある。共著者の三谷純（筑波大）から逆引きするのが安定。
 
 ### [Jia & Mitani 2022] Category of Strip Folding in Terms of a Boolean Matrix Representation
 - venue: JP Journal of Algebra, Number Theory and Applications, Vol. 58 (2022)
@@ -145,7 +145,7 @@
 - venue: Series in Advances in Mathematics for Applied Sciences (World Scientific, 2007 ほか)
 - link: 検索: "Ehresmann Vanbremeersch Memory Evolutive Systems"
 - 要旨: 多階層複雑系（生物・社会・認知）を colimit と higher category で記述。1990年代から続く長期プロジェクト。
-- 本プロジェクトとの接続: **社会システムを higher category で書いた数少ない長期研究**。研究室向けに「先行例はある」と示すうえで重要。
+- 本プロジェクトとの接続: **社会システムを higher category で書いた数少ない長期研究**。「先行例はある」と示すうえで重要。
 - 引っ掛かりポイント: 数学的厳密性は時代相応で、現代 ACT 系の Spivak / Myers / Hedges 派と接続が薄い。逆に「再定式化」のニーズがある。
 
 ---
@@ -184,4 +184,4 @@
 1. **Floridi-Jia-Tohmé 2025（arXiv:2512.09117）を最優先で精読**: ASEAN 論文の構造テンプレートになる。
 2. **Diaconescu の Grothendieck Institutions を読む**: 「異種を fibration で束ねる」古典的正当化を確保。
 3. **Niu & Spivak の Poly 本 + Myers の Categorical Systems Theory ドラフト**を ASEAN 論文の technical background として位置づけ、Topos 系コミュニティとの距離を縮める。
-4. **賈先生に直接コンタクト**: scholar プロフィールがないため、共著者経由（Floridi の Yale Digital Ethics Center 経由が一番堅い）でメール可能。同型構造に気付いた旨を伝える価値あり。
+4. **著者に直接コンタクト可能**: scholar プロフィールがないため、共著者経由（Floridi の Yale Digital Ethics Center 経由が一番堅い）でメール可能。同型構造に気付いた旨を伝える価値あり。
