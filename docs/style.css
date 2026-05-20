@@ -177,6 +177,43 @@ section h3 {
   max-width: 700px;
 }
 
+/* ---------- Plain-Japanese explanation box ---------- */
+
+.plain-jp {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  padding: 18px 22px;
+  margin: 8px 0 36px 0;
+  font-size: 0.95rem;
+  color: var(--fg);
+  line-height: 1.8;
+  border-radius: 0 4px 4px 0;
+}
+
+.plain-jp::before {
+  content: "ざっくり言うと";
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: #92400e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.plain-jp p {
+  margin: 0 0 8px 0;
+}
+
+.plain-jp p:last-child {
+  margin-bottom: 0;
+}
+
+.plain-jp strong {
+  color: var(--accent-r);
+  font-weight: 600;
+}
+
 /* ---------- Hypothesis Cards ---------- */
 
 .hypothesis {
