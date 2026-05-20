@@ -17,6 +17,23 @@ const COLOR_HL = '#f59e0b';
 
 const COUNTRY_ORDER = ['SG', 'BN', 'MY', 'TH', 'ID', 'VN', 'PH', 'KH', 'LA', 'MM'];
 
+const COUNTRY_NAME_JA = {
+  VN: 'ベトナム',
+  ID: 'インドネシア',
+  PH: 'フィリピン',
+  TH: 'タイ',
+  MY: 'マレーシア',
+  SG: 'シンガポール',
+  KH: 'カンボジア',
+  LA: 'ラオス',
+  MM: 'ミャンマー',
+  BN: 'ブルネイ'
+};
+
+function countryFull(code) {
+  return COUNTRY_NAME_JA[code] ? `${code} (${COUNTRY_NAME_JA[code]})` : code;
+}
+
 const BACKBONE_COLOR = {
   central_bank: '#0891b2',  // cyan
   platform:     '#dc2626',  // red
@@ -92,7 +109,7 @@ function makeScatter(canvasId, points, opts = {}) {
           callbacks: {
             label: ctx => {
               const p = ctx.raw;
-              return `${p.label}: (${p.x}, ${p.y})${p.note ? ' — ' + p.note : ''}`;
+              return `${countryFull(p.label)}: (${p.x}, ${p.y})${p.note ? ' — ' + p.note : ''}`;
             }
           }
         }
@@ -143,7 +160,7 @@ function makeBar(canvasId, labels, values, opts = {}) {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: ctx => `${ctx.label}: ${ctx.parsed[opts.horizontal ? 'x' : 'y']}${opts.unit || ''}`
+            label: ctx => `${countryFull(ctx.label)}: ${ctx.parsed[opts.horizontal ? 'x' : 'y']}${opts.unit || ''}`
           }
         }
       },

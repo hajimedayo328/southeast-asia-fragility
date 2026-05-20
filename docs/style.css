@@ -177,6 +177,39 @@ section h3 {
   max-width: 700px;
 }
 
+/* ---------- Country code legend ---------- */
+
+.country-key {
+  margin: 20px 0 36px 0;
+  padding: 16px 20px;
+  background: var(--line-soft);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.country-key .key-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--fg-mute);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.country-key .key-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 6px 16px;
+  color: var(--fg-sub);
+}
+
+.country-key .key-grid b {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--accent-l);
+  margin-right: 6px;
+}
+
 /* ---------- Plain-Japanese explanation box ---------- */
 
 .plain-jp {
