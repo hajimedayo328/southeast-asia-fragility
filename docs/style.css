@@ -258,16 +258,42 @@ section h3 {
 }
 
 .hypothesis .hyp-id {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
   color: var(--accent-l);
   font-weight: 600;
   display: inline-block;
-  padding: 4px 10px;
+  padding: 4px 12px;
   background: #eff6ff;
   border-radius: 3px;
   margin-bottom: 16px;
+}
+
+.punchline {
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: var(--fg);
+  background: var(--line-soft);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 16px 0 16px 0;
+  border-left: 3px solid var(--accent-l);
+  line-height: 1.7;
+}
+
+.punchline::before {
+  content: "👉 一言で言うと: ";
+  color: var(--accent-l);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.hypothesis.shadow .punchline {
+  border-left-color: var(--accent-r);
+}
+
+.hypothesis.shadow .punchline::before {
+  color: var(--accent-r);
 }
 
 .hypothesis h3 {

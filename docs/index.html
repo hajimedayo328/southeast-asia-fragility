@@ -16,21 +16,21 @@
 <body>
 
 <nav class="toc">
-  <a href="#hero">HERO</a>
-  <a href="#framework">FRAMEWORK</a>
-  <a href="#mobile">MOBILE</a>
-  <a href="#concentration">CONCENTRATION</a>
-  <a href="#remittance">REMITTANCE</a>
-  <a href="#disaster">DISASTER</a>
-  <a href="#comparison">COMPARISON</a>
-  <a href="#synthesis">SYNTHESIS</a>
+  <a href="#hero">最上部</a>
+  <a href="#framework">枠組み</a>
+  <a href="#mobile">モバイル金融</a>
+  <a href="#concentration">集中度</a>
+  <a href="#remittance">仕送り</a>
+  <a href="#disaster">災害</a>
+  <a href="#comparison">比較</a>
+  <a href="#synthesis">結論</a>
 </nav>
 
 <main>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
-  <div class="tag">A Research Pitch · 2026</div>
+  <div class="tag">研究方向の共有 · 2026</div>
   <h1>東南アジアの脆弱性は<br><span class="accent">先進国の予言</span>である</h1>
   <p class="subtitle">Southeast Asia as a Predictive Mirror — visualizing fragility through Category Theory and Graph Theory.</p>
   <p class="pitch">
@@ -62,15 +62,15 @@
   </div>
   <div class="meta">
     <span><strong>Author</strong> 学部3年生</span>
-    <span><strong>Tools</strong> Category Theory · Graph Theory · ASEAN data</span>
-    <span><strong>Repo</strong> <a href="https://github.com/hajimedayo328/southeast-asia-fragility" target="_blank">GitHub</a></span>
+    <span><strong>使う道具</strong> 圏論 · グラフ理論 · ASEAN実データ</span>
+    <span><strong>ソース</strong> <a href="https://github.com/hajimedayo328/southeast-asia-fragility" target="_blank">GitHub</a></span>
   </div>
-  <div class="scroll-hint">SCROLL ↓</div>
+  <div class="scroll-hint">下にスクロール ↓</div>
 </section>
 
 <!-- ============ FRAMEWORK ============ -->
 <section id="framework">
-  <span class="section-num">§ 01 — FRAMEWORK</span>
+  <span class="section-num">§ 01 — 枠組み</span>
   <h2>圏論的枠組み: 便利と不可視コストの随伴</h2>
   <p class="lede">数学的に対称な構造は、社会現象の非対称な振る舞いを正確に映す。</p>
 
@@ -123,7 +123,7 @@
 
 <!-- ============ MOBILE MONEY ============ -->
 <section id="mobile">
-  <span class="section-num">§ 02 — CASE A · MOBILE MONEY</span>
+  <span class="section-num">§ 02 — 事例A · モバイル金融</span>
   <h2>モバイル金融のリープフロッグと集中度</h2>
   <p class="lede">ASEAN10カ国でモバイルマネー普及が一気に進む。便利の裏側に何が貼り付くか。</p>
 
@@ -134,31 +134,37 @@
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">H-A1 · VISIBLE LAYER</span>
-    <h3>普及度 vs 銀行口座: リープフロッグ強度</h3>
+    <span class="hyp-id">仮説A1 · 見える層</span>
+    <h3>銀行を飛ばしてモバイル送金を使う度合い</h3>
+    <p class="punchline">
+      モバイル送金 (Y軸) が銀行口座 (X軸) より上にある国ほど、「銀行を経由せず先にモバイル」になってる = リープフロッグ国。
+    </p>
     <p class="claim">
       モバイルマネー普及率と銀行口座保有率の差分は「銀行をスキップする度合い」を示す。
       リープフロッグ国ほどモバイル先行で銀行が後追い。
     </p>
     <div class="chart-box"><canvas id="chart-A1"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-A1">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-A1">データ読込中...</span></div>
   </div>
 
   <div class="hypothesis shadow">
-    <span class="hyp-id">H-A2 · INVISIBLE LAYER</span>
-    <h3>普及度 vs トッププロバイダーシェア: 便利と集中の正相関</h3>
+    <span class="hyp-id">仮説A2 · 見えない層</span>
+    <h3>スマホ送金が普及した国ほど、1社独占が進んでないか?</h3>
+    <p class="punchline">
+      右上に行くほど「普及してて、かつ1社シェアも高い」状態 = 便利と集中が同時に増えてる兆候。
+    </p>
     <p class="claim">
       普及度が高い国ほど、特定の単一プロバイダーへの依存度も高い。
       L (便利) と R (集中リスク) が同時に増えている可能性。
     </p>
     <div class="chart-box"><canvas id="chart-A2"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-A2">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-A2">データ読込中...</span></div>
   </div>
 </section>
 
 <!-- ============ CONCENTRATION ============ -->
 <section id="concentration">
-  <span class="section-num">§ 03 — CASE A · BACKBONE TYPES</span>
+  <span class="section-num">§ 03 — 事例A · 骨格タイプ</span>
   <h2>信頼のbackboneタイプ別 構造リスク</h2>
   <p class="lede">「誰の信頼を借りているか」で脆弱性のパターンが変わる。</p>
 
@@ -169,32 +175,38 @@
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">H-B1 · TYPOLOGY</span>
-    <h3>ASEAN10の決済backbone分類</h3>
+    <span class="hyp-id">仮説B1 · 4タイプ分類</span>
+    <h3>ASEAN10の決済を「誰が支えてるか」で分類</h3>
+    <p class="punchline">
+      ① 中央銀行が支える国 (TH/KH) / ② 民間プラットフォームが独占 (VN/ID/PH/MY) / ③ 銀行コンソーシアム (SG/LA/MM/BN)。M-Pesa型(電話会社主導)はASEANではほぼ絶滅。
+    </p>
     <p class="claim">
-      各国のモバイル決済の信頼の中心 (backbone) を4タイプ分類:
-      Platform / Central Bank / Bank / Telco。
-      タイプによって脆弱性のメカニズムが異なる。
+      各国のモバイル決済の信頼の中心 (backbone = 骨格) を4タイプ分類:
+      民間プラットフォーム / 中央銀行 / 銀行 / 電話会社。
+      タイプによって「何が起きたときに崩れるか」が異なる。
     </p>
     <div class="chart-box"><canvas id="chart-B1"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-B1">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-B1">データ読込中...</span></div>
   </div>
 
   <div class="hypothesis shadow">
-    <span class="hyp-id">H-B2 · FRAGILITY</span>
-    <h3>Platform型 = 単一ノード集中の典型例</h3>
+    <span class="hyp-id">仮説B2 · 集中度ランキング</span>
+    <h3>どの国の「1社シェア」が一番高い?</h3>
+    <p class="punchline">
+      フィリピンは GCash 1社で 85%、ブルネイは BIBD 75%、ミャンマーは KBZPay 60%。これらの国は「その1社が止まったら国の送金が止まる」リスクが極めて高い。
+    </p>
     <p class="claim">
-      Platform型 (GCash, MoMo, GoPay 等) は単一民間企業に信頼が集中。
-      過去のM-Pesa障害履歴は、Telco型の脆弱性を実証している。
+      民間プラットフォーム型 (GCash, MoMo, GoPay 等) は単一企業に信頼が集中。
+      過去のM-Pesa障害事例は、Telco型の脆弱性を実証している。
     </p>
     <div class="chart-box"><canvas id="chart-B2"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-B2">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-B2">データ読込中...</span></div>
   </div>
 </section>
 
 <!-- ============ REMITTANCE ============ -->
 <section id="remittance">
-  <span class="section-num">§ 04 — CASE B · REMITTANCE</span>
+  <span class="section-num">§ 04 — 事例B · 仕送り</span>
   <h2>仕送りグラフ: 個人スケールから国経済まで</h2>
   <p class="lede">バイト先で聞いた1人の話が、世界の送金ネットワークの縮図になる。</p>
 
@@ -205,31 +217,37 @@
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">H-D1 · VISIBLE LAYER</span>
-    <h3>受取GDP比: 海外労働依存度の地図</h3>
+    <span class="hyp-id">仮説D1 · 見える層</span>
+    <h3>国経済の中で「仕送り」が占める割合</h3>
+    <p class="punchline">
+      フィリピンは GDP の 8.9% が海外からの仕送り。これは「日本でいうと国家予算の何割か級」の規模。カンボジア・ミャンマーも 5-6% 台。海外労働がコケると国が直撃する。
+    </p>
     <p class="claim">
       フィリピン (8.9%), カンボジア (6.5%), ミャンマー (5.5%) — 仕送りがGDPの大きな割合を占める国は、
       外部労働市場ショックに対して構造的に脆弱。
     </p>
     <div class="chart-box"><canvas id="chart-D1"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-D1">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-D1">データ読込中...</span></div>
   </div>
 
   <div class="hypothesis shadow">
-    <span class="hyp-id">H-D2 · INVISIBLE LAYER</span>
-    <h3>タイハブ三角と日本corridorの構造</h3>
+    <span class="hyp-id">仮説D2 · 見えない層</span>
+    <h3>タイは送金の「出入口」の両方を抱えてる</h3>
+    <p class="punchline">
+      タイは受け取り (青) も送り出し (赤) も両方大きい二重ハブ。タイの規制1つで カンボジア・ラオス・ミャンマー (CLM三国) の経済が同時に揺れる。彼らの命綱がタイにある。
+    </p>
     <p class="claim">
       タイは送出 ($3.8B) と 受取 ($9.5B) の二重ハブで、CLM三国 (KH/LA/MM) の経済を媒介している。
       タイの規制1つで3国同時ショック = リープフロッグ国の見えない依存先。
     </p>
     <div class="chart-box"><canvas id="chart-D2"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-D2">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-D2">データ読込中...</span></div>
   </div>
 </section>
 
 <!-- ============ DISASTER ============ -->
 <section id="disaster">
-  <span class="section-num">§ 05 — CASE C · DISASTER</span>
+  <span class="section-num">§ 05 — 事例C · 災害</span>
   <h2>災害時の都市インフラ脆弱性</h2>
   <p class="lede">沖積平野の3大都市 (ジャカルタ・マニラ・ハノイ) が抱える共通の脆弱性。</p>
 
@@ -240,31 +258,37 @@
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">H-C1 · VISIBLE LAYER</span>
-    <h3>災害頻度の地理勾配</h3>
+    <span class="hyp-id">仮説C1 · 見える層</span>
+    <h3>過去20年でどの国に災害が多かったか</h3>
+    <p class="punchline">
+      フィリピンとインドネシアが圧倒的に多い (400件超)。海に面した国 (PH/ID) は台風・地震・火山。内陸国 (LA/KH) は洪水・干ばつ中心で件数も少ない。地理が災害profileを決めてる。
+    </p>
     <p class="claim">
-      ASEAN10は海洋ASEAN (PH/ID) と 内陸ASEAN (LA/KH) で災害profileが大きく異なる。
+      ASEAN10は海洋ASEAN (PH/ID) と 内陸ASEAN (LA/KH) で災害の傾向が大きく異なる。
       台風通り道 (PH/VN) と火山列 (PH/ID) が物理的に決まっている。
     </p>
     <div class="chart-box"><canvas id="chart-C1"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-C1">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-C1">データ読込中...</span></div>
   </div>
 
   <div class="hypothesis shadow">
-    <span class="hyp-id">H-C2 · INVISIBLE LAYER</span>
-    <h3>都市集中度 × 災害被害 (相関)</h3>
+    <span class="hyp-id">仮説C2 · 見えない層</span>
+    <h3>「人が首都に集中してる国」ほど災害被害が大きい?</h3>
+    <p class="punchline">
+      仮説としては「集中都市=効率的だが、災害で1点が壊れたら全滅」のはず。ただしデータ点が10カ国しかなく、明確な傾向はまだ出てない。今後の検証ポイント。
+    </p>
     <p class="claim">
-      最大都市の人口集中度が高い国ほど、災害1件あたりの経済被害が大きい。
+      最大都市の人口集中度が高い国ほど、災害1件あたりの経済被害が大きい (仮説)。
       コンパクト都市の便利 (L) が、災害時の脆弱性 (R) として顕在化する。
     </p>
     <div class="chart-box"><canvas id="chart-C2"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-C2">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-C2">データ読込中...</span></div>
   </div>
 </section>
 
 <!-- ============ COMPARISON ============ -->
 <section id="comparison">
-  <span class="section-num">§ 06 — ASEAN10 OVERVIEW</span>
+  <span class="section-num">§ 06 — ASEAN10カ国 概観</span>
   <h2>ASEAN10の比較指標</h2>
   <p class="lede">経済規模・都市集中・電気アクセス・通信普及・宗教・植民地経路の同時マップ。</p>
 
@@ -275,32 +299,38 @@
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">H-E1 · LEGACY</span>
-    <h3>植民地経路と現代インフラ普及率</h3>
+    <span class="hyp-id">仮説E1 · 100年前の影響</span>
+    <h3>「どの国に支配されてたか」が今のネット普及率を決めてる?</h3>
+    <p class="punchline">
+      イギリス植民地だった国 (SG/MY/BN) はネット普及率95%超。フランス領 (VN/KH/LA) は60-78%。100年前の法制度・教育制度の差が現代のインフラ整備に効いている可能性。
+    </p>
     <p class="claim">
-      British圏 (SG/MY/BN) はネット普及率95%超、French圏 (VN/KH/LA) は60-78%帯。
+      イギリス圏 (SG/MY/BN) はネット普及率95%超、フランス圏 (VN/KH/LA) は60-78%帯。
       法制度の連続性が長期インフラ投資に効いている可能性。
     </p>
     <div class="chart-box"><canvas id="chart-E1"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-E1">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-E1">データ読込中...</span></div>
   </div>
 
   <div class="hypothesis shadow">
-    <span class="hyp-id">H-E2 · ANOMALY</span>
-    <h3>Laos の異常: 電気100%でモバイル契約65/100</h3>
+    <span class="hyp-id">仮説E2 · 例外</span>
+    <h3>ラオスだけ異常値: 電気は全国に通ってるのにモバイルが少ない</h3>
+    <p class="punchline">
+      ASEAN各国のモバイル契約は110〜170/100人だが、ラオスだけ65/100。電気は100%なのに。内陸国・低人口密度・通信業者寡占が原因か。フレームワークの「限界」を教える例外。
+    </p>
     <p class="claim">
       電気は全国通っているのにモバイル普及がASEAN唯一の60%台。
       内陸国・低人口密度・通信業者寡占。
       「リープフロッグ前提の脆弱性分析モデル」が当てはまらない例。
     </p>
     <div class="chart-box"><canvas id="chart-E2"></canvas></div>
-    <div class="finding"><strong>Finding:</strong> <span id="finding-E2">データ読込中...</span></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-E2">データ読込中...</span></div>
   </div>
 </section>
 
 <!-- ============ SYNTHESIS ============ -->
 <section id="synthesis">
-  <span class="section-num">§ 07 — SYNTHESIS</span>
+  <span class="section-num">§ 07 — 統合と結論</span>
   <h2>東南アジアは先進国の予言である</h2>
   <p class="lede">同じ構造、別のスケール、同じ未来。</p>
 
@@ -353,8 +383,8 @@
 
 <!-- ============ NEXT ============ -->
 <section id="next">
-  <span class="section-num">§ 08 — NEXT</span>
-  <h2>次に詰めること</h2>
+  <span class="section-num">§ 08 — 次の課題</span>
+  <h2>これから詰めること</h2>
   <ul class="clean">
     <li>「両立可能性 2-cell」の数学的厳密定義 (自然変換 or rewriting規則)</li>
     <li>Heyting値の時間積分を圏論的不変量として書く</li>
