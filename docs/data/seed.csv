@@ -1,0 +1,81 @@
+country,country_name,function,advanced_path_reference,leapfrog_implementation,has_2cell,leapfrog_strength,evidence_ref
+VN,Vietnam,Pay,bank_account+ATM+wire,MoMo+ZaloPay+VietQR,yes,5,VN central bank stats 2024
+VN,Vietnam,Cool,grid_powered_fridge_chain,?,?,?,?
+VN,Vietnam,Diag,hospital_visit,telemedicine_via_smartphone(post-COVID),partial,3,WHO SEARO 2023
+VN,Vietnam,Auth,paper_ID+office_visit,VNeID_biometric_app,yes,4,VN gov VNeID 2023+
+VN,Vietnam,Irrig,canal+pump_system,solar_drip(rural+SHB),partial,2,IFAD project reports
+VN,Vietnam,Move,rail+highway,Grab+ride-share,partial,3,ASEAN transport stats
+VN,Vietnam,Comm,landline+exchange,4G/5G_mobile_only,yes,5,ITU stats
+VN,Vietnam,Light,grid+wired_distribution,solar_microgrid(rural Mekong),partial,3,Energy Policy 2022
+ID,Indonesia,Pay,bank_account+ATM+wire,GoPay+OVO+DANA+QRIS,yes,5,BI stats 2024
+ID,Indonesia,Cool,grid_powered_fridge_chain,?,?,?,?
+ID,Indonesia,Diag,hospital_visit,Halodoc+Alodokter,partial,3,company reports
+ID,Indonesia,Auth,KTP_paper+office,KTP_digital+e-KTP,partial,3,Dukcapil reports
+ID,Indonesia,Irrig,canal+pump_system,solar_drip(Java pilots),partial,2,UNDP project notes
+ID,Indonesia,Move,rail+highway+ferry,Gojek+Grab+motorbike-share,yes,5,industry stats
+ID,Indonesia,Comm,landline+exchange,4G_mobile_only(78%+),yes,5,ITU stats
+ID,Indonesia,Light,grid+wired_distribution,solar_off-grid(outer islands),partial,3,IEA Indonesia 2023
+PH,Philippines,Pay,bank_account+ATM+wire,GCash+PayMaya,yes,5,BSP stats 2024
+PH,Philippines,Cool,grid_powered_fridge_chain,?,?,?,?
+PH,Philippines,Diag,hospital_visit,KonsultaMD+telehealth,partial,3,DOH PH 2022
+PH,Philippines,Auth,paper_ID+office,PhilID_biometric,partial,3,PSA reports
+PH,Philippines,Irrig,canal+pump_system,?,?,?,?
+PH,Philippines,Move,rail+highway,Grab+jeepney_apps,partial,3,industry stats
+PH,Philippines,Comm,landline+exchange,4G_mobile_only,yes,5,ITU stats
+PH,Philippines,Light,grid+wired_distribution,solar_off-grid(remote islands),partial,3,DOE PH 2023
+TH,Thailand,Pay,bank_account+ATM+wire,PromptPay+QR_payment,yes,5,BOT stats 2024
+TH,Thailand,Cool,grid_powered_fridge_chain,?,?,?,?
+TH,Thailand,Diag,hospital_visit,telemedicine_apps,partial,2,MOPH TH 2023
+TH,Thailand,Auth,paper_ID+office,ThaID_digital,partial,3,DOPA reports
+TH,Thailand,Irrig,canal+pump_system,smart_irrigation_pilots,partial,2,RID reports
+TH,Thailand,Move,rail+highway,Grab+Bolt,partial,3,industry stats
+TH,Thailand,Comm,landline+exchange,4G/5G_mobile_only,yes,4,NBTC stats
+TH,Thailand,Light,grid+wired_distribution,?,?,?,?
+MY,Malaysia,Pay,bank_account+ATM+wire,DuitNow+TouchnGo+GrabPay,yes,4,BNM stats 2024
+MY,Malaysia,Cool,grid_powered_fridge_chain,?,?,?,?
+MY,Malaysia,Diag,hospital_visit,DoctorOnCall,partial,2,KKM MY 2023
+MY,Malaysia,Auth,MyKad_paper+chip,MyDigital_ID,partial,3,JPN MY reports
+MY,Malaysia,Irrig,canal+pump_system,?,?,?,?
+MY,Malaysia,Move,rail+highway,Grab,partial,3,industry stats
+MY,Malaysia,Comm,landline+exchange,4G/5G_mobile_only,yes,4,MCMC stats
+MY,Malaysia,Light,grid+wired_distribution,?,?,?,?
+SG,Singapore,Pay,bank_account+ATM+wire,PayNow+Singpass+digital_wallets,partial,3,MAS stats 2024
+SG,Singapore,Cool,grid_powered_fridge_chain,no_leapfrog,no,1,advanced_infra
+SG,Singapore,Diag,hospital_visit,established_telemed,partial,2,MOH SG 2023
+SG,Singapore,Auth,paper_ID+office,Singpass_biometric,yes,4,IMDA reports
+SG,Singapore,Irrig,N/A_urban_state,N/A,no,0,N/A
+SG,Singapore,Move,MRT+highway,Grab+established_transit,no,1,advanced_infra
+SG,Singapore,Comm,landline+fiber+5G,parallel(not_leapfrog),no,1,IMDA stats
+SG,Singapore,Light,grid+wired_distribution,no_leapfrog,no,1,advanced_infra
+KH,Cambodia,Pay,bank_account+ATM+wire,Bakong+Wing+TrueMoney,yes,5,NBC Bakong 2024
+KH,Cambodia,Cool,grid_powered_fridge_chain,?,?,?,?
+KH,Cambodia,Diag,hospital_visit,?,?,?,?
+KH,Cambodia,Auth,paper_ID+office,?,?,?,?
+KH,Cambodia,Irrig,canal+pump_system,?,?,?,?
+KH,Cambodia,Move,rail+highway,Grab+PassApp,partial,3,industry stats
+KH,Cambodia,Comm,landline+exchange,4G_mobile_only(95%+),yes,5,ITU stats
+KH,Cambodia,Light,grid+wired_distribution,solar_off-grid(rural),yes,4,IEA Cambodia 2023
+LA,Laos,Pay,bank_account+ATM+wire,BCEL_OnePay+LaoQR,partial,3,BOL stats 2023
+LA,Laos,Cool,grid_powered_fridge_chain,?,?,?,?
+LA,Laos,Diag,hospital_visit,?,?,?,?
+LA,Laos,Auth,paper_ID+office,?,?,?,?
+LA,Laos,Irrig,canal+pump_system,?,?,?,?
+LA,Laos,Move,rail+highway(limited),?,?,?,?
+LA,Laos,Comm,landline+exchange,4G_mobile_only,yes,4,ITU stats
+LA,Laos,Light,grid+wired_distribution,hydro+grid_export,no,2,Power Trade reports
+MM,Myanmar,Pay,bank_account+ATM+wire,Wave_Money+KBZPay,yes,4,CBM stats(pre-2021)
+MM,Myanmar,Cool,grid_powered_fridge_chain,?,?,?,?
+MM,Myanmar,Diag,hospital_visit,?,?,?,?
+MM,Myanmar,Auth,paper_ID+office,?,?,?,?
+MM,Myanmar,Irrig,canal+pump_system,?,?,?,?
+MM,Myanmar,Move,rail+highway,Grab(suspended)+local_apps,partial,2,industry stats
+MM,Myanmar,Comm,landline+exchange,4G_mobile_only,yes,4,ITU stats(pre-2021)
+MM,Myanmar,Light,grid+wired_distribution,solar_off-grid+diesel,yes,4,ADB Myanmar 2020
+BN,Brunei,Pay,bank_account+ATM+wire,BIBD_NEXGEN+QR,partial,2,AMBD stats
+BN,Brunei,Cool,grid_powered_fridge_chain,no_leapfrog,no,1,advanced_infra
+BN,Brunei,Diag,hospital_visit,?,?,?,?
+BN,Brunei,Auth,paper_ID+office,?,?,?,?
+BN,Brunei,Irrig,N/A_small_country,N/A,no,0,N/A
+BN,Brunei,Move,highway,?,?,?,?
+BN,Brunei,Comm,landline+exchange,4G/5G_mobile,no,2,AITI BN stats
+BN,Brunei,Light,grid+wired_distribution,no_leapfrog,no,1,advanced_infra

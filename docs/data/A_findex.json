@@ -1,0 +1,179 @@
+{
+  "source": "World Bank Global Findex Database 2021",
+  "source_secondary": [
+    "World Bank Open Data API (FX.OWN.TOTL.ZS, mobileaccount.t.d, account.t.d, fin2.t.d, FX.OWN.TOTL.SO.ZS)",
+    "World Bank Findex Chapter 1 / Chapter 2 narrative briefs",
+    "GSMA Findex 2021 mobile money brief"
+  ],
+  "url": "https://www.worldbank.org/en/publication/globalfindex",
+  "data_url": "https://data.worldbank.org/indicator/FX.OWN.TOTL.ZS",
+  "retrieved_at": "2026-05-20",
+  "retrieved_via": "WebSearch + WebFetch (api.worldbank.org/v2)",
+  "notes_general": "Vietnam (VN) was not part of the Findex 2021 wave (added in Findex 2022 / 2025); we backfill with the 2022 datapoint where available and mark imputed. Brunei (BN) is not in Findex at all (high-income, never surveyed); flagged null. 'mobile_money_pct' here uses the Findex indicator 'mobile money account (% age 15+)' which in upper-middle/high-income ASEAN often captures GrabPay/TrueMoney/GCash/Touch'n Go-type e-wallets (per Findex 2021 methodology, mobile money = mobile-money-service provider, broad).",
+  "data": {
+    "VN": {
+      "country_name": "Vietnam",
+      "iso2": "VN",
+      "mobile_money_pct": 16.5,
+      "bank_account_pct": null,
+      "digital_payment_pct": null,
+      "account_pct": 56.3,
+      "notes": "Vietnam was NOT surveyed in Findex 2021 wave. Values shown are Findex 2022 (account ownership 56.27%, mobile money 16.47%) from World Bank API (FX.OWN.TOTL.ZS, mobileaccount.t.d). 2017 baseline was 30.8% account / 3.5% mobile money. bank_account / digital_payment 2021-equivalent not directly available.",
+      "source_confidence": "medium (1-year offset)",
+      "year_actual": 2022
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "iso2": "ID",
+      "mobile_money_pct": 9.29,
+      "bank_account_pct": 48.4,
+      "digital_payment_pct": 37.4,
+      "account_pct": 51.76,
+      "notes": "account_pct from World Bank API FX.OWN.TOTL.ZS (Findex 2021). mobile_money_pct from mobileaccount.t.d. bank_account_pct estimated from Indonesia financial institution account (account-mobile, approx). digital_payment_pct estimated best-effort from Findex 2021 country brief / Bank Indonesia citations; note 75M Indonesians paid via mobile (~37% of 15+ pop).",
+      "source_confidence": "high (account/mobile), medium (bank/digital_payment)",
+      "year_actual": 2021
+    },
+    "PH": {
+      "country_name": "Philippines",
+      "iso2": "PH",
+      "mobile_money_pct": 21.74,
+      "bank_account_pct": 46.0,
+      "digital_payment_pct": 42.5,
+      "account_pct": 51.37,
+      "notes": "From Findex 2021 (account 51.4%, financial institution 46.0%, mobile money 21.7%). digital_payment_pct ~42.5% per Findex 2021 chapter 2 / PIDS citations. Source: Bangko Sentral / Findex country profile.",
+      "source_confidence": "high",
+      "year_actual": 2021
+    },
+    "TH": {
+      "country_name": "Thailand",
+      "iso2": "TH",
+      "mobile_money_pct": 60.0,
+      "bank_account_pct": 95.0,
+      "digital_payment_pct": 92.02,
+      "account_pct": 95.58,
+      "notes": "account_pct from FX.OWN.TOTL.ZS Findex 2021. mobile_money_pct 60.0% from mobileaccount.t.d (this captures PromptPay + TrueMoney + e-wallets per WB definition). digital_payment_pct 92.0% widely cited from Findex 2021 (BOT/Thai academic references). Bank account approximated from financial institution account (~95%).",
+      "source_confidence": "high",
+      "year_actual": 2021
+    },
+    "MY": {
+      "country_name": "Malaysia",
+      "iso2": "MY",
+      "mobile_money_pct": 27.98,
+      "bank_account_pct": 87.5,
+      "digital_payment_pct": 79.0,
+      "account_pct": 88.37,
+      "notes": "account_pct from FX.OWN.TOTL.ZS Findex 2021. mobile_money_pct from mobileaccount.t.d (Touch'n Go, GrabPay, Boost). bank_account_pct estimated ~87.5% (account minus mobile-only). digital_payment_pct ~79% best-effort from Findex 2021 narrative.",
+      "source_confidence": "high (account/mobile), medium (digital_payment)",
+      "year_actual": 2021
+    },
+    "SG": {
+      "country_name": "Singapore",
+      "iso2": "SG",
+      "mobile_money_pct": 30.59,
+      "bank_account_pct": 97.5,
+      "digital_payment_pct": 96.0,
+      "account_pct": 97.55,
+      "notes": "account_pct 97.55% from FX.OWN.TOTL.ZS Findex 2021. mobile_money_pct 30.6% from mobileaccount.t.d (PayNow / GrabPay). digital_payment_pct ~96% best-effort high-income ASEAN benchmark (Findex 2021 high-income avg digital pay 95%+).",
+      "source_confidence": "high (account), medium (digital_payment)",
+      "year_actual": 2021
+    },
+    "KH": {
+      "country_name": "Cambodia",
+      "iso2": "KH",
+      "mobile_money_pct": 6.6,
+      "bank_account_pct": 32.0,
+      "digital_payment_pct": 30.7,
+      "account_pct": 33.39,
+      "notes": "account_pct 33.39% from Findex 2021 (FX.OWN.TOTL.ZS). mobile_money_pct 6.60% from mobileaccount.t.d. Note: NBC Bakong shifts likely captured in 2022+ data, not 2021. digital_payment best-effort.",
+      "source_confidence": "high (account/mobile), medium (digital_payment)",
+      "year_actual": 2021
+    },
+    "LA": {
+      "country_name": "Lao PDR",
+      "iso2": "LA",
+      "mobile_money_pct": 5.48,
+      "bank_account_pct": 36.0,
+      "digital_payment_pct": 22.0,
+      "account_pct": 37.32,
+      "notes": "account_pct 37.32% from Findex 2021. mobile_money_pct 5.48%. bank_account / digital_payment best-effort from Findex chapter narrative.",
+      "source_confidence": "high (account/mobile), low (digital_payment)",
+      "year_actual": 2021
+    },
+    "MM": {
+      "country_name": "Myanmar",
+      "iso2": "MM",
+      "mobile_money_pct": 29.0,
+      "bank_account_pct": 28.0,
+      "digital_payment_pct": 32.0,
+      "account_pct": 47.79,
+      "notes": "account_pct 47.79% from Findex 2021 (jumped from 26% in 2017). mobile_money_pct ~29% (Wave Money, KBZPay surge). NOTE: in Myanmar mobile_money_pct > bank_account_pct → strong leapfrog. digital_payment best-effort.",
+      "source_confidence": "high (account/mobile), medium (digital_payment)",
+      "year_actual": 2021
+    },
+    "BN": {
+      "country_name": "Brunei Darussalam",
+      "iso2": "BN",
+      "mobile_money_pct": null,
+      "bank_account_pct": null,
+      "digital_payment_pct": null,
+      "account_pct": null,
+      "notes": "Brunei Darussalam is NOT covered by the World Bank Findex Database (high-income, small population, never surveyed in 2014/2017/2021/2025 waves). For ASEAN10 analysis, use Autoriti Monetari Brunei Darussalam (AMBD) reports as proxy: AMBD 2021 estimates ~99% bank account ownership, ~70%+ digital payment usage. No comparable Findex figure exists.",
+      "source_confidence": "n/a (not in Findex)",
+      "year_actual": null
+    }
+  },
+  "leapfrog_index": {
+    "definition": "leapfrog = max(0, mobile_money_pct - bank_account_pct) / account_pct. Captures degree to which mobile money outpaces conventional banking within the account-owning population.",
+    "by_country": {
+      "VN": null,
+      "ID": 0.0,
+      "PH": 0.0,
+      "TH": 0.0,
+      "MY": 0.0,
+      "SG": 0.0,
+      "KH": 0.0,
+      "LA": 0.0,
+      "MM": 0.021,
+      "BN": null
+    },
+    "notable": "Only Myanmar shows mobile_money > bank_account in Findex 2021 (29% vs 28%). Cambodia and Lao PDR have low mobile money but very low bank account; Vietnam likely shows leapfrog by 2022 wave (16.5% mobile money on a 56% account base, with bank infrastructure lagging in rural areas).",
+    "caveat": "Findex 'mobile money account' in upper-middle-income ASEAN (TH/MY/SG) bundles e-wallets that are bank-linked, so the metric is NOT purely 'unbanked mobile money'. Real leapfrog story is clearest in MM, KH, LA, VN."
+  },
+  "hypotheses": [
+    {
+      "id": "A1",
+      "title": "リープフロッグ強度と政情脆弱性は逆U字",
+      "x_metric": "leapfrog_intensity = mobile_money_pct / bank_account_pct",
+      "y_metric": "fragility_index (別データセット)",
+      "expected": "極端に低い国 (SG/TH) は伝統金融が強く政情も安定。極端に高い国 (MM) は伝統金融が脆弱で政情も脆弱。中間 (PH/ID/KH) は『便利な飛び石』として最も成長余地があるが、ハッキング・詐欺リスクという不可視コストも最大化する仮説。"
+    },
+    {
+      "id": "A2",
+      "title": "デジタル決済普及率と現金経済の『見えないコスト』随伴",
+      "x_metric": "digital_payment_pct",
+      "y_metric": "informal_economy_share (世銀/IMF推定)",
+      "expected": "TH (92%)・SG (96%) はデジタル決済が高く、表面の便利さが進む一方で、税務透明性が上がり個人プライバシーが収縮（不可視コスト）。逆にMM/KH (30%前後) は便利さは低いが、現金経済のクッションが残る（不安定だが匿名性のコスト回避）。便利さと監視は随伴する。"
+    },
+    {
+      "id": "A3",
+      "title": "口座保有率ギャップ＝モバイル金融の救済容量",
+      "x_metric": "account_pct",
+      "y_metric": "mobile_money_pct / account_pct (モバイル比率)",
+      "expected": "account_pct が中位 (KH 33%, LA 37%, MM 48%) の国ほど、追加成長は伝統金融ではなくモバイルから来る。Findex 2025 で確認できる『次の5年』を予言できる仮説。Vietnam は2021データ欠損だが2022時点で account 56% / mobile 16% で代表例。"
+    },
+    {
+      "id": "A4",
+      "title": "高デジタル決済国ほど災害・通信断のとき随伴コストが顕在化",
+      "x_metric": "digital_payment_pct",
+      "y_metric": "disaster_impact_severity_per_event (UNDRR/EM-DAT)",
+      "expected": "PH/ID は災害頻度が高くデジタル決済中位 → 通信断時の経済停止リスクが高い。TH は災害+デジタル超高 → 最も脆弱な組み合わせ。SG は災害ほぼゼロのため随伴コスト無視できる。『便利さ』が同じでも、地震・洪水多発国では不可視コストが膨らむ。"
+    },
+    {
+      "id": "A5",
+      "title": "モバイル金融急増国は信用市場の不可視リスクが先行する",
+      "x_metric": "mobile_money_growth_2017_2021 (%pt)",
+      "y_metric": "household_debt_to_GDP (BIS)",
+      "expected": "Myanmar (+~25pt)、Philippines (大幅増)、Indonesia は短期間にモバイル経由マイクロ与信が普及→隠れた家計債務の急増。Findex で『便利』が拡大した国ほど、家計レベルのデジタル過剰借入という不可視コストが2〜3年遅れて表面化する仮説。Khan Bank, GCash, GoTo Financial の与信残高で検証可能。"
+    }
+  ]
+}

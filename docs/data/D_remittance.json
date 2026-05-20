@@ -1,0 +1,182 @@
+{
+  "source": "World Bank Migration and Remittances Data (KNOMAD) + Migration and Development Brief #39-40 (2024) + Central Bank statistics",
+  "retrieved_at": "2026-05-14",
+  "year": "2023 (latest WB Migration and Development Brief #40, June 2024)",
+  "methodology": "Inward/outward USD remittance flows from World Bank Migration and Development Brief 40 (2024). Bilateral corridors estimated from KNOMAD Bilateral Remittance Matrix 2021 (latest matrix available) and updated using migrant stock data. GDP shares computed against IMF WEO Oct 2024 nominal GDP.",
+  "data": {
+    "PH": {
+      "country_name": "Philippines",
+      "inward_usd_b": 39.1,
+      "outward_usd_b": 0.4,
+      "inward_pct_gdp": 8.9,
+      "top_source": "USA",
+      "top_destination": null,
+      "main_corridors": ["USA->PH", "Saudi Arabia->PH", "UAE->PH", "SG->PH", "JP->PH", "HK->PH"],
+      "notes": "World's 4th largest remittance recipient (after India, Mexico, China). OFW (Overseas Filipino Workers) sustained by POEA/DMW deployment program. USA share ~41% of inflows (incl. sea-based crews). Middle East corridor (GCC) ~24%. Growth ~3% YoY in 2023 despite global headwinds.",
+      "data_quality": "high (BSP monthly data)"
+    },
+    "VN": {
+      "country_name": "Vietnam",
+      "inward_usd_b": 14.0,
+      "outward_usd_b": 0.3,
+      "inward_pct_gdp": 3.2,
+      "top_source": "USA",
+      "top_destination": null,
+      "main_corridors": ["USA->VN", "JP->VN", "KR->VN", "TW->VN", "Australia->VN", "Germany->VN"],
+      "notes": "Top-10 global recipient. USA ~55% (large Viet-Kieu diaspora since 1975). Japan/Korea/Taiwan corridors growing rapidly via technical intern trainee (TITP) and EPS programs. HCMC alone receives ~50% of national inflows. State Bank of Vietnam (SBV) cites $16B in 2023 (broader definition incl. informal); WB official figure ~$14B.",
+      "data_quality": "medium-high (WB + SBV slight divergence)"
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "inward_usd_b": 14.5,
+      "outward_usd_b": 3.6,
+      "inward_pct_gdp": 1.0,
+      "top_source": "Saudi Arabia",
+      "top_destination": null,
+      "main_corridors": ["Saudi Arabia->ID", "MY->ID", "TW->ID", "HK->ID", "SG->ID", "UAE->ID"],
+      "notes": "Largest absolute recipient in ASEAN ex-PH but small share of GDP (~1%). Migrant workers concentrated in domestic work (Saudi, HK, TW) and plantation labor (MY). Outflow ~$3.6B reflects expat remuneration of foreign workers in Indonesia (mining, energy). Bank Indonesia (BI) data aligns with WB.",
+      "data_quality": "high"
+    },
+    "TH": {
+      "country_name": "Thailand",
+      "inward_usd_b": 9.5,
+      "outward_usd_b": 3.8,
+      "inward_pct_gdp": 1.9,
+      "top_source": "USA",
+      "top_destination": "Myanmar",
+      "main_corridors": ["USA->TH", "KR->TH", "TW->TH", "TH->MM (outward)", "TH->KH (outward)", "TH->LA (outward)"],
+      "notes": "Dual role: net recipient (~$9.5B in, ~$3.8B out). Major outward hub for ASEAN sub-region — sends to Myanmar (~$2.0B), Cambodia (~$0.8B), Laos (~$0.5B). ~4 million Myanmar migrants in Thailand make TH->MM the largest intra-ASEAN corridor. Bank of Thailand (BOT) tracks formal flows; informal cross-border (hundi-like) likely 30-50% higher.",
+      "data_quality": "medium (informal flows significant)"
+    },
+    "MY": {
+      "country_name": "Malaysia",
+      "inward_usd_b": 1.6,
+      "outward_usd_b": 8.5,
+      "inward_pct_gdp": 0.4,
+      "top_source": "SG",
+      "top_destination": "Indonesia",
+      "main_corridors": ["MY->ID (outward)", "MY->Bangladesh (outward)", "MY->Nepal (outward)", "MY->PH (outward)", "MY->VN (outward)", "SG->MY (inward)"],
+      "notes": "ASEAN's 2nd largest outward sender after SG. ~2.5M registered foreign workers + ~1.5M undocumented (ID, BD, NP, MM origin). Outflows ~$8.5B. Inward ~$1.6B mainly from MY diaspora in SG (cross-strait commuters) and Australia. Net sender.",
+      "data_quality": "medium-high (BNM data + undocumented gap)"
+    },
+    "SG": {
+      "country_name": "Singapore",
+      "inward_usd_b": 0.8,
+      "outward_usd_b": 8.2,
+      "inward_pct_gdp": 0.2,
+      "top_source": "MY",
+      "top_destination": "India",
+      "main_corridors": ["SG->India (outward)", "SG->Bangladesh (outward)", "SG->PH (outward)", "SG->ID (outward)", "SG->MY (outward)", "SG->CN (outward)"],
+      "notes": "Largest per-capita outward sender in ASEAN. ~1.5M foreign workforce (~38% of total labor force). India/Bangladesh corridor dominant in construction/marine sectors. PH/ID corridor dominant in domestic work (FDW). Inward minimal — SG citizens abroad few. Net outward sender ~$7.4B.",
+      "data_quality": "high (MAS + MOM data)"
+    },
+    "KH": {
+      "country_name": "Cambodia",
+      "inward_usd_b": 2.7,
+      "outward_usd_b": 0.3,
+      "inward_pct_gdp": 6.5,
+      "top_source": "Thailand",
+      "top_destination": null,
+      "main_corridors": ["TH->KH", "KR->KH", "MY->KH", "JP->KH", "USA->KH"],
+      "notes": "~1.2M Cambodian workers in Thailand (mostly construction, agriculture, fisheries). TH->KH ~60% of inflows. KR EPS program corridor growing. GDP share 6.5% — high vulnerability to TH labor market shocks. NBC (National Bank of Cambodia) reports include informal channels.",
+      "data_quality": "medium (large informal/cross-border cash)"
+    },
+    "LA": {
+      "country_name": "Laos",
+      "inward_usd_b": 0.3,
+      "outward_usd_b": 0.05,
+      "inward_pct_gdp": 1.8,
+      "top_source": "Thailand",
+      "top_destination": null,
+      "main_corridors": ["TH->LA", "KR->LA", "JP->LA"],
+      "notes": "Underreported. ~300K Lao workers in Thailand (language proximity to Isaan Thai dialect). Bank of Lao PDR (BOL) data sparse. Many flows informal — physical cash across Mekong bridges. Actual figure likely 2-3x official. Kip depreciation (2022-23) has incentivized USD/THB remittance.",
+      "data_quality": "low (severe under-reporting)"
+    },
+    "MM": {
+      "country_name": "Myanmar",
+      "inward_usd_b": 3.5,
+      "outward_usd_b": 0.05,
+      "inward_pct_gdp": 5.5,
+      "top_source": "Thailand",
+      "top_destination": null,
+      "main_corridors": ["TH->MM", "MY->MM", "SG->MM", "JP->MM", "KR->MM"],
+      "notes": "Post-coup (2021) capital controls forced ~50% of flows through hundi/informal hawala. Official WB figure $3.5B likely undercount; actual estimated $5-8B incl. informal. ~4M Myanmar nationals in Thailand are core source. CBM mandated official channels in 2022 but compliance weak. Highest informal share in ASEAN.",
+      "data_quality": "very low (informal-dominant since 2021)"
+    },
+    "BN": {
+      "country_name": "Brunei",
+      "inward_usd_b": 0.04,
+      "outward_usd_b": 1.2,
+      "inward_pct_gdp": 0.3,
+      "top_source": "MY",
+      "top_destination": "Philippines",
+      "main_corridors": ["BN->PH (outward)", "BN->ID (outward)", "BN->Bangladesh (outward)"],
+      "notes": "Net outward sender. Small economy (~$15B GDP) with ~100K foreign workers (PH, ID, BD origin) in oil/gas, construction, domestic work. AMBD (Brunei monetary authority) does not publish granular remittance data — figures estimated from migrant stock x avg wage.",
+      "data_quality": "low (estimated)"
+    }
+  },
+  "asean_aggregates": {
+    "total_inward_usd_b": 86.0,
+    "total_outward_usd_b": 26.4,
+    "net_inflow_usd_b": 59.6,
+    "intra_asean_corridors_usd_b_est": 5.5,
+    "extra_asean_dependence_pct": 93.6,
+    "note": "ASEAN net positive ~$60B/year. Intra-ASEAN corridors (TH->MM/KH/LA, MY->ID/PH, SG->PH/ID/MY) account for only ~6% — overwhelming dependence on extra-regional sources (USA, GCC, JP, KR, TW)."
+  },
+  "key_corridors_summary": [
+    {"corridor": "USA -> PH", "flow_usd_b_est": 16.0, "rank": 1, "driver": "Filipino-American diaspora (4M+)"},
+    {"corridor": "USA -> VN", "flow_usd_b_est": 7.7, "rank": 2, "driver": "Viet-Kieu diaspora (2.2M)"},
+    {"corridor": "Saudi Arabia -> PH", "flow_usd_b_est": 4.5, "rank": 3, "driver": "OFW deployment to GCC"},
+    {"corridor": "Saudi Arabia -> ID", "flow_usd_b_est": 3.5, "rank": 4, "driver": "Domestic workers TKW"},
+    {"corridor": "JP -> VN", "flow_usd_b_est": 2.2, "rank": 5, "driver": "Technical intern trainee (TITP) ~480K Vietnamese in JP"},
+    {"corridor": "TH -> MM", "flow_usd_b_est": 2.0, "rank": 6, "driver": "~4M Myanmar workers in Thailand (largest intra-ASEAN)"},
+    {"corridor": "MY -> ID", "flow_usd_b_est": 1.8, "rank": 7, "driver": "Plantation/construction labor"},
+    {"corridor": "SG -> India", "flow_usd_b_est": 1.7, "rank": 8, "driver": "Construction/marine S-Pass workers"},
+    {"corridor": "KR -> VN", "flow_usd_b_est": 1.4, "rank": 9, "driver": "EPS program + marriage migration"},
+    {"corridor": "TH -> KH", "flow_usd_b_est": 0.8, "rank": 10, "driver": "Construction/agriculture labor"}
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "受取GDP比が高い国(PH 8.9%, KH 6.5%, MM 5.5%)は外部労働市場ショックに対する脆弱性が高い",
+      "rationale": "外貨収入の中核を出稼ぎ労働者に依存。受入国の景気後退・移民規制強化(米・GCC・タイ)が即座に外貨繰り・家計消費に波及する。",
+      "test": "USリセッション期(2008, 2020)・GCC原油安期(2014-16, 2020)のPH受取変動率を国内消費GDPと相関分析"
+    },
+    {
+      "id": "H2",
+      "statement": "ASEAN内の主要仕送り回廊はタイをハブとする三角(TH<-MM, KH, LA)であり、タイ経済・タイバーツ動向がCLM三国の脆弱性を媒介する",
+      "rationale": "TH->MM/KH/LA合計~$3.3B、CLM三国の対外受取の40-70%を占める。バーツ安や入国規制強化が直撃する『タイ依存トラップ』。",
+      "test": "THB/USD為替変動・タイ最低賃金改定・労働許可制度変更とCLM受取増減の回帰分析"
+    },
+    {
+      "id": "H3",
+      "statement": "日本への送金元は技能実習・特定技能制度の影響が支配的で、ベトナム・ミャンマー・インドネシアからの労働流入と相関する",
+      "rationale": "JP->VN(~$2.2B)、JP->ID、JP->PH、JP->MM corridor は全て2017年以降の制度拡張(技能実習→特定技能2019)後に急増。",
+      "test": "在留外国人統計(出入国在留管理庁)国籍別残高と各国受取の四半期相関"
+    },
+    {
+      "id": "H4",
+      "statement": "ミャンマーは2021年クーデター以降、世界で最も情報非対称性の高い仕送り市場となり、公式統計の信頼性が極端に低下した",
+      "rationale": "CBMが公式チャネル経由を義務化したが、kyat下落・資本規制で hundi 経由が主流化。公式$3.5Bに対し実際は$5-8B推計。",
+      "test": "タイ国内のMyanmar送金事業者(hundi operator)聴取 + Western Union/Wise等の公式統計の対前年比較で乖離検出"
+    },
+    {
+      "id": "H5",
+      "statement": "シンガポール・マレーシアは「ASEAN内の隠れた送出ハブ」であり、合計outflow$16.7Bは域内および南アジア(IN, BD, NP)の経済安定化に直接寄与している",
+      "rationale": "SG outflow $8.2B + MY outflow $8.5B = $16.7B。これはPH+VN+ID+KH+MM の合計受取の約25%に相当し、域内労働市場の所得再分配機能を担っている。",
+      "test": "SG/MYの外国人労働者数・送金性向(propensity to remit) x 平均賃金で推計→宛先国受取と突合"
+    }
+  ],
+  "data_gaps": [
+    "Myanmar: 公式統計は2021年以降信頼性極めて低い。informal flows推計が必要",
+    "Laos: BOL公表データ自体が断片的。Mekong越境キャッシュ未捕捉",
+    "Brunei: AMBDが詳細公表せず、migrant stock x avg remit propensityでの推計のみ",
+    "Bilateral matrix: KNOMAD最新は2021年版。2023年実績の精緻なbilateral分解は未公表",
+    "Cambodia: NBCデータと現地報道で~30%の差。Thai border trade経由の現金が主要漏れ"
+  ],
+  "next_steps": [
+    "中央銀行(BSP, SBV, BI, BOT, BNM, MAS, NBC, BOL, CBM)の月次データを直接取得して2024年最新値を更新",
+    "JICA・JETRO・ILO等の現場調査レポートで informal corridor の倍率係数を補正",
+    "KNOMAD次回 Migration and Development Brief #41 (2024年Q4予定) で2024年通年値を再校正"
+  ]
+}

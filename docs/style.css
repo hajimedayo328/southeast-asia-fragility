@@ -1,0 +1,426 @@
+/* Southeast Asia as a Predictive Mirror — Academic White Theme */
+
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --fg-sub: #555555;
+  --fg-mute: #888888;
+  --line: #e5e5e5;
+  --line-soft: #f0f0f0;
+  --accent-l: #2563eb;  /* L (visible/convenience) blue */
+  --accent-r: #dc2626;  /* R (invisible/cost) red */
+  --accent-neutral: #6b7280;
+  --hl: #fef9c3;        /* highlight */
+  --serif: 'Crimson Pro', 'Noto Serif JP', Georgia, serif;
+  --sans: 'Inter', 'Noto Sans JP', -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line-soft);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 64px;
+  opacity: 1;
+  transform: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero .tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: var(--fg-mute);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 .accent {
+  color: var(--accent-r);
+}
+
+.hero .subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.3vw, 1.4rem);
+  color: var(--fg-sub);
+  font-style: italic;
+  margin: 0 0 32px 0;
+  max-width: 720px;
+}
+
+.hero .pitch {
+  font-size: 1.05rem;
+  color: var(--fg);
+  max-width: 680px;
+  margin: 0 0 40px 0;
+}
+
+.hero .meta {
+  font-size: 0.85rem;
+  color: var(--fg-mute);
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero .meta strong {
+  font-weight: 600;
+  color: var(--fg-sub);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--fg-mute);
+  letter-spacing: 0.2em;
+  animation: bounce 2.4s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+}
+
+/* ---------- Section Headers ---------- */
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--fg-mute);
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+section h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 40px 0 12px 0;
+  color: var(--fg);
+}
+
+.lede {
+  font-size: 1.05rem;
+  color: var(--fg-sub);
+  font-style: italic;
+  margin: 0 0 40px 0;
+  max-width: 700px;
+}
+
+/* ---------- Hypothesis Cards ---------- */
+
+.hypothesis {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  background: var(--bg);
+}
+
+.hypothesis .hyp-id {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-l);
+  font-weight: 600;
+  display: inline-block;
+  padding: 4px 10px;
+  background: #eff6ff;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+
+.hypothesis h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
+.hypothesis .claim {
+  font-size: 0.95rem;
+  margin: 12px 0 24px 0;
+  color: var(--fg-sub);
+}
+
+.hypothesis .finding {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--line-soft);
+  border-left: 3px solid var(--accent-l);
+  font-size: 0.92rem;
+}
+
+.hypothesis .finding strong {
+  color: var(--accent-l);
+}
+
+.hypothesis.shadow .hyp-id {
+  color: var(--accent-r);
+  background: #fef2f2;
+}
+
+.hypothesis.shadow .finding {
+  border-left-color: var(--accent-r);
+}
+
+.hypothesis.shadow .finding strong {
+  color: var(--accent-r);
+}
+
+/* ---------- Chart Container ---------- */
+
+.chart-box {
+  position: relative;
+  height: 360px;
+  margin: 20px 0;
+}
+
+.chart-box.tall {
+  height: 480px;
+}
+
+.chart-caption {
+  font-size: 0.78rem;
+  color: var(--fg-mute);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ---------- Framework Diagram ---------- */
+
+.adjunction {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 40px 0;
+  padding: 32px 24px;
+  background: var(--line-soft);
+  border-radius: 4px;
+}
+
+.adjunction .pole {
+  text-align: center;
+}
+
+.adjunction .pole .label {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.adjunction .pole.L .label { color: var(--accent-l); }
+.adjunction .pole.R .label { color: var(--accent-r); }
+
+.adjunction .pole .title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.adjunction .pole .desc {
+  font-size: 0.85rem;
+  color: var(--fg-sub);
+}
+
+.adjunction .arrow {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--fg-mute);
+}
+
+/* ---------- Tables ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.88rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  font-weight: 600;
+  color: var(--fg-sub);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+td.num {
+  font-family: var(--mono);
+  text-align: right;
+}
+
+/* ---------- Lists ---------- */
+
+ul.clean {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.clean li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-soft);
+  display: flex;
+  gap: 16px;
+}
+
+ul.clean li::before {
+  content: "→";
+  color: var(--fg-mute);
+  flex-shrink: 0;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 64px 24px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--fg-mute);
+  border-top: 1px solid var(--line);
+}
+
+footer a {
+  color: var(--fg-sub);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Misc ---------- */
+
+code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 2px 6px;
+  background: var(--line-soft);
+  border-radius: 3px;
+}
+
+a {
+  color: var(--accent-l);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.toc {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--fg-mute);
+  z-index: 100;
+}
+
+.toc a {
+  display: block;
+  color: var(--fg-mute);
+  padding: 6px 0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.toc a:hover, .toc a.active {
+  color: var(--accent-r);
+}
+
+@media (max-width: 1100px) {
+  .toc { display: none; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 60px 0; }
+  .hero { padding-top: 32px; }
+  .adjunction {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .adjunction .arrow { transform: rotate(90deg); }
+}

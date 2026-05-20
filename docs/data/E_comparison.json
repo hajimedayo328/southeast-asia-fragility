@@ -1,0 +1,193 @@
+{
+  "source": "World Bank Open Data API (SP.POP.TOTL, NY.GDP.PCAP.CD, SP.URB.TOTL.IN.ZS, EG.ELC.ACCS.ZS, IT.NET.USER.ZS, IT.CEL.SETS.P2) + UN World Urbanization Prospects 2018 + CIA World Factbook (religion/govt/colonial)",
+  "retrieved_at": "2026-05-20",
+  "year": "2023 (electricity 2022; Myanmar internet 2020 due to data blackout)",
+  "indicator_codes": {
+    "population_m": "SP.POP.TOTL",
+    "gdp_pc_usd": "NY.GDP.PCAP.CD",
+    "urban_pop_pct": "SP.URB.TOTL.IN.ZS",
+    "electricity_pct": "EG.ELC.ACCS.ZS",
+    "internet_pct": "IT.NET.USER.ZS",
+    "mobile_per_100": "IT.CEL.SETS.P2",
+    "top_city_pop_pct": "UN WUP 2018 / national statistics (largest city population / national total)"
+  },
+  "data": {
+    "VN": {
+      "country_name": "Vietnam",
+      "population_m": 100.4,
+      "gdp_pc_usd": 4323,
+      "urban_pop_pct": 38.1,
+      "top_city_pop_pct": 9.3,
+      "electricity_pct": 100,
+      "internet_pct": 78.1,
+      "mobile_per_100": 131,
+      "religion_majority": "Buddhist/Folk (Mahayana, with strong folk syncretism)",
+      "govt_system": "Socialist Republic (one-party communist)",
+      "colonial": "French (Indochina, 1887-1954)",
+      "notes": "Ho Chi Minh City ~9.3M of 100M. Bipolar urban structure (HCMC + Hanoi) reduces primate-city concentration. State-led digital push (resolution 52, Make in Vietnam)."
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "population_m": 281.2,
+      "gdp_pc_usd": 4876,
+      "urban_pop_pct": 58.1,
+      "top_city_pop_pct": 3.7,
+      "electricity_pct": 100,
+      "internet_pct": 69.2,
+      "mobile_per_100": 125,
+      "religion_majority": "Muslim (~87%, largest Muslim-majority country)",
+      "govt_system": "Presidential Republic (multiparty, decentralized)",
+      "colonial": "Dutch (Netherlands East Indies, ~1800-1945)",
+      "notes": "Jakarta ~10.6M of 281M = low primacy due to archipelago dispersion. New capital Nusantara under construction (Borneo). 17,000 islands = unique geographic fragility."
+    },
+    "PH": {
+      "country_name": "Philippines",
+      "population_m": 114.9,
+      "gdp_pc_usd": 3804,
+      "urban_pop_pct": 55.1,
+      "top_city_pop_pct": 12.0,
+      "electricity_pct": 94.8,
+      "internet_pct": 77.9,
+      "mobile_per_100": 117,
+      "religion_majority": "Christian (Catholic ~80%, unique in SEA)",
+      "govt_system": "Presidential Republic (US-style)",
+      "colonial": "Spanish (1565-1898) then American (1898-1946) = dual colonial",
+      "notes": "Metro Manila ~13.8M of 115M. Typhoon belt + Pacific Ring of Fire = highest natural disaster exposure in ASEAN. English fluency from US legacy = BPO hub."
+    },
+    "TH": {
+      "country_name": "Thailand",
+      "population_m": 71.7,
+      "gdp_pc_usd": 7195,
+      "urban_pop_pct": 60.9,
+      "top_city_pop_pct": 15.3,
+      "electricity_pct": 99.9,
+      "internet_pct": 89.5,
+      "mobile_per_100": 169,
+      "religion_majority": "Buddhist (Theravada ~93%)",
+      "govt_system": "Constitutional monarchy (military-influenced, frequent coups)",
+      "colonial": "Never colonized (buffer state between French Indochina and British Burma/Malaya)",
+      "notes": "Bangkok ~11M of 72M = high primacy. Aging society (median age 40+). PromptPay = mobile-money success but card/cash legacy strong."
+    },
+    "MY": {
+      "country_name": "Malaysia",
+      "population_m": 35.1,
+      "gdp_pc_usd": 11386,
+      "urban_pop_pct": 76.4,
+      "top_city_pop_pct": 24.2,
+      "electricity_pct": 100,
+      "internet_pct": 97.7,
+      "mobile_per_100": 143,
+      "religion_majority": "Muslim (Sunni ~64%, official religion; Buddhist/Hindu/Christian minorities)",
+      "govt_system": "Federal constitutional monarchy (parliamentary, rotating sultanate)",
+      "colonial": "British (Straits Settlements + Federated/Unfederated Malay States, ~1800-1957)",
+      "notes": "Greater KL ~8.5M of 35M. Multi-ethnic (Malay/Chinese/Indian) + bumiputera policy. Petronas oil rents = middle-income trap risk."
+    },
+    "SG": {
+      "country_name": "Singapore",
+      "population_m": 5.9,
+      "gdp_pc_usd": 85412,
+      "urban_pop_pct": 100,
+      "top_city_pop_pct": 100,
+      "electricity_pct": 100,
+      "internet_pct": 94.3,
+      "mobile_per_100": 173,
+      "religion_majority": "No majority (Buddhist 31% / Christian 19% / Muslim 16% / None 20% / Hindu 5%)",
+      "govt_system": "Parliamentary republic (dominant-party, PAP since 1959)",
+      "colonial": "British (Straits Settlements 1819-1963, then brief Malaysia federation)",
+      "notes": "City-state = trivially 100% primacy. Highest GDP/capita in ASEAN. Reference benchmark for digital governance (Singpass, PayNow)."
+    },
+    "KH": {
+      "country_name": "Cambodia",
+      "population_m": 17.4,
+      "gdp_pc_usd": 2430,
+      "urban_pop_pct": 40.6,
+      "top_city_pop_pct": 12.6,
+      "electricity_pct": 92.3,
+      "internet_pct": 68.9,
+      "mobile_per_100": 121,
+      "religion_majority": "Buddhist (Theravada ~97%)",
+      "govt_system": "Constitutional monarchy (de facto one-party, CPP / Hun family dynasty)",
+      "colonial": "French (French Indochina 1863-1953)",
+      "notes": "Phnom Penh ~2.2M of 17M. Post-Khmer Rouge trauma + young population. Bakong CBDC = pioneer in ASEAN. Chinese investment heavy (Sihanoukville)."
+    },
+    "LA": {
+      "country_name": "Laos",
+      "population_m": 7.7,
+      "gdp_pc_usd": 2067,
+      "urban_pop_pct": 38.8,
+      "top_city_pop_pct": 12.2,
+      "electricity_pct": 100,
+      "internet_pct": 64.4,
+      "mobile_per_100": 65,
+      "religion_majority": "Buddhist (Theravada ~65%, with strong animist/folk overlay)",
+      "govt_system": "Socialist Republic (one-party communist, LPRP)",
+      "colonial": "French (French Indochina 1893-1953)",
+      "notes": "Vientiane ~0.95M of 7.7M. Landlocked. Hydropower export to TH/VN/CN. Debt distress to China. Mobile penetration LOWEST in ASEAN (65/100) = anomaly."
+    },
+    "MM": {
+      "country_name": "Myanmar",
+      "population_m": 54.1,
+      "gdp_pc_usd": 1233,
+      "urban_pop_pct": 30.4,
+      "top_city_pop_pct": 10.5,
+      "electricity_pct": 73.6,
+      "internet_pct": 45.4,
+      "mobile_per_100": 121,
+      "religion_majority": "Buddhist (Theravada ~88%, Rohingya Muslim minority persecuted)",
+      "govt_system": "Military junta (2021 coup, civil war ongoing)",
+      "colonial": "British (British Burma, 1824-1948, administered from India)",
+      "notes": "Yangon ~5.7M of 54M. Internet 2020 value (post-coup blackouts make 2023 data unreliable). Lowest electricity access in ASEAN. Active civil war = data quality caveat."
+    },
+    "BN": {
+      "country_name": "Brunei Darussalam",
+      "population_m": 0.46,
+      "gdp_pc_usd": 32891,
+      "urban_pop_pct": 74.8,
+      "top_city_pop_pct": 14.4,
+      "electricity_pct": 100,
+      "internet_pct": 99.0,
+      "mobile_per_100": 119,
+      "religion_majority": "Muslim (Sunni ~78%, official; Sharia law since 2014)",
+      "govt_system": "Absolute monarchy (Sultanate, oldest royal lineage in SEA)",
+      "colonial": "British protectorate (1888-1984)",
+      "notes": "Bandar Seri Begawan ~66k of 459k. Oil/gas rents = high GDP/capita without industrialization. Tiny sample but useful outlier (rent-state)."
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H1_primacy_vs_fragility",
+      "title": "都市集中度(top_city_pop_pct)が高い国ほど災害・パンデミック脆弱性が高い",
+      "reasoning": "TH(15.3), MY(24.2), PH(12.0)のような首都一極集中型は、災害・サプライチェーン途絶で全国機能が止まる。ID(3.7)・VN(9.3)のような多極分散型は冗長性が高い。SGはcity-stateで例外。",
+      "testable_with": "災害死者数(EM-DAT)、COVID経済ショック幅、Logistics Performance Index",
+      "expected_correlation": "positive (集中度↑→脆弱性↑)"
+    },
+    {
+      "id": "H2_colonial_path_dependency",
+      "title": "植民地経路で現代インフラ・行政の初期条件が決まる",
+      "reasoning": "British圏(MY,SG,MM,BN)=common law + 鉄道網。French圏(VN,KH,LA)=中央集権官僚制 + メートル法。Dutch(ID)=分権連邦型。Spanish-US(PH)=英語+カトリック+米国式大統領制。Never-colonized(TH)=独自軍政循環。internet/mobile普及度と相関するか。",
+      "testable_with": "internet_pct, mobile_per_100, World Bank Governance Indicators, English proficiency (EF EPI)",
+      "expected_correlation": "British/Dutch圏 > French圏 (法整備の連続性)"
+    },
+    {
+      "id": "H3_electricity_mobile_decoupling",
+      "title": "電気アクセス率が100%でもモバイルマネー普及が遅い国はlegacy(現金/カード)に縛られている",
+      "reasoning": "TH(電100%/mobile169)・MY(電100%/mobile143)は物理インフラ完成済みだが、銀行・カード網が先に整備されたためQR/wallet移行に摩擦。一方KH(電92%/mobile121)・VN(電100%/mobile131)はleapfrog型。LA(電100%/mobile65)は両方未成熟で唯一の異常値。",
+      "testable_with": "GSMA Mobile Money State Report, BIS Triennial Survey, 各国中銀のe-payment統計",
+      "expected_correlation": "electricity↑かつcredit_card_penetration↑ → mobile_wallet_growth↓"
+    },
+    {
+      "id": "H4_religion_leapfrog",
+      "title": "宗教多数派とリープフロッグ強度の関係",
+      "reasoning": "イスラム圏(ID, MY, BN)はsharia-compliant fintech(takaful, sukuk)が独自発展。仏教圏(TH, KH, LA, MM, VN)は寺院送金・コミュニティ信用が現代mobile moneyのソーシャル基盤に。カトリック圏(PH)は海外出稼ぎ送金需要→GCash/Maya急成長。宗教は単なる文化変数ではなく金融プロダクト設計の制約条件。",
+      "testable_with": "Islamic Finance Development Indicator, OFW remittance flows (BSP), mobile money active users per religion",
+      "expected_correlation": "religion is moderator, not direct driver"
+    },
+    {
+      "id": "H5_govt_system_data_quality",
+      "title": "体制(民主度・透明性)とデータ品質・捕捉率",
+      "reasoning": "MM(軍政)・LA(一党制)・KH(事実上一党)・VN(一党制)では公式統計の精度に懸念。SG・MY・ID・PHの数値と直接比較するときバイアスを意識。脆弱性分析では複数ソース(NGO/衛星/民間)の併用が必須。",
+      "testable_with": "V-Dem Liberal Democracy Index, World Bank Statistical Capacity Index, Freedom House",
+      "expected_correlation": "democracy_score↓ → data_revision_amplitude↑"
+    }
+  ]
+}

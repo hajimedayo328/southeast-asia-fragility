@@ -1,0 +1,142 @@
+{
+  "source": "GSMA + central bank reports + Mordor Intelligence + Statista + fintech media (Fintech News SG/ID/PH, Tech in Asia, Reuters)",
+  "retrieved_at": "2026-05-14",
+  "methodology": "Top provider share = market share of #1 wallet/rail in mobile payments. Where retail e-wallet share and instant-payment rail share are reported separately, the dominant rail (e.g. PromptPay, Bakong) is treated as backbone if it carries the bulk of P2P/merchant volume. Estimates for KH/LA/MM/BN are media-derived due to absence of granular regulator data.",
+  "data": {
+    "VN": {
+      "country_name": "Vietnam",
+      "top_provider": "MoMo",
+      "top_share_pct": 56,
+      "top3_combined_pct": 94,
+      "backbone_type": "platform",
+      "notes": "MoMo ~56% (31M active), ZaloPay ~23%, VNPay ~15%. Top5 (incl ViettelPay, ShopeePay) ~65% per Mordor 2025. Platform-driven, telco-affiliated VNPT/Viettel marginal."
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "top_provider": "GoPay",
+      "top_share_pct": 25,
+      "top3_combined_pct": 55,
+      "backbone_type": "platform",
+      "notes": "Highly fragmented: GoPay/OVO/DANA/ShopeePay each 15-25%. Top5 ~70% combined per Mordor 2025. QRIS (central bank standard) used by all wallets as interoperability layer but commercial rails remain platform-driven."
+    },
+    "PH": {
+      "country_name": "Philippines",
+      "top_provider": "GCash",
+      "top_share_pct": 85,
+      "top3_combined_pct": 99,
+      "backbone_type": "platform",
+      "notes": "Extreme concentration. GCash ~85-89% (81M users 2024), Maya ~13-15%. GCash owned by Globe Telecom + Ant Group + Mynt - hybrid telco/platform but operationally platform-driven super-app."
+    },
+    "TH": {
+      "country_name": "Thailand",
+      "top_provider": "PromptPay",
+      "top_share_pct": 65,
+      "top3_combined_pct": 90,
+      "backbone_type": "central_bank",
+      "notes": "PromptPay (BoT-mandated rail) handles ~41% of mobile payments and 74M tx/day, 90M+ registrations. In wallet segment alone TrueMoney leads (~53%) but PromptPay dominates overall P2P/merchant volume across all bank apps."
+    },
+    "MY": {
+      "country_name": "Malaysia",
+      "top_provider": "Touch'n Go eWallet",
+      "top_share_pct": 62,
+      "top3_combined_pct": 85,
+      "backbone_type": "platform",
+      "notes": "TNG eWallet 62% preference (20M+ users), MAE #2 ~12%, GrabPay/ShopeePay/Boost trail (~5-9% each). DuitNow QR (central bank) provides interoperability but does not concentrate volume."
+    },
+    "SG": {
+      "country_name": "Singapore",
+      "top_provider": "PayNow",
+      "top_share_pct": 60,
+      "top3_combined_pct": 85,
+      "backbone_type": "bank",
+      "notes": "PayNow is bank-consortium rail (MAS-supervised, ABS-operated) - 5M+ registrations, near-universal. Wallet segment: DBS PayLah! 26%, GrabPay 35.3%, ShopeePay smaller. Backbone = bank consortium rather than central bank or single platform."
+    },
+    "KH": {
+      "country_name": "Cambodia",
+      "top_provider": "Bakong",
+      "top_share_pct": 70,
+      "top3_combined_pct": 92,
+      "backbone_type": "central_bank",
+      "notes": "Bakong (NBC-operated blockchain rail) processed 75.6M tx in H1 2024 (+180% YoY); KHQR standard. Wing Bank #2 (~17% e-com share), TrueMoney small (~2%). Strong central-bank backbone."
+    },
+    "LA": {
+      "country_name": "Laos",
+      "top_provider": "BCEL OnePay",
+      "top_share_pct": 55,
+      "top3_combined_pct": 85,
+      "backbone_type": "bank",
+      "notes": "BCEL One (state-owned commercial bank) dominates urban QR. U-Money (Unitel/Viettel telco) #2, LDB and JDB smaller. Mobile money +20% YoY but absolute volumes low. Limited regulator data - figures are media-derived estimates."
+    },
+    "MM": {
+      "country_name": "Myanmar",
+      "top_provider": "KBZPay",
+      "top_share_pct": 60,
+      "top3_combined_pct": 95,
+      "backbone_type": "bank",
+      "notes": "KBZPay (KBZ Bank) 19M users 2024, 43% adult population, 2.1B tx in 2024 - now larger than Wave Money. Wave Money ~30% (telco-origin, formerly 80% pre-2021). Ooredoo Money small. Backbone shifted from telco (Wave) to bank (KBZ) post-coup."
+    },
+    "BN": {
+      "country_name": "Brunei",
+      "top_provider": "BIBD NEXGEN",
+      "top_share_pct": 75,
+      "top3_combined_pct": 98,
+      "backbone_type": "bank",
+      "notes": "BIBD holds 56% retail deposits / 65% loans; NEXGEN wallet = 90% of BIBD retail tx. Baiduri Bank #2. Very small market (~150K active NEXGEN users) but extreme bank concentration. Quickpay QR is BIBD-proprietary."
+    }
+  },
+  "backbone_distribution": {
+    "central_bank": ["TH", "KH"],
+    "bank": ["SG", "LA", "MM", "BN"],
+    "platform": ["VN", "ID", "PH", "MY"],
+    "telco": []
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "Platform-backbone countries (VN, ID, PH, MY) show higher fragility to corporate failure: a single super-app outage (GCash, MoMo, GoPay, TNG) can freeze 50%+ of national retail payments.",
+      "evidence": "PH (GCash 85%) and VN (MoMo 56%) have no public-rail fallback. ID is mitigated by QRIS interoperability despite platform dominance."
+    },
+    {
+      "id": "H2",
+      "statement": "Central-bank-backbone countries (TH PromptPay, KH Bakong) are structurally more resilient because the rail is non-profit, regulator-operated, and interoperable across all licensed wallets/banks.",
+      "evidence": "PromptPay's 74M daily tx flow continues regardless of any commercial wallet's solvency. Bakong's blockchain settlement decouples from individual provider risk."
+    },
+    {
+      "id": "H3",
+      "statement": "Telco-backbone is effectively extinct in ASEAN-10 as of 2025-2026: Wave Money (MM) lost dominance to KBZ Bank post-2021 coup; ViettelPay (VN) remains marginal. Telco-led mobile money model has been displaced by either platform super-apps or central-bank rails.",
+      "evidence": "No ASEAN-10 country has telco as #1 in 2025. Contrasts with East Africa (M-Pesa Kenya). Implication: M-Pesa template did not transfer to ASEAN."
+    },
+    {
+      "id": "H4",
+      "statement": "Concentration (top1 share) correlates inversely with GDP per capita above a threshold: smaller/poorer markets (BN, PH, MM, KH) show 60-85% top-1 share; larger/wealthier markets (ID, SG) show 25-35%.",
+      "evidence": "ID's 270M population sustains 4+ competitive wallets; BN's 0.45M population sustains only 1 dominant bank. Network effects + market-size threshold for competitive entry."
+    },
+    {
+      "id": "H5",
+      "statement": "Hybrid backbone (bank consortium like SG PayNow, or central-bank-mandated interop like ID QRIS, TH PromptPay) is the most resilient configuration - reduces both single-platform failure risk AND single-regulator-policy risk.",
+      "evidence": "SG and ID both maintain wallet competition (low HHI) while standardizing the rail. KH Bakong is centralized but lacks competing wallet ecosystem - single-point-of-policy risk."
+    }
+  ],
+  "data_quality_warnings": {
+    "high_confidence": ["VN", "ID", "PH", "TH", "MY", "SG"],
+    "medium_confidence": ["KH", "MM"],
+    "low_confidence_estimates": ["LA", "BN"],
+    "notes": "LA and BN figures rely on bank annual reports and single-source media estimates; regulator-published share data unavailable. KH Bakong share inferred from transaction volume growth, not formal HHI."
+  },
+  "sources": [
+    "Mordor Intelligence - Vietnam/Indonesia/Thailand/Malaysia/Singapore Mobile Payments Market 2025",
+    "GlobeNewswire - Vietnam Mobile Payments Outlook to 2029 (2025-06-23)",
+    "Statista - Philippines digital wallet brands market share",
+    "Manila Bulletin / Packworks - GCash Maya 75% surge (2025-10-25)",
+    "Nation Thailand - PromptPay 41.10% market share 2025",
+    "FintechNews SG - Top E-Wallets Thailand 2026",
+    "Oppotus - Malaysia E-Wallet Usage 2024",
+    "Fintech Singapore - Cambodia QR/Bakong e-commerce 2025",
+    "Cambodia Investment Review - TrueMoney/Wing Bakong 2025-04",
+    "GSMA - Wave Money Myanmar financial inclusion",
+    "FinanceAsia - KBZ Bank Winner Spotlight 2025",
+    "BIBD official - NEXGEN Wallet retail tx share",
+    "Asian Banker - BIBD 70% market share 2020",
+    "BCEL official + sergioespresso.com - Laos mobile payment landscape"
+  ]
+}

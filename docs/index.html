@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southeast Asia as a Predictive Mirror — 東南アジアの脆弱性は先進国の予言である</title>
+<meta name="description" content="圏論×グラフ理論によるASEAN10カ国のリスク構造可視化。「便利と不可視コストの随伴」を実データで検証する研究プロジェクト。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="toc">
+  <a href="#hero">HERO</a>
+  <a href="#framework">FRAMEWORK</a>
+  <a href="#mobile">MOBILE</a>
+  <a href="#concentration">CONCENTRATION</a>
+  <a href="#remittance">REMITTANCE</a>
+  <a href="#disaster">DISASTER</a>
+  <a href="#comparison">COMPARISON</a>
+  <a href="#synthesis">SYNTHESIS</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="tag">A Research Pitch · 2026</div>
+  <h1>東南アジアの脆弱性は<br><span class="accent">先進国の予言</span>である</h1>
+  <p class="subtitle">Southeast Asia as a Predictive Mirror — visualizing fragility through Category Theory and Graph Theory.</p>
+  <p class="pitch">
+    便利な経路には、必ず見えないコストが貼り付く。<br>
+    随伴 <code>L ⊣ R</code> の数学的構造によって、これは経験則ではなく論理的必然になる。<br>
+    本プロジェクトは ASEAN10カ国の実データで <strong>L (便利)</strong> と <strong>R (不可視コスト)</strong> のペアを可視化し、
+    東南アジアの脆弱性パターンを <strong>先進国の将来リスク</strong> として読み替える。
+  </p>
+  <div class="meta">
+    <span><strong>Author</strong> 学部3年生</span>
+    <span><strong>Lab</strong> 賈伊陽研究室 (東京都市大学)</span>
+    <span><strong>Tools</strong> Category Theory · Graph Theory · ASEAN data</span>
+    <span><strong>Repo</strong> <a href="https://github.com/hajimedayo328/southeast-asia-fragility" target="_blank">GitHub</a></span>
+  </div>
+  <div class="scroll-hint">SCROLL ↓</div>
+</section>
+
+<!-- ============ FRAMEWORK ============ -->
+<section id="framework">
+  <span class="section-num">§ 01 — FRAMEWORK</span>
+  <h2>圏論的枠組み: 便利と不可視コストの随伴</h2>
+  <p class="lede">数学的に対称な構造は、社会現象の非対称な振る舞いを正確に映す。</p>
+
+  <p>
+    圏論の随伴 <code>L ⊣ R</code> は、左随伴 (自由・便利) と 右随伴 (制約・コスト) を必ずペアで現出させる構造。
+    片方だけ存在することはない。これにより、「便利が存在すること」は「コストが存在すること」と数学的に同値になる。
+  </p>
+
+  <div class="adjunction">
+    <div class="pole L">
+      <div class="label">L · LEFT ADJOINT</div>
+      <div class="title">可視の便利</div>
+      <div class="desc">速度・効率・新経路・自由度</div>
+    </div>
+    <div class="arrow">⊣</div>
+    <div class="pole R">
+      <div class="label">R · RIGHT ADJOINT</div>
+      <div class="title">不可視のコスト</div>
+      <div class="desc">集中・冗長喪失・信頼負債・脆弱性</div>
+    </div>
+  </div>
+
+  <h3>本プロジェクトで扱う L/R の対応例</h3>
+  <table>
+    <thead>
+      <tr><th>領域</th><th>L (見える便利)</th><th>R (見えないコスト)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>モバイル金融</td><td>速い送金 (Bakong/GCash/MoMo)</td><td>信頼の単一ノード集中</td></tr>
+      <tr><td>都市インフラ</td><td>コンパクト都市・効率移動</td><td>1橋落下で街分断</td></tr>
+      <tr><td>仕送り経済</td><td>海外労働で家族を養える</td><td>義理経済の重圧・送出国依存</td></tr>
+      <tr><td>AI・自動化 (先進国)</td><td>思考の効率化</td><td>判断力の外部化</td></tr>
+      <tr><td>プラットフォーム経済</td><td>巨大ネットワーク効果</td><td>単一企業崩壊で全滅</td></tr>
+    </tbody>
+  </table>
+
+  <h3>賈先生研究室との接続</h3>
+  <ul class="clean">
+    <li>Strip Folding as Monoidal Category (2022-23) → 機能の並列提供を <code>⊗</code> で記述</li>
+    <li>Heyting Algebra in Flat Origami (2024) → 「証拠ベースのインフラ存在」を直観主義で扱う</li>
+    <li>Categorical Analysis of LLMs (2025, Floridi共著, arXiv:2512.09117) → 文脈関手構造を「国×インフラ」に転用 (向きは反転)</li>
+  </ul>
+</section>
+
+<!-- ============ MOBILE MONEY ============ -->
+<section id="mobile">
+  <span class="section-num">§ 02 — CASE A · MOBILE MONEY</span>
+  <h2>モバイル金融のリープフロッグと集中度</h2>
+  <p class="lede">ASEAN10カ国でモバイルマネー普及が一気に進む。便利の裏側に何が貼り付くか。</p>
+
+  <div class="hypothesis">
+    <span class="hyp-id">H-A1 · VISIBLE LAYER</span>
+    <h3>普及度 vs 銀行口座: リープフロッグ強度</h3>
+    <p class="claim">
+      モバイルマネー普及率と銀行口座保有率の差分は「銀行をスキップする度合い」を示す。
+      リープフロッグ国ほどモバイル先行で銀行が後追い。
+    </p>
+    <div class="chart-box"><canvas id="chart-A1"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-A1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">H-A2 · INVISIBLE LAYER</span>
+    <h3>普及度 vs トッププロバイダーシェア: 便利と集中の正相関</h3>
+    <p class="claim">
+      普及度が高い国ほど、特定の単一プロバイダーへの依存度も高い。
+      L (便利) と R (集中リスク) が同時に増えている可能性。
+    </p>
+    <div class="chart-box"><canvas id="chart-A2"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-A2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ CONCENTRATION ============ -->
+<section id="concentration">
+  <span class="section-num">§ 03 — CASE A · BACKBONE TYPES</span>
+  <h2>信頼のbackboneタイプ別 構造リスク</h2>
+  <p class="lede">「誰の信頼を借りているか」で脆弱性のパターンが変わる。</p>
+
+  <div class="hypothesis">
+    <span class="hyp-id">H-B1 · TYPOLOGY</span>
+    <h3>ASEAN10の決済backbone分類</h3>
+    <p class="claim">
+      各国のモバイル決済の信頼の中心 (backbone) を4タイプ分類:
+      Platform / Central Bank / Bank / Telco。
+      タイプによって脆弱性のメカニズムが異なる。
+    </p>
+    <div class="chart-box"><canvas id="chart-B1"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-B1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">H-B2 · FRAGILITY</span>
+    <h3>Platform型 = 単一ノード集中の典型例</h3>
+    <p class="claim">
+      Platform型 (GCash, MoMo, GoPay 等) は単一民間企業に信頼が集中。
+      過去のM-Pesa障害履歴は、Telco型の脆弱性を実証している。
+    </p>
+    <div class="chart-box"><canvas id="chart-B2"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-B2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ REMITTANCE ============ -->
+<section id="remittance">
+  <span class="section-num">§ 04 — CASE B · REMITTANCE</span>
+  <h2>仕送りグラフ: 個人スケールから国経済まで</h2>
+  <p class="lede">バイト先で聞いた1人の話が、世界の送金ネットワークの縮図になる。</p>
+
+  <div class="hypothesis">
+    <span class="hyp-id">H-D1 · VISIBLE LAYER</span>
+    <h3>受取GDP比: 海外労働依存度の地図</h3>
+    <p class="claim">
+      フィリピン (8.9%), カンボジア (6.5%), ミャンマー (5.5%) — 仕送りがGDPの大きな割合を占める国は、
+      外部労働市場ショックに対して構造的に脆弱。
+    </p>
+    <div class="chart-box"><canvas id="chart-D1"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-D1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">H-D2 · INVISIBLE LAYER</span>
+    <h3>タイハブ三角と日本corridorの構造</h3>
+    <p class="claim">
+      タイは送出 ($3.8B) と 受取 ($9.5B) の二重ハブで、CLM三国 (KH/LA/MM) の経済を媒介している。
+      タイの規制1つで3国同時ショック = リープフロッグ国の見えない依存先。
+    </p>
+    <div class="chart-box"><canvas id="chart-D2"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-D2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ DISASTER ============ -->
+<section id="disaster">
+  <span class="section-num">§ 05 — CASE C · DISASTER</span>
+  <h2>災害時の都市インフラ脆弱性</h2>
+  <p class="lede">沖積平野の3大都市 (ジャカルタ・マニラ・ハノイ) が抱える共通の脆弱性。</p>
+
+  <div class="hypothesis">
+    <span class="hyp-id">H-C1 · VISIBLE LAYER</span>
+    <h3>災害頻度の地理勾配</h3>
+    <p class="claim">
+      ASEAN10は海洋ASEAN (PH/ID) と 内陸ASEAN (LA/KH) で災害profileが大きく異なる。
+      台風通り道 (PH/VN) と火山列 (PH/ID) が物理的に決まっている。
+    </p>
+    <div class="chart-box"><canvas id="chart-C1"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-C1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">H-C2 · INVISIBLE LAYER</span>
+    <h3>都市集中度 × 災害被害 (相関)</h3>
+    <p class="claim">
+      最大都市の人口集中度が高い国ほど、災害1件あたりの経済被害が大きい。
+      コンパクト都市の便利 (L) が、災害時の脆弱性 (R) として顕在化する。
+    </p>
+    <div class="chart-box"><canvas id="chart-C2"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-C2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section id="comparison">
+  <span class="section-num">§ 06 — ASEAN10 OVERVIEW</span>
+  <h2>ASEAN10の比較指標</h2>
+  <p class="lede">経済規模・都市集中・電気アクセス・通信普及・宗教・植民地経路の同時マップ。</p>
+
+  <div class="hypothesis">
+    <span class="hyp-id">H-E1 · LEGACY</span>
+    <h3>植民地経路と現代インフラ普及率</h3>
+    <p class="claim">
+      British圏 (SG/MY/BN) はネット普及率95%超、French圏 (VN/KH/LA) は60-78%帯。
+      法制度の連続性が長期インフラ投資に効いている可能性。
+    </p>
+    <div class="chart-box"><canvas id="chart-E1"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-E1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">H-E2 · ANOMALY</span>
+    <h3>Laos の異常: 電気100%でモバイル契約65/100</h3>
+    <p class="claim">
+      電気は全国通っているのにモバイル普及がASEAN唯一の60%台。
+      内陸国・低人口密度・通信業者寡占。
+      「リープフロッグ前提の脆弱性分析モデル」が当てはまらない例。
+    </p>
+    <div class="chart-box"><canvas id="chart-E2"></canvas></div>
+    <div class="finding"><strong>Finding:</strong> <span id="finding-E2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ SYNTHESIS ============ -->
+<section id="synthesis">
+  <span class="section-num">§ 07 — SYNTHESIS</span>
+  <h2>東南アジアは先進国の予言である</h2>
+  <p class="lede">同じ構造、別のスケール、同じ未来。</p>
+
+  <p>
+    ASEAN10で見えてきたのは:
+  </p>
+
+  <ul class="clean">
+    <li><strong>L (便利)</strong> が暴走する国ほど、<strong>R (不可視コスト)</strong> も同時に増える</li>
+    <li>backbone タイプ (Platform / Central Bank / Bank / Telco) で脆弱性メカニズムが変わる</li>
+    <li>都市集中度・仕送り依存度・植民地経路が、不可視コストの「形」を規定する</li>
+    <li>Laosのような異常値が、フレームワークの限界点を教えてくれる</li>
+  </ul>
+
+  <h3>先進国 (日本・米国・EU) への転用</h3>
+  <p>
+    先進国は東南アジアと逆方向で同じ構造を再生産している:
+  </p>
+
+  <ul class="clean">
+    <li>AI依存 = LLMルート関手で人間判断をスキップ → 判断力の不可視コスト</li>
+    <li>プラットフォーム経済 = GAFA backbone集中 → 単一企業崩壊リスク</li>
+    <li>自動運転・自動化 = 物理労働スキップ → スキル喪失コスト</li>
+    <li>少子化対応の移民労働 = 送出国依存 = 受け入れ側のリープフロッグ</li>
+  </ul>
+
+  <p>
+    <strong>東南アジアは「リープフロッグ」と呼ばれる現象を世界で最も濃く実演している実験場。</strong>
+    その実験室で起きていることを記述する道具が圏論なら、
+    同じ道具で先進国の盲点 (AI依存・プラットフォーム集中) も読み替えられる。
+  </p>
+
+  <h3>このプロジェクトの主張 (1文)</h3>
+  <div class="adjunction">
+    <div style="grid-column: 1 / -1; text-align: center;">
+      <p style="font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; margin: 0;">
+        圏論の随伴は数学的に対称な構造であり、
+        したがって「便利」と「不可視コスト」は必ずペアで現れる。<br>
+        東南アジアを観察することは、先進国の脆弱性を予測することである。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section id="next">
+  <span class="section-num">§ 08 — NEXT</span>
+  <h2>次に詰めること</h2>
+  <ul class="clean">
+    <li>「両立可能性 2-cell」の数学的厳密定義 (自然変換 or rewriting規則)</li>
+    <li>Heyting値の時間積分を圏論的不変量として書く</li>
+    <li>Grothendieck construction の射 (国間技術移転) の具体化</li>
+    <li>不可視コスト R の定量化指標統合 (HHI / 媒介中心性 / 累積信頼借り)</li>
+    <li>ASEAN実データで二層グラフ可視化のインタラクティブ版実装</li>
+    <li>賈先生研究室で議論、方法論的整合性の確認</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>
+    Southeast Asia as a Predictive Mirror · 2026<br>
+    Built for the Yiyang Jia Lab (Tokyo City University) ·
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility" target="_blank">GitHub</a> ·
+    <a href="https://hajimedayo328.github.io/southeast-asia-fragility/" target="_blank">Live</a>
+  </p>
+  <p style="margin-top: 16px; font-size: 0.75rem;">
+    Data sources: World Bank Findex 2021 · GSMA Mobile Money · EM-DAT · World Bank Migration · ITU · UN
+  </p>
+</footer>
+
+<script src="js/viz.js"></script>
+
+</body>
+</html>
