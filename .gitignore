@@ -10,3 +10,13 @@ Thumbs.db
 .vscode/
 .idea/
 *.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
