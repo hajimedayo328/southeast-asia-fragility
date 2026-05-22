@@ -1,8 +1,16 @@
 # 05. Petri net 理論ノート — 5つの主張と厳密化方針
 
 **作成日**: 2026-05-21
-**ステータス**: draft v1
+**ステータス**: draft v2 (サーベイ 06/07 結果統合済)
 **位置づけ**: 既存の `02_framework.md` (随伴 L ⊣ R) を Petri net 上に具体化するための理論詰め
+
+## v2 で確定したこと (サーベイ 06/07 結果)
+
+**二重ホール (Double White Space) 確認**:
+1. **理論側**: Heyting × Petri net は文献ゼロ。Jia (2024) Heyting Algebra in Flat Origami の Petri net 拡張は独自貢献候補。
+2. **応用側**: ASEAN モバイル金融 (Bakong/GCash/MoMo) の Petri net 形式化は1本もない。4 backbone 比較も皆無。
+
+この二重ホールが本プロジェクトの位置決め。借用は基盤論文 6本に集中、独自貢献は2つに絞る。
 
 ## なぜ Petri net か
 
@@ -67,6 +75,25 @@
 - ASEAN 各国の決済システムをポート経由で **合成可能なシステム** として扱う根拠
 - **本プロジェクトの直接の出発点**
 
+### Master 2019 "Petri Nets Based on Lawvere Theories" (arXiv 1904.09091)
+- Petri net 変種を Lawvere theory Q でパラメータ化
+- Q-net の operational semantics
+- **主張2 (不可視コスト = 補助場所)** をエレガントに扱う候補
+
+### Ouyang & Billington 2008 (Elsevier IST)
+- 電子決済プロトコルの atomicity / fairness を CPN + CTL で形式化
+- **本プロジェクトの応用基盤**として最重要
+- Bakong/GCash の atomicity 議論をそのまま借用可能
+
+### Pinna & Tonelli 2017/2018 (Computer Journal)
+- Bitcoin ブロックチェーンを Petri net で記述
+- **分散型 backbone (Bakong の Hyperledger Iroha) を書く前例**
+- ただしアーキテクチャ間比較なし → ここに独自貢献
+
+### Liu & Liu 2019 (IEEE)
+- スマートコントラクトを階層 CPN + 攻撃者モデルで verify
+- chaincode 層の記述方法論
+
 ### AlgebraicPetri.jl (Catlab.jl の Petri net 拡張)
 - Patterson, Halter らによる実装
 - ACSets (Attributed C-Sets) 上に Petri net を実装
@@ -96,26 +123,44 @@
 - アルゴリズムで自動判定可能 (高校生にも見せられる)
 - ASEAN10 各国の Petri net で実例計算
 
-### 主張2: 不可視コスト = 補助場所 (auxiliary places)
+### 主張2-v2: 不可視コスト = Heyting値の補助場所 ★最重要独自貢献
 
-**主張**:
-> 各「便利な遷移」`t` の発火時、可視層 (L) のトークン流に加え、
-> **不可視層 (R) の補助場所** `p_aux^t` にトークンが +1 加算される。
-> この補助場所群が随伴 L ⊣ R の R 側 (右随伴) の具体的位置に対応する。
+**主張 (v2 で格上げ)**:
+> 標準 Petri net (場所トークン値 ∈ ℕ) ではなく、**Heyting代数値 H をトークン値とする Petri net** を定義する。
+> 「便利な遷移」`t` の発火時、Heyting値の補助場所 `p_aux^t ∈ P_invisible` の値が **単調に増加** (∨ 演算で更新)。
+> この補助場所群が随伴 L ⊣ R の R (右随伴) の具体的位置に対応する。
+
+**なぜ Heyting値か (サーベイ 06 で確認)**:
+- 標準 Petri net (ℕ値) + linear logic (Engberg-Winskel quantale) はある
+- 標準 Petri net + **Heyting代数 (直観主義論理) はゼロ** ← 完全に空白
+- Jia (2024) "Heyting Algebra in Flat Origami" の枠組みを Petri net に持ち込む
+- 「信頼の累積」「証拠の蓄積」を二値ではなく直観主義論理で扱う
 
 **形式化候補**:
-- Petri net `(P, T, F)` を **2層拡張**: `P = P_visible ⊔ P_invisible`
-- 各 `t ∈ T` に対し、`F(t, p_aux) > 0` for some `p_aux ∈ P_invisible`
-- 補助場所はトークンが **減らない** (monotone)
+```
+H-Petri Net = (P_visible ⊔ P_invisible, T, F, M_0, H, m)
+  P_invisible: Heyting代数値を持つ補助場所
+  H: 完備Heyting代数
+  m: P_invisible × T → H (遷移発火時の Heyting値増分)
+発火規則:
+  M(p_inv) ← M(p_inv) ∨ m(p_inv, t)  for each p_inv ∈ post(t) ∩ P_invisible
+  M(p_vis): 標準 Petri net の発火規則
+```
 
 **具体例**:
-- 「Bakong送金完了」遷移発火のたびに、「NBC信頼依存」場所に +1
-- 「GCash送金完了」遷移発火のたびに、「Globe Telecom信頼依存」場所に +1
-- 送金回数 = 信頼依存トークン累積 (累積負債が可視化される)
+- 「Bakong送金完了」遷移発火 → 「NBC信頼」場所の Heyting値が ⊤ に向かう (証拠累積)
+- 「GCash送金完了」遷移発火 → 「Globe Telecom信頼」場所の Heyting値増加
+- 標準 Petri net (ℕ) と違い、「信頼が完全 (⊤)」「不確定」「証拠なし (⊥)」の中間状態を扱える
 
 **理論的含意**:
 - 不可視コストが Petri net の **構造として明示される**
-- グラフを見るだけで「どの遷移が何にコストを払うか」がわかる
+- かつ、Heyting値で「証拠ベース」「不確定」を扱える
+- **Jia (2024) Heyting Algebra in Flat Origami の Petri net 拡張**として位置づけられる
+
+**新規性 (サーベイ確認済)**:
+- linear logic × Petri net (quantale) は確立
+- **Heyting代数 × Petri net は文献ゼロ**
+- → 学部卒論〜修論の中核テーマになりうる規模
 
 ### 主張3: backbone タイプ = 構造的不変量 (P/T-invariant)
 
@@ -154,7 +199,7 @@
 - 前のChart.js でやった HHI (集中度) を Petri net 上で再定義
 - 業界統計から推定するのではなく、**システム構造から計算** できる
 
-### 主張5: 域内決済合成 = Open Petri Net の合成
+### 主張5: 域内決済合成 = Open Petri Net の合成 ★応用面の独自貢献
 
 **主張**:
 > ASEAN5 (TH/SG/MY/ID/PH) の決済システムは、各国 Petri net を
@@ -163,12 +208,15 @@
 
 **形式化候補**:
 - 各国の決済 Petri net を Open Petri Net として書く (入出力ポート付き)
-- 越境決済プロトコル (PromptPay-PayNow, QRIS-DuitNow 等) をポート間の射として
+- 越境決済プロトコル (PromptPay-PayNow, QRIS-DuitNow, Project Nexus) をポート間の射として
 - 合成は cospan の pushout で計算
+- AlgebraicPetri.jl で実装
 
-**新規性**:
-- Baez-Master 2018 は理論論文。**ASEAN実例で構築した研究はおそらくない** (要検証 → サーベイ中)
-- 賈先生研究 (モノイダル圏) との直接接続点
+**新規性 (サーベイ 07 確認済)**:
+- Baez-Master 2018 は理論論文。**ASEAN実例で構築した研究は1本もない (07確定)**
+- 中央集権型 vs 分散型 backbone を同一 Petri net 枠組みで比較した研究も**ゼロ**
+- Project Nexus (PromptPay × QRIS × DuitNow の越境決済) は運用文書のみで未形式化
+- Pinna & Tonelli 2017/18 (Bitcoin Petri net) を Bakong (分散型) の前例として借用可能
 
 ---
 
@@ -214,11 +262,13 @@
 - → **遷移合成 ≡ 折り操作合成** という構造的同型
 - 折り紙の「折り順」と Petri net の「発火列」が対応
 
-### Jia (2024) Heyting Algebra in Flat Origami
-- **Heyting値 Petri net** という拡張があるか? (サーベイ中)
+### Jia (2024) Heyting Algebra in Flat Origami ★直接接続点
+- **Heyting値 Petri net の文献はゼロ (06サーベイ確定)**
+- 主張2-v2 がこの拡張に相当 = 本プロジェクトの理論面の独自貢献
 - 場所のトークン値を Heyting代数値にすると、「証拠ベースのインフラ存在」を Petri net で扱える
 - 普通の Petri net (ℕ値) vs Heyting値 Petri net (証拠強度値)
-- これがゼロなら独自貢献候補
+- linear logic × Petri net (Engberg-Winskel quantale) はあるが、直観主義論理直接の Petri net は未開拓
+- Jia (2024) の Flat Origami での Heyting代数の使い方を Petri net 場所値に適用
 
 ### Jia, Floridi, Tohmé (2025) Categorical Analysis of LLMs
 - 人間ルート関手 vs LLM ルート関手 (Rel 上の射の並列)
@@ -233,73 +283,96 @@
 
 ---
 
-## §6 自分で詰める論点 (未解決)
+## §6 自分で詰める論点 (未解決 — v2 更新)
 
-提出するわけじゃない、自分で答えを出すべき問い:
+サーベイで一部回答済。残ってる論点:
 
-1. **2層 Petri net (可視層+不可視層) は標準Petri netに還元可能か?**
-   - 還元可能なら理論的に新規性なし、ただ実用的に便利
-   - 還元不可なら新規拡張として独立価値
-2. **Heyting値 Petri net は文献にあるか?**
-   - 6本目のサーベイ結果待ち
-   - ゼロなら独自貢献候補 (Jia 2024 直接接続)
-3. **リープフロッグの「経路disjoint」を Petri net でどう書くか?**
+1. ~~**Heyting値 Petri net は文献にあるか?**~~ → **ゼロ確定 (06)**。独自貢献候補確定。
+2. ~~**ASEAN モバイル金融 Petri net の先行研究はあるか?**~~ → **ゼロ確定 (07)**。応用面の独自貢献確定。
+3. **Heyting値 Petri net の標準 Petri net への還元性**
+   - 還元可能なら理論的価値は低下、実用的拡張として残る
+   - 還元不可能の証明があると新規拡張として独立価値
+   - **要詰め**: 線形論理 × Petri net (quantale) と比較してどう違うか
+4. **リープフロッグの「経路disjoint」を Petri net でどう書くか?**
    - 単純に「経由しない」だけだと弱い
-   - 「経路の本質的に異なる」を圏論的に定義したい
-4. **ASEAN3カ国の Petri net を実装する規模感**
+   - 部分マーキング reachability で形式化 (主張1)
+   - でも「本質的に異なる経路」を Open Petri Net レベルで言うには cospan 構造での差分が要る
+5. **ASEAN3カ国の Petri net を実装する規模感**
    - 5-10場所、10-20遷移で十分か
    - もっと細かくしないと現実が反映されないか
-5. **AlgebraicPetri.jl の学習コスト**
+   - **方針**: 最初は 5場所5遷移の最小モデルで Bakong/GCash を比較
+6. **AlgebraicPetri.jl の学習コスト**
    - Julia は触ったことがない (MEMORYでC++/Python中心)
-   - Catlab.jl の習得時間 → ROI判断要
-6. **市場時系列 (Tick Recorder) と Petri net は接続不能か?**
-   - 連続時系列にトークン離散モデルを乗せるのは無理
-   - でも「市場体制 (Bull/Bear/Range) の遷移」なら Petri net で書けるかも
-   - 別研究テーマとして検討
+   - **代替**: Python + NetworkX で自作 Petri net シミュレータを作る方が早いかも
+   - 既存の Pythonスキル流用 + ブラウザHTML可視化との接続が容易
+7. **「4類型を比較するための共通 CPN 規約」設計** (07サーベイ提言)
+   - 色 (token types)、階層 (hierarchical)、タイミングの統一規約
+   - これがあれば「Bakong vs GCash vs PromptPay」が直接比較できる
+   - 規約設計自体が論文化可能
+8. **Atomicity の借用方針** (Ouyang & Billington 2008)
+   - 決済 atomicity を本プロジェクトの「フロー保証」として借用
+   - 「Bakong は atomicity を構造的に保証する vs GCash は中央オーケストレータ依存」
+   - これは backbone 比較の具体的指標になる
+9. **市場時系列 (Tick Recorder) と Petri net の接続**
+   - 連続時系列にトークン離散モデルは無理
+   - でも「市場体制 (Bull/Bear/Range) の遷移」なら Petri net で書ける
+   - 別研究として温存
 
 ---
 
-## §7 当面のアクションリスト
+## §7 当面のアクションリスト (v2 更新)
 
 ### 短期 (今週)
-1. サーベイ06_petri_net_categorical.md と 07_petri_net_payment_apps.md の結果統合
-2. Heyting値 Petri net の存否確認 → 独自貢献の有無を決定
-3. 主張1〜5 のうち最も筋がいいものを選定 (たぶん主張1か主張5)
+1. ~~サーベイ06/07 統合~~ → **完了**
+2. ~~Heyting値 Petri net 存否確認~~ → **ゼロ確認、独自貢献確定**
+3. **主張選定**: 主張2-v2 (Heyting値Petri net) + 主張5 (Open Petri Net ASEAN5) を本命に
+4. **共通 CPN 規約の設計** (07提言): 4 backbone 比較のための統一フォーマットを決める
 
 ### 中期 (今月)
-4. 主張1: ASEAN3カ国 (VN/PH/TH) の決済 Petri net を 5-10場所スケールで構築
-5. 主張1: AlgebraicPetri.jl or 自作Python で reachability 計算
-6. 主張3: P-invariant を実例計算
+5. 主張1+5 応用: Bakong と GCash の最小 Petri net を構築 (5場所5遷移)
+6. 主張2-v2 実装: Heyting値補助場所を Python で試作
+7. Pythonベースの自作 Petri net シミュレータ (NetworkXベース)
+8. atomicity チェッカー (Ouyang & Billington 2008 流用) を Bakong/GCash 比較に適用
 
 ### 長期 (3ヶ月)
-7. 主張5: Baez-Master 2018 を読み込み、Open Petri Net を ASEAN5に実装
-8. 主張4: 場所中心性アルゴリズムを実装、HHIと数値比較
-9. 既存の southeast-asia-fragility の HTML に Petri net セクション追加 (理論固まったあと)
+9. Open Petri Net cospan 合成を Python で実装 (Baez-Master 2018)
+10. ASEAN5全展開 (TH/SG/MY/ID/PH に拡張)
+11. 場所中心性アルゴリズム実装、HHIと数値比較 (主張4)
+12. southeast-asia-fragility の HTML に Petri net セクション追加 (理論固まった後)
+13. Pinna & Tonelli 2017/18 を読み、Bakong (Hyperledger Iroha) の Petri net 記述を完成
 
 ---
 
-## §8 既存研究の借用関係 (整理)
+## §8 既存研究の借用関係 (v2 更新)
 
-| 借用元 | 何を借りるか |
-|---|---|
-| Petri 1962 | 基本定義 |
-| Meseguer-Montanari 1990 | モノイド構造 |
-| Baez-Master 2018 | Open Petri Net, cospan合成 |
-| AlgebraicPetri.jl | 実装フレームワーク |
-| Jia 2022-23 | モノイダル圏での操作合成 |
-| Jia 2024 | Heyting値拡張の発想 |
-| Jia-Floridi 2025 | 並列ルート関手の構造 |
+| 借用元 | 何を借りるか | 重要度 |
+|---|---|---|
+| Petri 1962 | 基本定義 | 必須 |
+| Meseguer-Montanari 1990 | モノイド構造、主張3の理論基盤 | 必須 |
+| **Baez-Master 2018** | Open Petri Net, cospan合成 (主張5本丸) | ★★★ |
+| **Master 2019** | Lawvere theory Q-net、主張2に応用可能性 | ★★ |
+| **Ouyang & Billington 2008** | 決済 atomicity 形式化、本プロジェクトの応用基盤 | ★★★ |
+| **Pinna & Tonelli 2017/18** | Bitcoin Petri net、Bakong (分散型) の前例 | ★★★ |
+| **Liu & Liu 2019** | スマートコントラクト検証、chaincode層 | ★ |
+| AlgebraicPetri.jl | 実装フレームワーク (Julia) | 候補 |
+| Catlab.jl | 圏論実装基盤 | 候補 |
+| **Jia 2022-23** Strip Folding | モノイダル圏での操作合成 | ★★ |
+| **Jia 2024** Heyting Origami | Heyting値拡張の発想 (主張2-v2 直接) | ★★★ |
+| **Jia-Floridi 2025** LLM | 並列ルート関手の構造 (主張1+5) | ★★ |
 
-借用する研究を明示することで、「単なる移植」じゃなく「先行研究の組合せ + 独自拡張」のスタンスを取る。
+借用関係の明示で、「単なる移植」じゃなく「**6本の基盤論文の組合せ + 2つの独自拡張 (Heyting値Petri net + ASEAN応用)**」のスタンスを取る。これは前のASEAN路線 (「ふーん」反応) と違って、独自貢献が明確 + 既存実装フレームワーク有り + 実応用ありの3点が揃ってる。
 
 ---
 
-## §9 リスク評価
+## §9 リスク評価 (v2 更新)
 
-- **R1**: 主張1〜5 が全て既存研究にあって新規性ゼロ → サーベイ次第。穴を埋めるならOK
-- **R2**: Julia (Catlab.jl) 学習コスト高くて手が止まる → Python自作で代替 (NetworkXベース)
-- **R3**: ASEAN実例構築でデータ不足 → 既存の docs/data/ + 業界レポートで補完
-- **R4**: Heyting値 Petri net が既出 → 直接の独自貢献は減るが、ASEAN応用で残せる
+- ~~**R1**: 主張1〜5 が全て既存研究にあって新規性ゼロ~~ → **サーベイで二重ホール確認、却下**
+- **R2**: Julia (Catlab.jl) 学習コスト高くて手が止まる → Python自作で代替 (NetworkXベース) ← 推奨
+- **R3**: ASEAN実例構築でデータ不足 → 既存の docs/data/ + 業界レポートで補完 (前のChart.jsで集めたデータ流用可)
+- ~~**R4**: Heyting値 Petri net が既出~~ → **ゼロ確認、却下**
+- **R5 (新)**: Heyting値 Petri net の還元性証明が予想以上に重い → 最初は形式定義だけにとどめ、性質証明は別研究
+- **R6 (新)**: 「4類型比較のための共通CPN規約」設計が学部レベル超える → 最小規約 (5場所5遷移) からスタート
+- **R7 (新)**: AlgebraicPetri.jl と Python 自作の二重保守 → Python 一本化推奨
 
 ---
 
