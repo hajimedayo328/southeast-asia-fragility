@@ -8,7 +8,16 @@ const RANK_LABELS = ['⊥', '⊤_priv', '⊤_bank', '⊤_pub'];
 
 const PETRI_COLORS = {
   bakong: '#0891b2',  // cyan (central bank)
+  paynow: '#7c3aed',  // purple (bank consortium)
+  kbzpay: '#a16207',  // amber-dark (bank single)
   gcash:  '#dc2626',  // red (private platform)
+};
+
+const PETRI_LABELS = {
+  bakong: 'Bakong (中央銀行型, KH)',
+  paynow: 'PayNow (銀行コンソーシアム型, SG)',
+  kbzpay: 'KBZPay (銀行単独型, MM)',
+  gcash:  'GCash (民間プラットフォーム型, PH)',
 };
 
 function rankTickLabel(value) {
@@ -26,39 +35,28 @@ async function loadPetri() {
   }
 }
 
-function makeRankChart(canvasId, bakongRanks, gcashRanks, opts = {}) {
+function makeRankChart(canvasId, backboneData, opts = {}) {
+  // backboneData: { backboneKey: ranksArray, ... }
   const ctx = document.getElementById(canvasId);
   if (!ctx) return;
-  const steps = bakongRanks.map((_, i) => i);
+  const firstKey = Object.keys(backboneData)[0];
+  const steps = backboneData[firstKey].map((_, i) => i);
+
+  const datasets = Object.entries(backboneData).map(([key, ranks]) => ({
+    label: PETRI_LABELS[key] || key,
+    data: ranks,
+    borderColor: PETRI_COLORS[key] || '#6b7280',
+    backgroundColor: (PETRI_COLORS[key] || '#6b7280') + '22',
+    borderWidth: 2.5,
+    pointRadius: 4,
+    pointHoverRadius: 6,
+    stepped: true,
+    tension: 0,
+  }));
+
   return new Chart(ctx, {
     type: 'line',
-    data: {
-      labels: steps,
-      datasets: [
-        {
-          label: 'Bakong (中央銀行型, KH)',
-          data: bakongRanks,
-          borderColor: PETRI_COLORS.bakong,
-          backgroundColor: PETRI_COLORS.bakong + '33',
-          borderWidth: 2.5,
-          pointRadius: 4,
-          pointHoverRadius: 6,
-          stepped: true,
-          tension: 0,
-        },
-        {
-          label: 'GCash (民間プラットフォーム型, PH)',
-          data: gcashRanks,
-          borderColor: PETRI_COLORS.gcash,
-          backgroundColor: PETRI_COLORS.gcash + '33',
-          borderWidth: 2.5,
-          pointRadius: 4,
-          pointHoverRadius: 6,
-          stepped: true,
-          tension: 0,
-        },
-      ],
-    },
+    data: { labels: steps, datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
@@ -105,32 +103,47 @@ function setText(id, html) {
     return;
   }
 
-  const bakong = data.bakong;
-  const gcash = data.gcash;
+  const backbones = data.backbones || { bakong: data.bakong, gcash: data.gcash };
+  const order = ['bakong', 'paynow', 'kbzpay', 'gcash'].filter(k => backbones[k]);
+
+  const trustData = {};
+  const loadData = {};
+  for (const k of order) {
+    trustData[k] = backbones[k].trust_curve_ranks;
+    loadData[k] = backbones[k].systemic_load_curve_ranks;
+  }
 
   // Trust curve
-  makeRankChart('chart-petri-trust', bakong.trust_curve_ranks, gcash.trust_curve_ranks, {
-    yLabel: 'TrustHub Heyting値の階数',
-  });
+  makeRankChart('chart-petri-trust', trustData, { yLabel: 'TrustHub Heyting値の階数' });
 
-  const trustStep = bakong.trust_reached_T_PUB_at_step;
+  const finals = order.map(k => `${k.toUpperCase()}=${backbones[k].final_invisible.TrustHub}`).join(' / ');
   setText(
     'finding-petri-trust',
-    `Bakong は step ${trustStep} で <strong>⊤_pub</strong> (rank 3) に到達し維持。
-     GCash は何回送金しても <strong>⊤_priv</strong> (rank 1) で頭打ち。
-     ${data.config.num_transactions} 回送金 (${bakong.steps} 遷移発火) で確認。
-     最終値: Bakong=${bakong.final_invisible.TrustHub} / GCash=${gcash.final_invisible.TrustHub}。`
+    `Bakong → <strong>⊤_pub</strong>、PayNow & KBZPay → <strong>⊤_bank</strong>、GCash → <strong>⊤_priv</strong> で永久に頭打ち。
+     ${data.config.num_transactions} 回送金 (${backbones[order[0]].steps} 遷移発火)。
+     最終値: ${finals}。
+     <strong>Heyting半順序の3段階差</strong>が同じ構造の Petri net で実現してる。`
   );
 
   // Systemic load curve
-  makeRankChart('chart-petri-load', bakong.systemic_load_curve_ranks, gcash.systemic_load_curve_ranks, {
-    yLabel: 'SystemicLoad Heyting値の階数',
-  });
+  makeRankChart('chart-petri-load', loadData, { yLabel: 'SystemicLoad Heyting値の階数' });
 
+  const loadFinals = order.map(k => `${k.toUpperCase()}=${backbones[k].final_invisible.SystemicLoad}`).join(' / ');
   setText(
     'finding-petri-load',
-    `Bakong は Reconciliation 遷移発火で <strong>⊤_bank</strong> (rank 2) まで上昇 — リアルタイム清算が銀行レベルの整合性を生む。
-     GCash は <strong>⊤_priv</strong> (rank 1) 止まり — バッチ清算で民間レベルの整合性。
-     最終値: Bakong=${bakong.final_invisible.SystemicLoad} / GCash=${gcash.final_invisible.SystemicLoad}。`
+    `SystemicLoad も backbone タイプで上限が違う。最終値: ${loadFinals}。
+     リアルタイム清算 (中銀・銀行) は ⊤_bank に到達、バッチ清算 (民間) は ⊤_priv 止まり。`
   );
+
+  // Bottleneck reversal demo (notes/15)
+  if (data.bottleneck_reversal_demo) {
+    const br = data.bottleneck_reversal_demo;
+    setText(
+      'finding-petri-reversal',
+      `⊗ (4 backbone を並列): <strong>${br['monoidal_⊗_bound (max)']}</strong> (max 律速、最強=Bakong) <br>
+       ▷ (4 backbone を統合): <strong>${br['cospan_▷_bound  (meet)']}</strong> (meet 律速、最弱=GCash) <br>
+       Heyting半順序の階数差: <strong>${br.rank_gap}</strong> 段階。<br><br>
+       <em>${br.interpretation}</em>`
+    );
+  }
 })();

@@ -1,8 +1,53 @@
 # 15. ⊗ vs ▷ 律速逆転 (Bottleneck Reversal) の深掘り
 
 **作成日**: 2026-05-23
-**ステータス**: draft v1 — 本プロジェクトの「唯一の真新規候補」を厳密化
-**位置づけ**: notes/13 §6 で立てた仮説を、定理 + 政策的含意 + 反例探索まで詰める
+**ステータス**: draft v2 — サーベイ08で既存研究3本判明、新規性主張を修正済み
+**位置づけ**: notes/13 §6 の仮説を厳密化したが、サーベイ結果で **既存の lattice bottleneck duality** に該当することが判明。本プロジェクトの貢献は「Open Petri Net + Heyting + ASEAN応用」への翻訳。
+
+## §0 サーベイ08 (literature/raw/08) からの修正
+
+当初は「本プロジェクトの唯一の真新規候補」と主張したが、徹底サーベイで以下が判明:
+
+### 致命的な先行研究3本
+
+1. **Liebeherr (2017) "Duality of the Max-Plus and Min-Plus Network Calculus"**
+   - 200ページ級 monograph
+   - 同一ネットワークに対し min-plus / max-plus の2代数が双対に振る舞うことを体系化
+   - 「同じ対象に異なる合成で律速逆転」の構造そのもの
+2. **Krishnan (2014) "Flow-Cut Dualities for Sheaves on Graphs"** (arXiv 1409.6712)
+   - Max-Flow Min-Cut の半環値 sheaf 一般化
+   - flow と cut で min/max が双対化する categorical 定式化
+3. **Curry & Krishnan (2024) "Lattice-Valued Bottleneck Duality"** (arXiv 2410.00315)
+   - **Theorem 3**: `⋁_P ⋀_e c(e) = ⋀_C ⋁_e c(e)` を分配束で証明
+   - path (直列, ▷的) で meet 律速、cut (並列, ⊗的) で join 律速
+   - **本プロジェクトの定理と数学的に同型**
+
+→ 「Bottleneck Reversal Theorem」は**既出**。
+
+### 残る新規性 (未踏領域)
+
+サーベイで以下は確認:
+- 用語 "bottleneck reversal" "asymmetric compositionality" は圏論文献に **0件**
+- Baez-Master Open Petri Net の cospan-pushout (▷) と disjoint union (⊗) を **律速演算の非対称性で対比した研究はゼロ**
+- Duoidal category (Aguiar-Mahajan, Shapiro-Spivak) で order-enriched 解釈はない
+- **Heyting代数値** (分配束より強い) での bottleneck duality 翻訳は未確認
+
+→ 本プロジェクトの貢献は **「既知の lattice bottleneck duality を、Open Petri Net (Baez-Master 2018) の文脈に翻訳する初の試み」** という incremental contribution。
+
+### 修正された主張
+
+> 「Curry-Krishnan 2024 の Lattice-Valued Bottleneck Duality を、
+> Open H-Petri Net (Baez-Master 2018 の Heyting版) に翻訳し、
+> ASEAN モバイル金融の越境決済システムに具体応用する。
+> これにより『域内決済統合は最弱国に律速』という政策的予言が
+> 圏論的構造から自動的に出る。」
+
+「世界初の定理」じゃなく「**既知の数学を新しい応用ドメインに翻訳**」のスタンス。
+これでも価値はあるが、当初の主張より控えめ。
+
+引用必須: Liebeherr 2017, Krishnan 2014, **Curry-Krishnan 2024 (最重要)**。
+
+---
 
 ## §1 本プロジェクトの中で位置づけ
 

@@ -4,8 +4,423 @@
     "send_amount": 10,
     "initial_balance": 1000
   },
+  "backbones": {
+    "bakong": {
+      "name": "Bakong (Cambodia, central_bank)",
+      "backbone_type": "central_bank",
+      "steps": 15,
+      "final_visible": {
+        "UserWallet": 970,
+        "PendingTx": 0,
+        "NBCBackbone": 1,
+        "SettledTx": 0,
+        "RecipientWallet": 30
+      },
+      "final_invisible": {
+        "TrustHub": "⊤_pub",
+        "SystemicLoad": "⊤_bank"
+      },
+      "trust_reached_T_PRIV_at_step": 2,
+      "trust_reached_T_BANK_at_step": 2,
+      "trust_reached_T_PUB_at_step": 2,
+      "systemic_load_curve_ranks": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "trust_curve_ranks": [
+        0,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "centrality": {
+        "net": "Bakong (Cambodia, central_bank)",
+        "places": {
+          "UserWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "PendingTx": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "NBCBackbone": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.9798,
+            "HCC": "—"
+          },
+          "SettledTx": {
+            "kind": "visible",
+            "TCC": 0.6,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "RecipientWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "TrustHub": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_pub"
+          },
+          "SystemicLoad": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_bank"
+          }
+        },
+        "HHI_AC": 0.76
+      }
+    },
+    "gcash": {
+      "name": "GCash (Philippines, platform)",
+      "backbone_type": "platform",
+      "steps": 15,
+      "final_visible": {
+        "UserWallet": 970,
+        "PendingTx": 0,
+        "GlobeBackbone": 1,
+        "SettledTx": 0,
+        "RecipientWallet": 30
+      },
+      "final_invisible": {
+        "TrustHub": "⊤_priv",
+        "SystemicLoad": "⊤_priv"
+      },
+      "trust_reached_T_PRIV_at_step": 2,
+      "trust_reached_T_BANK_at_step": null,
+      "trust_reached_T_PUB_at_step": null,
+      "systemic_load_curve_ranks": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "trust_curve_ranks": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "centrality": {
+        "net": "GCash (Philippines, platform)",
+        "places": {
+          "UserWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "PendingTx": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "GlobeBackbone": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.9798,
+            "HCC": "—"
+          },
+          "SettledTx": {
+            "kind": "visible",
+            "TCC": 0.6,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "RecipientWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "TrustHub": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_priv"
+          },
+          "SystemicLoad": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_priv"
+          }
+        },
+        "HHI_AC": 0.76
+      }
+    },
+    "paynow": {
+      "name": "PayNow (Singapore, bank consortium)",
+      "backbone_type": "bank_consortium",
+      "steps": 15,
+      "final_visible": {
+        "UserWallet": 970,
+        "PendingTx": 0,
+        "BankConsortium": 1,
+        "SettledTx": 0,
+        "RecipientWallet": 30
+      },
+      "final_invisible": {
+        "TrustHub": "⊤_bank",
+        "SystemicLoad": "⊤_bank"
+      },
+      "trust_reached_T_PRIV_at_step": 2,
+      "trust_reached_T_BANK_at_step": 2,
+      "trust_reached_T_PUB_at_step": null,
+      "systemic_load_curve_ranks": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "trust_curve_ranks": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "centrality": {
+        "net": "PayNow (Singapore, bank consortium)",
+        "places": {
+          "UserWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "PendingTx": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "BankConsortium": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.9798,
+            "HCC": "—"
+          },
+          "SettledTx": {
+            "kind": "visible",
+            "TCC": 0.6,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "RecipientWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "TrustHub": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_bank"
+          },
+          "SystemicLoad": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_bank"
+          }
+        },
+        "HHI_AC": 0.76
+      }
+    },
+    "kbzpay": {
+      "name": "KBZPay (Myanmar, bank single-dominant)",
+      "backbone_type": "bank_single",
+      "steps": 15,
+      "final_visible": {
+        "UserWallet": 970,
+        "PendingTx": 0,
+        "KBZBank": 1,
+        "SettledTx": 0,
+        "RecipientWallet": 30
+      },
+      "final_invisible": {
+        "TrustHub": "⊤_bank",
+        "SystemicLoad": "⊤_bank"
+      },
+      "trust_reached_T_PRIV_at_step": 2,
+      "trust_reached_T_BANK_at_step": 2,
+      "trust_reached_T_PUB_at_step": null,
+      "systemic_load_curve_ranks": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "trust_curve_ranks": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "centrality": {
+        "net": "KBZPay (Myanmar, bank single-dominant)",
+        "places": {
+          "UserWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "PendingTx": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "KBZBank": {
+            "kind": "visible",
+            "TCC": 0.4,
+            "BI": 0.9798,
+            "HCC": "—"
+          },
+          "SettledTx": {
+            "kind": "visible",
+            "TCC": 0.6,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "RecipientWallet": {
+            "kind": "visible",
+            "TCC": 0.2,
+            "BI": 0.0,
+            "HCC": "—"
+          },
+          "TrustHub": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_bank"
+          },
+          "SystemicLoad": {
+            "kind": "invisible",
+            "TCC": "—",
+            "BI": "—",
+            "HCC": "⊤_bank"
+          }
+        },
+        "HHI_AC": 0.76
+      }
+    }
+  },
   "bakong": {
     "name": "Bakong (Cambodia, central_bank)",
+    "backbone_type": "central_bank",
     "steps": 15,
     "final_visible": {
       "UserWallet": 970,
@@ -56,10 +471,59 @@
       3,
       3,
       3
-    ]
+    ],
+    "centrality": {
+      "net": "Bakong (Cambodia, central_bank)",
+      "places": {
+        "UserWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "PendingTx": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "NBCBackbone": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.9798,
+          "HCC": "—"
+        },
+        "SettledTx": {
+          "kind": "visible",
+          "TCC": 0.6,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "RecipientWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "TrustHub": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_pub"
+        },
+        "SystemicLoad": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_bank"
+        }
+      },
+      "HHI_AC": 0.76
+    }
   },
   "gcash": {
     "name": "GCash (Philippines, platform)",
+    "backbone_type": "platform",
     "steps": 15,
     "final_visible": {
       "UserWallet": 970,
@@ -110,10 +574,69 @@
       1,
       1,
       1
-    ]
+    ],
+    "centrality": {
+      "net": "GCash (Philippines, platform)",
+      "places": {
+        "UserWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "PendingTx": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "GlobeBackbone": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.9798,
+          "HCC": "—"
+        },
+        "SettledTx": {
+          "kind": "visible",
+          "TCC": 0.6,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "RecipientWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0,
+          "HCC": "—"
+        },
+        "TrustHub": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_priv"
+        },
+        "SystemicLoad": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_priv"
+        }
+      },
+      "HHI_AC": 0.76
+    }
+  },
+  "bottleneck_reversal_demo": {
+    "trust_uppers": {
+      "bakong": "⊤_pub",
+      "gcash": "⊤_priv",
+      "paynow": "⊤_bank",
+      "kbzpay": "⊤_bank"
+    },
+    "monoidal_⊗_bound (max)": "⊤_pub",
+    "cospan_▷_bound  (meet)": "⊤_priv",
+    "rank_gap": 2,
+    "interpretation": "If the 4 backbones are placed side-by-side (⊗ = monoidal product), the strongest one carries the system → ⊤ = ⊤_pub. But if they are integrated into a cross-border system (▷ = cospan-pushout), the weakest one drags the rest down → ⊥' = ⊤_priv. Same set, different composition direction, different bottleneck. (notes/15 Theorem: Bottleneck Reversal)"
   },
   "interpretation": {
-    "trust_gap": "Bakong reaches T_PUB in steps after the first BakongClear/Settle, while GCash never exceeds T_PRIV no matter how many transactions fire. This is the structural expression of the legal-protection gap.",
-    "key_observation": "Identical sequence length, identical visible-layer behavior, but invisible (Heyting) layer ranks differ permanently."
+    "trust_gap": "4 backbone types reach different Heyting upper bounds: Bakong (central bank) → ⊤_pub, PayNow & KBZPay (bank) → ⊤_bank, GCash (platform) → ⊤_priv. Identical structural form (5 places + 2 invisible, 5 transitions), but invisible-layer caps differ permanently."
   }
 }
