@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>時間軸 — Southeast Asia Fragility</title>
+<meta name="description" content="信頼の時間関手 Trust: Time → H。ASEAN各国と先進国の Trust 時系列、速度-集中度トレードオフ、bottleneck reversal の時間進化。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">Southeast Asia Fragility</a>
+  <a href="index.html" class="tab">概観</a>
+  <a href="finance.html" class="tab">金融</a>
+  <a href="petri.html" class="tab">Petri net</a>
+  <a href="temporal.html" class="tab active">時間軸</a>
+  <a href="https://github.com/hajimedayo328/southeast-asia-fragility" class="ext" target="_blank">GitHub</a>
+</nav>
+
+<nav class="toc">
+  <a href="#hero">最上部</a>
+  <a href="#concept">時間関手</a>
+  <a href="#timelines">Trust時系列</a>
+  <a href="#tradeoff">速度-集中</a>
+  <a href="#reversal-time">逆転×時間</a>
+  <a href="#prediction">将来</a>
+  <a href="#conclusion">結論</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="tag">TEMPORAL TAB · 時間軸を入れた研究</div>
+  <h1>東南アジアは<br><span class="accent">時間圧縮</span>で先進国に追いつく</h1>
+  <p class="subtitle">Trust as a time-functor: 4D research adding time to the categorical framework.</p>
+  <p class="pitch">
+    先進国は <strong>100年</strong> かけて Trust ⊤_pub に到達した。<br>
+    KH Bakong は <strong>6年</strong> で同じ水準に達した。<br>
+    速度差50倍以上 — その代償は何か?
+  </p>
+  <div class="plain-jp">
+    <p>日本の銀行は1873年 (第一国立銀行) から始まって、150年かけて今の信頼を獲得した。米国の Federal Reserve は1913年から113年。<strong>東南アジアの Bakong (カンボジア中銀) は2020年スタートで2024年に同じ水準</strong>。たった6年で。</p>
+    <p>これは <strong>「時間圧縮」</strong> — 同じ Heyting値ゴールに、何十倍も速い速度で到達してる。でも数学的には「ただで速くなる」は無理。<strong>「速さ」を取ると「何か」を犠牲にしてる</strong>はず。</p>
+    <p>このページは Trust を <strong>時間関手 `Trust: Time → H`</strong> として書いて、その代償が何かを可視化する。</p>
+  </div>
+
+  <div class="scroll-hint">下にスクロール ↓</div>
+</section>
+
+<!-- ============ CONCEPT ============ -->
+<section id="concept">
+  <span class="section-num">§ T1 — TIME FUNCTOR · 時間関手</span>
+  <h2>Trust: Time → H — 信頼を時間の関手として書く</h2>
+
+  <div class="plain-jp">
+    <p>これまで Heyting値 (⊥, ⊤_priv, ⊤_bank, ⊤_pub) は <strong>静的</strong> に扱ってきた。実際は時間で変化する。これを「時刻 t を Heyting値に対応させる関手」として書く。</p>
+    <p>関手の条件: <strong>時間が進んでも Heyting値は減らない</strong> (monotone)。これが「信頼の累積」を構造的に保証する。</p>
+    <p>2つの不変量が categorical に出る:</p>
+    <ul class="clean">
+      <li><strong>end</strong> (全期間最低保証) = ⋀_t Trust(t) — backbone が誕生する前の値</li>
+      <li><strong>coend</strong> (将来の上限) = ⋁_t Trust(t) — backbone がいずれ到達する Heyting値</li>
+    </ul>
+    <p>これで「歴史」と「将来」を1つの関手で扱える。</p>
+  </div>
+</section>
+
+<!-- ============ TIMELINES ============ -->
+<section id="timelines">
+  <span class="section-num">§ T2 — TRUST TIMELINES · 各国Trust時系列</span>
+  <h2>ASEAN + 先進国 の Trust 時系列 (1870〜2030)</h2>
+
+  <div class="plain-jp">
+    <p>横軸 = 年。縦軸 = Heyting値の階数 (0=⊥, 1=⊤_priv, 2=⊤_bank, 3=⊤_pub)。 backbone ごとに線が描かれる。</p>
+    <p>注目: <strong>先進国 (US Fed/Japan) は緩い右肩上がり、東南アジア (Bakong/PromptPay) は急峻な右肩上がり</strong>。同じゴールに向かって違うペース。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 T2-A · 時間関手</span>
+    <h3>Trust(t) 階数の時系列 (全 backbone)</h3>
+    <p class="punchline">
+      Bakong は 5年で ⊤_pub 到達、US Fed は 50年以上。東南アジア式の高速到達と、先進国式の歴史的蓄積が同じグラフに乗る。
+    </p>
+    <div class="chart-box tall"><canvas id="chart-timelines"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-timelines">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ TRADE-OFF ============ -->
+<section id="tradeoff">
+  <span class="section-num">§ T3 — SPEED × CONCENTRATION · 速度集中度</span>
+  <h2>速度-集中度トレードオフ — 速さの代償は集中</h2>
+
+  <div class="plain-jp">
+    <p>仮説 (notes/20 §4): <strong>v × C ≥ K_const</strong>。速く強くなりたいなら、構造的に集中するしかない。
+    分散したいなら、ゆっくりにしかなれない。</p>
+    <p>横軸 = 速度 (rank/年)、縦軸 = 集中度 (HHI類似)。各 backbone をドットでプロット。
+    もし反比例曲線が見えれば仮説支持。</p>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 T3-A · トレードオフ</span>
+    <h3>速度 × 集中度の散布</h3>
+    <p class="punchline">
+      Bakong/PromptPay は高速・集中、JP/US は低速・分散。同じ Heyting ゴールへの「2つの戦略」が見える。
+    </p>
+    <div class="chart-box"><canvas id="chart-tradeoff"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-tradeoff">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ BOTTLENECK REVERSAL × TIME ============ -->
+<section id="reversal-time">
+  <span class="section-num">§ T4 — REVERSAL × TIME · 律速逆転の時間進化</span>
+  <h2>ASEAN5 の bottleneck reversal が時間でどう動くか</h2>
+
+  <div class="plain-jp">
+    <p>notes/15 で示した「並列 ⊗ は max 律速、統合 ▷ は meet 律速」を <strong>時間軸で見る</strong>。</p>
+    <p>横軸 = 年、縦軸 = Heyting値階数。2本の線:</p>
+    <ul class="clean">
+      <li><strong>青 = ⊗ (並列)</strong>: ASEAN5の最強 backbone (時刻 t での max)</li>
+      <li><strong>赤 = ▷ (統合)</strong>: ASEAN5の最弱 backbone (時刻 t での meet)</li>
+    </ul>
+    <p>2本の差 = 統合の代償。時間とともにこの差がどう変わるかを見る。</p>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 T4-A · 律速逆転×時間</span>
+    <h3>ASEAN5 max(⊗) vs meet(▷) の時間進化</h3>
+    <p class="punchline">
+      2020 以降、最強 (Bakong) が ⊤_pub に到達したことで max が急上昇。
+      でも最弱 (GCash MoMo) は ⊤_priv 止まりなので meet は固定。
+      <strong>差が広がる = 越境統合の代償が増える</strong>。
+    </p>
+    <div class="chart-box tall"><canvas id="chart-reversal-time"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-reversal-time">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ PREDICTION ============ -->
+<section id="prediction">
+  <span class="section-num">§ T5 — PREDICTION · 将来予測</span>
+  <h2>時間関手の外挿で 2030 を予測する</h2>
+
+  <div class="plain-jp">
+    <p>時間関手 Trust の <strong>外挿 (extrapolation)</strong> で、各 backbone の 2030年の Heyting値を推測。</p>
+    <p>仮定: monotone (関手性) + サチる (Heyting値の階数なので上限あり)。これで控えめな予測ができる。</p>
+  </div>
+
+  <h3>2030年予測 (試案)</h3>
+  <table>
+    <thead>
+      <tr><th>backbone</th><th>2026年</th><th>2030年予測</th><th>根拠</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bakong (KH)</td><td>⊤_pub</td><td>⊤_pub</td><td>維持 (政治安定が前提)</td></tr>
+      <tr><td>PromptPay (TH)</td><td>⊤_pub</td><td>⊤_pub</td><td>BoT mandate 安定</td></tr>
+      <tr><td>GCash (PH)</td><td>⊤_priv</td><td>⊤_priv → ⊤_bank?</td><td>Mynt IPO 進めば institutional 圧で上昇可能性</td></tr>
+      <tr><td>MoMo (VN)</td><td>⊤_priv</td><td>⊤_priv</td><td>State Bank 規制次第</td></tr>
+      <tr><td>PayNow (SG)</td><td>⊤_bank</td><td>⊤_bank → ⊤_pub?</td><td>MAS CBDC 検討中</td></tr>
+      <tr><td>US Fed</td><td>⊤_pub</td><td>⊤_pub</td><td>FedNow (2023〜) で再強化</td></tr>
+      <tr><td>EU SEPA</td><td>⊤_bank</td><td>⊤_bank</td><td>多国合意難で上昇困難</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>含意</strong>: 2030 までに ASEAN5 越境決済 (▷) は最弱に律速され続ける。
+    GCash が ⊤_bank に上がれば域内 meet も上がるが、それは Mynt 上場次第。
+    <strong>EU SEPA は本質的に同じ問題を抱える</strong>: 多国合意の難しさで上昇が遅い。
+  </p>
+</section>
+
+<!-- ============ CONCLUSION ============ -->
+<section id="conclusion">
+  <span class="section-num">§ T6 — CONCLUSION · 結論</span>
+  <h2>時間軸を入れて見えること</h2>
+
+  <p>このページで示したこと:</p>
+  <ul class="clean">
+    <li>Trust を時間関手として書くと、end (歴史的最低) と coend (将来上限) が categorical に出る</li>
+    <li>東南アジアは時間圧縮で先進国に追いつく — 「速度 × 集中度」のトレードオフ</li>
+    <li>ASEAN5 bottleneck reversal が時間で変化する — 統合の代償が時間とともに変わる</li>
+    <li>2030年予測: 越境統合は最弱国に律速され続ける</li>
+  </ul>
+
+  <h3>「東南アジアは先進国の予言」の数学的根拠 (時間軸版)</h3>
+  <p>
+    時間関手 Trust の <strong>圧縮係数 σ</strong> を使うと:
+  </p>
+  <p style="font-family: var(--mono); background: var(--line-soft); padding: 12px 18px; border-radius: 4px;">
+    σ(Bakong) ≈ 18.8 × σ(US Fed)   (Bakongは US Fed の18.8倍速い)
+  </p>
+  <p>
+    つまり東南アジアの 2026年の状況は、先進国にとっての <strong>「未来の風景」</strong>。
+    AI依存・GAFA集中・自動運転スキル喪失も、同じ時間圧縮の構造で先進国に押し寄せる。
+  </p>
+
+  <h3>関連する理論ノート</h3>
+  <div class="note-link-grid">
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/17_time_functor.md" target="_blank">
+      <div class="id">notes/17</div>
+      <div class="title">時間軸 — Heyting値の時間積分</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/18_universal_isomorphism.md" target="_blank">
+      <div class="id">notes/18</div>
+      <div class="title">異分野同型 — 普遍随伴 L⊣R</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/19_temporal_category.md" target="_blank">
+      <div class="id">notes/19</div>
+      <div class="title">時間圏 Time + universal property</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/20_time_compression.md" target="_blank">
+      <div class="id">notes/20</div>
+      <div class="title">時間圧縮の数学 — 速度-集中度トレードオフ</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/trust_timeline.py" target="_blank">
+      <div class="id">src/h_petri</div>
+      <div class="title">Trust 時系列実装 (trust_timeline.py)</div>
+    </a>
+  </div>
+
+  <h3>他のタブへ</h3>
+  <div class="note-link-grid">
+    <a href="index.html">
+      <div class="id">← OVERVIEW</div>
+      <div class="title">概観タブ。フレームワーク全体、災害、ASEAN比較、結論。</div>
+    </a>
+    <a href="finance.html">
+      <div class="id">← FINANCE</div>
+      <div class="title">金融タブ。モバイル金融の深掘り、4 backbone 比較。</div>
+    </a>
+    <a href="petri.html">
+      <div class="id">← PETRI NET</div>
+      <div class="title">Petri net タブ。Bakong vs GCash の数値検証、律速逆転。</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>
+    Southeast Asia as a Predictive Mirror · 2026<br>
+    A research direction sketch ·
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility" target="_blank">GitHub</a>
+  </p>
+  <p style="margin-top: 16px; font-size: 0.75rem;">
+    Timeline data: best-effort historical estimates ·
+    Trust 時系列: <code>python -m h_petri.trust_timeline</code>
+  </p>
+</footer>
+
+<script src="js/temporal.js"></script>
+
+</body>
+</html>
