@@ -34,6 +34,12 @@ function countryFull(code) {
   return COUNTRY_NAME_JA[code] ? `${code} (${COUNTRY_NAME_JA[code]})` : code;
 }
 
+// Defensive: set innerHTML only if element exists (used across multi-page tabs)
+function setFinding(id, html) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+
 const BACKBONE_COLOR = {
   central_bank: '#0891b2',  // cyan
   platform:     '#dc2626',  // red
@@ -454,14 +460,20 @@ function renderE2(d) {
   const data = await loadAll();
   console.log('Loaded data:', Object.keys(data));
 
-  renderA1(data);
-  renderA2(data);
-  renderB1(data);
-  renderB2(data);
-  renderC1(data);
-  renderC2(data);
-  renderD1(data);
-  renderD2(data);
-  renderE1(data);
-  renderE2(data);
+  // Conditionally render based on which charts exist in the current page.
+  // Each page (index/finance/petri) hosts a different subset of canvases.
+  const guarded = (id, fn) => {
+    if (document.getElementById(id)) fn(data);
+  };
+
+  guarded('chart-A1', renderA1);
+  guarded('chart-A2', renderA2);
+  guarded('chart-B1', renderB1);
+  guarded('chart-B2', renderB2);
+  guarded('chart-C1', renderC1);
+  guarded('chart-C2', renderC2);
+  guarded('chart-D1', renderD1);
+  guarded('chart-D2', renderD2);
+  guarded('chart-E1', renderE1);
+  guarded('chart-E2', renderE2);
 })();

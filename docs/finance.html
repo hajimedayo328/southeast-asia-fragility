@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融 — Southeast Asia Fragility</title>
+<meta name="description" content="ASEAN モバイル金融 (Bakong/GCash/MoMo/PromptPay) の深掘り。リープフロッグ強度・集中度・仕送り。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="brand">Southeast Asia Fragility</a>
+  <a href="index.html" class="tab">概観</a>
+  <a href="finance.html" class="tab active">金融</a>
+  <a href="petri.html" class="tab">Petri net</a>
+  <a href="https://github.com/hajimedayo328/southeast-asia-fragility" class="ext" target="_blank">GitHub</a>
+</nav>
+
+<nav class="toc">
+  <a href="#hero">最上部</a>
+  <a href="#leapfrog">リープフロッグ</a>
+  <a href="#concentration">集中度</a>
+  <a href="#remittance">仕送り</a>
+  <a href="#summary">まとめ</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="tag">FINANCE TAB · 金融タブ</div>
+  <h1>東南アジア<br><span class="accent">モバイル金融</span>の構造</h1>
+  <p class="subtitle">Mobile money, backbone types, and concentration risk across ASEAN10.</p>
+  <p class="pitch">
+    銀行口座を作らずスマホで送金する仕組み (<strong>リープフロッグ</strong>) が
+    東南アジア全域に広まっている。だが「便利になった分、何が脆くなったか」は
+    国ごとに大きく異なる。誰が骨格 (backbone) を支えているか、で見える。
+  </p>
+  <div class="plain-jp">
+    <p>日本は「銀行口座作る → ATM/振込で送金」が普通。だけど東南アジアの多くの国では、<strong>そもそも銀行口座を作らずに、いきなりスマホで送金する</strong> ことが普通になってる。</p>
+    <p>これを「<strong>リープフロッグ</strong>(蛙跳び)」と呼ぶ。便利な反面、「<strong>その1社が止まると国民の送金が全滅する</strong>」みたいな脆さも一緒に増えてる。</p>
+    <p>このページは ASEAN10カ国のモバイル金融を、<strong>backbone (骨格) のタイプ別</strong> に深掘りする。</p>
+  </div>
+
+  <div class="country-key">
+    <div class="key-title">凡例: グラフに出てくる国コード</div>
+    <div class="key-grid">
+      <span><b>VN</b> ベトナム</span>
+      <span><b>ID</b> インドネシア</span>
+      <span><b>PH</b> フィリピン</span>
+      <span><b>TH</b> タイ</span>
+      <span><b>MY</b> マレーシア</span>
+      <span><b>SG</b> シンガポール</span>
+      <span><b>KH</b> カンボジア</span>
+      <span><b>LA</b> ラオス</span>
+      <span><b>MM</b> ミャンマー</span>
+      <span><b>BN</b> ブルネイ</span>
+    </div>
+  </div>
+  <div class="scroll-hint">下にスクロール ↓</div>
+</section>
+
+<!-- ============ LEAPFROG ============ -->
+<section id="leapfrog">
+  <span class="section-num">§ F1 — LEAPFROG STRENGTH · リープフロッグ強度</span>
+  <h2>銀行を飛ばしてモバイル送金を使う度合い</h2>
+
+  <div class="plain-jp">
+    <p><strong>銀行口座を持つ前にモバイル送金を使い始める</strong> 国がどれくらい先行してるか。これが「リープフロッグ強度」の代理指標。差が大きい国ほど、銀行ネットワークが整う前にモバイルマネーが浸透してる。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 F1-A · 見える層</span>
+    <h3>普及度 vs 銀行口座: リープフロッグ強度</h3>
+    <p class="punchline">
+      モバイル送金 (Y軸) が銀行口座 (X軸) より上にある国ほど、「銀行を経由せず先にモバイル」になってる = リープフロッグ国。
+    </p>
+    <p class="claim">
+      モバイルマネー普及率と銀行口座保有率の差分は「銀行をスキップする度合い」を示す。
+      リープフロッグ国ほどモバイル先行で銀行が後追い。
+    </p>
+    <div class="chart-box"><canvas id="chart-A1"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-A1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 F1-B · 見えない層</span>
+    <h3>スマホ送金が普及した国ほど、1社独占が進んでないか?</h3>
+    <p class="punchline">
+      右上に行くほど「普及してて、かつ1社シェアも高い」状態 = 便利と集中が同時に増えてる兆候。
+    </p>
+    <p class="claim">
+      普及度が高い国ほど、特定の単一プロバイダーへの依存度も高い。
+      L (便利) と R (集中リスク) が同時に増えている可能性。
+    </p>
+    <div class="chart-box"><canvas id="chart-A2"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-A2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ CONCENTRATION ============ -->
+<section id="concentration">
+  <span class="section-num">§ F2 — BACKBONE & CONCENTRATION · 骨格と集中度</span>
+  <h2>「誰がそのお金の仕組みを支えてるか」で脆弱性が変わる</h2>
+
+  <div class="plain-jp">
+    <p>同じモバイル送金でも、骨格 (backbone) のタイプで <strong>「何が起きたとき崩れるか」</strong> が全然違う。中央銀行が支えてる国、民間1社が独占してる国、銀行団が支えてる国、電話会社が支えてる国。それぞれリスクの形が違う。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 F2-A · 4タイプ分類</span>
+    <h3>ASEAN10の決済を「誰が支えてるか」で分類</h3>
+    <p class="punchline">
+      ① 中央銀行が支える国 (TH/KH) / ② 民間プラットフォームが独占 (VN/ID/PH/MY) / ③ 銀行コンソーシアム (SG/LA/MM/BN)。M-Pesa型(電話会社主導)はASEANではほぼ絶滅。
+    </p>
+    <p class="claim">
+      各国のモバイル決済の信頼の中心 (backbone = 骨格) を4タイプ分類:
+      民間プラットフォーム / 中央銀行 / 銀行 / 電話会社。
+      タイプによって「何が起きたときに崩れるか」が異なる。
+    </p>
+    <div class="chart-box"><canvas id="chart-B1"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-B1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 F2-B · 集中度ランキング</span>
+    <h3>どの国の「1社シェア」が一番高い?</h3>
+    <p class="punchline">
+      フィリピンは GCash 1社で 85%、ブルネイは BIBD 75%、ミャンマーは KBZPay 60%。これらの国は「その1社が止まったら国の送金が止まる」リスクが極めて高い。
+    </p>
+    <p class="claim">
+      民間プラットフォーム型 (GCash, MoMo, GoPay 等) は単一企業に信頼が集中。
+      過去のM-Pesa障害事例は、Telco型の脆弱性を実証している。
+    </p>
+    <div class="chart-box tall"><canvas id="chart-B2"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-B2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ REMITTANCE ============ -->
+<section id="remittance">
+  <span class="section-num">§ F3 — REMITTANCE · 仕送り</span>
+  <h2>仕送り経済: 個人スケールから国経済まで</h2>
+
+  <div class="plain-jp">
+    <p>日本でバイトしてるベトナム人やフィリピン人が、毎月の給料の一部を母国の家族に送ってる。これを「<strong>仕送り (remittance)</strong>」って言う。バカにならない規模で、<strong>フィリピンは GDP の 8.9% が仕送り収入</strong>。海外労働市場が止まると国が直撃する。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 F3-A · 見える層</span>
+    <h3>国経済の中で「仕送り」が占める割合</h3>
+    <p class="punchline">
+      フィリピンは GDP の 8.9% が海外からの仕送り。これは「日本でいうと国家予算の何割か級」の規模。カンボジア・ミャンマーも 5-6% 台。海外労働がコケると国が直撃する。
+    </p>
+    <p class="claim">
+      フィリピン (8.9%), カンボジア (6.5%), ミャンマー (5.5%) — 仕送りがGDPの大きな割合を占める国は、
+      外部労働市場ショックに対して構造的に脆弱。
+    </p>
+    <div class="chart-box"><canvas id="chart-D1"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-D1">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 F3-B · 見えない層</span>
+    <h3>タイは送金の「出入口」の両方を抱えてる</h3>
+    <p class="punchline">
+      タイは受け取り (青) も送り出し (赤) も両方大きい二重ハブ。タイの規制1つで カンボジア・ラオス・ミャンマー (CLM三国) の経済が同時に揺れる。彼らの命綱がタイにある。
+    </p>
+    <p class="claim">
+      タイは送出 ($3.8B) と 受取 ($9.5B) の二重ハブで、CLM三国 (KH/LA/MM) の経済を媒介している。
+      タイの規制1つで3国同時ショック = リープフロッグ国の見えない依存先。
+    </p>
+    <div class="chart-box"><canvas id="chart-D2"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-D2">データ読込中...</span></div>
+  </div>
+</section>
+
+<!-- ============ SUMMARY ============ -->
+<section id="summary">
+  <span class="section-num">§ F4 — SUMMARY · まとめ</span>
+  <h2>4 backbone の構造的比較</h2>
+
+  <div class="plain-jp">
+    <p>4タイプの backbone (中央銀行 / 民間 / 銀行 / 電話会社) を比較すると、それぞれ <strong>違う種類の不可視コスト</strong> を抱えている。これが本プロジェクトの核 「便利と不可視コストの随伴 L ⊣ R」が金融現場で見える形。</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>backbone</th><th>例</th><th>強み (L)</th><th>不可視コスト (R)</th><th>崩壊リスク</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>中央銀行型</td>
+        <td>TH PromptPay, KH Bakong</td>
+        <td>国家保証、分散構造</td>
+        <td>政治体制変動</td>
+        <td>中央銀行の独立性次第</td>
+      </tr>
+      <tr>
+        <td>民間プラットフォーム型</td>
+        <td>VN MoMo, ID GoPay, PH GCash, MY TNG</td>
+        <td>高速イノベーション、UI洗練</td>
+        <td>単一企業依存、規制困難</td>
+        <td>その1社が倒れたら全滅</td>
+      </tr>
+      <tr>
+        <td>銀行コンソーシアム型</td>
+        <td>SG PayNow, MM KBZPay</td>
+        <td>既存信頼活用、預金保険</td>
+        <td>取込スピード遅、レガシー縛り</td>
+        <td>銀行間の調整失敗</td>
+      </tr>
+      <tr>
+        <td>電話会社型</td>
+        <td>(ASEAN絶滅、M-Pesa参考)</td>
+        <td>既存契約者ベース</td>
+        <td>通信規制限定</td>
+        <td>電話会社倒産=金融全滅</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>圏論で書くと何が見える?</h3>
+  <p>
+    上の4タイプの違いは、「同じ共通CPN規約 (notes/07) の上で、Heyting値の上限が違うだけ」として圏論的に厳密に書ける。
+    詳細は <a href="petri.html">Petri net タブ</a> で実コードと共に確認できる。
+  </p>
+
+  <h3>関連する理論ノート</h3>
+  <div class="note-link-grid">
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/02_framework.md" target="_blank">
+      <div class="id">notes/02</div>
+      <div class="title">圏論的枠組み: 便利と不可視コストの随伴 L⊣R</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/03_cases/mobile_money.md" target="_blank">
+      <div class="id">notes/03</div>
+      <div class="title">事例: モバイル金融の詳細</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/07_common_cpn_spec.md" target="_blank">
+      <div class="id">notes/07</div>
+      <div class="title">共通CPN規約: 4タイプ比較フォーマット</div>
+    </a>
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/literature/raw/07_petri_net_payment_apps.md" target="_blank">
+      <div class="id">literature/07</div>
+      <div class="title">サーベイ: モバイル金融の Petri net 形式化 (空白確認)</div>
+    </a>
+  </div>
+
+  <h3>次のタブへ</h3>
+  <div class="note-link-grid">
+    <a href="petri.html">
+      <div class="id">→ PETRI NET TAB</div>
+      <div class="title">Bakong vs GCash の Petri net シミュレーション。理論を実コードで動かして「Heyting値の上限差」を確認。</div>
+    </a>
+    <a href="index.html">
+      <div class="id">← OVERVIEW</div>
+      <div class="title">概観タブに戻る。フレームワーク全体、災害、ASEAN比較、結論。</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>
+    Southeast Asia as a Predictive Mirror · 2026<br>
+    A research direction sketch ·
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility" target="_blank">GitHub</a> ·
+    <a href="https://hajimedayo328.github.io/southeast-asia-fragility/" target="_blank">Live</a>
+  </p>
+  <p style="margin-top: 16px; font-size: 0.75rem;">
+    Data sources: World Bank Findex 2021 · GSMA Mobile Money · BIS · IMF · 各国中央銀行
+  </p>
+</footer>
+
+<script src="js/viz.js"></script>
+
+</body>
+</html>
