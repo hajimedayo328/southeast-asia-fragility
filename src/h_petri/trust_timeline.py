@@ -158,6 +158,65 @@ TRUST_TIMELINES: dict[str, dict] = {
         "concentration": 0.2,    # mining concentration, but protocol decentralized
     },
 
+    # === Developed-country backbones (V: pair counterparts) ===
+    # These are added to put ASEAN-vs-developed pairs on the same time-line.
+
+    "Cloudflare (global infra)": {
+        "type": "platform",
+        "region": "developed",
+        "country": "Global (US-based)",
+        "data": [
+            (2010, H.BOTTOM),
+            (2011, H.T_PRIV),    # founding
+            (2017, H.T_PRIV),    # IPO prep, mainstream
+            (2020, H.T_BANK),    # essential CDN, ~20% of web
+            (2025, H.T_PRIV),    # ★ Nov 2025 5.5h outage — ChatGPT/Claude/Sora all down
+            (2026, H.T_BANK),
+        ],
+        "concentration": 0.7,   # single company runs ~20% of web traffic
+    },
+    "Lehman→Fed (US banking)": {
+        "type": "bank_consortium",
+        "region": "developed",
+        "country": "United States",
+        "data": [
+            (1980, H.T_BANK),
+            (1999, H.T_BANK),    # Glass-Steagall repeal
+            (2007, H.T_BANK),
+            (2008, H.T_PRIV),    # ★ Lehman collapse Sep 2008 — meet▷ contagion
+            (2009, H.T_PRIV),
+            (2011, H.T_BANK),    # TARP recapitalization, Dodd-Frank
+            (2024, H.T_PUB),     # Fed has shown willingness to backstop (post-SVB)
+        ],
+        "concentration": 0.55,
+    },
+    "SWIFT (global rail)": {
+        "type": "bank_consortium",
+        "region": "global",
+        "country": "Belgium (international coop)",
+        "data": [
+            (1973, H.T_PRIV),    # founding
+            (1990, H.T_BANK),
+            (2010, H.T_PUB),     # de facto sovereign-backed (US/EU jurisdiction)
+            (2022, H.T_BANK),    # ★ Russia exclusion — political weaponization exposed
+            (2024, H.T_BANK),    # never fully recovered to ⊤_pub trust
+        ],
+        "concentration": 0.95,   # near-monopoly on cross-border messaging
+    },
+    "GAFA-AI (developed AI market)": {
+        "type": "platform",
+        "region": "developed",
+        "country": "Global (US-based)",
+        "data": [
+            (2018, H.BOTTOM),
+            (2020, H.T_PRIV),    # GPT-3
+            (2022, H.T_PRIV),    # ChatGPT launch
+            (2024, H.T_PRIV),    # OpenAI/Anthropic/Google split market
+            (2025, H.T_PRIV),    # ★ Nov 2025 Cloudflare cascade exposed shared dep
+        ],
+        "concentration": 0.85,   # 3 companies dominate generative AI
+    },
+
     # === 1990s ASEAN banking systems (for 1997 crisis study) ===
     # These overlap with later digital backbones, but capture the legacy
     # banking sector that *was* the backbone in 1985-2000.
@@ -521,6 +580,75 @@ def export_all(year_range: tuple[int, int] = (1870, 2030)) -> dict:
 
     # Prediction pairs (ペアショーケース for temporal.html)
     result["prediction_pairs"] = PREDICTION_PAIRS
+
+    # W: Lag trend — flatten prediction pairs into (ea_year, lag) points
+    lag_points = []
+    for p in PREDICTION_PAIRS:
+        for d in p["developed"]:
+            lag_points.append({
+                "ea_year": p["ea"]["year"],
+                "lag": d["lag"],
+                "ea_event": p["ea"]["event"],
+                "developed_event": d["event"],
+                "developed_year": d["year"],
+                "pair_id": p["id"],
+                "label": p["label"],
+            })
+    # sort by ea_year
+    lag_points.sort(key=lambda x: x["ea_year"])
+    result["lag_trend"] = lag_points
+
+    # X: 2030 forecasts (open pairs — predicted developed-side events not yet happened)
+    result["forecast_2030"] = [
+        {
+            "id": "forecast_1",
+            "label": "中銀デジタル通貨 (CBDC)",
+            "ea": {
+                "event": "Bakong (KH) 2024 ⊤_pub到達",
+                "year": 2024,
+                "summary": "カンボジア中央銀行型デジタル通貨が4年で ⊤_pub に。",
+            },
+            "developed_forecast": {
+                "event_candidates": "FedNow拡張 / 日銀DCJPYパイロット / ECB Digital Euro",
+                "estimated_year": "2027-2030",
+                "lag_estimate": "3-6年",
+                "summary": "先進国中銀がCBDCで ⊤_pub レベル決済を完成させる。",
+                "confidence": "中 (BIS Innovation Hubが既に動いている)",
+            },
+        },
+        {
+            "id": "forecast_2",
+            "label": "越境決済統合",
+            "ea": {
+                "event": "Project Nexus (2027ライブ予定)",
+                "year": 2027,
+                "summary": "ASEAN5+India の越境P2P決済が ▷ 統合で本格運用。meet律速が顕在化見込み。",
+            },
+            "developed_forecast": {
+                "event_candidates": "G7 越境決済統合 / SWIFT GPI拡張 / CBDC bridge",
+                "estimated_year": "2030-2033",
+                "lag_estimate": "3-6年",
+                "summary": "先進国版の越境決済統合で同じ meet律速問題が出る予測。",
+                "confidence": "高 (BIS が並行で議論中)",
+            },
+        },
+        {
+            "id": "forecast_3",
+            "label": "AI ガバナンス・カスケード",
+            "ea": {
+                "event": "GCash PH 1社集中 (継続)",
+                "year": 2020,
+                "summary": "プラットフォーム1社が国の決済を支配する構造。",
+            },
+            "developed_forecast": {
+                "event_candidates": "AI multi-agent 同時障害 / LLMサプライチェーン崩壊",
+                "estimated_year": "2027-2030",
+                "lag_estimate": "7-10年",
+                "summary": "AI multi-agent システムが ▷ 連鎖した状態で1ノード崩壊で全体停止 (2025-11 Cloudflareの拡張版)。",
+                "confidence": "中-高 (2025-11 が前触れ)",
+            },
+        },
+    ]
 
     return result
 

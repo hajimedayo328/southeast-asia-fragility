@@ -586,4 +586,127 @@ function renderPredictionPairs(data) {
   render1997CrisisChart(data);
   renderReversal1997Chart(data);
   renderPredictionPairs(data);
+  renderLagTrend(data);
+  renderForecast2030(data);
 })();
+
+// ---------------- W: Lag trend scatter ----------------
+
+function renderLagTrend(data) {
+  const ctx = document.getElementById('chart-lag-trend');
+  if (!ctx) return;
+  const points = (data.lag_trend || []).map(p => ({
+    x: p.ea_year,
+    y: p.lag,
+    label: `${p.ea_event} → ${p.developed_event}`,
+    pair: p.label,
+  }));
+  if (points.length === 0) return;
+
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: '予言ペア',
+        data: points,
+        backgroundColor: '#dc2626',
+        borderColor: '#dc2626',
+        pointRadius: 8,
+        pointHoverRadius: 10,
+        showLine: false,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: c => {
+              const p = c.raw;
+              return [`${p.pair}`, `${p.label}`, `ラグ: ${p.y}年`];
+            },
+          },
+        },
+      },
+      scales: {
+        x: { title: { display: true, text: '東南アジア事象の年' }, type: 'linear' },
+        y: { title: { display: true, text: 'ラグ (年)' }, min: 0, max: 15 },
+      },
+    },
+    plugins: [{
+      id: 'lag_labels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        ctx.save();
+        ctx.font = '600 10px JetBrains Mono, monospace';
+        ctx.fillStyle = '#555';
+        chart.getDatasetMeta(0).data.forEach((point, i) => {
+          const p = chart.data.datasets[0].data[i];
+          ctx.fillText(`+${p.y}年`, point.x + 12, point.y - 6);
+        });
+        ctx.restore();
+      },
+    }],
+  });
+
+  // Compute average and trend
+  const xs = points.map(p => p.x);
+  const ys = points.map(p => p.y);
+  const n = points.length;
+  const sumX = xs.reduce((a, b) => a + b, 0);
+  const sumY = ys.reduce((a, b) => a + b, 0);
+  const sumXY = xs.reduce((a, x, i) => a + x * ys[i], 0);
+  const sumXX = xs.reduce((a, x) => a + x * x, 0);
+  const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+  const avg = (sumY / n).toFixed(1);
+
+  setText(
+    'finding-lag-trend',
+    `平均ラグ: <strong>${avg}年</strong>。線形回帰の傾き: <strong>${slope.toFixed(3)} 年/年</strong>
+     (負なら時代が進むほどラグが縮む → 「予言の到達速度が加速」)。
+     最古ペア (1997 AFC) のラグ 11-13年に対し、最新ペア (2021 Wave Money崩壊) のラグは 3年。
+     <strong>4倍速になってる</strong>。`
+  );
+}
+
+// ---------------- X: 2030 forecast ----------------
+
+function renderForecast2030(data) {
+  const container = document.getElementById('forecast-pairs-container');
+  if (!container) return;
+  const forecasts = data.forecast_2030 || [];
+  if (forecasts.length === 0) {
+    container.innerHTML = '<div class="pair-empty">予測データが見つかりません。</div>';
+    return;
+  }
+
+  const html = forecasts.map(f => {
+    const dev = f.developed_forecast;
+    return `
+      <div class="pair-card">
+        <div class="pair-label">${escHtml(f.label)} (予測)</div>
+        <div class="pair-timeline">
+          <div class="pair-event ea">
+            <span class="year">${f.ea.year}</span>
+            <div class="event-name">${escHtml(f.ea.event)}</div>
+            <div class="summary">${escHtml(f.ea.summary)}</div>
+          </div>
+          <div class="pair-arrow">
+            <span class="arrow-line">→</span>
+            <span class="lag">${escHtml(dev.lag_estimate)}</span>
+            <span class="lag-note">推定</span>
+          </div>
+          <div class="pair-event developed" style="border-left-style:dashed;">
+            <span class="year">${escHtml(dev.estimated_year)} (予測)</span>
+            <div class="event-name">${escHtml(dev.event_candidates)}</div>
+            <div class="summary">${escHtml(dev.summary)}</div>
+            <div class="region" style="margin-top:6px;">信頼度: ${escHtml(dev.confidence)}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = html;
+}

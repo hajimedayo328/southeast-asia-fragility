@@ -6804,6 +6804,2757 @@
       "speed_per_year": 0.0556,
       "speed_x_concentration": 0.0111
     },
+    "Cloudflare (global infra)": {
+      "type": "platform",
+      "region": "developed",
+      "country": "Global (US-based)",
+      "concentration": 0.7,
+      "data_points": [
+        {
+          "year": 1870,
+          "rank": 0
+        },
+        {
+          "year": 1871,
+          "rank": 0
+        },
+        {
+          "year": 1872,
+          "rank": 0
+        },
+        {
+          "year": 1873,
+          "rank": 0
+        },
+        {
+          "year": 1874,
+          "rank": 0
+        },
+        {
+          "year": 1875,
+          "rank": 0
+        },
+        {
+          "year": 1876,
+          "rank": 0
+        },
+        {
+          "year": 1877,
+          "rank": 0
+        },
+        {
+          "year": 1878,
+          "rank": 0
+        },
+        {
+          "year": 1879,
+          "rank": 0
+        },
+        {
+          "year": 1880,
+          "rank": 0
+        },
+        {
+          "year": 1881,
+          "rank": 0
+        },
+        {
+          "year": 1882,
+          "rank": 0
+        },
+        {
+          "year": 1883,
+          "rank": 0
+        },
+        {
+          "year": 1884,
+          "rank": 0
+        },
+        {
+          "year": 1885,
+          "rank": 0
+        },
+        {
+          "year": 1886,
+          "rank": 0
+        },
+        {
+          "year": 1887,
+          "rank": 0
+        },
+        {
+          "year": 1888,
+          "rank": 0
+        },
+        {
+          "year": 1889,
+          "rank": 0
+        },
+        {
+          "year": 1890,
+          "rank": 0
+        },
+        {
+          "year": 1891,
+          "rank": 0
+        },
+        {
+          "year": 1892,
+          "rank": 0
+        },
+        {
+          "year": 1893,
+          "rank": 0
+        },
+        {
+          "year": 1894,
+          "rank": 0
+        },
+        {
+          "year": 1895,
+          "rank": 0
+        },
+        {
+          "year": 1896,
+          "rank": 0
+        },
+        {
+          "year": 1897,
+          "rank": 0
+        },
+        {
+          "year": 1898,
+          "rank": 0
+        },
+        {
+          "year": 1899,
+          "rank": 0
+        },
+        {
+          "year": 1900,
+          "rank": 0
+        },
+        {
+          "year": 1901,
+          "rank": 0
+        },
+        {
+          "year": 1902,
+          "rank": 0
+        },
+        {
+          "year": 1903,
+          "rank": 0
+        },
+        {
+          "year": 1904,
+          "rank": 0
+        },
+        {
+          "year": 1905,
+          "rank": 0
+        },
+        {
+          "year": 1906,
+          "rank": 0
+        },
+        {
+          "year": 1907,
+          "rank": 0
+        },
+        {
+          "year": 1908,
+          "rank": 0
+        },
+        {
+          "year": 1909,
+          "rank": 0
+        },
+        {
+          "year": 1910,
+          "rank": 0
+        },
+        {
+          "year": 1911,
+          "rank": 0
+        },
+        {
+          "year": 1912,
+          "rank": 0
+        },
+        {
+          "year": 1913,
+          "rank": 0
+        },
+        {
+          "year": 1914,
+          "rank": 0
+        },
+        {
+          "year": 1915,
+          "rank": 0
+        },
+        {
+          "year": 1916,
+          "rank": 0
+        },
+        {
+          "year": 1917,
+          "rank": 0
+        },
+        {
+          "year": 1918,
+          "rank": 0
+        },
+        {
+          "year": 1919,
+          "rank": 0
+        },
+        {
+          "year": 1920,
+          "rank": 0
+        },
+        {
+          "year": 1921,
+          "rank": 0
+        },
+        {
+          "year": 1922,
+          "rank": 0
+        },
+        {
+          "year": 1923,
+          "rank": 0
+        },
+        {
+          "year": 1924,
+          "rank": 0
+        },
+        {
+          "year": 1925,
+          "rank": 0
+        },
+        {
+          "year": 1926,
+          "rank": 0
+        },
+        {
+          "year": 1927,
+          "rank": 0
+        },
+        {
+          "year": 1928,
+          "rank": 0
+        },
+        {
+          "year": 1929,
+          "rank": 0
+        },
+        {
+          "year": 1930,
+          "rank": 0
+        },
+        {
+          "year": 1931,
+          "rank": 0
+        },
+        {
+          "year": 1932,
+          "rank": 0
+        },
+        {
+          "year": 1933,
+          "rank": 0
+        },
+        {
+          "year": 1934,
+          "rank": 0
+        },
+        {
+          "year": 1935,
+          "rank": 0
+        },
+        {
+          "year": 1936,
+          "rank": 0
+        },
+        {
+          "year": 1937,
+          "rank": 0
+        },
+        {
+          "year": 1938,
+          "rank": 0
+        },
+        {
+          "year": 1939,
+          "rank": 0
+        },
+        {
+          "year": 1940,
+          "rank": 0
+        },
+        {
+          "year": 1941,
+          "rank": 0
+        },
+        {
+          "year": 1942,
+          "rank": 0
+        },
+        {
+          "year": 1943,
+          "rank": 0
+        },
+        {
+          "year": 1944,
+          "rank": 0
+        },
+        {
+          "year": 1945,
+          "rank": 0
+        },
+        {
+          "year": 1946,
+          "rank": 0
+        },
+        {
+          "year": 1947,
+          "rank": 0
+        },
+        {
+          "year": 1948,
+          "rank": 0
+        },
+        {
+          "year": 1949,
+          "rank": 0
+        },
+        {
+          "year": 1950,
+          "rank": 0
+        },
+        {
+          "year": 1951,
+          "rank": 0
+        },
+        {
+          "year": 1952,
+          "rank": 0
+        },
+        {
+          "year": 1953,
+          "rank": 0
+        },
+        {
+          "year": 1954,
+          "rank": 0
+        },
+        {
+          "year": 1955,
+          "rank": 0
+        },
+        {
+          "year": 1956,
+          "rank": 0
+        },
+        {
+          "year": 1957,
+          "rank": 0
+        },
+        {
+          "year": 1958,
+          "rank": 0
+        },
+        {
+          "year": 1959,
+          "rank": 0
+        },
+        {
+          "year": 1960,
+          "rank": 0
+        },
+        {
+          "year": 1961,
+          "rank": 0
+        },
+        {
+          "year": 1962,
+          "rank": 0
+        },
+        {
+          "year": 1963,
+          "rank": 0
+        },
+        {
+          "year": 1964,
+          "rank": 0
+        },
+        {
+          "year": 1965,
+          "rank": 0
+        },
+        {
+          "year": 1966,
+          "rank": 0
+        },
+        {
+          "year": 1967,
+          "rank": 0
+        },
+        {
+          "year": 1968,
+          "rank": 0
+        },
+        {
+          "year": 1969,
+          "rank": 0
+        },
+        {
+          "year": 1970,
+          "rank": 0
+        },
+        {
+          "year": 1971,
+          "rank": 0
+        },
+        {
+          "year": 1972,
+          "rank": 0
+        },
+        {
+          "year": 1973,
+          "rank": 0
+        },
+        {
+          "year": 1974,
+          "rank": 0
+        },
+        {
+          "year": 1975,
+          "rank": 0
+        },
+        {
+          "year": 1976,
+          "rank": 0
+        },
+        {
+          "year": 1977,
+          "rank": 0
+        },
+        {
+          "year": 1978,
+          "rank": 0
+        },
+        {
+          "year": 1979,
+          "rank": 0
+        },
+        {
+          "year": 1980,
+          "rank": 0
+        },
+        {
+          "year": 1981,
+          "rank": 0
+        },
+        {
+          "year": 1982,
+          "rank": 0
+        },
+        {
+          "year": 1983,
+          "rank": 0
+        },
+        {
+          "year": 1984,
+          "rank": 0
+        },
+        {
+          "year": 1985,
+          "rank": 0
+        },
+        {
+          "year": 1986,
+          "rank": 0
+        },
+        {
+          "year": 1987,
+          "rank": 0
+        },
+        {
+          "year": 1988,
+          "rank": 0
+        },
+        {
+          "year": 1989,
+          "rank": 0
+        },
+        {
+          "year": 1990,
+          "rank": 0
+        },
+        {
+          "year": 1991,
+          "rank": 0
+        },
+        {
+          "year": 1992,
+          "rank": 0
+        },
+        {
+          "year": 1993,
+          "rank": 0
+        },
+        {
+          "year": 1994,
+          "rank": 0
+        },
+        {
+          "year": 1995,
+          "rank": 0
+        },
+        {
+          "year": 1996,
+          "rank": 0
+        },
+        {
+          "year": 1997,
+          "rank": 0
+        },
+        {
+          "year": 1998,
+          "rank": 0
+        },
+        {
+          "year": 1999,
+          "rank": 0
+        },
+        {
+          "year": 2000,
+          "rank": 0
+        },
+        {
+          "year": 2001,
+          "rank": 0
+        },
+        {
+          "year": 2002,
+          "rank": 0
+        },
+        {
+          "year": 2003,
+          "rank": 0
+        },
+        {
+          "year": 2004,
+          "rank": 0
+        },
+        {
+          "year": 2005,
+          "rank": 0
+        },
+        {
+          "year": 2006,
+          "rank": 0
+        },
+        {
+          "year": 2007,
+          "rank": 0
+        },
+        {
+          "year": 2008,
+          "rank": 0
+        },
+        {
+          "year": 2009,
+          "rank": 0
+        },
+        {
+          "year": 2010,
+          "rank": 0
+        },
+        {
+          "year": 2011,
+          "rank": 1
+        },
+        {
+          "year": 2012,
+          "rank": 1
+        },
+        {
+          "year": 2013,
+          "rank": 1
+        },
+        {
+          "year": 2014,
+          "rank": 1
+        },
+        {
+          "year": 2015,
+          "rank": 1
+        },
+        {
+          "year": 2016,
+          "rank": 1
+        },
+        {
+          "year": 2017,
+          "rank": 1
+        },
+        {
+          "year": 2018,
+          "rank": 1
+        },
+        {
+          "year": 2019,
+          "rank": 1
+        },
+        {
+          "year": 2020,
+          "rank": 2
+        },
+        {
+          "year": 2021,
+          "rank": 2
+        },
+        {
+          "year": 2022,
+          "rank": 2
+        },
+        {
+          "year": 2023,
+          "rank": 2
+        },
+        {
+          "year": 2024,
+          "rank": 2
+        },
+        {
+          "year": 2025,
+          "rank": 1
+        },
+        {
+          "year": 2026,
+          "rank": 2
+        },
+        {
+          "year": 2027,
+          "rank": 2
+        },
+        {
+          "year": 2028,
+          "rank": 2
+        },
+        {
+          "year": 2029,
+          "rank": 2
+        },
+        {
+          "year": 2030,
+          "rank": 2
+        }
+      ],
+      "milestones": [
+        {
+          "year": 2010,
+          "value": "⊥",
+          "rank": 0
+        },
+        {
+          "year": 2011,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2017,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2020,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 2025,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2026,
+          "value": "⊤_bank",
+          "rank": 2
+        }
+      ],
+      "end": "⊥",
+      "coend": "⊤_bank",
+      "trust_2026": "⊤_bank",
+      "speed_per_year": 0.125,
+      "speed_x_concentration": 0.0875
+    },
+    "Lehman→Fed (US banking)": {
+      "type": "bank_consortium",
+      "region": "developed",
+      "country": "United States",
+      "concentration": 0.55,
+      "data_points": [
+        {
+          "year": 1870,
+          "rank": 0
+        },
+        {
+          "year": 1871,
+          "rank": 0
+        },
+        {
+          "year": 1872,
+          "rank": 0
+        },
+        {
+          "year": 1873,
+          "rank": 0
+        },
+        {
+          "year": 1874,
+          "rank": 0
+        },
+        {
+          "year": 1875,
+          "rank": 0
+        },
+        {
+          "year": 1876,
+          "rank": 0
+        },
+        {
+          "year": 1877,
+          "rank": 0
+        },
+        {
+          "year": 1878,
+          "rank": 0
+        },
+        {
+          "year": 1879,
+          "rank": 0
+        },
+        {
+          "year": 1880,
+          "rank": 0
+        },
+        {
+          "year": 1881,
+          "rank": 0
+        },
+        {
+          "year": 1882,
+          "rank": 0
+        },
+        {
+          "year": 1883,
+          "rank": 0
+        },
+        {
+          "year": 1884,
+          "rank": 0
+        },
+        {
+          "year": 1885,
+          "rank": 0
+        },
+        {
+          "year": 1886,
+          "rank": 0
+        },
+        {
+          "year": 1887,
+          "rank": 0
+        },
+        {
+          "year": 1888,
+          "rank": 0
+        },
+        {
+          "year": 1889,
+          "rank": 0
+        },
+        {
+          "year": 1890,
+          "rank": 0
+        },
+        {
+          "year": 1891,
+          "rank": 0
+        },
+        {
+          "year": 1892,
+          "rank": 0
+        },
+        {
+          "year": 1893,
+          "rank": 0
+        },
+        {
+          "year": 1894,
+          "rank": 0
+        },
+        {
+          "year": 1895,
+          "rank": 0
+        },
+        {
+          "year": 1896,
+          "rank": 0
+        },
+        {
+          "year": 1897,
+          "rank": 0
+        },
+        {
+          "year": 1898,
+          "rank": 0
+        },
+        {
+          "year": 1899,
+          "rank": 0
+        },
+        {
+          "year": 1900,
+          "rank": 0
+        },
+        {
+          "year": 1901,
+          "rank": 0
+        },
+        {
+          "year": 1902,
+          "rank": 0
+        },
+        {
+          "year": 1903,
+          "rank": 0
+        },
+        {
+          "year": 1904,
+          "rank": 0
+        },
+        {
+          "year": 1905,
+          "rank": 0
+        },
+        {
+          "year": 1906,
+          "rank": 0
+        },
+        {
+          "year": 1907,
+          "rank": 0
+        },
+        {
+          "year": 1908,
+          "rank": 0
+        },
+        {
+          "year": 1909,
+          "rank": 0
+        },
+        {
+          "year": 1910,
+          "rank": 0
+        },
+        {
+          "year": 1911,
+          "rank": 0
+        },
+        {
+          "year": 1912,
+          "rank": 0
+        },
+        {
+          "year": 1913,
+          "rank": 0
+        },
+        {
+          "year": 1914,
+          "rank": 0
+        },
+        {
+          "year": 1915,
+          "rank": 0
+        },
+        {
+          "year": 1916,
+          "rank": 0
+        },
+        {
+          "year": 1917,
+          "rank": 0
+        },
+        {
+          "year": 1918,
+          "rank": 0
+        },
+        {
+          "year": 1919,
+          "rank": 0
+        },
+        {
+          "year": 1920,
+          "rank": 0
+        },
+        {
+          "year": 1921,
+          "rank": 0
+        },
+        {
+          "year": 1922,
+          "rank": 0
+        },
+        {
+          "year": 1923,
+          "rank": 0
+        },
+        {
+          "year": 1924,
+          "rank": 0
+        },
+        {
+          "year": 1925,
+          "rank": 0
+        },
+        {
+          "year": 1926,
+          "rank": 0
+        },
+        {
+          "year": 1927,
+          "rank": 0
+        },
+        {
+          "year": 1928,
+          "rank": 0
+        },
+        {
+          "year": 1929,
+          "rank": 0
+        },
+        {
+          "year": 1930,
+          "rank": 0
+        },
+        {
+          "year": 1931,
+          "rank": 0
+        },
+        {
+          "year": 1932,
+          "rank": 0
+        },
+        {
+          "year": 1933,
+          "rank": 0
+        },
+        {
+          "year": 1934,
+          "rank": 0
+        },
+        {
+          "year": 1935,
+          "rank": 0
+        },
+        {
+          "year": 1936,
+          "rank": 0
+        },
+        {
+          "year": 1937,
+          "rank": 0
+        },
+        {
+          "year": 1938,
+          "rank": 0
+        },
+        {
+          "year": 1939,
+          "rank": 0
+        },
+        {
+          "year": 1940,
+          "rank": 0
+        },
+        {
+          "year": 1941,
+          "rank": 0
+        },
+        {
+          "year": 1942,
+          "rank": 0
+        },
+        {
+          "year": 1943,
+          "rank": 0
+        },
+        {
+          "year": 1944,
+          "rank": 0
+        },
+        {
+          "year": 1945,
+          "rank": 0
+        },
+        {
+          "year": 1946,
+          "rank": 0
+        },
+        {
+          "year": 1947,
+          "rank": 0
+        },
+        {
+          "year": 1948,
+          "rank": 0
+        },
+        {
+          "year": 1949,
+          "rank": 0
+        },
+        {
+          "year": 1950,
+          "rank": 0
+        },
+        {
+          "year": 1951,
+          "rank": 0
+        },
+        {
+          "year": 1952,
+          "rank": 0
+        },
+        {
+          "year": 1953,
+          "rank": 0
+        },
+        {
+          "year": 1954,
+          "rank": 0
+        },
+        {
+          "year": 1955,
+          "rank": 0
+        },
+        {
+          "year": 1956,
+          "rank": 0
+        },
+        {
+          "year": 1957,
+          "rank": 0
+        },
+        {
+          "year": 1958,
+          "rank": 0
+        },
+        {
+          "year": 1959,
+          "rank": 0
+        },
+        {
+          "year": 1960,
+          "rank": 0
+        },
+        {
+          "year": 1961,
+          "rank": 0
+        },
+        {
+          "year": 1962,
+          "rank": 0
+        },
+        {
+          "year": 1963,
+          "rank": 0
+        },
+        {
+          "year": 1964,
+          "rank": 0
+        },
+        {
+          "year": 1965,
+          "rank": 0
+        },
+        {
+          "year": 1966,
+          "rank": 0
+        },
+        {
+          "year": 1967,
+          "rank": 0
+        },
+        {
+          "year": 1968,
+          "rank": 0
+        },
+        {
+          "year": 1969,
+          "rank": 0
+        },
+        {
+          "year": 1970,
+          "rank": 0
+        },
+        {
+          "year": 1971,
+          "rank": 0
+        },
+        {
+          "year": 1972,
+          "rank": 0
+        },
+        {
+          "year": 1973,
+          "rank": 0
+        },
+        {
+          "year": 1974,
+          "rank": 0
+        },
+        {
+          "year": 1975,
+          "rank": 0
+        },
+        {
+          "year": 1976,
+          "rank": 0
+        },
+        {
+          "year": 1977,
+          "rank": 0
+        },
+        {
+          "year": 1978,
+          "rank": 0
+        },
+        {
+          "year": 1979,
+          "rank": 0
+        },
+        {
+          "year": 1980,
+          "rank": 2
+        },
+        {
+          "year": 1981,
+          "rank": 2
+        },
+        {
+          "year": 1982,
+          "rank": 2
+        },
+        {
+          "year": 1983,
+          "rank": 2
+        },
+        {
+          "year": 1984,
+          "rank": 2
+        },
+        {
+          "year": 1985,
+          "rank": 2
+        },
+        {
+          "year": 1986,
+          "rank": 2
+        },
+        {
+          "year": 1987,
+          "rank": 2
+        },
+        {
+          "year": 1988,
+          "rank": 2
+        },
+        {
+          "year": 1989,
+          "rank": 2
+        },
+        {
+          "year": 1990,
+          "rank": 2
+        },
+        {
+          "year": 1991,
+          "rank": 2
+        },
+        {
+          "year": 1992,
+          "rank": 2
+        },
+        {
+          "year": 1993,
+          "rank": 2
+        },
+        {
+          "year": 1994,
+          "rank": 2
+        },
+        {
+          "year": 1995,
+          "rank": 2
+        },
+        {
+          "year": 1996,
+          "rank": 2
+        },
+        {
+          "year": 1997,
+          "rank": 2
+        },
+        {
+          "year": 1998,
+          "rank": 2
+        },
+        {
+          "year": 1999,
+          "rank": 2
+        },
+        {
+          "year": 2000,
+          "rank": 2
+        },
+        {
+          "year": 2001,
+          "rank": 2
+        },
+        {
+          "year": 2002,
+          "rank": 2
+        },
+        {
+          "year": 2003,
+          "rank": 2
+        },
+        {
+          "year": 2004,
+          "rank": 2
+        },
+        {
+          "year": 2005,
+          "rank": 2
+        },
+        {
+          "year": 2006,
+          "rank": 2
+        },
+        {
+          "year": 2007,
+          "rank": 2
+        },
+        {
+          "year": 2008,
+          "rank": 1
+        },
+        {
+          "year": 2009,
+          "rank": 1
+        },
+        {
+          "year": 2010,
+          "rank": 1
+        },
+        {
+          "year": 2011,
+          "rank": 2
+        },
+        {
+          "year": 2012,
+          "rank": 2
+        },
+        {
+          "year": 2013,
+          "rank": 2
+        },
+        {
+          "year": 2014,
+          "rank": 2
+        },
+        {
+          "year": 2015,
+          "rank": 2
+        },
+        {
+          "year": 2016,
+          "rank": 2
+        },
+        {
+          "year": 2017,
+          "rank": 2
+        },
+        {
+          "year": 2018,
+          "rank": 2
+        },
+        {
+          "year": 2019,
+          "rank": 2
+        },
+        {
+          "year": 2020,
+          "rank": 2
+        },
+        {
+          "year": 2021,
+          "rank": 2
+        },
+        {
+          "year": 2022,
+          "rank": 2
+        },
+        {
+          "year": 2023,
+          "rank": 2
+        },
+        {
+          "year": 2024,
+          "rank": 3
+        },
+        {
+          "year": 2025,
+          "rank": 3
+        },
+        {
+          "year": 2026,
+          "rank": 3
+        },
+        {
+          "year": 2027,
+          "rank": 3
+        },
+        {
+          "year": 2028,
+          "rank": 3
+        },
+        {
+          "year": 2029,
+          "rank": 3
+        },
+        {
+          "year": 2030,
+          "rank": 3
+        }
+      ],
+      "milestones": [
+        {
+          "year": 1980,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 1999,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 2007,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 2008,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2009,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2011,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 2024,
+          "value": "⊤_pub",
+          "rank": 3
+        }
+      ],
+      "end": "⊤_priv",
+      "coend": "⊤_pub",
+      "trust_2026": "⊤_pub",
+      "speed_per_year": 0.0652,
+      "speed_x_concentration": 0.0359
+    },
+    "SWIFT (global rail)": {
+      "type": "bank_consortium",
+      "region": "global",
+      "country": "Belgium (international coop)",
+      "concentration": 0.95,
+      "data_points": [
+        {
+          "year": 1870,
+          "rank": 0
+        },
+        {
+          "year": 1871,
+          "rank": 0
+        },
+        {
+          "year": 1872,
+          "rank": 0
+        },
+        {
+          "year": 1873,
+          "rank": 0
+        },
+        {
+          "year": 1874,
+          "rank": 0
+        },
+        {
+          "year": 1875,
+          "rank": 0
+        },
+        {
+          "year": 1876,
+          "rank": 0
+        },
+        {
+          "year": 1877,
+          "rank": 0
+        },
+        {
+          "year": 1878,
+          "rank": 0
+        },
+        {
+          "year": 1879,
+          "rank": 0
+        },
+        {
+          "year": 1880,
+          "rank": 0
+        },
+        {
+          "year": 1881,
+          "rank": 0
+        },
+        {
+          "year": 1882,
+          "rank": 0
+        },
+        {
+          "year": 1883,
+          "rank": 0
+        },
+        {
+          "year": 1884,
+          "rank": 0
+        },
+        {
+          "year": 1885,
+          "rank": 0
+        },
+        {
+          "year": 1886,
+          "rank": 0
+        },
+        {
+          "year": 1887,
+          "rank": 0
+        },
+        {
+          "year": 1888,
+          "rank": 0
+        },
+        {
+          "year": 1889,
+          "rank": 0
+        },
+        {
+          "year": 1890,
+          "rank": 0
+        },
+        {
+          "year": 1891,
+          "rank": 0
+        },
+        {
+          "year": 1892,
+          "rank": 0
+        },
+        {
+          "year": 1893,
+          "rank": 0
+        },
+        {
+          "year": 1894,
+          "rank": 0
+        },
+        {
+          "year": 1895,
+          "rank": 0
+        },
+        {
+          "year": 1896,
+          "rank": 0
+        },
+        {
+          "year": 1897,
+          "rank": 0
+        },
+        {
+          "year": 1898,
+          "rank": 0
+        },
+        {
+          "year": 1899,
+          "rank": 0
+        },
+        {
+          "year": 1900,
+          "rank": 0
+        },
+        {
+          "year": 1901,
+          "rank": 0
+        },
+        {
+          "year": 1902,
+          "rank": 0
+        },
+        {
+          "year": 1903,
+          "rank": 0
+        },
+        {
+          "year": 1904,
+          "rank": 0
+        },
+        {
+          "year": 1905,
+          "rank": 0
+        },
+        {
+          "year": 1906,
+          "rank": 0
+        },
+        {
+          "year": 1907,
+          "rank": 0
+        },
+        {
+          "year": 1908,
+          "rank": 0
+        },
+        {
+          "year": 1909,
+          "rank": 0
+        },
+        {
+          "year": 1910,
+          "rank": 0
+        },
+        {
+          "year": 1911,
+          "rank": 0
+        },
+        {
+          "year": 1912,
+          "rank": 0
+        },
+        {
+          "year": 1913,
+          "rank": 0
+        },
+        {
+          "year": 1914,
+          "rank": 0
+        },
+        {
+          "year": 1915,
+          "rank": 0
+        },
+        {
+          "year": 1916,
+          "rank": 0
+        },
+        {
+          "year": 1917,
+          "rank": 0
+        },
+        {
+          "year": 1918,
+          "rank": 0
+        },
+        {
+          "year": 1919,
+          "rank": 0
+        },
+        {
+          "year": 1920,
+          "rank": 0
+        },
+        {
+          "year": 1921,
+          "rank": 0
+        },
+        {
+          "year": 1922,
+          "rank": 0
+        },
+        {
+          "year": 1923,
+          "rank": 0
+        },
+        {
+          "year": 1924,
+          "rank": 0
+        },
+        {
+          "year": 1925,
+          "rank": 0
+        },
+        {
+          "year": 1926,
+          "rank": 0
+        },
+        {
+          "year": 1927,
+          "rank": 0
+        },
+        {
+          "year": 1928,
+          "rank": 0
+        },
+        {
+          "year": 1929,
+          "rank": 0
+        },
+        {
+          "year": 1930,
+          "rank": 0
+        },
+        {
+          "year": 1931,
+          "rank": 0
+        },
+        {
+          "year": 1932,
+          "rank": 0
+        },
+        {
+          "year": 1933,
+          "rank": 0
+        },
+        {
+          "year": 1934,
+          "rank": 0
+        },
+        {
+          "year": 1935,
+          "rank": 0
+        },
+        {
+          "year": 1936,
+          "rank": 0
+        },
+        {
+          "year": 1937,
+          "rank": 0
+        },
+        {
+          "year": 1938,
+          "rank": 0
+        },
+        {
+          "year": 1939,
+          "rank": 0
+        },
+        {
+          "year": 1940,
+          "rank": 0
+        },
+        {
+          "year": 1941,
+          "rank": 0
+        },
+        {
+          "year": 1942,
+          "rank": 0
+        },
+        {
+          "year": 1943,
+          "rank": 0
+        },
+        {
+          "year": 1944,
+          "rank": 0
+        },
+        {
+          "year": 1945,
+          "rank": 0
+        },
+        {
+          "year": 1946,
+          "rank": 0
+        },
+        {
+          "year": 1947,
+          "rank": 0
+        },
+        {
+          "year": 1948,
+          "rank": 0
+        },
+        {
+          "year": 1949,
+          "rank": 0
+        },
+        {
+          "year": 1950,
+          "rank": 0
+        },
+        {
+          "year": 1951,
+          "rank": 0
+        },
+        {
+          "year": 1952,
+          "rank": 0
+        },
+        {
+          "year": 1953,
+          "rank": 0
+        },
+        {
+          "year": 1954,
+          "rank": 0
+        },
+        {
+          "year": 1955,
+          "rank": 0
+        },
+        {
+          "year": 1956,
+          "rank": 0
+        },
+        {
+          "year": 1957,
+          "rank": 0
+        },
+        {
+          "year": 1958,
+          "rank": 0
+        },
+        {
+          "year": 1959,
+          "rank": 0
+        },
+        {
+          "year": 1960,
+          "rank": 0
+        },
+        {
+          "year": 1961,
+          "rank": 0
+        },
+        {
+          "year": 1962,
+          "rank": 0
+        },
+        {
+          "year": 1963,
+          "rank": 0
+        },
+        {
+          "year": 1964,
+          "rank": 0
+        },
+        {
+          "year": 1965,
+          "rank": 0
+        },
+        {
+          "year": 1966,
+          "rank": 0
+        },
+        {
+          "year": 1967,
+          "rank": 0
+        },
+        {
+          "year": 1968,
+          "rank": 0
+        },
+        {
+          "year": 1969,
+          "rank": 0
+        },
+        {
+          "year": 1970,
+          "rank": 0
+        },
+        {
+          "year": 1971,
+          "rank": 0
+        },
+        {
+          "year": 1972,
+          "rank": 0
+        },
+        {
+          "year": 1973,
+          "rank": 1
+        },
+        {
+          "year": 1974,
+          "rank": 1
+        },
+        {
+          "year": 1975,
+          "rank": 1
+        },
+        {
+          "year": 1976,
+          "rank": 1
+        },
+        {
+          "year": 1977,
+          "rank": 1
+        },
+        {
+          "year": 1978,
+          "rank": 1
+        },
+        {
+          "year": 1979,
+          "rank": 1
+        },
+        {
+          "year": 1980,
+          "rank": 1
+        },
+        {
+          "year": 1981,
+          "rank": 1
+        },
+        {
+          "year": 1982,
+          "rank": 1
+        },
+        {
+          "year": 1983,
+          "rank": 1
+        },
+        {
+          "year": 1984,
+          "rank": 1
+        },
+        {
+          "year": 1985,
+          "rank": 1
+        },
+        {
+          "year": 1986,
+          "rank": 1
+        },
+        {
+          "year": 1987,
+          "rank": 1
+        },
+        {
+          "year": 1988,
+          "rank": 1
+        },
+        {
+          "year": 1989,
+          "rank": 1
+        },
+        {
+          "year": 1990,
+          "rank": 2
+        },
+        {
+          "year": 1991,
+          "rank": 2
+        },
+        {
+          "year": 1992,
+          "rank": 2
+        },
+        {
+          "year": 1993,
+          "rank": 2
+        },
+        {
+          "year": 1994,
+          "rank": 2
+        },
+        {
+          "year": 1995,
+          "rank": 2
+        },
+        {
+          "year": 1996,
+          "rank": 2
+        },
+        {
+          "year": 1997,
+          "rank": 2
+        },
+        {
+          "year": 1998,
+          "rank": 2
+        },
+        {
+          "year": 1999,
+          "rank": 2
+        },
+        {
+          "year": 2000,
+          "rank": 2
+        },
+        {
+          "year": 2001,
+          "rank": 2
+        },
+        {
+          "year": 2002,
+          "rank": 2
+        },
+        {
+          "year": 2003,
+          "rank": 2
+        },
+        {
+          "year": 2004,
+          "rank": 2
+        },
+        {
+          "year": 2005,
+          "rank": 2
+        },
+        {
+          "year": 2006,
+          "rank": 2
+        },
+        {
+          "year": 2007,
+          "rank": 2
+        },
+        {
+          "year": 2008,
+          "rank": 2
+        },
+        {
+          "year": 2009,
+          "rank": 2
+        },
+        {
+          "year": 2010,
+          "rank": 3
+        },
+        {
+          "year": 2011,
+          "rank": 3
+        },
+        {
+          "year": 2012,
+          "rank": 3
+        },
+        {
+          "year": 2013,
+          "rank": 3
+        },
+        {
+          "year": 2014,
+          "rank": 3
+        },
+        {
+          "year": 2015,
+          "rank": 3
+        },
+        {
+          "year": 2016,
+          "rank": 3
+        },
+        {
+          "year": 2017,
+          "rank": 3
+        },
+        {
+          "year": 2018,
+          "rank": 3
+        },
+        {
+          "year": 2019,
+          "rank": 3
+        },
+        {
+          "year": 2020,
+          "rank": 3
+        },
+        {
+          "year": 2021,
+          "rank": 3
+        },
+        {
+          "year": 2022,
+          "rank": 2
+        },
+        {
+          "year": 2023,
+          "rank": 2
+        },
+        {
+          "year": 2024,
+          "rank": 2
+        },
+        {
+          "year": 2025,
+          "rank": 2
+        },
+        {
+          "year": 2026,
+          "rank": 2
+        },
+        {
+          "year": 2027,
+          "rank": 2
+        },
+        {
+          "year": 2028,
+          "rank": 2
+        },
+        {
+          "year": 2029,
+          "rank": 2
+        },
+        {
+          "year": 2030,
+          "rank": 2
+        }
+      ],
+      "milestones": [
+        {
+          "year": 1973,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 1990,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 2010,
+          "value": "⊤_pub",
+          "rank": 3
+        },
+        {
+          "year": 2022,
+          "value": "⊤_bank",
+          "rank": 2
+        },
+        {
+          "year": 2024,
+          "value": "⊤_bank",
+          "rank": 2
+        }
+      ],
+      "end": "⊤_priv",
+      "coend": "⊤_pub",
+      "trust_2026": "⊤_bank",
+      "speed_per_year": 0.0377,
+      "speed_x_concentration": 0.0358
+    },
+    "GAFA-AI (developed AI market)": {
+      "type": "platform",
+      "region": "developed",
+      "country": "Global (US-based)",
+      "concentration": 0.85,
+      "data_points": [
+        {
+          "year": 1870,
+          "rank": 0
+        },
+        {
+          "year": 1871,
+          "rank": 0
+        },
+        {
+          "year": 1872,
+          "rank": 0
+        },
+        {
+          "year": 1873,
+          "rank": 0
+        },
+        {
+          "year": 1874,
+          "rank": 0
+        },
+        {
+          "year": 1875,
+          "rank": 0
+        },
+        {
+          "year": 1876,
+          "rank": 0
+        },
+        {
+          "year": 1877,
+          "rank": 0
+        },
+        {
+          "year": 1878,
+          "rank": 0
+        },
+        {
+          "year": 1879,
+          "rank": 0
+        },
+        {
+          "year": 1880,
+          "rank": 0
+        },
+        {
+          "year": 1881,
+          "rank": 0
+        },
+        {
+          "year": 1882,
+          "rank": 0
+        },
+        {
+          "year": 1883,
+          "rank": 0
+        },
+        {
+          "year": 1884,
+          "rank": 0
+        },
+        {
+          "year": 1885,
+          "rank": 0
+        },
+        {
+          "year": 1886,
+          "rank": 0
+        },
+        {
+          "year": 1887,
+          "rank": 0
+        },
+        {
+          "year": 1888,
+          "rank": 0
+        },
+        {
+          "year": 1889,
+          "rank": 0
+        },
+        {
+          "year": 1890,
+          "rank": 0
+        },
+        {
+          "year": 1891,
+          "rank": 0
+        },
+        {
+          "year": 1892,
+          "rank": 0
+        },
+        {
+          "year": 1893,
+          "rank": 0
+        },
+        {
+          "year": 1894,
+          "rank": 0
+        },
+        {
+          "year": 1895,
+          "rank": 0
+        },
+        {
+          "year": 1896,
+          "rank": 0
+        },
+        {
+          "year": 1897,
+          "rank": 0
+        },
+        {
+          "year": 1898,
+          "rank": 0
+        },
+        {
+          "year": 1899,
+          "rank": 0
+        },
+        {
+          "year": 1900,
+          "rank": 0
+        },
+        {
+          "year": 1901,
+          "rank": 0
+        },
+        {
+          "year": 1902,
+          "rank": 0
+        },
+        {
+          "year": 1903,
+          "rank": 0
+        },
+        {
+          "year": 1904,
+          "rank": 0
+        },
+        {
+          "year": 1905,
+          "rank": 0
+        },
+        {
+          "year": 1906,
+          "rank": 0
+        },
+        {
+          "year": 1907,
+          "rank": 0
+        },
+        {
+          "year": 1908,
+          "rank": 0
+        },
+        {
+          "year": 1909,
+          "rank": 0
+        },
+        {
+          "year": 1910,
+          "rank": 0
+        },
+        {
+          "year": 1911,
+          "rank": 0
+        },
+        {
+          "year": 1912,
+          "rank": 0
+        },
+        {
+          "year": 1913,
+          "rank": 0
+        },
+        {
+          "year": 1914,
+          "rank": 0
+        },
+        {
+          "year": 1915,
+          "rank": 0
+        },
+        {
+          "year": 1916,
+          "rank": 0
+        },
+        {
+          "year": 1917,
+          "rank": 0
+        },
+        {
+          "year": 1918,
+          "rank": 0
+        },
+        {
+          "year": 1919,
+          "rank": 0
+        },
+        {
+          "year": 1920,
+          "rank": 0
+        },
+        {
+          "year": 1921,
+          "rank": 0
+        },
+        {
+          "year": 1922,
+          "rank": 0
+        },
+        {
+          "year": 1923,
+          "rank": 0
+        },
+        {
+          "year": 1924,
+          "rank": 0
+        },
+        {
+          "year": 1925,
+          "rank": 0
+        },
+        {
+          "year": 1926,
+          "rank": 0
+        },
+        {
+          "year": 1927,
+          "rank": 0
+        },
+        {
+          "year": 1928,
+          "rank": 0
+        },
+        {
+          "year": 1929,
+          "rank": 0
+        },
+        {
+          "year": 1930,
+          "rank": 0
+        },
+        {
+          "year": 1931,
+          "rank": 0
+        },
+        {
+          "year": 1932,
+          "rank": 0
+        },
+        {
+          "year": 1933,
+          "rank": 0
+        },
+        {
+          "year": 1934,
+          "rank": 0
+        },
+        {
+          "year": 1935,
+          "rank": 0
+        },
+        {
+          "year": 1936,
+          "rank": 0
+        },
+        {
+          "year": 1937,
+          "rank": 0
+        },
+        {
+          "year": 1938,
+          "rank": 0
+        },
+        {
+          "year": 1939,
+          "rank": 0
+        },
+        {
+          "year": 1940,
+          "rank": 0
+        },
+        {
+          "year": 1941,
+          "rank": 0
+        },
+        {
+          "year": 1942,
+          "rank": 0
+        },
+        {
+          "year": 1943,
+          "rank": 0
+        },
+        {
+          "year": 1944,
+          "rank": 0
+        },
+        {
+          "year": 1945,
+          "rank": 0
+        },
+        {
+          "year": 1946,
+          "rank": 0
+        },
+        {
+          "year": 1947,
+          "rank": 0
+        },
+        {
+          "year": 1948,
+          "rank": 0
+        },
+        {
+          "year": 1949,
+          "rank": 0
+        },
+        {
+          "year": 1950,
+          "rank": 0
+        },
+        {
+          "year": 1951,
+          "rank": 0
+        },
+        {
+          "year": 1952,
+          "rank": 0
+        },
+        {
+          "year": 1953,
+          "rank": 0
+        },
+        {
+          "year": 1954,
+          "rank": 0
+        },
+        {
+          "year": 1955,
+          "rank": 0
+        },
+        {
+          "year": 1956,
+          "rank": 0
+        },
+        {
+          "year": 1957,
+          "rank": 0
+        },
+        {
+          "year": 1958,
+          "rank": 0
+        },
+        {
+          "year": 1959,
+          "rank": 0
+        },
+        {
+          "year": 1960,
+          "rank": 0
+        },
+        {
+          "year": 1961,
+          "rank": 0
+        },
+        {
+          "year": 1962,
+          "rank": 0
+        },
+        {
+          "year": 1963,
+          "rank": 0
+        },
+        {
+          "year": 1964,
+          "rank": 0
+        },
+        {
+          "year": 1965,
+          "rank": 0
+        },
+        {
+          "year": 1966,
+          "rank": 0
+        },
+        {
+          "year": 1967,
+          "rank": 0
+        },
+        {
+          "year": 1968,
+          "rank": 0
+        },
+        {
+          "year": 1969,
+          "rank": 0
+        },
+        {
+          "year": 1970,
+          "rank": 0
+        },
+        {
+          "year": 1971,
+          "rank": 0
+        },
+        {
+          "year": 1972,
+          "rank": 0
+        },
+        {
+          "year": 1973,
+          "rank": 0
+        },
+        {
+          "year": 1974,
+          "rank": 0
+        },
+        {
+          "year": 1975,
+          "rank": 0
+        },
+        {
+          "year": 1976,
+          "rank": 0
+        },
+        {
+          "year": 1977,
+          "rank": 0
+        },
+        {
+          "year": 1978,
+          "rank": 0
+        },
+        {
+          "year": 1979,
+          "rank": 0
+        },
+        {
+          "year": 1980,
+          "rank": 0
+        },
+        {
+          "year": 1981,
+          "rank": 0
+        },
+        {
+          "year": 1982,
+          "rank": 0
+        },
+        {
+          "year": 1983,
+          "rank": 0
+        },
+        {
+          "year": 1984,
+          "rank": 0
+        },
+        {
+          "year": 1985,
+          "rank": 0
+        },
+        {
+          "year": 1986,
+          "rank": 0
+        },
+        {
+          "year": 1987,
+          "rank": 0
+        },
+        {
+          "year": 1988,
+          "rank": 0
+        },
+        {
+          "year": 1989,
+          "rank": 0
+        },
+        {
+          "year": 1990,
+          "rank": 0
+        },
+        {
+          "year": 1991,
+          "rank": 0
+        },
+        {
+          "year": 1992,
+          "rank": 0
+        },
+        {
+          "year": 1993,
+          "rank": 0
+        },
+        {
+          "year": 1994,
+          "rank": 0
+        },
+        {
+          "year": 1995,
+          "rank": 0
+        },
+        {
+          "year": 1996,
+          "rank": 0
+        },
+        {
+          "year": 1997,
+          "rank": 0
+        },
+        {
+          "year": 1998,
+          "rank": 0
+        },
+        {
+          "year": 1999,
+          "rank": 0
+        },
+        {
+          "year": 2000,
+          "rank": 0
+        },
+        {
+          "year": 2001,
+          "rank": 0
+        },
+        {
+          "year": 2002,
+          "rank": 0
+        },
+        {
+          "year": 2003,
+          "rank": 0
+        },
+        {
+          "year": 2004,
+          "rank": 0
+        },
+        {
+          "year": 2005,
+          "rank": 0
+        },
+        {
+          "year": 2006,
+          "rank": 0
+        },
+        {
+          "year": 2007,
+          "rank": 0
+        },
+        {
+          "year": 2008,
+          "rank": 0
+        },
+        {
+          "year": 2009,
+          "rank": 0
+        },
+        {
+          "year": 2010,
+          "rank": 0
+        },
+        {
+          "year": 2011,
+          "rank": 0
+        },
+        {
+          "year": 2012,
+          "rank": 0
+        },
+        {
+          "year": 2013,
+          "rank": 0
+        },
+        {
+          "year": 2014,
+          "rank": 0
+        },
+        {
+          "year": 2015,
+          "rank": 0
+        },
+        {
+          "year": 2016,
+          "rank": 0
+        },
+        {
+          "year": 2017,
+          "rank": 0
+        },
+        {
+          "year": 2018,
+          "rank": 0
+        },
+        {
+          "year": 2019,
+          "rank": 0
+        },
+        {
+          "year": 2020,
+          "rank": 1
+        },
+        {
+          "year": 2021,
+          "rank": 1
+        },
+        {
+          "year": 2022,
+          "rank": 1
+        },
+        {
+          "year": 2023,
+          "rank": 1
+        },
+        {
+          "year": 2024,
+          "rank": 1
+        },
+        {
+          "year": 2025,
+          "rank": 1
+        },
+        {
+          "year": 2026,
+          "rank": 1
+        },
+        {
+          "year": 2027,
+          "rank": 1
+        },
+        {
+          "year": 2028,
+          "rank": 1
+        },
+        {
+          "year": 2029,
+          "rank": 1
+        },
+        {
+          "year": 2030,
+          "rank": 1
+        }
+      ],
+      "milestones": [
+        {
+          "year": 2018,
+          "value": "⊥",
+          "rank": 0
+        },
+        {
+          "year": 2020,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2022,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2024,
+          "value": "⊤_priv",
+          "rank": 1
+        },
+        {
+          "year": 2025,
+          "value": "⊤_priv",
+          "rank": 1
+        }
+      ],
+      "end": "⊥",
+      "coend": "⊤_priv",
+      "trust_2026": "⊤_priv",
+      "speed_per_year": 0.125,
+      "speed_x_concentration": 0.1062
+    },
     "Thailand Banking (1985-)": {
       "type": "bank_consortium",
       "region": "ASEAN",
@@ -10576,6 +13327,10 @@
       "Japan Banking (JP)": 0.0078,
       "EU SEPA (EU)": 0.0316,
       "Bitcoin (global)": 0.0111,
+      "Cloudflare (global infra)": 0.0875,
+      "Lehman→Fed (US banking)": 0.0359,
+      "SWIFT (global rail)": 0.0358,
+      "GAFA-AI (developed AI market)": 0.1062,
       "Thailand Banking (1985-)": 0.0405,
       "Indonesia Banking (1985-)": 0.0341,
       "Korea Banking (1985-)": 0.0439,
@@ -11024,6 +13779,112 @@
           "lag": 3
         }
       ]
+    }
+  ],
+  "lag_trend": [
+    {
+      "ea_year": 1997,
+      "lag": 11,
+      "ea_event": "1997 アジア通貨危機",
+      "developed_event": "2008 リーマンショック",
+      "developed_year": 2008,
+      "pair_id": "pair_1",
+      "label": "金融連鎖崩壊 (meet律速 / cospan-pushout)"
+    },
+    {
+      "ea_year": 1997,
+      "lag": 13,
+      "ea_event": "1997 アジア通貨危機",
+      "developed_event": "2010-12 欧州ソブリン危機",
+      "developed_year": 2010,
+      "pair_id": "pair_1",
+      "label": "金融連鎖崩壊 (meet律速 / cospan-pushout)"
+    },
+    {
+      "ea_year": 2010,
+      "lag": 12,
+      "ea_event": "メコン上流ダム支配 (中国)",
+      "developed_event": "ロシア天然ガス→欧州依存の暴露",
+      "developed_year": 2022,
+      "pair_id": "pair_4",
+      "label": "上流ノードの戦略的依存"
+    },
+    {
+      "ea_year": 2019,
+      "lag": 6,
+      "ea_event": "M-Pesa 5時間停止 (Kenya)",
+      "developed_event": "Cloudflare 障害",
+      "developed_year": 2025,
+      "pair_id": "pair_2",
+      "label": "モバイル金融単一障害点 (民間backbone)"
+    },
+    {
+      "ea_year": 2020,
+      "lag": 4,
+      "ea_event": "GCash 85%集中 (PH)",
+      "developed_event": "AI市場の GAFA集中",
+      "developed_year": 2024,
+      "pair_id": "pair_3",
+      "label": "プラットフォーム独占 (継続中)"
+    },
+    {
+      "ea_year": 2021,
+      "lag": 3,
+      "ea_event": "Wave Money 崩壊 (Myanmar)",
+      "developed_event": "TikTok 規制問題 (USA)",
+      "developed_year": 2024,
+      "pair_id": "pair_5",
+      "label": "政治変動による backbone 強制切替"
+    }
+  ],
+  "forecast_2030": [
+    {
+      "id": "forecast_1",
+      "label": "中銀デジタル通貨 (CBDC)",
+      "ea": {
+        "event": "Bakong (KH) 2024 ⊤_pub到達",
+        "year": 2024,
+        "summary": "カンボジア中央銀行型デジタル通貨が4年で ⊤_pub に。"
+      },
+      "developed_forecast": {
+        "event_candidates": "FedNow拡張 / 日銀DCJPYパイロット / ECB Digital Euro",
+        "estimated_year": "2027-2030",
+        "lag_estimate": "3-6年",
+        "summary": "先進国中銀がCBDCで ⊤_pub レベル決済を完成させる。",
+        "confidence": "中 (BIS Innovation Hubが既に動いている)"
+      }
+    },
+    {
+      "id": "forecast_2",
+      "label": "越境決済統合",
+      "ea": {
+        "event": "Project Nexus (2027ライブ予定)",
+        "year": 2027,
+        "summary": "ASEAN5+India の越境P2P決済が ▷ 統合で本格運用。meet律速が顕在化見込み。"
+      },
+      "developed_forecast": {
+        "event_candidates": "G7 越境決済統合 / SWIFT GPI拡張 / CBDC bridge",
+        "estimated_year": "2030-2033",
+        "lag_estimate": "3-6年",
+        "summary": "先進国版の越境決済統合で同じ meet律速問題が出る予測。",
+        "confidence": "高 (BIS が並行で議論中)"
+      }
+    },
+    {
+      "id": "forecast_3",
+      "label": "AI ガバナンス・カスケード",
+      "ea": {
+        "event": "GCash PH 1社集中 (継続)",
+        "year": 2020,
+        "summary": "プラットフォーム1社が国の決済を支配する構造。"
+      },
+      "developed_forecast": {
+        "event_candidates": "AI multi-agent 同時障害 / LLMサプライチェーン崩壊",
+        "estimated_year": "2027-2030",
+        "lag_estimate": "7-10年",
+        "summary": "AI multi-agent システムが ▷ 連鎖した状態で1ノード崩壊で全体停止 (2025-11 Cloudflareの拡張版)。",
+        "confidence": "中-高 (2025-11 が前触れ)"
+      }
     }
   ]
 }
