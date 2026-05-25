@@ -122,11 +122,19 @@ main {
 section {
   padding: 96px 0;
   border-bottom: 1px solid var(--line-soft);
+  /* Sections are visible by default. Fade-in is opt-in via .needs-fade
+     class plus a JS observer (currently only index uses it via viz.js).
+     Without this default, pages without viz.js (petri/temporal) showed
+     blank below the hero. */
+}
+
+section.needs-fade {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
+section.needs-fade.visible,
 section.visible {
   opacity: 1;
   transform: translateY(0);
