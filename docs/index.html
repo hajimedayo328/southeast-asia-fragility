@@ -29,6 +29,7 @@
   <a href="#framework">枠組み</a>
   <a href="#disaster">災害</a>
   <a href="#comparison">比較</a>
+  <a href="#findings">主要発見</a>
   <a href="#synthesis">結論</a>
 </nav>
 
@@ -127,132 +128,6 @@
   </ul>
 </section>
 
-<!-- Mobile money sections moved to finance.html for deeper coverage -->
-<!--
-<section id="mobile">
-  <span class="section-num">§ 02 — 事例A · モバイル金融</span>
-  <h2>モバイル金融のリープフロッグと集中度</h2>
-  <p class="lede">ASEAN10カ国でモバイルマネー普及が一気に進む。便利の裏側に何が貼り付くか。</p>
-
-  <div class="plain-jp">
-    <p>日本は「銀行口座作る → ATM/振込で送金」が普通。だけど東南アジアの多くの国では、<strong>そもそも銀行口座を作らずに、いきなりスマホでお金を送る</strong> ことが普通になってる。ベトナムの MoMo、フィリピンの GCash、カンボジアの Bakong とか。</p>
-    <p>これを「<strong>リープフロッグ</strong> (蛙跳び)」と呼ぶ。先進国が辿った道を飛ばして、いきなり最先端に行く現象。</p>
-    <p>便利な反面、「<strong>その1社が止まると国民の送金が全滅する</strong>」みたいな脆さも一緒に増えてる。下のグラフはそれを実データで見たもの。</p>
-  </div>
-
-  <div class="hypothesis">
-    <span class="hyp-id">仮説A1 · 見える層</span>
-    <h3>銀行を飛ばしてモバイル送金を使う度合い</h3>
-    <p class="punchline">
-      モバイル送金 (Y軸) が銀行口座 (X軸) より上にある国ほど、「銀行を経由せず先にモバイル」になってる = リープフロッグ国。
-    </p>
-    <p class="claim">
-      モバイルマネー普及率と銀行口座保有率の差分は「銀行をスキップする度合い」を示す。
-      リープフロッグ国ほどモバイル先行で銀行が後追い。
-    </p>
-    <div class="chart-box"><canvas id="chart-A1"></canvas></div>
-    <div class="finding"><strong>わかったこと:</strong> <span id="finding-A1">データ読込中...</span></div>
-  </div>
-
-  <div class="hypothesis shadow">
-    <span class="hyp-id">仮説A2 · 見えない層</span>
-    <h3>スマホ送金が普及した国ほど、1社独占が進んでないか?</h3>
-    <p class="punchline">
-      右上に行くほど「普及してて、かつ1社シェアも高い」状態 = 便利と集中が同時に増えてる兆候。
-    </p>
-    <p class="claim">
-      普及度が高い国ほど、特定の単一プロバイダーへの依存度も高い。
-      L (便利) と R (集中リスク) が同時に増えている可能性。
-    </p>
-    <div class="chart-box"><canvas id="chart-A2"></canvas></div>
-    <div class="finding"><strong>わかったこと:</strong> <span id="finding-A2">データ読込中...</span></div>
-  </div>
-</section>
-
-<!-- ============ CONCENTRATION ============ -->
-<section id="concentration">
-  <span class="section-num">§ 03 — 事例A · 骨格タイプ</span>
-  <h2>信頼のbackboneタイプ別 構造リスク</h2>
-  <p class="lede">「誰の信頼を借りているか」で脆弱性のパターンが変わる。</p>
-
-  <div class="plain-jp">
-    <p>「<strong>誰がそのお金の仕組みを支えてるか</strong>」で、リスクの形が全然違う。</p>
-    <p>例: ① <strong>中央銀行 (国)</strong> が直接運営 (タイの PromptPay、カンボジアの Bakong) → 政治変動に弱いが分散的。② <strong>民間プラットフォーム</strong> 1社が独占 (フィリピンの GCash 85%、ベトナムの MoMo) → 早いが、その会社崩壊で全滅。③ <strong>銀行コンソーシアム</strong> (シンガポールの PayNow) → 安定だが導入遅い。④ <strong>電話会社</strong> (M-Pesa 型) → ASEANではほぼ絶滅。</p>
-    <p>同じ「モバイル送金」でも、誰が backbone (バックボーン=骨格) かで、何が起きたときに崩れるかが全く違う。</p>
-  </div>
-
-  <div class="hypothesis">
-    <span class="hyp-id">仮説B1 · 4タイプ分類</span>
-    <h3>ASEAN10の決済を「誰が支えてるか」で分類</h3>
-    <p class="punchline">
-      ① 中央銀行が支える国 (TH/KH) / ② 民間プラットフォームが独占 (VN/ID/PH/MY) / ③ 銀行コンソーシアム (SG/LA/MM/BN)。M-Pesa型(電話会社主導)はASEANではほぼ絶滅。
-    </p>
-    <p class="claim">
-      各国のモバイル決済の信頼の中心 (backbone = 骨格) を4タイプ分類:
-      民間プラットフォーム / 中央銀行 / 銀行 / 電話会社。
-      タイプによって「何が起きたときに崩れるか」が異なる。
-    </p>
-    <div class="chart-box"><canvas id="chart-B1"></canvas></div>
-    <div class="finding"><strong>わかったこと:</strong> <span id="finding-B1">データ読込中...</span></div>
-  </div>
-
-  <div class="hypothesis shadow">
-    <span class="hyp-id">仮説B2 · 集中度ランキング</span>
-    <h3>どの国の「1社シェア」が一番高い?</h3>
-    <p class="punchline">
-      フィリピンは GCash 1社で 85%、ブルネイは BIBD 75%、ミャンマーは KBZPay 60%。これらの国は「その1社が止まったら国の送金が止まる」リスクが極めて高い。
-    </p>
-    <p class="claim">
-      民間プラットフォーム型 (GCash, MoMo, GoPay 等) は単一企業に信頼が集中。
-      過去のM-Pesa障害事例は、Telco型の脆弱性を実証している。
-    </p>
-    <div class="chart-box"><canvas id="chart-B2"></canvas></div>
-    <div class="finding"><strong>わかったこと:</strong> <span id="finding-B2">データ読込中...</span></div>
-  </div>
-</section>
-
-<!-- ============ REMITTANCE ============ -->
-<section id="remittance">
-  <span class="section-num">§ 04 — 事例B · 仕送り</span>
-  <h2>仕送りグラフ: 個人スケールから国経済まで</h2>
-  <p class="lede">バイト先で聞いた1人の話が、世界の送金ネットワークの縮図になる。</p>
-
-  <div class="plain-jp">
-    <p>日本でバイトしてるベトナム人やフィリピン人が、毎月の給料の一部を母国の家族に送ってる。これを「<strong>仕送り (remittance、リミッタンス)</strong>」って言う。</p>
-    <p>これがバカにならない規模で、<strong>フィリピンは GDP の 8.9% が仕送り収入</strong>。つまり国全体の経済の1割が「海外で働く家族からの送金」で成り立ってる。カンボジア 6.5%、ミャンマー 5.5% も同じ構造。</p>
-    <p>便利な仕組み (国境越え送金、技能実習制度) があるおかげで成立してるけど、<strong>もし日本の景気が悪くなったり、入管制度が厳しくなったりすると、東南アジアの村が直撃する</strong>。便利の裏に「他国依存」というコストが貼り付いてる例。</p>
-  </div>
-
-  <div class="hypothesis">
-    <span class="hyp-id">仮説D1 · 見える層</span>
-    <h3>国経済の中で「仕送り」が占める割合</h3>
-    <p class="punchline">
-      フィリピンは GDP の 8.9% が海外からの仕送り。これは「日本でいうと国家予算の何割か級」の規模。カンボジア・ミャンマーも 5-6% 台。海外労働がコケると国が直撃する。
-    </p>
-    <p class="claim">
-      フィリピン (8.9%), カンボジア (6.5%), ミャンマー (5.5%) — 仕送りがGDPの大きな割合を占める国は、
-      外部労働市場ショックに対して構造的に脆弱。
-    </p>
-    <div class="chart-box"><canvas id="chart-D1"></canvas></div>
-    <div class="finding"><strong>わかったこと:</strong> <span id="finding-D1">データ読込中...</span></div>
-  </div>
-
-  <div class="hypothesis shadow">
-    <span class="hyp-id">仮説D2 · 見えない層</span>
-    <h3>タイは送金の「出入口」の両方を抱えてる</h3>
-    <p class="punchline">
-      タイは受け取り (青) も送り出し (赤) も両方大きい二重ハブ。タイの規制1つで カンボジア・ラオス・ミャンマー (CLM三国) の経済が同時に揺れる。彼らの命綱がタイにある。
-    </p>
-    <p class="claim">
-      タイは送出 ($3.8B) と 受取 ($9.5B) の二重ハブで、CLM三国 (KH/LA/MM) の経済を媒介している。
-      タイの規制1つで3国同時ショック = リープフロッグ国の見えない依存先。
-    </p>
-    <div class="chart-box"><canvas id="chart-D2"></canvas></div>
-    <div class="finding"><strong>わかったこと:</strong> <span id="finding-D2">データ読込中...</span></div>
-  </div>
-</section>
-
--->
 <!-- ============ DISASTER ============ -->
 <section id="disaster">
   <span class="section-num">§ 05 — 事例C · 災害</span>
@@ -336,9 +211,58 @@
   </div>
 </section>
 
+<!-- ============ KEY FINDINGS ============ -->
+<section id="findings">
+  <span class="section-num">§ 07 — KEY FINDINGS · 主要発見</span>
+  <h2>本プロジェクトで見えた 3つのこと</h2>
+  <p class="lede">「東南アジアの脆弱性は先進国の予言」を支える3つの具体的発見。</p>
+
+  <div class="hypothesis">
+    <span class="hyp-id">発見 1 · 律速逆転 (越境統合の代償)</span>
+    <h3>同じ要素集合でも、合成方向で律速が逆転する</h3>
+    <p class="punchline">
+      ASEAN4 backbone を並列 (⊗) に並べると最強 (⊤_pub, Bakong) で律速。
+      でも越境統合 (▷) すると最弱 (⊤_priv, GCash) で律速。
+      <strong>「ASEAN域内決済統合を進めると、構造的に脆弱になる」</strong> という反直観的予言。
+    </p>
+    <p class="claim">
+      数学的根拠: Curry-Krishnan 2024 "Lattice-Valued Bottleneck Duality"。
+      本プロジェクトは Open Petri Net (Baez-Master 2018) の文脈に翻訳し、ASEAN モバイル金融で実コード検証 (<a href="petri.html">Petri net タブ</a>)。
+    </p>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">発見 2 · 1997アジア通貨危機の歴史的実証</span>
+    <h3>「⊤_priv が ⊤_pub を演じる」状態の崩壊</h3>
+    <p class="punchline">
+      1997年以前、東南アジア各国の銀行システムは USDペッグで「⊤_pub」に見えた。
+      でも実態は外貨建て短期民間債務 = <strong>⊤_priv</strong>。
+      タイの崩壊が ▷ で繋がった域内全体に meet律速で伝染。
+      <strong>「観察粒度の狭さが暴露される瞬間」の歴史的実例</strong>。
+    </p>
+    <p class="claim">
+      マレーシアは資本規制 (▷ チャネル切断) で被害を抑制 → 律速逆転定理の政策的検証。詳細は <a href="temporal.html#crisis-1997">時間軸タブ §T6</a>。
+    </p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">発見 3 · AI依存に同じ構造が現れる</span>
+    <h3>ChatGPT vs Claude vs Llama も、Bakong vs GCash vs PayNow と同型</h3>
+    <p class="punchline">
+      LLM の backbone を Heyting値で分類すると:
+      <strong>政府AI (仮想) = ⊤_pub、Llama (オープン) = ⊤_bank、ChatGPT/Claude (民間) = ⊤_priv</strong>。
+      multi-agent システムは meet律速で脆くなる。
+      <strong>東南アジアモバイル金融の構造が、AI時代の先進国に既に現れている</strong>。
+    </p>
+    <p class="claim">
+      2025年11月の ChatGPT/Claude/Gemini 同時障害は、独立企業のはずが共通インフラ依存で同時崩壊 = M-Pesa 障害と同型構造。詳細は <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/18_universal_isomorphism.md">notes/18</a>。
+    </p>
+  </div>
+</section>
+
 <!-- ============ SYNTHESIS ============ -->
 <section id="synthesis">
-  <span class="section-num">§ 07 — 統合と結論</span>
+  <span class="section-num">§ 08 — 統合と結論</span>
   <h2>東南アジアは先進国の予言である</h2>
   <p class="lede">同じ構造、別のスケール、同じ未来。</p>
 
