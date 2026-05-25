@@ -1,0 +1,236 @@
+{
+  "config": {
+    "num_prompts": 3
+  },
+  "ai_backbones": {
+    "chatgpt": {
+      "name": "ChatGPT (OpenAI, private platform)",
+      "backbone_type": "platform",
+      "steps": 15,
+      "final_visible": {
+        "User": 997,
+        "PromptInQueue": 0,
+        "OpenAIBackbone": 1,
+        "ResponseReady": 0,
+        "UserOutput": 3
+      },
+      "final_invisible": {
+        "TrustInLLM": "⊤_priv",
+        "AtrophyOfThinking": "⊤_priv"
+      },
+      "trust_curve_ranks": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "atrophy_curve_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "claude": {
+      "name": "Claude (Anthropic, private platform + safety focus)",
+      "backbone_type": "platform",
+      "steps": 15,
+      "final_visible": {
+        "User": 997,
+        "PromptInQueue": 0,
+        "AnthropicBackbone": 1,
+        "ResponseReady": 0,
+        "UserOutput": 3
+      },
+      "final_invisible": {
+        "TrustInLLM": "⊤_priv",
+        "AtrophyOfThinking": "⊤_priv"
+      },
+      "trust_curve_ranks": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "atrophy_curve_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "llama": {
+      "name": "Llama (Meta open weights, distributed)",
+      "backbone_type": "bank_consortium",
+      "steps": 15,
+      "final_visible": {
+        "User": 997,
+        "PromptInQueue": 0,
+        "OpenModelInfrastructure": 1,
+        "ResponseReady": 0,
+        "UserOutput": 3
+      },
+      "final_invisible": {
+        "TrustInLLM": "⊤_bank",
+        "AtrophyOfThinking": "⊤_bank"
+      },
+      "trust_curve_ranks": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "atrophy_curve_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "govt_ai": {
+      "name": "Government AI (hypothetical, central-bank-equivalent)",
+      "backbone_type": "central_bank",
+      "steps": 15,
+      "final_visible": {
+        "User": 997,
+        "PromptInQueue": 0,
+        "StateAIInfrastructure": 1,
+        "ResponseReady": 0,
+        "UserOutput": 3
+      },
+      "final_invisible": {
+        "TrustInLLM": "⊤_pub",
+        "AtrophyOfThinking": "⊤_pub"
+      },
+      "trust_curve_ranks": [
+        0,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "atrophy_curve_ranks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "isomorphism_with_finance": {
+    "ChatGPT": "GCash (両方 ⊤_priv 民間集中)",
+    "Claude": "GCash (同じ Heyting rank、ただし安全性重視で実質上位)",
+    "Llama": "PayNow (両方 ⊤_bank 分散構造)",
+    "Government AI (hypothetical)": "Bakong (両方 ⊤_pub 公的保証)"
+  },
+  "bottleneck_reversal_demo": {
+    "trust_uppers": {
+      "chatgpt": "⊤_priv",
+      "claude": "⊤_priv",
+      "llama": "⊤_bank",
+      "govt_ai": "⊤_pub"
+    },
+    "monoidal_⊗_bound (max)": "⊤_pub",
+    "cospan_▷_bound  (meet)": "⊤_priv",
+    "rank_gap": 2,
+    "interpretation": "並列利用 (ユーザーが LLM を選べる、⊗): 最強は ⊤_pub (政府AI想定 or Llama)。多重 agent chain (▷): 最弱に律速 → ⊤_priv (ChatGPT/Claude に律速)。AI ドメインでも Curry-Krishnan 律速逆転が成立。"
+  },
+  "interpretation": {
+    "cross_domain": "ChatGPT が止まれば全世界の AI ユーザーが詰むのは、M-Pesa 障害で Kenya 経済が止まるのと同型構造。同じ Heyting値の不可視層 (TrustInLLM) が単一企業に集中。"
+  }
+}
