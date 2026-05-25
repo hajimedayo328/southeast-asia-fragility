@@ -165,21 +165,14 @@
     <p>これで「同じ枠の中で何が違うか」が比較可能になる。</p>
   </div>
 
-  <h3>必須 7場所 (5可視 + 2不可視)</h3>
-  <ul class="clean">
-    <li><code>UserWallet</code> — 送金者残高 (可視・ℕ値)</li>
-    <li><code>PendingTx</code> — 処理中取引 (可視・ℕ値)</li>
-    <li><code>Backbone</code> — backbone内部状態 (可視・ℕ値) <strong>← ここで Bakong/GCash で別物</strong></li>
-    <li><code>SettledTx</code> — 確定取引 (可視・ℕ値)</li>
-    <li><code>RecipientWallet</code> — 受取人残高 (可視・ℕ値)</li>
-    <li><code>TrustHub</code> — backbone信頼累積 (<strong>不可視・Heyting値</strong>) <strong>← ここが本質</strong></li>
-    <li><code>SystemicLoad</code> — システム負荷累積 (<strong>不可視・Heyting値</strong>)</li>
-  </ul>
-
-  <h3>標準 5遷移</h3>
   <p>
-    <code>InitiateSend → BackboneClear → Settle → Reconciliation → AcknowledgeReceipt</code><br>
-    どの backbone でもこの流れは同じ。違うのは <strong>各遷移が TrustHub に書き込む Heyting値の大きさ</strong>。
+    可視層 5場所 (UserWallet → PendingTx → Backbone → SettledTx → RecipientWallet) と
+    不可視層 2場所 (<code>TrustHub</code>, <code>SystemicLoad</code>) の計 7場所、
+    遷移 5本 (InitiateSend → BackboneClear → Settle → Reconciliation → AcknowledgeReceipt)。
+    どの backbone でもこの構造は同じ。違うのは <strong>各遷移が不可視場所に書き込む Heyting値の大きさだけ</strong>。
+  </p>
+  <p>
+    詳細は <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/07_common_cpn_spec.md" target="_blank">notes/07 共通CPN規約</a>。
   </p>
 </section>
 
