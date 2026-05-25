@@ -265,7 +265,7 @@ US Fed (2026 ⊤_pub):
 3. **§6 外挿の数学的根拠**
    - monotone 関手の外挿の universal property
    - 「最少 Heyting値外挿」(誇張回避) の規範化
-4. **時間圧縮と Curry-Krishnan の関係**
+4. **時間圧縮と Ghrist-Gould-Lopez の関係**
    - 律速逆転定理 (notes/15) が時間関手版でどうなるか
    - 時間軸でも meet 律速 / max 律速 の構造が出るはず
 5. **連続時間版 (`Time_c`) の dynamics**

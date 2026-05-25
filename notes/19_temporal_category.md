@@ -213,7 +213,7 @@ Hom_{[Time, H]}(よ(t), Trust) ≅ Trust(t)
 - 2026年: ⊤_pub ∧ ⊤_priv = ⊤_priv (最弱に律速)
 - これは notes/10 Meet Bottleneck Theorem の **時間関手版**
 
-→ **時間軸を入れても、Curry-Krishnan 2024 の bottleneck duality は同じく成立**。
+→ **時間軸を入れても、Ghrist-Gould-Lopez 2024 の bottleneck duality は同じく成立**。
 
 ### 7.3 時間進化での予測
 

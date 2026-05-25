@@ -228,7 +228,7 @@
     "monoidal_⊗_bound (max)": "⊤_pub",
     "cospan_▷_bound  (meet)": "⊤_priv",
     "rank_gap": 2,
-    "interpretation": "並列利用 (ユーザーが LLM を選べる、⊗): 最強は ⊤_pub (政府AI想定 or Llama)。多重 agent chain (▷): 最弱に律速 → ⊤_priv (ChatGPT/Claude に律速)。AI ドメインでも Curry-Krishnan 律速逆転が成立。"
+    "interpretation": "並列利用 (ユーザーが LLM を選べる、⊗): 最強は ⊤_pub (政府AI想定 or Llama)。多重 agent chain (▷): 最弱に律速 → ⊤_priv (ChatGPT/Claude に律速)。AI ドメインでも Ghrist-Gould-Lopez 律速逆転が成立。"
   },
   "interpretation": {
     "cross_domain": "ChatGPT が止まれば全世界の AI ユーザーが詰むのは、M-Pesa 障害で Kenya 経済が止まるのと同型構造。同じ Heyting値の不可視層 (TrustInLLM) が単一企業に集中。"

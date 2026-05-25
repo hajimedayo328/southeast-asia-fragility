@@ -489,6 +489,89 @@ function renderReversal1997Chart(data) {
   );
 }
 
+// ---------------- Prediction pairs ----------------
+
+function escHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderPredictionPairs(data) {
+  const container = document.getElementById('prediction-pairs-container');
+  if (!container) return;
+  const pairs = data.prediction_pairs || [];
+  if (pairs.length === 0) {
+    container.innerHTML = '<div class="pair-empty">予言ペアが見つかりません。</div>';
+    return;
+  }
+
+  const html = pairs.map(p => {
+    const devHtml = p.developed.map(d => `
+      <div class="pair-event developed">
+        <span class="year">${d.year}</span>
+        <div class="event-name">${escHtml(d.event)}</div>
+        <div class="region">${escHtml(d.region)}</div>
+        <div class="summary">${escHtml(d.summary)}</div>
+      </div>
+    `).join('');
+
+    // If single developed event, use simple 3-col layout. If multiple, stack on right.
+    const isMulti = p.developed.length > 1;
+
+    if (!isMulti) {
+      const d = p.developed[0];
+      return `
+        <div class="pair-card">
+          <div class="pair-label">${escHtml(p.label)}</div>
+          <div class="pair-timeline">
+            <div class="pair-event ea">
+              <span class="year">${p.ea.year}</span>
+              <div class="event-name">${escHtml(p.ea.event)}</div>
+              <div class="region">${escHtml(p.ea.region)}</div>
+              <div class="summary">${escHtml(p.ea.summary)}</div>
+            </div>
+            <div class="pair-arrow">
+              <span class="arrow-line">→</span>
+              <span class="lag">+${d.lag}年</span>
+              <span class="lag-note">ラグ</span>
+            </div>
+            <div class="pair-event developed">
+              <span class="year">${d.year}</span>
+              <div class="event-name">${escHtml(d.event)}</div>
+              <div class="region">${escHtml(d.region)}</div>
+              <div class="summary">${escHtml(d.summary)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      const minLag = Math.min(...p.developed.map(d => d.lag));
+      const maxLag = Math.max(...p.developed.map(d => d.lag));
+      const lagText = `+${minLag}〜${maxLag}年`;
+      return `
+        <div class="pair-card">
+          <div class="pair-label">${escHtml(p.label)}</div>
+          <div class="pair-timeline">
+            <div class="pair-event ea">
+              <span class="year">${p.ea.year}</span>
+              <div class="event-name">${escHtml(p.ea.event)}</div>
+              <div class="region">${escHtml(p.ea.region)}</div>
+              <div class="summary">${escHtml(p.ea.summary)}</div>
+            </div>
+            <div class="pair-arrow">
+              <span class="arrow-line">→</span>
+              <span class="lag">${lagText}</span>
+              <span class="lag-note">ラグ</span>
+            </div>
+            <div class="pair-multi">${devHtml}</div>
+          </div>
+        </div>
+      `;
+    }
+  }).join('');
+
+  container.innerHTML = html;
+}
+
 (async function init() {
   const data = await loadTimeline();
   if (!data) {
@@ -502,4 +585,5 @@ function renderReversal1997Chart(data) {
   renderReversalTimeChart(data);
   render1997CrisisChart(data);
   renderReversal1997Chart(data);
+  renderPredictionPairs(data);
 })();

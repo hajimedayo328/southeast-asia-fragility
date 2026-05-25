@@ -12,7 +12,7 @@ notes/18 で informal に主張した「ChatGPT = GCash、Claude = GCash、Llama
 
 これが動けば:
 - 本プロジェクトのフレームワーク (H-Petri Net + Heyting値) が AI ドメインに転用可能
-- 律速逆転 (Curry-Krishnan) が multi-agent LLM chain でも成立
+- 律速逆転 (Ghrist-Gould-Lopez) が multi-agent LLM chain でも成立
 - 「東南アジアは先進国の予言」の **AI版** が出る
 
 ---
@@ -57,7 +57,7 @@ Government AI ⟷  Bakong         (両方 ⊤_pub 公的保証)
 
 ---
 
-## §3 律速逆転 (Curry-Krishnan) の AI版
+## §3 律速逆転 (Ghrist-Gould-Lopez) の AI版
 
 ### 3.1 並列利用 (⊗) vs Multi-agent chain (▷)
 
@@ -73,7 +73,7 @@ Government AI ⟷  Bakong         (両方 ⊤_pub 公的保証)
 
 ### 3.2 含意
 
-「**multi-agent LLM システムは構造的に脆い**」が Curry-Krishnan 2024 から自動的に出る。
+「**multi-agent LLM システムは構造的に脆い**」が Ghrist-Gould-Lopez 2024 から自動的に出る。
 
 これは AI alignment 議論への直接含意:
 - AutoGPT, BabyAGI のような multi-agent system は最弱 LLM に律速される
@@ -238,7 +238,7 @@ PayNow の利点: バンクコンソーシアムで「1銀行が倒れても他�
 実コードで確認したこと:
 - ChatGPT/Claude/Llama/政府AI を 同じ H-Petri Net 規約で書ける
 - Heyting値の階数が モバイル金融 backbone と完全一致
-- 律速逆転 (Curry-Krishnan) が AI ドメインでも数値で再現
+- 律速逆転 (Ghrist-Gould-Lopez) が AI ドメインでも数値で再現
 - multi-agent chain は構造的に脆い (最弱 LLM 律速)
 
 これで本プロジェクトの方法論が **AI alignment 議論にも転用可能** と示せた。

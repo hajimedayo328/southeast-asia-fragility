@@ -229,6 +229,114 @@ TRUST_TIMELINES: dict[str, dict] = {
 }
 
 
+# Prediction pairs: "東南アジア事象 → X年後 → 先進国類似事象"
+# 構造的同型を時間ラグで示す。本プロジェクトの核「予言である」の具体化。
+PREDICTION_PAIRS = [
+    {
+        "id": "pair_1",
+        "label": "金融連鎖崩壊 (meet律速 / cospan-pushout)",
+        "ea": {
+            "event": "1997 アジア通貨危機",
+            "year": 1997,
+            "region": "TH/ID/KR/MY",
+            "summary": "USDペッグ崩壊が▷で繋がった域内全体に伝染、最弱国 (タイ) に律速。1国崩壊 → 4国同時危機。",
+        },
+        "developed": [
+            {
+                "event": "2008 リーマンショック",
+                "year": 2008,
+                "region": "US → 世界",
+                "summary": "シャドーバンクシステムが ▷ で繋がってた金融機関に連鎖崩壊。1社破綻 (Lehman) → 世界恐慌的影響。",
+                "lag": 11,
+            },
+            {
+                "event": "2010-12 欧州ソブリン危機",
+                "year": 2010,
+                "region": "EU (PIIGS)",
+                "summary": "ユーロ統合 = ▷統合状態。1国 (ギリシャ) の財政崩壊が ECB 全体を揺るがす。",
+                "lag": 13,
+            },
+        ],
+    },
+    {
+        "id": "pair_2",
+        "label": "モバイル金融単一障害点 (民間backbone)",
+        "ea": {
+            "event": "M-Pesa 5時間停止 (Kenya)",
+            "year": 2019,
+            "region": "ケニア",
+            "summary": "Safaricom 1社停止で Kenya 経済の決済が一時停止。GDP 59% が経由する単一ノード。",
+        },
+        "developed": [
+            {
+                "event": "Cloudflare 障害",
+                "year": 2025,
+                "region": "全世界",
+                "summary": "Cloudflare Workers KV 障害 5.5時間で ChatGPT・Claude・Sora 等同時ダウン。Downdetector 11,183件報告。全Webの20%が単一CDN依存。",
+                "lag": 6,
+            },
+        ],
+    },
+    {
+        "id": "pair_3",
+        "label": "プラットフォーム独占 (継続中)",
+        "ea": {
+            "event": "GCash 85%集中 (PH)",
+            "year": 2020,
+            "region": "フィリピン",
+            "summary": "GCash 1社が国の決済を 85% 担う。Globe Telecom + Ant Group の民間支配。",
+        },
+        "developed": [
+            {
+                "event": "AI市場の GAFA集中",
+                "year": 2024,
+                "region": "全世界",
+                "summary": "ChatGPT/Claude/Gemini の3社で生成AI市場をほぼ独占。Meta Llama がオープン代替だが、推論インフラは大手依存。",
+                "lag": 4,
+            },
+        ],
+    },
+    {
+        "id": "pair_4",
+        "label": "上流ノードの戦略的依存",
+        "ea": {
+            "event": "メコン上流ダム支配 (中国)",
+            "year": 2010,
+            "region": "メコン5国",
+            "summary": "中国上流ダム 11基が下流5国 (タイ・ラオス・カンボジア・ベトナム・ミャンマー) の水量・農業・電力を握る。",
+        },
+        "developed": [
+            {
+                "event": "ロシア天然ガス→欧州依存の暴露",
+                "year": 2022,
+                "region": "EU",
+                "summary": "ウクライナ侵攻でロシア依存が表面化。EU は10年以上前から依存していたが、戦争で初めて『見える』化。",
+                "lag": 12,
+            },
+        ],
+    },
+    {
+        "id": "pair_5",
+        "label": "政治変動による backbone 強制切替",
+        "ea": {
+            "event": "Wave Money 崩壊 (Myanmar)",
+            "year": 2021,
+            "region": "ミャンマー",
+            "summary": "クーデター後、80% シェアだった Wave Money (telco backbone) が縮退、KBZPay (銀行 backbone) が代替。1事件で backbone タイプが変わる。",
+        },
+        "developed": [
+            {
+                "event": "TikTok 規制問題 (USA)",
+                "year": 2024,
+                "region": "USA",
+                "summary": "TikTok の中国親会社 ByteDance に対する米国の divestment 要求。SNS の backbone を国家が強制的に切り替える試み。",
+                "lag": 3,
+            },
+        ],
+    },
+]
+
+
 # Crisis events: Heyting value temporarily depresses then recovers.
 # These are reflected directly in the data above (years marked with ★).
 # Cataloged here for the UI overlay.
@@ -410,6 +518,9 @@ def export_all(year_range: tuple[int, int] = (1870, 2030)) -> dict:
 
     # Crisis events for UI overlay
     result["crisis_events"] = CRISIS_EVENTS
+
+    # Prediction pairs (ペアショーケース for temporal.html)
+    result["prediction_pairs"] = PREDICTION_PAIRS
 
     return result
 

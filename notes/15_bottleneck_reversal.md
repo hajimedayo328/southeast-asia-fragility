@@ -17,7 +17,7 @@
 2. **Krishnan (2014) "Flow-Cut Dualities for Sheaves on Graphs"** (arXiv 1409.6712)
    - Max-Flow Min-Cut の半環値 sheaf 一般化
    - flow と cut で min/max が双対化する categorical 定式化
-3. **Curry & Krishnan (2024) "Lattice-Valued Bottleneck Duality"** (arXiv 2410.00315)
+3. **Ghrist, Gould & Lopez (2024) "Lattice-Valued Bottleneck Duality"** (arXiv 2410.00315)
    - **Theorem 3**: `⋁_P ⋀_e c(e) = ⋀_C ⋁_e c(e)` を分配束で証明
    - path (直列, ▷的) で meet 律速、cut (並列, ⊗的) で join 律速
    - **本プロジェクトの定理と数学的に同型**
@@ -36,7 +36,7 @@
 
 ### 修正された主張
 
-> 「Curry-Krishnan 2024 の Lattice-Valued Bottleneck Duality を、
+> 「Ghrist-Gould-Lopez 2024 の Lattice-Valued Bottleneck Duality を、
 > Open H-Petri Net (Baez-Master 2018 の Heyting版) に翻訳し、
 > ASEAN モバイル金融の越境決済システムに具体応用する。
 > これにより『域内決済統合は最弱国に律速』という政策的予言が
@@ -45,7 +45,7 @@
 「世界初の定理」じゃなく「**既知の数学を新しい応用ドメインに翻訳**」のスタンス。
 これでも価値はあるが、当初の主張より控えめ。
 
-引用必須: Liebeherr 2017, Krishnan 2014, **Curry-Krishnan 2024 (最重要)**。
+引用必須: Liebeherr 2017, Krishnan 2014, **Ghrist-Gould-Lopez 2024 (最重要)**。
 
 ---
 

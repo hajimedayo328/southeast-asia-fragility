@@ -23,7 +23,7 @@
 - **一致点**: 「ネットワーク上で max と min が双対に振る舞う」現象を sheaf 理論 (=圏論的) に formalize した最も近い先行研究。半環選択で min/max が入れ替わる点も近い。
 - **異なる点**: Petri net 合成 (cospan-pushout vs disjoint-union tensor) の対比という形ではなく、単一ネットワーク上の flow vs cut の双対。「合成方向で律速が反転」という言明はない。
 
-### 3. **Curry & Krishnan (2024)** — *Lattice-Valued Bottleneck Duality* (arXiv:2410.00315)
+### 3. **Ghrist, Gould & Lopez (2024)** — *Lattice-Valued Bottleneck Duality* (arXiv:2410.00315)
 - **何を言ってる**: 古典的 bottleneck duality (max-min path = min-max cut) を **distributive lattice** 値容量に一般化。Theorem 3: ⋁_{P∈𝒫} ⋀_{e∈P} c(e) = ⋀_{C∈𝒞} ⋁_{e∈C} c(e)。pentagon/diamond lattice では成立しないことも証明。
 - **一致点**: 「path (直列) では meet (∧) で律速、cut (並列) では join (∨) で律速」という構造そのもの。本仮説と数学的核心が完全に同型。
 - **異なる点**: (a) Petri net や open systems の合成方向 (⊗ vs ▷) の議論ではなく古典的 flow network 内の path/cut, (b) 「bottleneck reversal」「asymmetric compositionality」という用語は使わず "lattice bottleneck duality" と呼ぶ, (c) cospan/monoidal product の対比は扱わない。
@@ -70,7 +70,7 @@
 **「⊗ で max 律速 / ▷ で meet 律速」という対比そのものは数学的に新規ではない。** 以下3つの先行領域にすでに本質的に同じ構造がある:
 
 1. **Network calculus** (Liebeherr): min-plus と max-plus の合成演算の双対
-2. **Sheaf-theoretic flow-cut duality** (Krishnan; Curry-Krishnan): path で meet, cut で join という lattice bottleneck duality
+2. **Sheaf-theoretic flow-cut duality** (Krishnan; Ghrist-Gould-Lopez): path で meet, cut で join という lattice bottleneck duality
 3. **Duoidal categories**: 2つの monoidal structure を備えた標準的枠組み
 
 ### ただし、以下の **特定の組み合わせは未踏** と判定できる:
@@ -81,11 +81,11 @@
 
 ### プロジェクトの戦略的位置付け
 
-本仮説を「完全新規」と主張するのは **不適切** (Liebeherr 2017 / Curry-Krishnan 2024 と数学的に同型である事実は隠せない)。
+本仮説を「完全新規」と主張するのは **不適切** (Liebeherr 2017 / Ghrist-Gould-Lopez 2024 と数学的に同型である事実は隠せない)。
 
 正しい新規性主張は:
 > "lattice bottleneck duality (既知) を open Petri net の categorical composition (▷ = cospan-pushout, ⊗ = disjoint union) の文脈に **持ち込み**、Baez-Master 圏論的枠組みで明示的に演算非対称性を述べる初の試み"
 
 これなら **incremental だが正当な貢献** として位置付け可能。「カテゴリ理論×ボトルネック反転」を Petri net 合成に翻訳する貢献は確かに残されている。
 
-ただし完全な新規性 (= no precedent in any field) は否定された。先行研究を必ず3本 (Liebeherr / Krishnan / Curry-Krishnan) 引用したうえで「Petri net compositional bottleneck への翻訳」という限定された新規性として書くべき。
+ただし完全な新規性 (= no precedent in any field) は否定された。先行研究を必ず3本 (Liebeherr / Krishnan / Ghrist-Gould-Lopez) 引用したうえで「Petri net compositional bottleneck への翻訳」という限定された新規性として書くべき。

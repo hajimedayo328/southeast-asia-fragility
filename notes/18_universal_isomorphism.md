@@ -113,7 +113,7 @@ t5: OutputAsOwn (Output → User)
 これが「**異分野同型**」の具体表現。
 ChatGPT が止まったら全世界の AI ユーザーが詰むのは、M-Pesa 障害で Kenya 経済が止まるのと **同型構造**。
 
-### 4.5 律速逆転 (Curry-Krishnan) の AI版
+### 4.5 律速逆転 (Ghrist-Gould-Lopez) の AI版
 
 複数 LLM を **並列に並べる** (⊗):
 - Trust 上限: `max(⊤_priv, ⊤_bank, ⊤_pub) = ⊤_pub`
@@ -123,7 +123,7 @@ ChatGPT が止まったら全世界の AI ユーザーが詰むのは、M-Pesa �
 - Trust 上限: `meet(⊤_priv, ⊤_bank, ⊤_pub) = ⊤_priv`
 - どの 1つが壊れても chain 全体が止まる
 
-→ **「multi-agent システムは構造的に脆くなる」** が Curry-Krishnan 2024 から自動的に出る。
+→ **「multi-agent システムは構造的に脆くなる」** が Ghrist-Gould-Lopez 2024 から自動的に出る。
 これは AI alignment の議論に直接使える。
 
 ---
@@ -280,7 +280,7 @@ Buldyrev 2010 の interdependent network = 電力 + 通信 の二層 Petri net�
 本ノートで主張したこと:
 - 9つの異分野で「便利と不可視コスト」が同型構造を持つ (observational)
 - 共通圏 `𝓒_universal` の上で各ドメインを関手として書ける
-- Curry-Krishnan 2024 の bottleneck duality が ChatGPT vs Claude にも適用できる
+- Ghrist-Gould-Lopez 2024 の bottleneck duality が ChatGPT vs Claude にも適用できる
 - 「政府AI = Bakong」「ChatGPT = GCash」「Llama = PayNow」の同型対応
 - 「東南アジアは先進国の予言」が **構造的同型 + 時間ラグ** で正当化される
 - 反例 (太陽光等) があれば普遍性は弱まる、要検証
