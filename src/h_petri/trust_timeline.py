@@ -157,7 +157,105 @@ TRUST_TIMELINES: dict[str, dict] = {
         ],
         "concentration": 0.2,    # mining concentration, but protocol decentralized
     },
+
+    # === 1990s ASEAN banking systems (for 1997 crisis study) ===
+    # These overlap with later digital backbones, but capture the legacy
+    # banking sector that *was* the backbone in 1985-2000.
+    # Per literature/raw/16_1997_crisis_analysis.md:
+    # Apparent ⊤_pub (USD-peg) collapsed to ⊤_priv during 1997.
+    "Thailand Banking (1985-)": {
+        "type": "bank_consortium",
+        "region": "ASEAN",
+        "country": "Thailand (legacy)",
+        "data": [
+            (1984, H.T_PRIV),    # USD peg starts
+            (1993, H.T_BANK),    # BIBF opens, apparent ⊤_bank
+            (1996, H.T_BANK),    # peak credit boom
+            (1997, H.T_PRIV),    # ★ baht devaluation Jul 2 — meet ▷ propagates
+            (1999, H.T_PRIV),    # bottom
+            (2002, H.T_BANK),    # IMF program ends, BoT regains
+            (2010, H.T_BANK),
+            (2024, H.T_BANK),
+        ],
+        "concentration": 0.85,   # 15 chaebol-linked banks
+    },
+    "Indonesia Banking (1985-)": {
+        "type": "bank_single",
+        "region": "ASEAN",
+        "country": "Indonesia (legacy)",
+        "data": [
+            (1985, H.T_PRIV),    # conglomerate-controlled banks
+            (1995, H.T_BANK),
+            (1997, H.BOTTOM),    # ★ rupiah crashes 80%, 16 banks suspended Nov
+            (1998, H.BOTTOM),    # banking system collapse (deepest)
+            (2002, H.T_PRIV),    # IBRA program
+            (2010, H.T_BANK),
+            (2024, H.T_BANK),
+        ],
+        "concentration": 0.7,
+    },
+    "Korea Banking (1985-)": {
+        "type": "bank_consortium",
+        "region": "developed",
+        "country": "South Korea (chaebol)",
+        "data": [
+            (1985, H.T_PRIV),
+            (1992, H.T_BANK),
+            (1996, H.T_BANK),
+            (1997, H.T_PRIV),    # ★ won devaluation, chaebol bankruptcies
+            (1998, H.T_PRIV),
+            (2001, H.T_BANK),    # IMF program ends
+            (2010, H.T_BANK),
+            (2024, H.T_PUB),     # KRX maturity, BoK independence
+        ],
+        "concentration": 0.6,
+    },
+    "Malaysia Banking (1985-)": {
+        "type": "bank_consortium",
+        "region": "ASEAN",
+        "country": "Malaysia",
+        "data": [
+            (1985, H.T_PRIV),
+            (1993, H.T_BANK),
+            (1996, H.T_BANK),
+            (1997, H.T_BANK),    # capital controls Sep 1998 — Heyting value preserved
+            (1998, H.T_PRIV),    # but real economy hit
+            (2001, H.T_BANK),    # quick recovery via controls
+            (2010, H.T_BANK),
+            (2024, H.T_BANK),
+        ],
+        "concentration": 0.5,
+    },
 }
+
+
+# Crisis events: Heyting value temporarily depresses then recovers.
+# These are reflected directly in the data above (years marked with ★).
+# Cataloged here for the UI overlay.
+CRISIS_EVENTS = [
+    {"year": 1997, "label": "AFC (Asian Financial Crisis)",
+     "affected": ["Thailand Banking (1985-)", "Indonesia Banking (1985-)",
+                  "Korea Banking (1985-)", "Malaysia Banking (1985-)"],
+     "note": "USD peg collapse cascades via ▷-merged trade/credit network. "
+             "Meet bottleneck reversal in action: weakest country drags rest down."},
+    {"year": 2008, "label": "GFC (Global Financial Crisis)",
+     "affected": ["US Federal Reserve (US)"],
+     "note": "Subprime cascade. Fed's ⊤_pub remained nominal but TARP "
+             "showed legal-protection invocation."},
+    {"year": 2011, "label": "March 11 (Tohoku)",
+     "affected": ["Japan Banking (JP)"],
+     "note": "Operational shock to banking system, recovered quickly via BoJ."},
+    {"year": 2010, "label": "Greek crisis",
+     "affected": ["EU SEPA (EU)"],
+     "note": "Sovereign debt crisis pressured EU banking framework."},
+    {"year": 2021, "label": "Myanmar coup",
+     "affected": ["KBZPay (MM)"],
+     "note": "Telco-dominant Wave Money collapsed; KBZPay (bank) took over."},
+    {"year": 2019, "label": "M-Pesa outage",
+     "affected": [],
+     "note": "5-hour Safaricom outage caused ~KES billions in economic loss "
+             "(referenced, not in chart)."},
+]
 
 
 # ---------------------------------------------------------------------------
@@ -289,6 +387,29 @@ def export_all(year_range: tuple[int, int] = (1870, 2030)) -> dict:
             "time-concentration trade-off hypothesis."
         ),
     }
+
+    # 1997-era backbones for crisis study
+    crisis_1997_backbones = [
+        "Thailand Banking (1985-)",
+        "Indonesia Banking (1985-)",
+        "Korea Banking (1985-)",
+        "Malaysia Banking (1985-)",
+    ]
+    result["crisis_1997"] = {
+        "backbones": crisis_1997_backbones,
+        "max_meet_over_time": [],
+    }
+    for y in range(1985, 2031):
+        row = {
+            "year": y,
+            "max_⊗": H._rank(trust_max_at(y, crisis_1997_backbones)),
+            "meet_▷": H._rank(trust_meet_at(y, crisis_1997_backbones)),
+        }
+        row["gap"] = row["max_⊗"] - row["meet_▷"]
+        result["crisis_1997"]["max_meet_over_time"].append(row)
+
+    # Crisis events for UI overlay
+    result["crisis_events"] = CRISIS_EVENTS
 
     return result
 

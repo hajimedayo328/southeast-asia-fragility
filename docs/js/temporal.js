@@ -278,6 +278,217 @@ function renderReversalTimeChart(data) {
 
 // ---------------- Main ----------------
 
+// ---------------- 1997 Crisis chart ----------------
+
+function render1997CrisisChart(data) {
+  const ctx = document.getElementById('chart-crisis-1997');
+  if (!ctx) return;
+
+  // Build per-country series for 1985-2010
+  const startYear = 1985, endYear = 2010;
+  const labels = [];
+  for (let y = startYear; y <= endYear; y++) labels.push(y);
+
+  const crisis_backbones = [
+    'Thailand Banking (1985-)',
+    'Indonesia Banking (1985-)',
+    'Korea Banking (1985-)',
+    'Malaysia Banking (1985-)',
+  ];
+
+  const country_colors = {
+    'Thailand Banking (1985-)':    '#dc2626',
+    'Indonesia Banking (1985-)':   '#ea580c',
+    'Korea Banking (1985-)':       '#7c3aed',
+    'Malaysia Banking (1985-)':    '#0891b2',
+  };
+
+  const datasets = crisis_backbones.map(name => {
+    const m = data.backbones[name];
+    if (!m) return null;
+    const pts = {};
+    for (const p of m.data_points) pts[p.year] = p.rank;
+    const series = labels.map(y => pts[y] ?? null);
+    return {
+      label: name.replace(' (1985-)', '').replace(' Banking', ''),
+      data: series,
+      borderColor: country_colors[name],
+      backgroundColor: country_colors[name] + '22',
+      borderWidth: 2.5,
+      pointRadius: 0,
+      stepped: true,
+      spanGaps: true,
+    };
+  }).filter(Boolean);
+
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: c => `${c.dataset.label}: ${rankTickLabel(c.parsed.y)} (rank ${c.parsed.y})`,
+            title: items => `${items[0].label}年`,
+          },
+        },
+      },
+      scales: {
+        x: { title: { display: true, text: '年 (1985-2010)' } },
+        y: {
+          title: { display: true, text: 'Heyting値 階数' },
+          min: 0, max: 3,
+          ticks: { stepSize: 1, callback: v => `${v}: ${rankTickLabel(v)}` },
+        },
+      },
+    },
+    plugins: [{
+      id: 'crisis_marker',
+      afterDraw(chart) {
+        const ctx = chart.ctx;
+        const scaleX = chart.scales.x;
+        const px1997 = scaleX.getPixelForValue('1997');
+        const yTop = chart.chartArea.top;
+        const yBottom = chart.chartArea.bottom;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(220, 38, 38, 0.7)';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 4]);
+        ctx.beginPath();
+        ctx.moveTo(px1997, yTop);
+        ctx.lineTo(px1997, yBottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#dc2626';
+        ctx.font = '600 11px JetBrains Mono, monospace';
+        ctx.fillText('1997 AFC', px1997 + 6, yTop + 14);
+        ctx.restore();
+      },
+    }],
+  });
+
+  // Compute drop ranges
+  const drops = {};
+  for (const name of crisis_backbones) {
+    const m = data.backbones[name];
+    if (!m) continue;
+    const pts = {};
+    for (const p of m.data_points) pts[p.year] = p.rank;
+    const r1996 = pts[1996] ?? 0;
+    const r1998 = pts[1998] ?? 0;
+    drops[name.replace(' (1985-)', '').replace(' Banking', '')] = { from: r1996, to: r1998, drop: r1996 - r1998 };
+  }
+
+  const dropTxt = Object.entries(drops).map(([k, v]) => `<strong>${k}</strong>: ${v.from}→${v.to} (-${v.drop})`).join(' / ');
+  setText(
+    'finding-crisis-1997',
+    `1996→1998 階数推移: ${dropTxt}。
+     インドネシアが最大 (rank 2→0, -2階段)、マレーシアは資本規制で抑制 (rank 2→1, -1階段)。<br>
+     <strong>同じ ⊤_bank 名目だった4国が、▷ で繋がっていたため最弱に律速されて全部崩落</strong>。`
+  );
+}
+
+function renderReversal1997Chart(data) {
+  const ctx = document.getElementById('chart-reversal-1997');
+  if (!ctx) return;
+
+  const crisis = data.crisis_1997;
+  if (!crisis) return;
+
+  // Sample every 2 years
+  const series = crisis.max_meet_over_time.filter(r => r.year % 2 === 0 || r.year === 1997);
+  const labels = series.map(r => r.year);
+  const maxData = series.map(r => r['max_⊗']);
+  const meetData = series.map(r => r['meet_▷']);
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '⊗ 並列 (最強で律速)',
+          data: maxData,
+          borderColor: '#2563eb',
+          backgroundColor: '#2563eb22',
+          borderWidth: 3,
+          pointRadius: 2,
+          stepped: true,
+          fill: false,
+        },
+        {
+          label: '▷ 越境統合 (最弱で律速)',
+          data: meetData,
+          borderColor: '#dc2626',
+          backgroundColor: '#dc262622',
+          borderWidth: 3,
+          pointRadius: 2,
+          stepped: true,
+          fill: '-1',
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: c => `${c.dataset.label}: ${rankTickLabel(c.parsed.y)} (rank ${c.parsed.y})`,
+          },
+        },
+      },
+      scales: {
+        x: { title: { display: true, text: '年 (1985-2030)' } },
+        y: {
+          title: { display: true, text: 'Heyting値 階数' },
+          min: 0, max: 3,
+          ticks: { stepSize: 1, callback: v => `${v}: ${rankTickLabel(v)}` },
+        },
+      },
+    },
+    plugins: [{
+      id: 'crisis_marker',
+      afterDraw(chart) {
+        const ctx = chart.ctx;
+        const scaleX = chart.scales.x;
+        // find 1997 in labels
+        const idx = chart.data.labels.indexOf(1997);
+        if (idx < 0) return;
+        const px = scaleX.getPixelForValue(1997);
+        const yTop = chart.chartArea.top;
+        const yBottom = chart.chartArea.bottom;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(220, 38, 38, 0.7)';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 4]);
+        ctx.beginPath();
+        ctx.moveTo(px, yTop);
+        ctx.lineTo(px, yBottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#dc2626';
+        ctx.font = '600 11px JetBrains Mono, monospace';
+        ctx.fillText('1997', px + 6, yTop + 14);
+        ctx.restore();
+      },
+    }],
+  });
+
+  // Find max gap
+  const maxGap = series.reduce((acc, r) => r.gap > acc.gap ? r : acc, series[0]);
+  const gap1996 = series.find(r => r.year === 1996)?.gap ?? '?';
+  const gap1998 = series.find(r => r.year === 1998)?.gap ?? '?';
+  setText(
+    'finding-reversal-1997',
+    `1996 階数差=${gap1996}, 1998 階数差=${gap1998}, 最大階数差=${maxGap.gap} (${maxGap.year}年)。
+     <strong>1997年で meet が ${meetData[labels.indexOf(1997)] ?? '?'} に急落、max は ${maxData[labels.indexOf(1997)] ?? '?'} を維持 → 階数差が一気に広がる</strong>。
+     これが「越境統合の代償が暴露される瞬間」の数値証拠。`
+  );
+}
+
 (async function init() {
   const data = await loadTimeline();
   if (!data) {
@@ -289,4 +500,6 @@ function renderReversalTimeChart(data) {
   renderTimelinesChart(data);
   renderTradeoffChart(data);
   renderReversalTimeChart(data);
+  render1997CrisisChart(data);
+  renderReversal1997Chart(data);
 })();

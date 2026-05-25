@@ -30,6 +30,7 @@
   <a href="#timelines">Trust時系列</a>
   <a href="#tradeoff">速度-集中</a>
   <a href="#reversal-time">逆転×時間</a>
+  <a href="#crisis-1997">1997危機</a>
   <a href="#prediction">将来</a>
   <a href="#conclusion">結論</a>
 </nav>
@@ -144,9 +145,78 @@
   </div>
 </section>
 
+<!-- ============ 1997 CRISIS ============ -->
+<section id="crisis-1997">
+  <span class="section-num">§ T6 — 1997 AFC · 歴史的実証</span>
+  <h2>1997 アジア通貨危機 — 律速逆転定理の歴史的検証</h2>
+
+  <div class="plain-jp">
+    <p>本プロジェクトの中心定理 (notes/15 律速逆転) は <strong>1997 アジア通貨危機で歴史的に支持</strong> されている。</p>
+    <p>1997年以前、東南アジア各国の銀行システムは USDペッグ + BIBF (外貨建て短期融資) で <strong>「⊤_pub に見える」</strong> 状態だった。でも実態は <strong>「⊤_priv が ⊤_pub を演じている」</strong> 状態 — 短期外貨建て民間債務に支えられた砂上の信頼。</p>
+    <p>1997年7月のタイバーツ崩壊が、▷ で繋がった域内全体に <strong>meet 律速で伝染</strong>。1国 (タイ) の崩壊が、3-4国 (タイ・インドネシア・韓国・マレーシア) の同時危機を引き起こした。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 T6-A · 1997検証</span>
+    <h3>1997 各国の Trust 時系列</h3>
+    <p class="punchline">
+      タイ・インドネシア・韓国は1997-98年に <strong>急落 (⊤_bank → ⊤_priv or ⊥)</strong>。
+      マレーシアは資本規制 (capital controls) で <strong>規模を抑制</strong>。
+      meet 律速 (▷) の歴史的実例。
+    </p>
+    <p class="claim">
+      USDペッグ + 自由資本移動 = ▷ (越境統合) 状態。Heyting値が ⊤_priv の実態を ⊤_pub と誤認した結果、最弱国 (タイ) の崩壊が全体に meet 律速で伝染。マレーシアの資本規制は cospan の ▷ を一時的に切る操作で、meet 律速を回避した実例。
+    </p>
+    <div class="chart-box tall"><canvas id="chart-crisis-1997"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-crisis-1997">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 T6-B · 律速逆転×1997</span>
+    <h3>1985-2030 ASEAN4 max(⊗) vs meet(▷)</h3>
+    <p class="punchline">
+      1997 で meet が ⊥ に急落、max は ⊤_bank 維持 → <strong>階数差 max-meet が一気に3に広がる</strong>。
+      これが「越境統合の代償が暴露される瞬間」の数値表現。
+    </p>
+    <div class="chart-box"><canvas id="chart-reversal-1997"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-reversal-1997">データ読込中...</span></div>
+  </div>
+
+  <h3>本プロジェクト主張への 3 重実証</h3>
+  <table>
+    <thead>
+      <tr><th>主張</th><th>1997年での確認</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>律速逆転 (notes/15)</strong></td>
+        <td>1国 (タイ) の崩壊が3-4国へ伝染 → 越境統合の最弱国に律速</td>
+      </tr>
+      <tr>
+        <td><strong>観察粒度補題 (notes/22)</strong></td>
+        <td>名目 ⊤_pub の見せかけが実態 ⊤_priv に暴落 → 観察粒度の狭さの帰結</td>
+      </tr>
+      <tr>
+        <td><strong>時間圧縮の代償 (notes/20)</strong></td>
+        <td>⊤_priv で⊤_pub を演じた経済が崩壊 → 時間蓄積なしで信頼を借りた代償</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>マレーシアの「自然実験」</h3>
+  <p>
+    マレーシアは1998年9月に <strong>資本規制</strong> を導入し、外貨建て短期債務との ▷ チャネルを **強制的に切った**。
+    結果: 危機からの回復が他国より早く、Heyting値の下落幅も小さかった。
+  </p>
+  <p>
+    これは <strong>「meet 律速を回避するには ▷ を切ればよい」</strong> という政策的予言の歴史的実証。
+    Krugman も "Capital Controls" を1998年に支持に回った経緯がある。
+  </p>
+</section>
+
 <!-- ============ PREDICTION ============ -->
 <section id="prediction">
-  <span class="section-num">§ T5 — PREDICTION · 将来予測</span>
+  <span class="section-num">§ T7 — PREDICTION · 将来予測</span>
   <h2>時間関手の外挿で 2030 を予測する</h2>
 
   <div class="plain-jp">
@@ -179,7 +249,7 @@
 
 <!-- ============ CONCLUSION ============ -->
 <section id="conclusion">
-  <span class="section-num">§ T6 — CONCLUSION · 結論</span>
+  <span class="section-num">§ T8 — CONCLUSION · 結論</span>
   <h2>時間軸を入れて見えること</h2>
 
   <p>このページで示したこと:</p>
