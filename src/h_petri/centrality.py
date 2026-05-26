@@ -180,3 +180,85 @@ def full_centrality_report(net: HPetriNet, max_steps: int = 30) -> dict:
         "places": report,
         "HHI_AC": round(hhi_analog(net), 4),
     }
+
+
+# ---------------------------------------------------------------------------
+# Main — 4-backbone centrality comparison + JSON output
+# ---------------------------------------------------------------------------
+
+def main():
+    import json
+    import sys
+    from pathlib import Path
+
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
+    from h_petri.backbones import bakong, paynow, kbzpay, gcash
+
+    BACKBONES = [
+        ("bakong", "Bakong (KH, central bank)",        bakong.build_bakong_net),
+        ("paynow", "PayNow (SG, bank consortium)",     paynow.build_paynow_net),
+        ("kbzpay", "KBZPay (MM, bank single)",         kbzpay.build_kbzpay_net),
+        ("gcash",  "GCash (PH, private platform)",     gcash.build_gcash_net),
+    ]
+
+    reports = {}
+    for key, _, builder in BACKBONES:
+        net = builder()
+        reports[key] = full_centrality_report(net, max_steps=20)
+
+    # Identify hotspots: highest BI per backbone
+    hotspots = {}
+    for key, _, _ in BACKBONES:
+        places = reports[key]["places"]
+        bi_scores = {
+            p: v["BI"] for p, v in places.items()
+            if v["kind"] == "visible" and isinstance(v["BI"], (int, float))
+        }
+        if bi_scores:
+            top_place = max(bi_scores, key=bi_scores.get)
+            hotspots[key] = {"place": top_place, "BI": bi_scores[top_place]}
+
+    bundle = {
+        "description": (
+            "Place centrality measures (notes/16) for 4 ASEAN mobile money "
+            "backbones. TCC = transition coverage, BI = bottleneck index "
+            "(reachability loss when place removed), HCC = max Heyting weight "
+            "written to an invisible place, HHI-AC = sum of TCC². High BI "
+            "indicates a structural hotspot that, if disrupted, kills most "
+            "reachable behavior."
+        ),
+        "backbones": reports,
+        "hotspots": hotspots,
+        "lesson": (
+            "Backbone 構造の集中度 (HHI-AC) と単一ホットスポット (max BI) は "
+            "backbone タイプによらず共通の場所に集中する傾向。これは notes/16 主張4 "
+            "「H-Petri Net の場所中心性は backbone タイプを横断する構造的不変量」"
+            "を数値で確認するもの。"
+        ),
+    }
+
+    print("=" * 70)
+    print("Place Centrality — 4 ASEAN backbones")
+    print("=" * 70)
+    for key, label, _ in BACKBONES:
+        r = reports[key]
+        print(f"\n[{label}]")
+        print(f"  HHI-AC: {r['HHI_AC']}")
+        for p, v in r["places"].items():
+            kind = v["kind"][:3]
+            print(f"  {p:24s} ({kind})  TCC={v['TCC']}  BI={v['BI']}  HCC={v['HCC']}")
+        if key in hotspots:
+            hs = hotspots[key]
+            print(f"  → hotspot: {hs['place']}  (BI={hs['BI']})")
+
+    out_path = Path(__file__).resolve().parent.parent.parent / "docs" / "data" / "centrality.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(bundle, f, ensure_ascii=False, indent=2)
+    print(f"\nWrote: {out_path}")
+
+
+if __name__ == "__main__":
+    main()

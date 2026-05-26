@@ -1,0 +1,41 @@
+{
+  "description": "Open H-Petri Net composition for ASEAN4 cross-border payment integration. Verifies the Bottleneck Reversal Theorem (notes/15, Ghrist-Gould-Lopez 2024) numerically: parallel composition (⊗) is bounded by the join (max), cospan composition (▷) is bounded by the meet (min). The Heyting rank difference gives the 'integration paradox' cost.",
+  "components": [
+    {
+      "name": "Bakong (KH, ⊤_pub central bank)",
+      "trust": "⊤_pub"
+    },
+    {
+      "name": "PayNow (SG, ⊤_bank consortium)",
+      "trust": "⊤_bank"
+    },
+    {
+      "name": "KBZPay (MM, ⊤_bank single)",
+      "trust": "⊤_bank"
+    },
+    {
+      "name": "GCash (PH, ⊤_priv private)",
+      "trust": "⊤_priv"
+    }
+  ],
+  "parallel_otimes": {
+    "operator": "⊗",
+    "name": "Parallel (user picks any backbone)",
+    "final_trust": "⊤_pub",
+    "final_load": "⊤_bank",
+    "interpretation": "ユーザーは 4 個の backbone を自由に選べるので、全体の Trust は最強の backbone に支配される (join)。最終 Trust = ⊤_pub。"
+  },
+  "cospan_triangleright": {
+    "operator": "▷",
+    "name": "Cospan over 'ASEANSettlementHub' (Project-Nexus-style integration)",
+    "final_trust": "⊤_priv",
+    "final_load": "⊤_priv",
+    "interpretation": "全 backbone が共通の決済 hub 'ASEANSettlementHub' で同期するので、Trust は最弱の backbone に律速される (meet)。最終 Trust = ⊤_priv。"
+  },
+  "bottleneck_reversal": {
+    "parallel_bound": "⊤_pub",
+    "cospan_bound": "⊤_priv",
+    "rank_gap": 2,
+    "lesson": "同じ 4 backbone でも、合成方向で律速が逆転する。⊗ 並列 = ⊤_pub (最強 Bakong に支配)、▷ 統合 = ⊤_priv (最弱 GCash に律速)。Heyting 階数差 = 2。ASEAN 域内決済統合 (Project Nexus 等) は構造的に脆弱性を増やすという反直観的予言。"
+  }
+}

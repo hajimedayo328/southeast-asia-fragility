@@ -1,0 +1,216 @@
+{
+  "description": "Place centrality measures (notes/16) for 4 ASEAN mobile money backbones. TCC = transition coverage, BI = bottleneck index (reachability loss when place removed), HCC = max Heyting weight written to an invisible place, HHI-AC = sum of TCC². High BI indicates a structural hotspot that, if disrupted, kills most reachable behavior.",
+  "backbones": {
+    "bakong": {
+      "net": "Bakong (Cambodia, central_bank)",
+      "places": {
+        "UserWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "PendingTx": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "NBCBackbone": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.9978,
+          "HCC": "—"
+        },
+        "SettledTx": {
+          "kind": "visible",
+          "TCC": 0.6,
+          "BI": 0.9868,
+          "HCC": "—"
+        },
+        "RecipientWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "TrustHub": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_pub"
+        },
+        "SystemicLoad": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_bank"
+        }
+      },
+      "HHI_AC": 0.76
+    },
+    "paynow": {
+      "net": "PayNow (Singapore, bank consortium)",
+      "places": {
+        "UserWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "PendingTx": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "BankConsortium": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.9978,
+          "HCC": "—"
+        },
+        "SettledTx": {
+          "kind": "visible",
+          "TCC": 0.6,
+          "BI": 0.9868,
+          "HCC": "—"
+        },
+        "RecipientWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "TrustHub": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_bank"
+        },
+        "SystemicLoad": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_bank"
+        }
+      },
+      "HHI_AC": 0.76
+    },
+    "kbzpay": {
+      "net": "KBZPay (Myanmar, bank single-dominant)",
+      "places": {
+        "UserWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "PendingTx": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "KBZBank": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.9978,
+          "HCC": "—"
+        },
+        "SettledTx": {
+          "kind": "visible",
+          "TCC": 0.6,
+          "BI": 0.9868,
+          "HCC": "—"
+        },
+        "RecipientWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "TrustHub": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_bank"
+        },
+        "SystemicLoad": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_bank"
+        }
+      },
+      "HHI_AC": 0.76
+    },
+    "gcash": {
+      "net": "GCash (Philippines, platform)",
+      "places": {
+        "UserWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "PendingTx": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "GlobeBackbone": {
+          "kind": "visible",
+          "TCC": 0.4,
+          "BI": 0.9978,
+          "HCC": "—"
+        },
+        "SettledTx": {
+          "kind": "visible",
+          "TCC": 0.6,
+          "BI": 0.9868,
+          "HCC": "—"
+        },
+        "RecipientWallet": {
+          "kind": "visible",
+          "TCC": 0.2,
+          "BI": 0.0002,
+          "HCC": "—"
+        },
+        "TrustHub": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_priv"
+        },
+        "SystemicLoad": {
+          "kind": "invisible",
+          "TCC": "—",
+          "BI": "—",
+          "HCC": "⊤_priv"
+        }
+      },
+      "HHI_AC": 0.76
+    }
+  },
+  "hotspots": {
+    "bakong": {
+      "place": "NBCBackbone",
+      "BI": 0.9978
+    },
+    "paynow": {
+      "place": "BankConsortium",
+      "BI": 0.9978
+    },
+    "kbzpay": {
+      "place": "KBZBank",
+      "BI": 0.9978
+    },
+    "gcash": {
+      "place": "GlobeBackbone",
+      "BI": 0.9978
+    }
+  },
+  "lesson": "Backbone 構造の集中度 (HHI-AC) と単一ホットスポット (max BI) は backbone タイプによらず共通の場所に集中する傾向。これは notes/16 主張4 「H-Petri Net の場所中心性は backbone タイプを横断する構造的不変量」を数値で確認するもの。"
+}

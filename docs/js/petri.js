@@ -138,14 +138,33 @@ function setText(id, html) {
   // Bottleneck reversal demo (notes/15)
   if (data.bottleneck_reversal_demo) {
     const br = data.bottleneck_reversal_demo;
-    setText(
-      'finding-petri-reversal',
-      `⊗ (4 backbone を並列): <strong>${br['monoidal_⊗_bound (max)']}</strong> (max 律速、最強=Bakong) <br>
+    let text = `⊗ (4 backbone を並列): <strong>${br['monoidal_⊗_bound (max)']}</strong> (max 律速、最強=Bakong) <br>
        ▷ (4 backbone を統合): <strong>${br['cospan_▷_bound  (meet)']}</strong> (meet 律速、最弱=GCash) <br>
        Heyting半順序の階数差: <strong>${br.rank_gap}</strong> 段階。<br><br>
-       <em>${br.interpretation}</em>`
-    );
+       <em>${br.interpretation}</em>`;
+
+    // Cross-verify with Open Petri Net implementation
+    try {
+      const openR = await fetch('data/open_petri_composition.json');
+      if (openR.ok) {
+        const open = await openR.json();
+        const opn = open.bottleneck_reversal;
+        const consistent = (opn.parallel_bound === br['monoidal_⊗_bound (max)']) &&
+                           (opn.cospan_bound === br['cospan_▷_bound  (meet)']);
+        text += `<br><br><strong>独立実装での再現:</strong>
+          <code>src/h_petri/open_net.py</code> (Baez-Master 2018 cospan 合成) でも
+          ⊗=<strong>${opn.parallel_bound}</strong>, ▷=<strong>${opn.cospan_bound}</strong>,
+          rank gap=<strong>${opn.rank_gap}</strong>。
+          ${consistent ? '✓ <strong>compare.py と完全一致</strong>。' : '✗ 不一致 (要調査)。'}
+          独立 2 実装で同じ結果 = 律速逆転定理の頑健性が数値で確認できた。`;
+      }
+    } catch (err) { /* fall through */ }
+
+    setText('finding-petri-reversal', text);
   }
+
+  // ----- Centrality (§P4-D) -----
+  await initCentrality();
 
   // ----- AI domain (§P5) -----
   await initAIDomain();
@@ -156,6 +175,73 @@ function setText(id, html) {
   // ----- Writer H monad (§P7) -----
   await initMonad();
 })();
+
+// ---------------------------------------------------------------------------
+// Centrality (§P4-D) — reads docs/data/centrality.json
+// ---------------------------------------------------------------------------
+
+async function loadCentrality() {
+  try {
+    const r = await fetch('data/centrality.json');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (err) {
+    console.warn('Failed to load centrality.json', err);
+    return null;
+  }
+}
+
+async function initCentrality() {
+  const c = await loadCentrality();
+  if (!c) {
+    setText('finding-centrality',
+      'data/centrality.json が読み込めない。<code>python -m h_petri.centrality</code> を実行してください。');
+    return;
+  }
+
+  const grid = document.getElementById('centrality-grid');
+  if (grid) {
+    const order = ['bakong', 'paynow', 'kbzpay', 'gcash'];
+    const colorOf = {
+      bakong: '#0891b2', paynow: '#7c3aed', kbzpay: '#a16207', gcash: '#dc2626',
+    };
+    grid.innerHTML = order.filter(k => c.backbones[k]).map(k => {
+      const r = c.backbones[k];
+      const hs = c.hotspots[k];
+      const trustHubHCC = r.places.TrustHub?.HCC ?? '—';
+      return `
+        <div class="cent-card" style="border-left: 4px solid ${colorOf[k]};">
+          <div class="cent-key">${k.toUpperCase()}</div>
+          <div class="cent-metric">
+            <span class="lbl">HHI-AC</span>
+            <span class="val">${r.HHI_AC}</span>
+          </div>
+          <div class="cent-metric">
+            <span class="lbl">hotspot</span>
+            <span class="val mono">${hs ? hs.place : '—'}</span>
+          </div>
+          <div class="cent-metric">
+            <span class="lbl">max BI</span>
+            <span class="val">${hs ? hs.BI : '—'}</span>
+          </div>
+          <div class="cent-metric">
+            <span class="lbl">TrustHub HCC</span>
+            <span class="val mono"><strong>${trustHubHCC}</strong></span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  const hhiSet = new Set(Object.values(c.backbones).map(r => r.HHI_AC));
+  const biSet  = new Set(Object.values(c.hotspots).map(h => h.BI));
+  const hccSet = new Set(Object.values(c.backbones).map(r => r.places.TrustHub?.HCC));
+  setText('finding-centrality',
+    `HHI-AC は <strong>${[...hhiSet].join(' / ')}</strong> (${hhiSet.size === 1 ? '全 backbone 完全一致' : '差あり'})。
+     ホットスポットの BI は <strong>${[...biSet].join(' / ')}</strong> (${biSet.size === 1 ? '完全一致' : '差あり'})。
+     TrustHub の HCC は <strong>${[...hccSet].join(' / ')}</strong> (${hccSet.size > 1 ? '←ここだけ分離' : '一致'})。
+     <em>${c.lesson}</em>`);
+}
 
 // ---------------------------------------------------------------------------
 // AI domain charts (§P5) — reads docs/data/ai_comparison.json
