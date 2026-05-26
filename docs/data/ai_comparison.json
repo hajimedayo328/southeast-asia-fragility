@@ -1,23 +1,19 @@
 {
   "config": {
-    "num_prompts": 3
+    "num_queries": 3
   },
-  "ai_backbones": {
+  "backbones": {
     "chatgpt": {
       "name": "ChatGPT (OpenAI, private platform)",
-      "backbone_type": "platform",
+      "backbone_type": "platform_private",
       "steps": 15,
-      "final_visible": {
-        "User": 997,
-        "PromptInQueue": 0,
-        "OpenAIBackbone": 1,
-        "ResponseReady": 0,
-        "UserOutput": 3
-      },
       "final_invisible": {
         "TrustInLLM": "⊤_priv",
         "AtrophyOfThinking": "⊤_priv"
       },
+      "trust_reached_T_PUB_at_step": null,
+      "trust_reached_T_BANK_at_step": null,
+      "trust_reached_T_PRIV_at_step": 2,
       "trust_curve_ranks": [
         0,
         0,
@@ -57,19 +53,15 @@
     },
     "claude": {
       "name": "Claude (Anthropic, private platform + safety focus)",
-      "backbone_type": "platform",
+      "backbone_type": "platform_private",
       "steps": 15,
-      "final_visible": {
-        "User": 997,
-        "PromptInQueue": 0,
-        "AnthropicBackbone": 1,
-        "ResponseReady": 0,
-        "UserOutput": 3
-      },
       "final_invisible": {
         "TrustInLLM": "⊤_priv",
         "AtrophyOfThinking": "⊤_priv"
       },
+      "trust_reached_T_PUB_at_step": null,
+      "trust_reached_T_BANK_at_step": null,
+      "trust_reached_T_PRIV_at_step": 2,
       "trust_curve_ranks": [
         0,
         0,
@@ -109,19 +101,15 @@
     },
     "llama": {
       "name": "Llama (Meta open weights, distributed)",
-      "backbone_type": "bank_consortium",
+      "backbone_type": "open_consortium",
       "steps": 15,
-      "final_visible": {
-        "User": 997,
-        "PromptInQueue": 0,
-        "OpenModelInfrastructure": 1,
-        "ResponseReady": 0,
-        "UserOutput": 3
-      },
       "final_invisible": {
         "TrustInLLM": "⊤_bank",
         "AtrophyOfThinking": "⊤_bank"
       },
+      "trust_reached_T_PUB_at_step": null,
+      "trust_reached_T_BANK_at_step": 2,
+      "trust_reached_T_PRIV_at_step": 2,
       "trust_curve_ranks": [
         0,
         0,
@@ -159,21 +147,17 @@
         2
       ]
     },
-    "govt_ai": {
+    "govai": {
       "name": "Government AI (hypothetical, central-bank-equivalent)",
-      "backbone_type": "central_bank",
+      "backbone_type": "central_state_hypothetical",
       "steps": 15,
-      "final_visible": {
-        "User": 997,
-        "PromptInQueue": 0,
-        "StateAIInfrastructure": 1,
-        "ResponseReady": 0,
-        "UserOutput": 3
-      },
       "final_invisible": {
         "TrustInLLM": "⊤_pub",
         "AtrophyOfThinking": "⊤_pub"
       },
+      "trust_reached_T_PUB_at_step": 2,
+      "trust_reached_T_BANK_at_step": 2,
+      "trust_reached_T_PRIV_at_step": 2,
       "trust_curve_ranks": [
         0,
         0,
@@ -212,25 +196,97 @@
       ]
     }
   },
-  "isomorphism_with_finance": {
-    "ChatGPT": "GCash (両方 ⊤_priv 民間集中)",
-    "Claude": "GCash (同じ Heyting rank、ただし安全性重視で実質上位)",
-    "Llama": "PayNow (両方 ⊤_bank 分散構造)",
-    "Government AI (hypothetical)": "Bakong (両方 ⊤_pub 公的保証)"
-  },
   "bottleneck_reversal_demo": {
     "trust_uppers": {
       "chatgpt": "⊤_priv",
       "claude": "⊤_priv",
       "llama": "⊤_bank",
-      "govt_ai": "⊤_pub"
+      "govai": "⊤_pub"
     },
-    "monoidal_⊗_bound (max)": "⊤_pub",
-    "cospan_▷_bound  (meet)": "⊤_priv",
+    "monoidal_⊗_bound (max, user picks best LLM)": "⊤_pub",
+    "cospan_▷_bound  (meet, multi-agent chain)": "⊤_priv",
     "rank_gap": 2,
-    "interpretation": "並列利用 (ユーザーが LLM を選べる、⊗): 最強は ⊤_pub (政府AI想定 or Llama)。多重 agent chain (▷): 最弱に律速 → ⊤_priv (ChatGPT/Claude に律速)。AI ドメインでも Ghrist-Gould-Lopez 律速逆転が成立。"
+    "interpretation": "If a user picks the strongest LLM (⊗), they get ⊤_pub. But if multi-agent chains require ALL LLMs (▷, e.g. ReAct or multi-step pipelines depending on different vendors), the system is bounded by the weakest = ⊤_priv. Same set of LLMs, different composition direction, different bottleneck. Mirrors notes/15 / notes/26 for ASEAN backbones."
   },
-  "interpretation": {
-    "cross_domain": "ChatGPT が止まれば全世界の AI ユーザーが詰むのは、M-Pesa 障害で Kenya 経済が止まるのと同型構造。同じ Heyting値の不可視層 (TrustInLLM) が単一企業に集中。"
+  "cloudflare_2025_11_cascade": {
+    "description": "2025-11-18 Cloudflare Workers KV outage took ChatGPT, Claude, Sora, and other AI services down for ~5.5 hours, with Downdetector spiking to 11,183 reports. Modeled here by depressing TrustInLLM to ⊥ at a mid-step for backbones with type=platform_private (since they share Cloudflare CDN). Open-consortium and state backbones unaffected.",
+    "curves": {
+      "chatgpt": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "claude": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "llama": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "govai": [
+        0,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "structural_lesson": "Pair 2 from notes/23 (M-Pesa 2019 / Kenya 5h → Cloudflare 2025-11 / global 5.5h) is reproduced here at the code level: a single private backbone outage downgrades the visible Trust of all dependent services."
+  },
+  "isomorphism_with_asean": {
+    "description": "Per notes/18 §4.4: Bakong = GovAI (both ⊤_pub), PayNow = Llama (both ⊤_bank, consortium-like), GCash = ChatGPT/Claude (both ⊤_priv, single private). Same H-Petri Net structure (5 visible + 2 invisible places), different Heyting upper bounds. φ_P and φ_T (notes/23) are explicit at the code level."
   }
 }

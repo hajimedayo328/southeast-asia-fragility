@@ -146,4 +146,144 @@ function setText(id, html) {
        <em>${br.interpretation}</em>`
     );
   }
+
+  // ----- AI domain (§P5) -----
+  await initAIDomain();
 })();
+
+// ---------------------------------------------------------------------------
+// AI domain charts (§P5) — reads docs/data/ai_comparison.json
+// ---------------------------------------------------------------------------
+
+const AI_COLORS = {
+  govai:   '#0891b2',  // cyan (公的) ≈ Bakong
+  llama:   '#7c3aed',  // purple (分散) ≈ PayNow
+  claude:  '#a16207',  // amber-dark (民間) ≈ KBZPay
+  chatgpt: '#dc2626',  // red (民間) ≈ GCash
+};
+
+const AI_LABELS = {
+  govai:   'GovAI (仮想・公的 ⊤_pub)',
+  llama:   'Llama (Meta 開放配布 ⊤_bank)',
+  claude:  'Claude (Anthropic 民間 ⊤_priv)',
+  chatgpt: 'ChatGPT (OpenAI 民間 ⊤_priv)',
+};
+
+async function loadAI() {
+  try {
+    const r = await fetch('data/ai_comparison.json');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (err) {
+    console.warn('Failed to load ai_comparison.json', err);
+    return null;
+  }
+}
+
+function makeAIRankChart(canvasId, dataMap, yLabel) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  const firstKey = Object.keys(dataMap)[0];
+  const steps = dataMap[firstKey].map((_, i) => i);
+
+  const datasets = Object.entries(dataMap).map(([key, ranks]) => ({
+    label: AI_LABELS[key] || key,
+    data: ranks,
+    borderColor: AI_COLORS[key] || '#6b7280',
+    backgroundColor: (AI_COLORS[key] || '#6b7280') + '22',
+    borderWidth: 2.5,
+    pointRadius: 4,
+    pointHoverRadius: 6,
+    stepped: true,
+    tension: 0,
+  }));
+
+  return new Chart(ctx, {
+    type: 'line',
+    data: { labels: steps, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', align: 'end' },
+        tooltip: {
+          callbacks: {
+            label: (c) =>
+              `${c.dataset.label}: ${rankTickLabel(c.parsed.y)} (rank ${c.parsed.y})`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: '発火ステップ (LLM 質問サイクル)' },
+          ticks: { stepSize: 1, autoSkip: false, maxRotation: 0 },
+        },
+        y: {
+          title: { display: true, text: yLabel || 'Heyting値の階数' },
+          min: 0,
+          max: 3,
+          ticks: {
+            stepSize: 1,
+            callback: (v) => `${v}: ${rankTickLabel(v)}`,
+          },
+        },
+      },
+    },
+  });
+}
+
+async function initAIDomain() {
+  const ai = await loadAI();
+  if (!ai) {
+    setText(
+      'finding-ai-trust',
+      'data/ai_comparison.json が読み込めない。<code>python -m h_petri.compare_ai</code> を実行して生成してください。'
+    );
+    return;
+  }
+
+  const order = ['govai', 'llama', 'claude', 'chatgpt'].filter(k => ai.backbones[k]);
+
+  // Trust curve
+  const trustData = {};
+  for (const k of order) trustData[k] = ai.backbones[k].trust_curve_ranks;
+  makeAIRankChart('chart-ai-trust', trustData, 'TrustInLLM Heyting値の階数');
+
+  const finals = order
+    .map(k => `${k.toUpperCase()}=${ai.backbones[k].final_invisible.TrustInLLM}`)
+    .join(' / ');
+  setText(
+    'finding-ai-trust',
+    `4 LLM backbone を ${ai.config.num_queries} 質問サイクル動かした最終 TrustInLLM: ${finals}。
+     金融 backbone と <strong>完全に同じ階数の半順序</strong> が再現する。
+     これは「Heyting値階数は backbone タイプの本質的不変量」という主張の cross-domain 検証。`
+  );
+
+  // Cloudflare 2025-11 cascade
+  if (ai.cloudflare_2025_11_cascade && ai.cloudflare_2025_11_cascade.curves) {
+    const cascade = {};
+    for (const k of order) cascade[k] = ai.cloudflare_2025_11_cascade.curves[k];
+    makeAIRankChart('chart-ai-cascade', cascade, 'TrustInLLM (Cloudflare cascade injection)');
+    setText(
+      'finding-ai-cascade',
+      `中点で <strong>民間 LLM (ChatGPT, Claude) だけ Trust が ⊥ に降下</strong>、Llama / GovAI は影響なし。
+       2025-11-18 Cloudflare Workers KV 障害 (Downdetector 11,183 reports / 5.5h) を Petri net 上で再現。
+       「単一 stalk の障害が全 dependent サービスを同時に落とす」という
+       <strong>M-Pesa 2019 (Kenya 5h) と構造的に同型</strong>な事象 (notes/23 ペア2 / notes/25 sheaf)。`
+    );
+  }
+
+  // Bottleneck reversal in AI
+  if (ai.bottleneck_reversal_demo) {
+    const br = ai.bottleneck_reversal_demo;
+    // Append to trust finding
+    const existing = document.getElementById('finding-ai-trust');
+    if (existing) {
+      existing.innerHTML +=
+        `<br><br><strong>律速逆転 (AI 領域):</strong>
+         ⊗ (ユーザーが最強 LLM を選ぶ): <strong>${br['monoidal_⊗_bound (max, user picks best LLM)']}</strong> /
+         ▷ (multi-agent chain で全 LLM を直列に通す): <strong>${br['cospan_▷_bound  (meet, multi-agent chain)']}</strong>。
+         Heyting階数差 <strong>${br.rank_gap}</strong> 段階。ReAct や多段パイプラインを組むと最弱の ChatGPT に律速される。`;
+    }
+  }
+}

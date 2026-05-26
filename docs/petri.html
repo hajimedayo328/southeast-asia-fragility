@@ -30,6 +30,7 @@
   <a href="#heyting">Heyting値</a>
   <a href="#spec">共通CPN</a>
   <a href="#sim">比較</a>
+  <a href="#ai">AI領域</a>
   <a href="#conclusion">結論</a>
 </nav>
 
@@ -234,9 +235,62 @@
   </div>
 </section>
 
+<!-- ============ AI DOMAIN ============ -->
+<section id="ai">
+  <span class="section-num">§ P5 — CROSS-DOMAIN · AI DEPENDENCY</span>
+  <h2>同じ枠で AI 領域に当てる</h2>
+
+  <div class="plain-jp">
+    <p>H-Petri Net は <strong>モバイル金融専用じゃない</strong>。共通CPN規約 (§P3) の 5可視場所 + 2不可視場所 + 5遷移 をそのまま AI 領域に当てると、<strong>4 LLM backbone</strong> が金融の 4 backbone と <strong>同じ Heyting値階数</strong> で並ぶ。</p>
+    <p>対応関係 (notes/18 §4):</p>
+    <ul class="clean">
+      <li><strong>GovAI (仮想・公的)</strong> = Bakong (両方 ⊤_pub 公的保証)</li>
+      <li><strong>Llama (Meta 開放配布)</strong> = PayNow (両方 ⊤_bank 分散構造)</li>
+      <li><strong>ChatGPT / Claude (民間集中)</strong> = GCash (両方 ⊤_priv 単一企業)</li>
+    </ul>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 P5-A · LLM TrustInLLM の Heyting値</span>
+    <h3>4 LLM backbone の TrustInLLM 階数曲線</h3>
+    <p class="punchline">
+      GovAI は ⊤_pub、Llama は ⊤_bank、ChatGPT/Claude は ⊤_priv で頭打ち。
+      <strong>金融 backbone と同じ階数</strong>が AI 領域で再現する。
+    </p>
+    <div class="chart-box"><canvas id="chart-ai-trust"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-ai-trust">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 P5-B · Cloudflare 2025-11 cascade</span>
+    <h3>2025-11-18 Cloudflare Workers KV 障害を Petri net 上で再現</h3>
+    <p class="punchline">
+      Cloudflare CDN 経由の <strong>民間 LLM (ChatGPT, Claude) は同時に Trust が ⊥ に降下</strong>。
+      Llama (分散) と GovAI (公的) は影響なし。
+      これは <strong>共通 stalk の崩壊が H¹(F) を爆発させる sheaf-理論的事象</strong> (notes/25)。
+    </p>
+    <div class="chart-box"><canvas id="chart-ai-cascade"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-ai-cascade">データ読込中...</span></div>
+  </div>
+
+  <h3>金融と AI の構造的同型 — 翻訳関手 F</h3>
+  <p>
+    本セクションの主張は notes/26 の <strong>翻訳関手 F: 𝓒_finance → 𝓒_AI</strong> として書ける。
+    F は対象を「同じ Heyting階数の backbone」に送り、射 (関係) を保つ。
+    M-Pesa 2019 ↔ Cloudflare 2025-11 が <strong>strict functor</strong> として通る理由は、
+    両者が「単一民間 backbone の同時停止 = ⊥ への崩壊」という構造を共有しているから。
+  </p>
+  <p>
+    詳しくは
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/18_universal_isomorphism.md" target="_blank">notes/18 §4</a> /
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25 sheaf</a> /
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/26_translation_functor.md" target="_blank">notes/26 翻訳関手</a>。
+  </p>
+</section>
+
 <!-- ============ CONCLUSION ============ -->
 <section id="conclusion">
-  <span class="section-num">§ P5 — CONCLUSION & NEXT</span>
+  <span class="section-num">§ P6 — CONCLUSION & NEXT</span>
   <h2>結論 — 構造から脆さが見える</h2>
 
   <p>このページで示したこと:</p>

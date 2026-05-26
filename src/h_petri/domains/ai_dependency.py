@@ -228,7 +228,7 @@ def main():
             "interpretation": (
                 f"並列利用 (ユーザーが LLM を選べる、⊗): 最強は {join_value} "
                 f"(政府AI想定 or Llama)。多重 agent chain (▷): 最弱に律速 → {meet_value} "
-                f"(ChatGPT/Claude に律速)。AI ドメインでも Curry-Krishnan 律速逆転が成立。"
+                f"(ChatGPT/Claude に律速)。AI ドメインでも Ghrist-Gould-Lopez 2024 律速逆転が成立。"
             ),
         },
         "interpretation": {
