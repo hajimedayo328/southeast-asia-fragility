@@ -145,6 +145,9 @@ def petri_firing_as_writer_chain(net, initial_marking, sequence: list[str]) -> W
 
 def main():
     import sys
+    import json
+    from pathlib import Path
+
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
@@ -165,11 +168,11 @@ def main():
         " path-independence of total cost."
     )
 
-    # Bridge demo — apply to Bakong and GCash, compare logs
+    # Bridge demo — apply to all 4 finance backbones
     print("\n" + "-" * 70)
     print("Bridge demo: H-Petri Net firing sequence as Writer chain")
     print("-" * 70)
-    from h_petri.backbones import bakong, gcash
+    from h_petri.backbones import bakong, gcash, paynow, kbzpay
 
     SEQ = [
         "t1_InitiateSend",
@@ -179,9 +182,16 @@ def main():
         "t5_AcknowledgeReceipt",
     ] * 3
 
-    for builder, label in [(bakong.build_bakong_net, "Bakong"), (gcash.build_gcash_net, "GCash")]:
+    bridge_results = []
+    for builder, label in [
+        (bakong.build_bakong_net, "Bakong"),
+        (paynow.build_paynow_net, "PayNow"),
+        (kbzpay.build_kbzpay_net, "KBZPay"),
+        (gcash.build_gcash_net, "GCash"),
+    ]:
         net = builder()
         w = petri_firing_as_writer_chain(net, net.initial, SEQ)
+        bridge_results.append({"backbone": label, "kleisli_log": w.log})
         print(f"  {label:8s} → final Writer log = {w.log}")
 
     print(
@@ -189,6 +199,32 @@ def main():
         " Same chain length, structurally different total cost. This is the"
         " monadic restatement of the §P4 finding."
     )
+
+    # Write JSON for Pages consumption
+    bundle = {
+        "description": (
+            "Writer H monad — invisible cost accumulation as a categorical "
+            "structure (notes/24 §3). Verified that for the 4-level Heyting "
+            "algebra, all permutations of a fixed list of costs yield the "
+            "same total log (Effect Accumulation Theorem, §3.3)."
+        ),
+        "effect_accumulation": v,
+        "bridge_demo": {
+            "sequence_length": len(SEQ),
+            "results": bridge_results,
+            "lesson": (
+                "Same Kleisli chain length (15 arrows), but the accumulated "
+                "log differs by Heyting rank because each transition emits a "
+                "different cost level. The monadic ∨-accumulation re-derives "
+                "the §P4 backbone separation without simulating tokens."
+            ),
+        },
+    }
+    out_path = Path(__file__).resolve().parent.parent.parent.parent / "docs" / "data" / "writer_h.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(bundle, f, ensure_ascii=False, indent=2)
+    print(f"\nWrote: {out_path}")
 
 
 if __name__ == "__main__":

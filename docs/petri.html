@@ -31,6 +31,8 @@
   <a href="#spec">共通CPN</a>
   <a href="#sim">比較</a>
   <a href="#ai">AI領域</a>
+  <a href="#sheaf">Sheaf H¹</a>
+  <a href="#monad">Writer H</a>
   <a href="#conclusion">結論</a>
 </nav>
 
@@ -288,9 +290,89 @@
   </p>
 </section>
 
+<!-- ============ SHEAF H1 ============ -->
+<section id="sheaf">
+  <span class="section-num">§ P6 — SHEAF H¹ · 局所→大域のリスク</span>
+  <h2>共通 stalk の崩壊を H¹ で捕まえる</h2>
+
+  <div class="plain-jp">
+    <p>ASEAN 各国 (or 各 AI サービス) を点、隣接関係を辺とする 1-複体の上に、各点の Trust 値を <strong>Heyting値の sheaf</strong> として乗せる。すると <strong>H¹(F) = 隣接点で値が食い違う辺の数</strong> が「貼り合わせの障害 = 構造的に潜むリスク」を測る。</p>
+    <p>1997 と Cloudflare で <strong>同じ signature</strong> が出る — これが notes/25 の主張。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 P6-A · 1997 AFC の H¹ 階段</span>
+    <h3>USD ペッグ崩壊で H¹ が爆発する</h3>
+    <p class="punchline">
+      1996-12 (USD ペッグ安定) は H¹=0。1997-07 のタイバーツ崩壊で H¹=4。
+      1997-12 の伝染拡大で H¹=6。<strong>共通 stalk (USDペッグ) の崩壊が階段状に H¹ を押し上げる</strong>。
+    </p>
+    <div class="chart-box"><canvas id="chart-sheaf-afc"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-sheaf-afc">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 P6-B · Cloudflare 2025-11 の H⁰ 崩壊</span>
+    <h3>共通 stalk の崩壊は H⁰(meet) を ⊥ に落とす</h3>
+    <p class="punchline">
+      Cloudflare の場合は <strong>H⁰(meet)</strong> が ⊤_priv → ⊥ → ⊤_priv と落ちて戻る。
+      これは「共通 stalk が瞬間的に死ぬ → 全域の最弱値が ⊥ に支配される」事象。
+      1997 とは H¹ vs H⁰ で出方は違うが、<strong>共通 stalk 崩壊という構造的事象</strong>は同じ。
+    </p>
+    <div class="chart-box"><canvas id="chart-sheaf-cf"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-sheaf-cf">データ読込中...</span></div>
+  </div>
+
+  <p>
+    実装: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/sheaf/cech.py" target="_blank"><code>src/h_petri/sheaf/cech.py</code></a> /
+    出力: <code>docs/data/sheaf_h1.json</code> / 理論: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25</a>。
+  </p>
+</section>
+
+<!-- ============ WRITER H MONAD ============ -->
+<section id="monad">
+  <span class="section-num">§ P7 — WRITER H MONAD · 副作用累積</span>
+  <h2>「便利の暴走」をモナドで書く</h2>
+
+  <div class="plain-jp">
+    <p>H-Petri Net の発火は <strong>Writer H モナド</strong> (Heyting値ログ付きの計算) と完全に同型。各遷移が「値は変えず、Heyting値の log を累積するだけ」の Kleisli 射として書ける。</p>
+    <p>このとき <strong>累積順序を入れ替えても結果は同じ</strong> — これが Effect Accumulation Theorem (notes/24 §3.3)。Heyting半順序の <code>∨</code> がモノイドなので、結合則と可換則が自動的に保証される。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 P7-A · Effect Accumulation Theorem</span>
+    <h3>6個のコストの全順列 720通りで同じ⊤_pubに収束</h3>
+    <p class="punchline">
+      <code>{⊤_priv, ⊤_bank, ⊤_priv, ⊤_pub, ⊥, ⊤_bank}</code> の 6個を 720 通り並べ替えても、
+      <strong>全ての並べ方で最終ログは ⊤_pub</strong>。
+      Monoid 結合律 + Heyting <code>∨</code> の冪等性が「累積順依存性ゼロ」を構造的に保証してる。
+    </p>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-monad-eat">データ読込中...</span></div>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">仮説 P7-B · Bridge — 4 backbone を Kleisli chain で再現</span>
+    <h3>同じ chain 長でも backbone タイプで log が分かれる</h3>
+    <p class="punchline">
+      Bakong, PayNow, KBZPay, GCash の発火列を Writer H 上の Kleisli chain として書き直すと、
+      §P4 と <strong>完全に同じ階数の分離</strong> (⊤_pub / ⊤_bank / ⊤_priv) が出る。
+      Petri net シミュレータを動かさずに、モナド演算だけで backbone の構造的差を計算できる。
+    </p>
+    <div id="monad-bridge-grid" class="monad-bridge-grid">
+      <div class="bridge-empty">データ読込中...</div>
+    </div>
+  </div>
+
+  <p>
+    実装: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/monad/writer_h.py" target="_blank"><code>src/h_petri/monad/writer_h.py</code></a> /
+    出力: <code>docs/data/writer_h.json</code> / 理論: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/24_monad_side_effects.md" target="_blank">notes/24</a>。
+    これで <strong>圏論本気適用3層 (モナド / 層 / 翻訳関手)</strong> が全部 Pages で見える状態に。
+  </p>
+</section>
+
 <!-- ============ CONCLUSION ============ -->
 <section id="conclusion">
-  <span class="section-num">§ P6 — CONCLUSION & NEXT</span>
+  <span class="section-num">§ P8 — CONCLUSION & NEXT</span>
   <h2>結論 — 構造から脆さが見える</h2>
 
   <p>このページで示したこと:</p>

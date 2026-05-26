@@ -149,6 +149,12 @@ function setText(id, html) {
 
   // ----- AI domain (§P5) -----
   await initAIDomain();
+
+  // ----- Sheaf H¹ (§P6) -----
+  await initSheaf();
+
+  // ----- Writer H monad (§P7) -----
+  await initMonad();
 })();
 
 // ---------------------------------------------------------------------------
@@ -285,5 +291,196 @@ async function initAIDomain() {
          ▷ (multi-agent chain で全 LLM を直列に通す): <strong>${br['cospan_▷_bound  (meet, multi-agent chain)']}</strong>。
          Heyting階数差 <strong>${br.rank_gap}</strong> 段階。ReAct や多段パイプラインを組むと最弱の ChatGPT に律速される。`;
     }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Sheaf H¹ charts (§P6) — reads docs/data/sheaf_h1.json
+// ---------------------------------------------------------------------------
+
+const RANK_OF = { '⊥': 0, '⊤_priv': 1, '⊤_bank': 2, '⊤_pub': 3 };
+
+async function loadSheaf() {
+  try {
+    const r = await fetch('data/sheaf_h1.json');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (err) {
+    console.warn('Failed to load sheaf_h1.json', err);
+    return null;
+  }
+}
+
+function makeSheafChart(canvasId, snapshots, opts) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  const labels = snapshots.map((s, i) => `T${i}`);
+
+  const datasets = [];
+  if (opts.showH1) {
+    datasets.push({
+      label: 'H¹ (gluing failures)',
+      data: snapshots.map(s => s.h1_count),
+      borderColor: '#dc2626',
+      backgroundColor: '#dc262622',
+      borderWidth: 2.5,
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      tension: 0,
+      stepped: true,
+      yAxisID: 'y',
+    });
+  }
+  if (opts.showH0) {
+    datasets.push({
+      label: 'H⁰(meet) Heyting rank',
+      data: snapshots.map(s => RANK_OF[s.h0_meet] ?? 0),
+      borderColor: '#0891b2',
+      backgroundColor: '#0891b222',
+      borderWidth: 2.5,
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      tension: 0,
+      stepped: true,
+      yAxisID: opts.showH1 ? 'y1' : 'y',
+    });
+  }
+
+  const scales = {
+    x: {
+      title: { display: true, text: 'スナップショット (時系列)' },
+      ticks: {
+        callback: (_, i) => `${labels[i]}\n${(snapshots[i].snapshot || '').slice(0, 24)}`,
+        maxRotation: 0,
+        font: { size: 10 },
+      },
+    },
+  };
+  if (opts.showH1) {
+    scales.y = {
+      title: { display: true, text: 'H¹ (# inconsistent edges)' },
+      beginAtZero: true,
+      ticks: { stepSize: 1 },
+      position: 'left',
+    };
+  }
+  if (opts.showH0) {
+    const key = opts.showH1 ? 'y1' : 'y';
+    scales[key] = {
+      title: { display: true, text: 'H⁰(meet) rank' },
+      min: 0,
+      max: 3,
+      ticks: {
+        stepSize: 1,
+        callback: (v) => `${v}: ${rankTickLabel(v)}`,
+      },
+      position: opts.showH1 ? 'right' : 'left',
+      grid: opts.showH1 ? { drawOnChartArea: false } : undefined,
+    };
+  }
+
+  return new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', align: 'end' },
+        tooltip: {
+          callbacks: {
+            title: (items) => snapshots[items[0].dataIndex].snapshot,
+          },
+        },
+      },
+      scales,
+    },
+  });
+}
+
+async function initSheaf() {
+  const s = await loadSheaf();
+  if (!s) {
+    setText('finding-sheaf-afc',
+      'data/sheaf_h1.json が読み込めない。<code>python -m h_petri.sheaf.cech</code> を実行してください。');
+    return;
+  }
+
+  // 1997 AFC — show H¹
+  const afc = s.scenario_1997_afc.timeline;
+  makeSheafChart('chart-sheaf-afc', afc, { showH1: true, showH0: true });
+  const afcSeries = afc.map(x => x.h1_count).join(' → ');
+  setText('finding-sheaf-afc',
+    `H¹ 推移: <strong>${afcSeries}</strong>。
+     ${afc.length} スナップショット (USDペッグ崩壊から MY 資本規制まで)。
+     共通 stalk (USDペッグ) が消えた瞬間に H¹ が階段状に上昇、
+     H⁰(meet) は <strong>${afc[0].h0_meet} → ${afc[afc.length-1].h0_meet}</strong> に低下。
+     <em>これが「sheaf 視点での通貨危機の構造的指紋」</em>。`);
+
+  // Cloudflare — show H¹ and H⁰
+  const cf = s.scenario_cloudflare_2025_11.timeline;
+  makeSheafChart('chart-sheaf-cf', cf, { showH1: true, showH0: true });
+  const cfH0 = cf.map(x => x.h0_meet).join(' → ');
+  setText('finding-sheaf-cf',
+    `H⁰(meet) 推移: <strong>${cfH0}</strong>。
+     09:30 の Workers KV 障害で全 Cloudflare-fronted AI サービスが ⊥ に同時降下、
+     H⁰(meet) が <strong>⊤_priv → ⊥</strong> に崩壊。約 5.5h 後に復旧。
+     1997 と <em>H¹ の出方は違うが、共通 stalk 崩壊という構造的事象は同じ</em>。
+     これが notes/23 予言ペア2 (M-Pesa 2019 ↔ Cloudflare 2025-11) の sheaf-理論的根拠。`);
+}
+
+// ---------------------------------------------------------------------------
+// Writer H monad (§P7) — reads docs/data/writer_h.json
+// ---------------------------------------------------------------------------
+
+async function loadMonad() {
+  try {
+    const r = await fetch('data/writer_h.json');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (err) {
+    console.warn('Failed to load writer_h.json', err);
+    return null;
+  }
+}
+
+async function initMonad() {
+  const m = await loadMonad();
+  if (!m) {
+    setText('finding-monad-eat',
+      'data/writer_h.json が読み込めない。<code>python -m h_petri.monad.writer_h</code> を実行してください。');
+    return;
+  }
+
+  // Effect Accumulation Theorem
+  const eat = m.effect_accumulation;
+  setText('finding-monad-eat',
+    `投入コスト: <code>${JSON.stringify(eat.costs)}</code><br>
+     順列数: <strong>${eat.num_permutations_tested}</strong> 通り。
+     全て同じログ?: <strong>${eat.all_permutations_yield_same_log ? '✓ YES' : '✗ NO'}</strong>。
+     観測された distinct なログ: <strong>${eat.distinct_logs_observed.join(', ')}</strong>
+     (= 期待値 <code>${eat.expected_join}</code> のみ)。
+     <em>結合律と冪等性が「累積順依存性ゼロ」を構造的に保証している。</em>`);
+
+  // Bridge demo
+  const grid = document.getElementById('monad-bridge-grid');
+  if (grid && m.bridge_demo) {
+    const colorOf = {
+      'Bakong': '#0891b2',
+      'PayNow': '#7c3aed',
+      'KBZPay': '#a16207',
+      'GCash':  '#dc2626',
+    };
+    grid.innerHTML = m.bridge_demo.results.map(r => `
+      <div class="bridge-card" style="border-left: 4px solid ${colorOf[r.backbone] || '#6b7280'};">
+        <div class="bridge-backbone">${r.backbone}</div>
+        <div class="bridge-log"><code>${r.kleisli_log}</code></div>
+      </div>
+    `).join('') + `
+      <div class="bridge-note">
+        Chain 長 <strong>${m.bridge_demo.sequence_length} 射</strong>、全 backbone で同じ。
+        累積ログだけが backbone タイプで分離している。
+      </div>
+    `;
   }
 }

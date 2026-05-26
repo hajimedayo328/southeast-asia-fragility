@@ -1,0 +1,41 @@
+{
+  "description": "Writer H monad — invisible cost accumulation as a categorical structure (notes/24 §3). Verified that for the 4-level Heyting algebra, all permutations of a fixed list of costs yield the same total log (Effect Accumulation Theorem, §3.3).",
+  "effect_accumulation": {
+    "costs": [
+      "⊤_priv",
+      "⊤_bank",
+      "⊤_priv",
+      "⊤_pub",
+      "⊥",
+      "⊤_bank"
+    ],
+    "expected_join": "⊤_pub",
+    "num_permutations_tested": 720,
+    "all_permutations_yield_same_log": true,
+    "distinct_logs_observed": [
+      "⊤_pub"
+    ]
+  },
+  "bridge_demo": {
+    "sequence_length": 15,
+    "results": [
+      {
+        "backbone": "Bakong",
+        "kleisli_log": "⊤_pub"
+      },
+      {
+        "backbone": "PayNow",
+        "kleisli_log": "⊤_bank"
+      },
+      {
+        "backbone": "KBZPay",
+        "kleisli_log": "⊤_bank"
+      },
+      {
+        "backbone": "GCash",
+        "kleisli_log": "⊤_priv"
+      }
+    ],
+    "lesson": "Same Kleisli chain length (15 arrows), but the accumulated log differs by Heyting rank because each transition emits a different cost level. The monadic ∨-accumulation re-derives the §P4 backbone separation without simulating tokens."
+  }
+}

@@ -885,6 +885,55 @@ a:hover {
   .pair-table td { padding: 8px 6px; }
 }
 
+/* ----- Writer H monad bridge cards (§P7) ----- */
+.monad-bridge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.monad-bridge-grid .bridge-card {
+  padding: 16px 18px;
+  background: var(--line-soft);
+  border-radius: 0 3px 3px 0;
+}
+
+.monad-bridge-grid .bridge-backbone {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--fg-mute);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.monad-bridge-grid .bridge-log {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--mono);
+}
+
+.monad-bridge-grid .bridge-log code {
+  background: transparent;
+  padding: 0;
+}
+
+.monad-bridge-grid .bridge-note {
+  grid-column: 1 / -1;
+  font-size: 0.88rem;
+  color: var(--fg-sub);
+  padding: 8px 12px;
+  border-top: 1px dashed var(--line);
+}
+
+.monad-bridge-grid .bridge-empty {
+  grid-column: 1 / -1;
+  color: var(--fg-mute);
+  font-style: italic;
+  padding: 16px;
+}
+
 @media (max-width: 600px) {
   section { padding: 60px 0; }
   .hero { padding-top: 32px; }
