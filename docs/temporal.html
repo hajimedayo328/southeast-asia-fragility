@@ -34,6 +34,7 @@
   <a href="#prediction-pairs">予言ペア</a>
   <a href="#lag-trend">ラグ縮小</a>
   <a href="#forecast-2030">2030予測</a>
+  <a href="#translation-functor">翻訳関手</a>
   <a href="#conclusion">結論</a>
 </nav>
 
@@ -292,9 +293,87 @@
   <p>どちらに転んでも研究的価値がある。「予測 → 検証」のサイクルを回す枠組み。</p>
 </section>
 
+<!-- ============ TRANSLATION FUNCTOR ============ -->
+<section id="translation-functor">
+  <span class="section-num">§ T10 — TRANSLATION FUNCTOR · 予言の自然性</span>
+  <h2>「予言の強度 = 関手の自然性の度合い」</h2>
+
+  <div class="plain-jp">
+    <p>5つの予言ペアは <strong>翻訳関手 F: 𝓒_EA → 𝓒_Dev</strong> として書ける。F は東南アジア事象を発展国の類似事象に対応させ、射 (関係) を保つ。</p>
+    <p>F が <strong>strict</strong> (完全に自然) なら予言は最強。<strong>lax</strong> (一部の射で自然性が破れる) なら予言は部分的。F の自然性の度合いがそのまま予言の信頼度になる、というのが notes/26 の中心主張。</p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">仮説 T10 · 関手 F の strict/lax 分類</span>
+    <h3>5ペアを関手の自然性で並べ直す</h3>
+    <p class="punchline">
+      ペア2 (M-Pesa↔Cloudflare) が唯一の <strong>strict functor</strong>、残り4ペアは
+      <strong>lax / partial / quasi-natural</strong>。strict なペアほど信頼度が高い、
+      lax なペアほど「**忘却される情報**」(政治的非対称性、介入余地、規模差) が大きい。
+    </p>
+
+    <table class="pair-table">
+      <thead>
+        <tr><th>ペア</th><th>F の性質</th><th>信頼度</th><th>忘却される情報</th></tr>
+      </thead>
+      <tbody>
+        <tr class="strict">
+          <td><strong>2. M-Pesa ↔ Cloudflare</strong></td>
+          <td><span class="badge strict">strict</span></td>
+          <td>★★★★★</td>
+          <td>ほぼなし (時間スケール 5h ≈ 5.5h、両者 ⊤_priv で一致)</td>
+        </tr>
+        <tr class="quasi">
+          <td>3. GCash ↔ GAFA-AI</td>
+          <td><span class="badge quasi">quasi-natural</span></td>
+          <td>★★★★</td>
+          <td>規制エコシステムの違い (国内独占 vs グローバル独占)</td>
+        </tr>
+        <tr class="partial">
+          <td>5. Wave Money ↔ TikTok</td>
+          <td><span class="badge partial">partial</span></td>
+          <td>★★★</td>
+          <td>Dev側が未完成 (TikTok は切替未確定)</td>
+        </tr>
+        <tr class="lax">
+          <td>1. 1997 AFC ↔ 2008 Lehman</td>
+          <td><span class="badge lax">lax</span></td>
+          <td>★★★</td>
+          <td>事後介入で Heyting階数を上げられる余地 (TARP は ⊤_pub、IMF は ⊤_priv 維持)</td>
+        </tr>
+        <tr class="lax">
+          <td>4. メコン上流ダム ↔ 露天然ガス</td>
+          <td><span class="badge lax">lax</span></td>
+          <td>★★</td>
+          <td>政治的隠蔽 vs 公然 weaponization の戦略差</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="finding"><strong>わかったこと:</strong>
+      予言は「当たる/外れる」の二値じゃなく、<strong>関手の自然性の度合いで連続的に評価できる</strong>。
+      これで「どこまで信用していいか」「破れる境界はどこか」が categorical に言語化される。
+      Jia-Floridi 2025 の Kan拡張ツールをそのまま転用できる位置取り。
+    </div>
+  </div>
+
+  <h3>右Kan拡張 Ran_F で「忘却部分」を復元する</h3>
+  <p>
+    F が lax で破れる箇所は、<strong>右Kan拡張 Ran_F: 𝓒_Dev → 𝓒_EA</strong> で復元できる。
+    Ran_F(B) = lim<sub>F(A)→B</sub> A で「Dev事象 B に最も近い EA事象」を返す。
+    これで「予言が破れる境界条件」を数学的に書ける。
+  </p>
+  <p>
+    詳しくは <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/26_translation_functor.md" target="_blank">notes/26 翻訳関手</a> /
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25 sheaf cohomology</a> /
+    <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/24_monad_side_effects.md" target="_blank">notes/24 Writer H モナド</a>。
+    本プロジェクトの「圏論本気適用3層」(モナド / 層 / 翻訳関手) のうち、翻訳関手が予言可能性の measure を与える。
+  </p>
+</section>
+
 <!-- ============ CONCLUSION ============ -->
 <section id="conclusion">
-  <span class="section-num">§ T10 — CONCLUSION · 結論</span>
+  <span class="section-num">§ T11 — CONCLUSION · 結論</span>
   <h2>時間軸を入れて見えること</h2>
 
   <p>このページで示したこと:</p>

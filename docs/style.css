@@ -833,6 +833,58 @@ a:hover {
   padding: 16px;
 }
 
+/* ----- pair-table: translation functor F strict/lax classification ----- */
+.pair-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 24px 0;
+  font-size: 0.92rem;
+}
+
+.pair-table th,
+.pair-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.pair-table thead th {
+  border-bottom: 2px solid var(--fg);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+
+.pair-table tbody tr.strict   { background: rgba(8, 145, 178, 0.04); }
+.pair-table tbody tr.quasi    { background: rgba(124, 58, 237, 0.04); }
+.pair-table tbody tr.partial  { background: rgba(161, 98, 7, 0.04); }
+.pair-table tbody tr.lax      { background: rgba(220, 38, 38, 0.04); }
+
+.pair-table .badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+.pair-table .badge.strict  { background: #0891b2; color: white; }
+.pair-table .badge.quasi   { background: #7c3aed; color: white; }
+.pair-table .badge.partial { background: #a16207; color: white; }
+.pair-table .badge.lax     { background: #dc2626; color: white; }
+
+@media (max-width: 700px) {
+  .pair-table { font-size: 0.82rem; }
+  .pair-table th,
+  .pair-table td { padding: 8px 6px; }
+}
+
 @media (max-width: 600px) {
   section { padding: 60px 0; }
   .hero { padding-top: 32px; }
