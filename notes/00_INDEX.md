@@ -161,13 +161,27 @@
 
 ## 実装との対応
 
-| 実装 | 関連 notes |
-|---|---|
-| `src/h_petri/core.py` | 06 (H-Petri Net) |
-| `src/h_petri/backbones/{bakong,gcash,paynow,kbzpay}.py` | 07 (共通CPN) |
-| `src/h_petri/centrality.py` | 16 (中心性) |
-| `src/h_petri/trust_timeline.py` | 17, 20 (時間関手) |
-| `src/h_petri/compare.py` | 06, 07 (動作確認) |
+| 実装 | 関連 notes | Pages |
+|---|---|---|
+| `src/h_petri/core.py` | 06 (H-Petri Net) | — |
+| `src/h_petri/backbones/{bakong,gcash,paynow,kbzpay}.py` | 07 (共通CPN) | petri.html §P4 |
+| `src/h_petri/domains/ai_dependency.py` | 18 (異分野同型), 26 (翻訳関手) | petri.html §P5 |
+| `src/h_petri/monad/writer_h.py` | 24 (Writer H モナド) | petri.html §P7 |
+| `src/h_petri/sheaf/cech.py` | 25 (層) | petri.html §P6 |
+| `src/h_petri/centrality.py` | 16 (中心性) | (未統合) |
+| `src/h_petri/trust_timeline.py` | 17, 20 (時間関手) | temporal.html §T1-T9 |
+| `src/h_petri/compare.py` | 06, 07 (金融比較ランナー) | — |
+| `src/h_petri/compare_ai.py` | 18 (AI比較ランナー + Cloudflare cascade) | — |
+
+### 出力 JSON と Pages の対応
+
+| JSON | 生成元 | 使用先 |
+|---|---|---|
+| `docs/data/petri_comparison.json` | `compare.py` | petri.html §P4 |
+| `docs/data/ai_comparison.json` | `compare_ai.py` | petri.html §P5 |
+| `docs/data/trust_timeline.json` | `trust_timeline.py` | temporal.html §T1-T9 |
+| `docs/data/sheaf_h1.json` | `sheaf/cech.py` | petri.html §P6 |
+| `docs/data/writer_h.json` | `monad/writer_h.py` | petri.html §P7 |
 
 ---
 

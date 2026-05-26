@@ -214,8 +214,8 @@
 <!-- ============ KEY FINDINGS ============ -->
 <section id="findings">
   <span class="section-num">§ 07 — KEY FINDINGS · 主要発見</span>
-  <h2>本プロジェクトで見えた 3つのこと</h2>
-  <p class="lede">「東南アジアの脆弱性は先進国の予言」を支える3つの具体的発見。</p>
+  <h2>本プロジェクトで見えた 4つのこと</h2>
+  <p class="lede">「東南アジアの脆弱性は先進国の予言」を支える 4 つの具体的発見。</p>
 
   <div class="hypothesis">
     <span class="hyp-id">発見 1 · 律速逆転 (越境統合の代償)</span>
@@ -256,6 +256,23 @@
     </p>
     <p class="claim">
       2025年11月の ChatGPT/Claude/Gemini 同時障害は、独立企業のはずが共通インフラ依存で同時崩壊 = M-Pesa 障害と同型構造。詳細は <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/18_universal_isomorphism.md">notes/18</a>。
+    </p>
+  </div>
+
+  <div class="hypothesis shadow">
+    <span class="hyp-id">発見 4 · 圏論本気適用 3 層 (モナド / 層 / 翻訳関手)</span>
+    <h3>「予言」を 3 つの圏論レイヤーでコード実装</h3>
+    <p class="punchline">
+      予言の構造を <strong>3 つの圏論的層</strong> でコードに落とした:
+      ① <strong>Writer H モナド</strong> — 720 順列すべてで同じ ⊤_pub に収束 (Effect Accumulation Theorem 構成的検証)、
+      ② <strong>Čech H¹ 層</strong> — 1997 AFC で H¹ が 0→4→6 と階段上昇、Cloudflare 2025-11 で H⁰(meet) が ⊤_priv→⊥ 崩壊、
+      ③ <strong>翻訳関手 F: 𝓒_EA → 𝓒_Dev</strong> — 5 予言ペアを strict / quasi / partial / lax で自然性分類。
+    </p>
+    <p class="claim">
+      これで「予言の強度 = 関手の自然性の度合い」が <strong>数値で測れる位置取り</strong>になった。
+      Jia-Floridi 2025 の Kan 拡張ツールセットがそのまま転用可能。
+      実装は <a href="petri.html#sheaf">Petri net §P6 (Sheaf)</a> / <a href="petri.html#monad">§P7 (Monad)</a> /
+      <a href="temporal.html#translation-functor">時間軸 §T10 (翻訳関手)</a>。
     </p>
   </div>
 </section>

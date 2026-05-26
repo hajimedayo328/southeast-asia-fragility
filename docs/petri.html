@@ -380,14 +380,26 @@
     <li>標準 Petri net + Heyting値拡張で、モバイル金融の信頼構造を圏論的に書ける</li>
     <li>4 backbone タイプは「Heyting値上限の半順序」として数学的に分類される</li>
     <li>同じ場所・遷移の net でも、不可視層の上限が永久に異なる</li>
+    <li>AI 領域 (ChatGPT/Claude/Llama/GovAI) でも金融と同じ階数分布が再現する (§P5)</li>
+    <li>Sheaf H¹ で 1997 と Cloudflare の構造的同型が数値で確認できる (§P6)</li>
+    <li>Writer H モナドで 4 backbone の分離を Petri net シミュレータ無しに再現できる (§P7)</li>
     <li>これは Jia-Floridi 2025 の方法論を別ドメインに転用した結果</li>
+  </ul>
+
+  <h3>実装完了済</h3>
+  <ul class="clean">
+    <li>✅ 金融 4 backbone (Bakong / PayNow / KBZPay / GCash)</li>
+    <li>✅ AI 4 backbone (ChatGPT / Claude / Llama / GovAI) + Cloudflare 2025-11 cascade</li>
+    <li>✅ Čech H¹ sheaf (1997 AFC + Cloudflare 2025-11)</li>
+    <li>✅ Writer H モナド + Effect Accumulation Theorem 構成的検証</li>
+    <li>✅ 翻訳関手 F の strict / quasi / partial / lax 分類 (時間軸タブ §T10)</li>
   </ul>
 
   <h3>次の実装目標</h3>
   <ul class="clean">
-    <li>PayNow (銀行型, SG), KBZPay (銀行型, MM) を追加 → 4 backbone 比較完成</li>
-    <li>Open Petri Net 合成で ASEAN5 越境決済 → <strong>Meet Bottleneck 定理</strong>の数値検証</li>
-    <li>主張4 (場所中心性 = ホットスポット) の実装</li>
+    <li>Open Petri Net 合成 (Baez-Master 2018) で ASEAN5 越境決済 → <strong>Meet Bottleneck 定理</strong>の数値検証</li>
+    <li>主張4 (場所中心性 TCC / BI / HCC / HHI-AC) を Pages 上で可視化</li>
+    <li>Mermaid / SVG 概念図で翻訳関手 F・sheaf・モナド合成を図解</li>
   </ul>
 
   <h3>関連する理論ノート</h3>
