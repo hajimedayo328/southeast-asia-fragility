@@ -46,7 +46,7 @@
 **やること**:
 - Buldyrev 2010 / Bashan 2013 / Danziger 2022 のモデルを ASEAN データに当てる
 - 「中間距離依存リンクが最脆弱」（Bashan 2013）vs リープフロッグ実態（携帯+ミニグリッド）の **衝突仮説を検証**
-- Specker 2020 の compositional power system framework を ASEAN10で並列展開
+- Nolan et al. (Compositional Models for Power Systems, arXiv:2009.06833) の compositional power system framework を ASEAN10で並列展開
 
 **評価**:
 - 新規性: ★★★★★（穴D, E を同時に埋める。**反直観仮説の検証**）
@@ -152,7 +152,7 @@
 ### 最初の一週間でやる小タスク (今週中)
 
 1. **arxiv:2512.09117 を取得**して 1 回読み切る (方向1の起点)
-2. **arxiv:2009.06833 (Specker)** を取得して compositional power system の構造を理解する (方向2の起点)
+2. **arxiv:2009.06833 (Nolan et al., Compositional Models for Power Systems)** を取得して compositional power system の構造を理解する (方向2の起点)
 3. **Mutiso 2025 (Science)** の本文を大学経由で入手する手配
 4. **Bui 2023 Nature Comm** を取得してベトナム3層データの形式を確認する (方向2 + ベトナム派遣準備)
 

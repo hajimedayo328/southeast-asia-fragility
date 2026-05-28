@@ -10,7 +10,7 @@
 
 ```
                       [軸①] 圏論×システム
-                    Specker 2020 (power)
+                    Nolan et al. 2020 (power)
                     Moeller-Vasilakopoulou 2020 (monoidal fibration)
                               │
 [軸③] 多層ネットワーク ─── ★本プロジェクト ─── [軸⑤] Higher Cat 応用
@@ -32,7 +32,7 @@ Danziger 2022                       Spivak Wiring Diagram系
 ## 各軸の最重要論文 TOP 3 ずつ
 
 ### 軸① 圏論×システム
-1. **Specker et al. 2020 "Compositional Models for Power Systems"** (arxiv 2009.06833)
+1. **Nolan, Pollard, Breiner, Anand, Subrahmanian 2020 "Compositional Models for Power Systems"** (arxiv 2009.06833)
    — Catlab.jl で電力系統に symmetric monoidal category 適用。**単一国・国比較なし・fibration なし**。本プロジェクトの差別化ポイントが明確。
 2. **Moeller & Vasilakopoulou 2020 "Monoidal Grothendieck Construction"** (TAC 35-31)
    — `p: 𝓘 → 𝓒` を monoidal fibration として書く理論基盤。応用が network model 止まり。
@@ -71,7 +71,7 @@ Danziger 2022                       Spivak Wiring Diagram系
 5軸のサーベイで共通して指摘された穴を整理:
 
 ### 穴A: 「国×インフラ」を fibration で扱った応用例が存在しない
-- 軸①（Specker等）と軸⑤（Moeller-Vasilakopoulou等）の両方から指摘。
+- 軸①（Nolan et al.等）と軸⑤（Moeller-Vasilakopoulou等）の両方から指摘。
 - 理論はある、単一国応用もある、**両者を繋ぐ研究がない**。
 - → 本プロジェクトの **最大の新規性候補**。
 
@@ -108,7 +108,7 @@ Danziger 2022                       Spivak Wiring Diagram系
 
 | draft仮説 | 既存研究との位置 | 評価 |
 |------|------|------|
-| 機能圏 𝓕 + 国の圏 𝓒 + 実装圏 𝓘 | Specker 2020（電力単独）+ Moeller-Vasilakopoulou 2020（fibration理論）の延長 | **正統な位置**。穴Aを埋める |
+| 機能圏 𝓕 + 国の圏 𝓒 + 実装圏 𝓘 | Nolan et al. 2020（電力単独）+ Moeller-Vasilakopoulou 2020（fibration理論）の延長 | **正統な位置**。穴Aを埋める |
 | Grothendieck fibration `p: 𝓘 → 𝓒` | Jia-Floridi 2025 と同型 | **穴Cを直接埋める** |
 | リープフロッグ = 平行射の2-cell | Mutiso 2025 の5ルールを形式化 | **穴Bを直接埋める** |
 | Heyting代数で「証拠ベースのインフラ存在」 | Sallach 2017 の延長、Jia 2024 Heyting研究と直結 | 補助線として有効 |

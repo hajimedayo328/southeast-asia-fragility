@@ -48,14 +48,14 @@
 
 ## B. ACT 会議録（最新動向のスキャン用）
 
-### [Master & Lin eds. 2024] Proceedings of the Seventh International Conference on Applied Category Theory 2024
+### [Johnson & Myers eds. 2024] Proceedings of the Seventh International Conference on Applied Category Theory 2024
 - venue: arxiv 2509.18357 / EPTCS
 - link: https://arxiv.org/abs/2509.18357
 - 要旨: ACT2024（Oxford）の proceedings。古典力学・確率・言語学・疫学・熱力学・工学への ACT 応用が幅広く収録。
 - 本プロジェクトとの接続: 直近の「圏論×応用」のトレンドを掴むカタログ。インフラ近接の論文（疫学・工学）をここから拾える。
 - 引っ掛かりポイント: 多くが extended abstract で短く、深掘りは元論文必須。
 
-### [Master eds. 2023] Proceedings of the Sixth International Conference on Applied Category Theory 2023
+### [Staton & Vasilakopoulou eds. 2023] Proceedings of the Sixth International Conference on Applied Category Theory 2023
 - venue: arxiv 2312.08138 / EPTCS
 - link: https://arxiv.org/abs/2312.08138
 - 要旨: ACT2023（Maryland）の proceedings。
@@ -66,7 +66,7 @@
 
 ## C. インフラ・電力網への直接応用
 
-### [Specker, Anand, Bristow, Fairbanks 2020] Compositional Models for Power Systems
+### [Nolan, Pollard, Breiner, Anand, Subrahmanian 2020] Compositional Models for Power Systems
 - venue: arxiv 2009.06833 / NIST 公開版
 - link: https://arxiv.org/abs/2009.06833
 - 要旨: 分散エネルギー資源 (DER) を symmetric monoidal category と categorical database で記述。汎用問題仕様と数値ソルバを関手で接続。
@@ -80,7 +80,7 @@
 - 本プロジェクトとの接続: 「電力網は decorated cospan で記述できる」というロールモデル。インフラを「境界（端子）+ 中身（回路）」と分けて扱う発想の原典。
 - 引っ掛かりポイント: passive かつ linear に限定。実インフラの非線形性（変圧器、制御）を取り込むには拡張が必要。
 
-### [Min, Anderson, et al. 2025] Compositional and Equilibrium-Free Conditions for Power System Stability — Part I: Theory
+### [Yang, Peng, Ru, Geng, Liu 2025] Compositional and Equilibrium-Free Conditions for Power System Stability — Part I: Theory
 - venue: arxiv 2506.11406
 - link: https://arxiv.org/abs/2506.11406
 - 要旨: 不均一非線形デバイスを含む電力系統の安定性を、平衡点に依らないローカル条件で合成的に保証する枠組み。
@@ -112,14 +112,14 @@
 - 本プロジェクトとの接続: 𝓘 を double category として組む際の現代的な手引書。Grothendieck fibration との接続も double 構造で見るとクリア。
 - 引っ掛かりポイント: 抽象度が高く、応用文脈での具体例が少ない。「途上国インフラ」みたいな現場概念とのギャップが大きい。
 
-### [Baez, Weisbart, Yassine 2025/forthcoming] Double Categories of Open Systems: the Cospan Approach
+### [Baez 2025/forthcoming] Double Categories of Open Systems: the Cospan Approach
 - venue: arxiv 2509.22584
 - link: https://arxiv.org/abs/2509.22584
 - 要旨: open Petri net / open dynamical system / open Petri net with rates を double category の cospan アプローチで統一展開。
 - 本プロジェクトとの接続: 「機能圏 𝓕 / 実装圏 𝓘」を double category にまとめる雛形。
 - 引っ掛かりポイント: 最新で参照論文がまだ少ない。逆に言えば乗っかれる先端。
 
-### [Lanese, Sassone et al. 2025] Towards a Double Operadic Theory of Systems
+### [Libkind & Myers 2025] Towards a Double Operadic Theory of Systems
 - venue: arxiv 2505.18329
 - link: https://arxiv.org/abs/2505.18329
 - 要旨: 「systems theory」を symmetric monoidal loose right module（systems）× symmetric monoidal double category（interfaces and interactions）として組む統一枠。Petri net, Moore machine などを例として収納。
@@ -169,7 +169,7 @@
 - 本プロジェクトとの接続: **直撃**。`p: 𝓘 → 𝓒` を monoidal fibration として組み、各国 c∈𝓒 のファイバ 𝓘_c で資源合成を行う、という構想の数学的バックボーン。
 - 引っ掛かりポイント: 例が network model 中心で、社会システム・インフラへの応用は未着手。本プロジェクトはこの空白を埋めうる。
 
-### [Hermida & co. ほか] Categorical Notions of Fibration（解説）
+### [Loregian & Riehl] Categorical Notions of Fibration（解説）
 - venue: arxiv 1806.06129
 - link: https://arxiv.org/abs/1806.06129
 - 要旨: cloven / split / discrete / Cartesian fibration の関係を整理したサーベイ。
@@ -193,7 +193,7 @@
 
 1. **「国×インフラ」を二重に階層化する fibration の応用例が事実上ゼロ**。Monoidal Grothendieck Construction（Moeller–Vasilakopoulou 2020）は理論を整えたが、応用は network model に留まり、政策・地理・制度差を国単位ファイバとして扱う研究は見当たらない。**ここが本プロジェクトの最大の白地**。
 
-2. **電力系統の compositional モデル（Specker et al. 2020 / Min et al. 2025）はあるが、いずれも単一国・単一ドメイン**。クロスドメイン（電力 × 水 × 通信）も、クロスカントリー（タイ vs. ベトナム vs. ラオス）も扱われていない。`p: 𝓘 → 𝓒` の `𝓒` を「国 + ドメイン」のテンソル積として構成できれば新規性が立つ。
+2. **電力系統の compositional モデル（Nolan et al. 2020 / Yang et al. 2025）はあるが、いずれも単一国・単一ドメイン**。クロスドメイン（電力 × 水 × 通信）も、クロスカントリー（タイ vs. ベトナム vs. ラオス）も扱われていない。`p: 𝓘 → 𝓒` の `𝓒` を「国 + ドメイン」のテンソル積として構成できれば新規性が立つ。
 
 3. **Heyting代数の社会システム応用（Sallach 2017 ほか）は思弁段階に留まり、実データ／計算実装と結びついていない**。途上国インフラの「未充足ニーズ」を `¬φ`（古典否定）ではなく `¬¬φ`（直観主義二重否定）で扱う設計は、開発経済学のデータと組み合わせれば実証可能で、Jia (2024) Heyting Algebra in Flat Origami と直結する。
 
@@ -205,6 +205,6 @@
 
 ## 次のアクション候補
 
-- **必読 5 本に絞る場合**: Spivak 2013（operad）, Fong–Spivak 2018（Seven Sketches）, Specker et al. 2020（power systems）, Moeller–Vasilakopoulou 2020（monoidal Grothendieck）, Sallach 2017（topos × 社会）。
-- **手を動かす場合**: Catlab.jl で Specker et al. を再現 → 国インデックスを Grothendieck fibration として追加するプロトタイプ。
+- **必読 5 本に絞る場合**: Spivak 2013（operad）, Fong–Spivak 2018（Seven Sketches）, Nolan et al. 2020（power systems）, Moeller–Vasilakopoulou 2020（monoidal Grothendieck）, Sallach 2017（topos × 社会）。
+- **手を動かす場合**: Catlab.jl で Nolan et al. を再現 → 国インデックスを Grothendieck fibration として追加するプロトタイプ。
 - **外部レビュー素材**: 上記「穴の仮説」5 点を、それぞれ「圏論研究 (モノイダル圏・Heyting・LLM圏論分析) との交差」とセットで A4 一枚にまとめると議論が走る。

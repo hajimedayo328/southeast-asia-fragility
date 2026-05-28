@@ -137,7 +137,7 @@
 
 ### Reachability complexity
 - Czerwinski et al. "The Reachability Problem for Petri Nets is Not Elementary" (arXiv:1809.07115)
-- Leroux-Schmitz "Reachability Problem for Petri Nets is Not Primitive Recursive" (arXiv:2104.12695)
+- Leroux "The Reachability Problem for Petri Nets is Not Primitive Recursive" (arXiv:2104.12695)
 - Lipton 1976 (EXPSPACE lower bound), Mayr 1981 (decidability)
 
 ### 実装

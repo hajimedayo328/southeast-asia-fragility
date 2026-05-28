@@ -174,7 +174,7 @@
 
 ## 6. 横断的（複層・category-theoretic）
 
-### [Tsuiki & Honkawa 2013] Theory of Interface: Category Theory, Directed Networks and Evolution of Biological Networks
+### [Haruna 2013] Theory of Interface: Category Theory, Directed Networks and Evolution of Biological Networks
 - venue: arXiv:1210.6166 / BioSystems
 - link: https://arxiv.org/abs/1210.6166
 - 要旨: 有向ネットワークの進化を圏論の「随伴」で記述。静的経路と動的（横断的）経路を双対関係として扱う。

@@ -70,7 +70,7 @@
 - 本プロジェクトとの接続: 軸③の現在の最先端実装。ただし北米データのみ。**途上国データで同モデルを動かす研究が空白**。
 - 引っ掛かりポイント: 異種グラフ = 圏論的に **profunctor / multi-sorted hypergraph**。I³ モデルを「異種関手の合成」として書き直すと、現状ブラックボックスのアーキテクチャに数理的解釈が与えられる。
 
-### [Sun et al. 2024] Recovery of contour nodes in interdependent directed networks
+### [Perez & La Rocca 2024] Recovery of contour nodes in interdependent directed networks
 - venue: arXiv 2410.13492
 - link: https://arxiv.org/html/2410.13492
 - 要旨: 有向相互依存網に **復旧戦略** を入れると、崩壊状態 ↔ 復旧状態の **abrupt transition（ヒステリシスあり）** が出る。境界ノード（contour）優先復旧が最適。

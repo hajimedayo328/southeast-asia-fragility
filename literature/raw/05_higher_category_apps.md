@@ -102,7 +102,7 @@
 - 本プロジェクトとの接続: 「ポジション × 方向」というシンプルな抽象が、政策プラットフォーム（複数選択肢の中での実装方向選定）と相似。
 - 引っ掛かりポイント: Niu は NASA の Advanced Air Mobility Architecture に応用中。**インフラへの実応用例**として最先端。
 
-### [Spivak & Vicary 2021] Double Categories of Open Dynamical Systems
+### [Myers 2021] Double Categories of Open Dynamical Systems
 - venue: arXiv:2005.05956 / EPTCS (ACT2020)
 - link: https://arxiv.org/abs/2005.05956
 - 要旨: 行動型（behavior type）を区間上の sheaf として導入し、open dynamical system を double category として扱う。Willems 流の「変数共有」を indexed double category で表現。

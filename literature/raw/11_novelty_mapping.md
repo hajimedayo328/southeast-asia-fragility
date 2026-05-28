@@ -27,7 +27,7 @@
 - 既存研究:
   - [Lawfare 2024] Three-Layer AI Governance Framework: 国×実装×機能の3層は政策論で常套句。
   - [Moeller & Vasilakopoulou 2020] Monoidal Grothendieck Construction: `p: 𝓘→𝓒` の monoidal fibration を網理論で使用。インフラ・国比較には未適用。
-  - [Specker et al. 2020] Compositional Power Systems: DER を symmetric monoidal category で記述するが、単一国モデル。Grothendieck構造なし。
+  - [Nolan et al. 2020] Compositional Power Systems: DER を symmetric monoidal category で記述するが、単一国モデル。Grothendieck構造なし。
 - 残る新規性: 「国 × インフラ (実装) × 機能」の三層を monoidal Grothendieck construction で記述し、ASEAN/モバイル金融の比較研究に適用」する組合せは未見。フレーム自体ではなく **適用ドメイン** に新規性。
 - 強度: **★★★☆☆**
 
@@ -89,7 +89,7 @@
 
 - 判定: **部分既出 (R-restricted という名称は新しいが、構造は既出)**
 - 既存研究:
-  - 「restricted reachability」「place-environment restriction」(Tredup-Erofeev 2021 arXiv:2112.03608): 場所の preset/postset 制約での reachability synthesis。
+  - 「restricted reachability」「place-environment restriction」(Devillers & Tredup 2021 arXiv:2112.03608): 場所の preset/postset 制約での reachability synthesis。
   - Reachability with **inhibitor arcs** (Reinhardt 2008): 特定場所に token が無いことを条件化 → 「Rを経由しない」と類似。
   - Petri net reachability decidability (Mayr 1981, Czerwinski 2019): 古典。
 - 残る新規性 (1文): 「`R ⊂ P_v` を経由しない発火列の存在判定 = リープフロッグ可能性」という **応用解釈** は新規。技術的には inhibitor arc / restricted synthesis の特殊例で書ける。
@@ -102,7 +102,7 @@
 - 判定: **真に新規 (ただし応用論文レベル)**
 - 既存研究:
   - 標準 Petri net の P-invariant / T-invariant 解析 (Murata 1989) で構造分類は古典。
-  - [Specker et al. 2020] DER の categorical 分類: 国比較なし。
+  - [Nolan et al. 2020] DER の categorical 分類: 国比較なし。
   - サーベイ 07: 「4 backbone を Petri net で並べた先行研究はゼロ」。
 - 残る新規性: 「公的 ⊤_pub > 銀行 ⊤_bank > 民間 ⊤_priv」のような Heyting半順序での backbone 型分類は未見。
 - 強度: **★★★☆☆** (主張Dと一体で評価すれば ★★★★)
@@ -127,10 +127,10 @@
 - 既存研究:
   - [Baez & Master 2018-2022] Open Petri Nets (arXiv:1808.05415): cospan-pushout で open net を symmetric monoidal double category として構築。
   - [Baez & Courser 2020] Structured Cospans
-  - [Baez, Weisbart 系 2025] Double Categories of Open Systems (arXiv:2509.22584): open Petri net with rates の double category 拡張。**ここで rates が値 (実数等) を取る拡張は既出**。
+  - [Baez 2025] Double Categories of Open Systems (arXiv:2509.22584): open Petri net with rates の double category 拡張。**ここで rates が値 (実数等) を取る拡張は既出**。
   - [Baldan-Corradini-Montanari 2008] Open Petri Nets: 古い系譜。
-- 残る新規性 (1文): 「open化された Petri net の入出力ポートを **不可視 (Heyting値) 場所にも許す**」拡張は Baez-Master 系列で扱われていない。ただし Baez-Weisbart 2025 が "with rates" として既に値付き拡張を進めているため、その rates を Heyting値に specialize したと位置づければ「派生」扱い。
-- 強度: **★★★☆☆** (Baez-Weisbart 2025 との差別化を明示しないと弱い)
+- 残る新規性 (1文): 「open化された Petri net の入出力ポートを **不可視 (Heyting値) 場所にも許す**」拡張は Baez-Master 系列で扱われていない。ただし Baez 2025 が "with rates" として既に値付き拡張を進めているため、その rates を Heyting値に specialize したと位置づければ「派生」扱い。
+- 強度: **★★★☆☆** (Baez 2025 との差別化を明示しないと弱い)
 
 ---
 
@@ -206,7 +206,7 @@
 - B. 3層フレーム (ドメイン応用のみ新規)
 - C. リープフロッグ = 2-cell (形式化が未踏)
 - H. Backbone型 = Heyting半順序分類
-- J. Open H-Petri Net (Baez-Weisbart 2025 と要差別化)
+- J. Open H-Petri Net (Baez 2025 と要差別化)
 - O. Jia-Floridi 2025 との構造同型
 
 ### 完全既出または弱い (★★以下)
@@ -242,7 +242,7 @@
 
 1. **Dialectica Petri Nets (Lavore-Leal-de Paiva 2021/2025)** との差別化を明示しないと「派生研究」扱いされる (主張Eへの直撃)
 2. **Master "Additive Invariants of Open Petri Nets" (Compositionality 2021)** と K の関係を整理しないと「Heyting版の自明な特殊化」扱いされる
-3. **Baez-Weisbart 2025 "Double Categories of Open Systems"** との関係 (open Petri net with rates の Heyting特殊化として位置づけられる可能性) を整理する
+3. **Baez 2025 "Double Categories of Open Systems"** との関係 (open Petri net with rates の Heyting特殊化として位置づけられる可能性) を整理する
 4. **Oliver-Kuure 2026** が Kan拡張・2-category への拡張を future work に挙げており、先取されるリスクあり (validation V2 で既に指摘済み)
 
 これらに対する明示的な差別化説明を入れれば、**応用領域論文 (応用圏論 ACT proceedings レベル) として論文化可能**。トップ数学誌は厳しい (構成は派生、独自定理はK・Lに限定されるため)。
@@ -270,7 +270,7 @@
 3. Master 2021 — Additive Invariants of Open Petri Nets (Compositionality journal) ★★★★★ 必読・差別化必須
 4. Lavore-Leal-de Paiva 2021/2025 — Dialectica Petri Nets (arXiv:2105.12801) ★★★★★ 必読・差別化必須
 5. Meseguer & Montanari 1990 — Petri Nets are Monoids ★★★★★
-6. Baez, Weisbart 2025 — Double Categories of Open Systems (arXiv:2509.22584) ★★★★ 差別化必須
+6. Baez 2025 — Double Categories of Open Systems (arXiv:2509.22584) ★★★★ 差別化必須
 7. Oliver & Kuure 2026 — Modelling Trust (arXiv:2602.11376) ★★★★★ (V2で既に判明)
 8. Jia, Floridi, Tohmé 2025 — Categorical Analysis of LLMs (arXiv:2512.09117) ★★★★
 9. Ouyang & Billington 2008 — CPN Electronic Payment ★★★★
@@ -290,12 +290,12 @@
 3. `"open Petri net" composition meet "fiber product" Heyting 2024 2025` → Baez-Master系のみ、Heyting特化なし
 4. `"mobile money" OR "GCash" categorical "petri net" formal model` → ゼロ (07サーベイ確認)
 5. `"leapfrog" "category theory" "functor" development economics formal` → ゼロ
-6. `"R-restricted reachability" Petri net subset places` → 部分既出 (Tredup-Erofeev synthesis)
+6. `"R-restricted reachability" Petri net subset places` → 部分既出 (Devillers & Tredup synthesis)
 7. `"monotonicity" "Petri net" "unfading" persistent trust evidence` → 既出 (古典 monotonicity)
 8. `"Dialectica Petri Nets" Lavore Leal lineale Heyting 2025` → 主張Eに直撃する既存研究
 9. `"Place invariant" centrality concentration "Petri net" hotspot` → 既出 (古典 invariant 解析)
 10. `"monoidal Grothendieck" "fibration" payment finance economics 2024 2025` → 金融応用ゼロ (本プロジェクトの隙間)
-11. `"strict symmetric monoidal" "double" "2-category" Petri net Baez 2024 2025` → Baez-Weisbart 2025 確認
+11. `"strict symmetric monoidal" "double" "2-category" Petri net Baez 2024 2025` → Baez 2025 確認
 12. `"cross-border payment" weakest link OR fragility ASEAN` → 政策論あり、形式化ゼロ
 13. `"Genovese" "Loregian" "Petri net" guarded bounded categorical` → bounded/guarded 既出
 14. `"Master" "Lawvere theory" Petri net 2019 universal property "Q-net"` → Master 2019 確認
@@ -313,4 +313,4 @@
 - **「新規かもしれない」と楽観しない**。本マッピングでは ★★★★ 以上の主張は3つ (K/L/D) のみに絞った
 - 残りの12主張は派生・既出・未厳密化のいずれか
 - 論文化するなら、本筋は K (Meet Bottleneck) + L (⊗ vs ▷ 双対性) + D (共通CPN規約 + ASEAN応用) で組み、他は補強材料に回す
-- Dialectica Petri Nets, Master "Additive Invariants", Baez-Weisbart 2025 の3本は **本プロジェクトのほぼ全主張に直撃** するので、必ず読破してから論文を書く
+- Dialectica Petri Nets, Master "Additive Invariants", Baez 2025 の3本は **本プロジェクトのほぼ全主張に直撃** するので、必ず読破してから論文を書く

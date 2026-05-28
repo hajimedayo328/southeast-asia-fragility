@@ -60,7 +60,7 @@
 
 ## 補足: その他 注目論文
 
-- **Bitcoin Trace-Net (Chiang & Khabbazian 2020)**: Petri net + Dolev-Yao 知識モデルでオフチェーン契約を検証 ([arXiv:2007.07528](https://arxiv.org/pdf/2007.07528))
+- **Bitcoin Trace-Net (Chiang 2020)**: Petri net + Dolev-Yao 知識モデルでオフチェーン契約を検証 ([arXiv:2007.07528](https://arxiv.org/pdf/2007.07528))
 - **Verification of cryptocurrency consensus protocols: reenterable colored Petri net model design (2023)**: PoW/PoS の合意を再入可能 CPN で形式化 ([T&F](https://www.tandfonline.com/doi/full/10.1080/17445760.2023.2273452)) — Bakong の許可型 BFT合意の記述に応用余地
 - **Zupan & Kasinathan 2020 "Secure Smart Contract Generation Based on Petri Nets"**: Petri net から Solidity を自動生成
 - **Hindi 2006 — Using a Timed Petri Net (TPN) to Model a Bank ATM** ([IEEE](https://ieeexplore.ieee.org/document/1607364/)): ATM の TPN 記述。物理タッチポイントモデルの最古典

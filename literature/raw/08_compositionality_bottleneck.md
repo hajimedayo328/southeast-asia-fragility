@@ -44,7 +44,7 @@
 ### 7. **Cousot-Cousot 系 concurrent monoid** (Hoare ら) / 検索でヒットした *Concurrent monads for shared state* (ACM 2024)
 - 「sequential と parallel の2つの monoid 構造 + inequational interchange law」を扱う。「parallel が weak、sequential が strong」のような構造的非対称性は議論される。本仮説の min/max 構造の特殊化として読める。
 
-### 8. **化学反応における rate-determining step** (古典) + Curry-Montes (2024) *Categorical Perspectives on Chemical Reaction Networks* (arXiv:2604.04919)
+### 8. **化学反応における rate-determining step** (古典) + Curry-Montes (2026) *Categorical Perspectives on Chemical Reaction Networks* (arXiv:2604.04919)
 - 「直列反応では最も遅いステップが律速」(meet 律速) は化学の常識。Curry-Montes は CRN を arrow category で扱うが、本仮説のような「並列合成では max が支配」との対比は明示していない。
 
 ---
