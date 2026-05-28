@@ -122,9 +122,9 @@
 
   <h3>関連する圏論研究との接続</h3>
   <ul class="clean">
-    <li>Strip Folding as Monoidal Category (Jia 2022-23) → 機能の並列提供を <code>⊗</code> で記述</li>
-    <li>Heyting Algebra in Flat Origami (Jia 2024) → 「証拠ベースのインフラ存在」を直観主義で扱う</li>
-    <li>Categorical Analysis of LLMs (Jia, Floridi, Tohmé 2025, arXiv:2512.09117) → 文脈関手構造を「国×インフラ」に転用 (向きは反転)</li>
+    <li>Order Theory in Strip Folding (Jia &amp; Mitani 2023) → 機能の並列提供を <code>⊗</code> で記述 (monoidal 構造としての解釈は本プロジェクト側)</li>
+    <li>Heyting Algebra in Flat Origami (Jia &amp; Mitani 2024) → 「証拠ベースのインフラ存在」を直観主義で扱う</li>
+    <li>A Categorical Analysis of LLMs (Floridi, Jia, Tohmé 2025, arXiv:2512.09117) → 文脈関手構造を「国×インフラ」に転用 (向きは反転)</li>
   </ul>
 </section>
 
@@ -232,7 +232,7 @@
   </div>
 
   <div class="hypothesis shadow">
-    <span class="hyp-id">発見 2 · 1997アジア通貨危機の歴史的実証</span>
+    <span class="hyp-id">発見 2 · 1997アジア通貨危機との整合的解釈</span>
     <h3>「⊤_priv が ⊤_pub を演じる」状態の崩壊</h3>
     <p class="punchline">
       1997年以前、東南アジア各国の銀行システムは USDペッグで「⊤_pub」に見えた。
@@ -241,7 +241,7 @@
       <strong>「⊤_priv が ⊤_pub を演じてた」状態の崩壊 — 評価の浅さが暴露される瞬間</strong>。
     </p>
     <p class="claim">
-      マレーシアは資本規制 (▷ チャネル切断) で被害を抑制 → 律速逆転定理の政策的検証。詳細は <a href="temporal.html#crisis-1997">時間軸タブ §T6</a>。
+      マレーシアは資本規制 (▷ チャネル切断) で被害を抑制 → 律速逆転の枠組みと整合的な事後解釈 (演繹的検証ではない)。詳細は <a href="temporal.html#crisis-1997">時間軸タブ §T6</a>。
     </p>
   </div>
 
@@ -264,13 +264,13 @@
     <h3>「予言」を 3 つの圏論レイヤーでコード実装</h3>
     <p class="punchline">
       予言の構造を <strong>3 つの圏論的層</strong> でコードに落とした:
-      ① <strong>Writer H モナド</strong> — 720 順列すべてで同じ ⊤_pub に収束 (Effect Accumulation Theorem 構成的検証)、
+      ① <strong>Writer H モナド</strong> — 720 順列すべてで同じ ⊤_pub に収束 (∨ の半束則からの帰結で、実装が正しく満たすことの確認)、
       ② <strong>Čech H¹ 層</strong> — 1997 AFC で H¹ が 0→4→6 と階段上昇、Cloudflare 2025-11 で H⁰(meet) が ⊤_priv→⊥ 崩壊、
       ③ <strong>翻訳関手 F: 𝓒_EA → 𝓒_Dev</strong> — 5 予言ペアを strict / quasi / partial / lax で自然性分類。
     </p>
     <p class="claim">
       これで「予言の強度 = 関手の自然性の度合い」が <strong>数値で測れる位置取り</strong>になった。
-      Jia-Floridi 2025 の Kan 拡張ツールセットがそのまま転用可能。
+      Floridi-Jia-Tohmé 2025 の Kan 拡張ツールセットがそのまま転用可能。
       実装は <a href="petri.html#sheaf">Petri net §P6 (Sheaf)</a> / <a href="petri.html#monad">§P7 (Monad)</a> /
       <a href="temporal.html#translation-functor">時間軸 §T10 (翻訳関手)</a>。
     </p>

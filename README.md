@@ -118,7 +118,7 @@ cd ../docs && python -m http.server 8767
 
 ## 既存研究との位置づけ
 
-- **Jia, Floridi, Tohmé 2025** (Categorical Analysis of LLMs, arXiv:2512.09117)
+- **Floridi, Jia, Tohmé 2025** (A Categorical Analysis of LLMs, arXiv:2512.09117)
   → 同じ Kan 拡張ツールセットを別ドメインに転用
 - **Baez & Master 2018** (Open Petri Nets, arXiv:1808.05415) → cospan-pushout 構造を借りる
 - **Ghrist, Gould & Lopez 2024** (Lattice-Valued Bottleneck Duality, arXiv:2410.00315) → 律速逆転の数学的根拠

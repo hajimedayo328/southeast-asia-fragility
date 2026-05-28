@@ -6,14 +6,17 @@ Implements the construction described in notes/24:
   - return x   = (x, ⊥)
   - bind f >>= g = (b, h_f ∨ h_g)   where (b, h_f) = f(a)
 
-Theorem (Effect Accumulation, notes/24 §3.3):
+Order-independence of accumulated effect (notes/24 §3.3):
   The total effect of any composition  f_n >>= ... >>= f_1  is
       h_1 ∨ h_2 ∨ ... ∨ h_n
-  which is independent of grouping by associativity of ∨.
+  which is independent of order/grouping. This is NOT a novel theorem — it is
+  the standard property of a (bounded) join-semilattice: ∨ is associative,
+  commutative and idempotent. (We previously over-labelled this an "Effect
+  Accumulation Theorem"; it is just the semilattice law.)
 
-This module verifies the theorem constructively and shows that an H-Petri
-Net firing sequence has the same effect-accumulation signature as a chain
-of Writer-Kleisli arrows.
+This module checks that the implementation respects that law (720 permutations
+all collapse to the same join) and shows that an H-Petri Net firing sequence
+has the same accumulation signature as a chain of Writer-Kleisli arrows.
 """
 
 from __future__ import annotations
@@ -75,14 +78,16 @@ def cost(level: str) -> Callable[[A], Writer[A]]:
 
 
 # ---------------------------------------------------------------------------
-# Effect Accumulation Theorem — constructive verification
+# Order-independence check (join-semilattice law, notes/24 §3.3)
 # ---------------------------------------------------------------------------
 
 def verify_effect_accumulation(ha: FourLevelHA) -> dict:
-    """Verify notes/24 §3.3 Effect Accumulation Theorem constructively.
+    """Check the join-semilattice law (notes/24 §3.3) constructively.
 
     For every permutation of a fixed list of Heyting-valued costs, the
-    accumulated log must be identical (= ∨ of all costs).
+    accumulated log must be identical (= ∨ of all costs). This is a known
+    property of ∨ (assoc/comm/idempotent), not a new theorem — the check
+    just confirms the implementation respects it.
     """
     from itertools import permutations
 
@@ -154,7 +159,7 @@ def main():
     ha = FourLevelHA()
 
     print("=" * 70)
-    print("Writer H Monad — Effect Accumulation Theorem verification")
+    print("Writer H Monad — join-semilattice order-independence check (notes/24 §3.3)")
     print("=" * 70)
     v = verify_effect_accumulation(ha)
     print(f"\nCosts emitted (in original order): {v['costs']}")
@@ -163,9 +168,9 @@ def main():
     print(f"All permutations same log?         {v['all_permutations_yield_same_log']}")
     print(f"Distinct logs observed:            {v['distinct_logs_observed']}")
     print(
-        "\n→ notes/24 §3.3 Effect Accumulation Theorem is verified for"
-        " the 4-level Heyting algebra: monoidal associativity of ∨ guarantees"
-        " path-independence of total cost."
+        "\n→ The join-semilattice law holds for the 4-level Heyting algebra:"
+        " associativity/commutativity/idempotency of ∨ guarantee"
+        " path-independence of total cost (known property, not a new theorem)."
     )
 
     # Bridge demo — apply to all 4 finance backbones
@@ -204,9 +209,10 @@ def main():
     bundle = {
         "description": (
             "Writer H monad — invisible cost accumulation as a categorical "
-            "structure (notes/24 §3). Verified that for the 4-level Heyting "
+            "structure (notes/24 §3). Checked that for the 4-level Heyting "
             "algebra, all permutations of a fixed list of costs yield the "
-            "same total log (Effect Accumulation Theorem, §3.3)."
+            "same total log. This is the standard join-semilattice law "
+            "(∨ assoc/comm/idempotent, §3.3), not a novel theorem."
         ),
         "effect_accumulation": v,
         "bridge_demo": {

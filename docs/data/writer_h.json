@@ -1,5 +1,5 @@
 {
-  "description": "Writer H monad — invisible cost accumulation as a categorical structure (notes/24 §3). Verified that for the 4-level Heyting algebra, all permutations of a fixed list of costs yield the same total log (Effect Accumulation Theorem, §3.3).",
+  "description": "Writer H monad — invisible cost accumulation as a categorical structure (notes/24 §3). Checked that for the 4-level Heyting algebra, all permutations of a fixed list of costs yield the same total log. This is the standard join-semilattice law (∨ assoc/comm/idempotent, §3.3), not a novel theorem.",
   "effect_accumulation": {
     "costs": [
       "⊤_priv",

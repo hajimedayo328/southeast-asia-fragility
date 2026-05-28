@@ -50,7 +50,7 @@
   </p>
   <div class="plain-jp">
     <p>Petri net は「<strong>並行して何かが動くシステム</strong>」を数学的に書く道具。1960年代に提案されてから、半導体回路・並行プログラム・生体反応の解析に使われてきた。</p>
-    <p>本プロジェクトでは、これを <strong>Heyting値拡張 (賈先生 Flat Origami 研究の発想を借用)</strong> して、ASEAN モバイル金融に当てる。</p>
+    <p>本プロジェクトでは、これを <strong>Heyting値拡張 (Jia &amp; Mitani 2024 "Heyting Algebra in Flat Origami" の発想を借用)</strong> して、ASEAN モバイル金融に当てる。</p>
     <p>結果: Bakong (中銀型) と GCash (民間型) は <strong>同じ構造の Petri net</strong> なのに、トークンの値の上限が永久に違う。これは「中央銀行は国家保証、民間は企業保証」の <strong>圏論的根拠</strong>。</p>
   </div>
   <div class="scroll-hint">下にスクロール ↓</div>
@@ -124,7 +124,7 @@
 
   <div class="plain-jp">
     <p>標準 Petri net は、トークンの数を <strong>0, 1, 2, ...</strong> という自然数で扱う。しかし「信頼」「証拠」「確実性」は数で測れない。「あるか、ないか」じゃなく「<strong>どれくらい強い証拠か</strong>」。</p>
-    <p>そこで <strong>Heyting代数</strong> (直観主義論理の真理値) で測る。Jia 2024 の Flat Origami研究で使われてる発想を Petri net に持ち込む。</p>
+    <p>そこで <strong>Heyting代数</strong> (直観主義論理の真理値) で測る。Jia &amp; Mitani 2024 の Flat Origami研究で使われてる発想を Petri net に持ち込む。</p>
     <p>本プロジェクトでは4段階の Heyting代数を採用:</p>
   </div>
 
@@ -215,7 +215,7 @@
     成分は <code>η_TrustHub: ⊤_priv → ⊤_pub</code> という Heyting半順序の包含。
   </p>
   <p>
-    これは Jia-Floridi 2025 "Categorical Analysis of LLMs" の
+    これは Floridi-Jia-Tohmé 2025 "A Categorical Analysis of LLMs" の
     「人間ルート関手 vs LLMルート関手」と <strong>構造的に同型</strong>。
     本プロジェクトはその方法論を別ドメイン (モバイル金融) に転用したもの。
   </p>
@@ -319,6 +319,8 @@
   <div class="plain-jp">
     <p>ASEAN 各国 (or 各 AI サービス) を点、隣接関係を辺とする 1-複体の上に、各点の Trust 値を <strong>Heyting値の sheaf</strong> として乗せる。すると <strong>H¹(F) = 隣接点で値が食い違う辺の数</strong> が「貼り合わせの障害 = 構造的に潜むリスク」を測る。</p>
     <p>1997 と Cloudflare で <strong>同じ signature</strong> が出る — これが notes/25 の主張。</p>
+    <p class="caveat"><strong>注意:</strong> 下の H¹/H⁰ は実測ではなく、<strong>著者が各時点の Trust 値を手で割り当てたモデル上の数値例</strong>。
+    位相空間の定義自体も notes/25 では未確定 (探索段階)。「こう割り当てると枠組みと整合する」というデモであって、データからの検証ではない。</p>
   </div>
 
   <div class="hypothesis">
@@ -356,17 +358,18 @@
   <h2>「便利の暴走」をモナドで書く</h2>
 
   <div class="plain-jp">
-    <p>H-Petri Net の発火は <strong>Writer H モナド</strong> (Heyting値ログ付きの計算) と完全に同型。各遷移が「値は変えず、Heyting値の log を累積するだけ」の Kleisli 射として書ける。</p>
-    <p>このとき <strong>累積順序を入れ替えても結果は同じ</strong> — これが Effect Accumulation Theorem (notes/24 §3.3)。Heyting半順序の <code>∨</code> がモノイドなので、結合則と可換則が自動的に保証される。</p>
+    <p>H-Petri Net の発火は <strong>Writer H モナド</strong> (Heyting値ログ付きの計算) と同じ形で書ける。各遷移が「値は変えず、Heyting値の log を累積するだけ」の Kleisli 射として書ける。</p>
+    <p>このとき <strong>累積順序を入れ替えても結果は同じ</strong>。これは厳密には新しい定理ではなく、<strong>Heyting半順序の <code>∨</code> が結合的・可換・冪等</strong>(=有界半束)であることの直接の帰結。下のコードはその性質を実装が正しく満たすことの確認。</p>
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">仮説 P7-A · Effect Accumulation Theorem</span>
+    <span class="hyp-id">仮説 P7-A · 副作用累積の順序非依存性 (∨ の半束性質、証明は標準的)</span>
     <h3>6個のコストの全順列 720通りで同じ⊤_pubに収束</h3>
     <p class="punchline">
       <code>{⊤_priv, ⊤_bank, ⊤_priv, ⊤_pub, ⊥, ⊤_bank}</code> の 6個を 720 通り並べ替えても、
       <strong>全ての並べ方で最終ログは ⊤_pub</strong>。
-      Monoid 結合律 + Heyting <code>∨</code> の冪等性が「累積順依存性ゼロ」を構造的に保証してる。
+      これは <code>∨</code> の冪等・可換・結合性から数学的に自明な結果で、
+      新規定理ではなく <strong>実装が半束則を正しく満たすことの確認</strong>。
     </p>
     <div class="finding"><strong>わかったこと:</strong> <span id="finding-monad-eat">データ読込中...</span></div>
   </div>
@@ -402,9 +405,9 @@
     <li>4 backbone タイプは「Heyting値上限の半順序」として数学的に分類される</li>
     <li>同じ場所・遷移の net でも、不可視層の上限が永久に異なる</li>
     <li>AI 領域 (ChatGPT/Claude/Llama/GovAI) でも金融と同じ階数分布が再現する (§P5)</li>
-    <li>Sheaf H¹ で 1997 と Cloudflare の構造的同型が数値で確認できる (§P6)</li>
+    <li>Sheaf H¹ で 1997 と Cloudflare の構造的類似を<strong>モデル上の数値例</strong>として示せる (§P6、入力 Trust 値は著者が割当て)</li>
     <li>Writer H モナドで 4 backbone の分離を Petri net シミュレータ無しに再現できる (§P7)</li>
-    <li>これは Jia-Floridi 2025 の方法論を別ドメインに転用した結果</li>
+    <li>これは Floridi-Jia-Tohmé 2025 の方法論を別ドメインに転用した結果</li>
   </ul>
 
   <h3>実装完了済</h3>
@@ -412,7 +415,7 @@
     <li>✅ 金融 4 backbone (Bakong / PayNow / KBZPay / GCash)</li>
     <li>✅ AI 4 backbone (ChatGPT / Claude / Llama / GovAI) + Cloudflare 2025-11 cascade</li>
     <li>✅ Čech H¹ sheaf (1997 AFC + Cloudflare 2025-11)</li>
-    <li>✅ Writer H モナド + Effect Accumulation Theorem 構成的検証</li>
+    <li>✅ Writer H モナド (∨ の半束則による副作用累積の順序非依存性の確認)</li>
     <li>✅ 翻訳関手 F の strict / quasi / partial / lax 分類 (時間軸タブ §T10)</li>
   </ul>
 
@@ -451,7 +454,7 @@
     </a>
     <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/13_monoidal_2category.md" target="_blank">
       <div class="id">notes/13</div>
-      <div class="title">Monoidal 2-category (Jia 2022-23 Strip Folding 対応)</div>
+      <div class="title">Monoidal 2-category (Jia &amp; Mitani 2023 Strip Folding 対応)</div>
     </a>
     <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri" target="_blank">
       <div class="id">src/h_petri</div>
