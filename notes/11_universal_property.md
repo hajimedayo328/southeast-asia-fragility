@@ -118,7 +118,7 @@ F ⊣ U: Hom_HPN(F(P_v, P_h, T), N) ≅ Hom_Set(P_v, U(N)) × Hom_Set(P_h, U(N))
 
 ---
 
-## §5 賈先生 Heyting Origami との Lawvere Theory 対応
+## §5 Jia-Mitani 2024 "Heyting Algebra in Flat Origami" との Lawvere Theory 対応
 
 ### 5.1 Jia 2024 の Heyting代数の使い方
 

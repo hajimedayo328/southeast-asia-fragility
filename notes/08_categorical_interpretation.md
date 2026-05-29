@@ -228,9 +228,9 @@ TrustHub(O_合成) = TrustHub(O_TH) ∧ TrustHub(O_SG) ∧ ... ∧ TrustHub(O_PH
 
 ---
 
-## §7 賈先生研究との接続点まとめ
+## §7 先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との接続点まとめ
 
-| 賈先生研究 | 本プロジェクトでの圏論的対応 |
+| 先行研究 | 本プロジェクトでの圏論的対応 |
 |---|---|
 | **Strip Folding as Monoidal Category** (Jia 2022-23) | 発火列 = モノイダル圏の射の合成 |
 | **Heyting Algebra in Flat Origami** (Jia 2024) | 不可視層 = Heyting値の関手 `F_h^*: T* → H^{P_h}` |
@@ -240,7 +240,7 @@ TrustHub(O_合成) = TrustHub(O_TH) ∧ TrustHub(O_SG) ∧ ... ∧ TrustHub(O_PH
 - Jia 2024 から **Heyting値の構造** を借用
 - Jia-Floridi 2025 から **並列関手 + 自然変換** の構造を借用
 
-→ 本プロジェクトは **「賈先生研究室の方法論をモバイル金融という別ドメインに転用する応用研究」** という位置づけが最も明確。
+→ 本プロジェクトは **「この圏論研究系統の方法論をモバイル金融という別ドメインに転用する応用研究」** という位置づけが最も明確。
 
 ---
 
@@ -298,7 +298,7 @@ src/ の実装で見た「Bakong vs GCash の不可視層 Heyting値の差」は
 
 ### 長期
 - 論文骨格としての再整理
-- 賈先生研究の借用関係を厳密に明示
+- 当該先行研究の借用関係を厳密に明示
 - arXiv プレプリント候補
 
 ---

@@ -18,7 +18,7 @@ notes/08 で:
    - 「Bakong は GCash より強い」を 1-cell として書ける
 2. **2-cell の合成則 (垂直 / 水平)** が使える
    - 複数の backbone を変換する2-cellをチェイン可能
-3. **賈先生 LLM 論文の流儀と完全一致**
+3. **Floridi-Jia-Tohmé 2025 LLM論文の流儀と完全一致**
    - Jia-Floridi 2025 は 2-category そのもの
    - Strip Folding (Jia 2022-23) は monoidal 2-category
 4. **Open Petri Net の Baez-Master 2018 が double category**
@@ -186,7 +186,7 @@ O_TH ▷ O_SG ▷ O_MY ▷ O_ID ▷ O_PH
 
 ---
 
-## §5 賈先生研究との対応 (2-categorical version)
+## §5 先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との対応 (2-categorical version)
 
 ### 5.1 Jia 2022-23 Strip Folding as Monoidal Category
 
@@ -284,7 +284,7 @@ M(p_h) ≤ ∧_{i=1}^{n} TrustHub_max(O_i)
    - Heyting代数の meet 安定性
 6. **monoidal 2-category への拡張**
    - 並列発火を ⊗ で書く
-   - 賈先生 Strip Folding (2022-23) との完全対応
+   - Jia-Mitani 2023 Strip Folding との完全対応
 
 ---
 

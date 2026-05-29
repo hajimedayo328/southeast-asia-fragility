@@ -156,13 +156,13 @@ recover: state → (state', large_negative_visibility)
 
 = 「累積してた依存が一気に表面化」。Writer モナドのログが **暴露される瞬間**。
 
-### 4.3 賈先生 LLM論文との直結
+### 4.3 Floridi-Jia-Tohmé 2025 LLM論文との直結
 
 Jia-Floridi 2025 の中心ツール = Kan拡張 (= adjoint pair の特殊形)。
 Kan拡張は **モナドを生成する** (Day convolution など)。
 
-→ **本プロジェクトのモナド T は、賈先生のLLM圏論ツールセットの中で自然に位置する**。
-これが「賈先生研究の流儀そのまま」と言える根拠。
+→ **本プロジェクトのモナド T は、Floridi-Jia-Tohmé 2025 のLLM圏論ツールセットの中で自然に位置する**。
+これが「当該先行研究の流儀そのまま」と言える根拠。
 
 ---
 

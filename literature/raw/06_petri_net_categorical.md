@@ -6,13 +6,13 @@
 
 ## 取得件数: 25本以上 (詳細は本文参照)
 
-## コア論文 Top 5 (賈先生研究との接続強度で順序づけ)
+## コア論文 Top 5 (先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との接続強度で順序づけ)
 
 ### [Meseguer & Montanari, 1990] Petri Nets are Monoids
 - venue: Information and Computation 88(2), 105-155 (SRI Tech Report 1988初出)
 - link: https://www.semanticscholar.org/paper/Petri-Nets-Are-Monoids-Meseguer-Montanari/382a8fbe1be96c0651cc9c553b09cb8dcb80c091
 - 中心定理: P/T-Petri net = "commutative monoidal category" (対称が恒等の対称strict monoidal category) の表示 (presentation) として見ることができる。Petri net と commutative monoidal category の間に随伴 (adjunction) が成立する。
-- 本プロジェクトとの接続: **主張3 (backbone型 = P/T-invariant)** と直結。Petri net をモナド/モノイドで定式化したオリジナル論文。賈先生の "Strip Folding as Monoidal Category" (2022) と同じく「具体的構造を monoidal category として扱う」枠組みで、形式上の親和性が極めて高い。
+- 本プロジェクトとの接続: **主張3 (backbone型 = P/T-invariant)** と直結。Petri net をモナド/モノイドで定式化したオリジナル論文。Jia-Mitani の "Strip Folding as Monoidal Category" (2022) と同じく「具体的構造を monoidal category として扱う」枠組みで、形式上の親和性が極めて高い。
 - 引っ掛かりポイント: 30年以上前の論文で、「commutative monoidal category」は対称 strict monoidal category の "unusually strict" な変種である点が後続研究で繰り返し議論されている (collective-token vs individual-token philosophy)。
 
 ### [Baez & Master, 2018-2022] Open Petri Nets
@@ -64,7 +64,7 @@
 - Heyting algebra (直観主義論理) と Petri net を直接結ぶ論文は本サーベイ内に見当たらない
 - 関連は2段階を介す: (a) quantale = 線形直観主義論理の代数, (b) complete Heyting algebra = 直観主義論理の代数
 - Dialectica Petri Nets (Lavore-Leal, Fundamenta Informaticae 2025) でも Heyting への明示的接続は薄い (lineale としての言及程度)
-- **賈先生 "Heyting Algebra in Flat Origami" (2024) と接続するなら、ここが最大の新規性候補**
+- **Jia-Mitani 2024 "Heyting Algebra in Flat Origami" と接続するなら、ここが最大の新規性候補**
 
 ### 仮説H2: モバイル金融 (Bakong/GCash/MoMo) の Petri net 形式化はゼロ
 - M-Pesa, GCash, MoMo 等を colored / 形式 Petri net で記述した論文は本サーベイで発見されず
@@ -82,11 +82,11 @@
 
 ### 仮説H5: Heyting × Open Petri Net の二重新規性
 - "open" な Petri net (Baez-Master) に直観主義論理的「未確定/possibility」を組み込んだ研究はゼロ
-- 賈先生研究室との接続性が最も高い
+- この圏論研究系統との接続性が最も高い
 
 ---
 
-## 賈先生研究との接続マップ
+## 先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との接続マップ
 
 ### Strip Folding (Jia-Mitani 2022/2023) × Petri net
 - 共通枠組: 両者とも具体的構造 (折り紙の折り目 / Petri net の発火) を **monoidal category** として表示する
@@ -98,12 +98,12 @@
 - **これは最重要かつ最も空白**。仮説H1の通り、Petri net と Heyting algebra を直接結ぶ既存研究は実質ない
 - 折り紙の「折るか折らないか」の不確定性が Heyting algebra で記述されるなら、Petri net の「発火するかしないか」の possibility も同様の構造を持ちうる
 - 提案: Petri net の reachability set を frame / locale として扱い、Heyting algebra 構造を抽出する研究
-- 申先生研究室で進める場合、これが学部卒論〜修論の中核テーマになりうる
+- この圏論研究系統で進める場合、これが学部卒論〜修論の中核テーマになりうる
 
 ### Jia-Floridi "Categorical Analysis of LLMs" (arXiv:2512.09117, 2025) × Petri net
 - LLM を categorical 視点で分析する手法と、Petri net の categorical semantics は共通の言語 (functor, monoidal category) を使う
 - LLM の token 生成プロセス自体を一種の "stochastic Petri net" として扱う可能性 (Baez-Biamonte の stochastic mechanics と接続)
-- 直接の応用は遠いが、賈先生研究室の「現実現象を圏で記述する」方法論に Petri net を加える正当化として機能する
+- 直接の応用は遠いが、この圏論研究系統の「現実現象を圏で記述する」方法論に Petri net を加える正当化として機能する
 
 ---
 
@@ -151,5 +151,5 @@
 
 1. **理論基盤は完備**: Petri net の categorical 扱いは Meseguer-Montanari (1990) 〜 Baez-Master (2018) 〜 Master (2019) で十分整っており、本プロジェクトはこれを応用できる
 2. **応用は空白**: 東南アジアモバイル金融 (Bakong/GCash/MoMo) を Petri net で記述した先行研究はゼロ。leapfrog = reachability の形式化も先行例なし
-3. **賈先生研究との接続の鍵は Heyting algebra**: Petri net × Heyting algebra は実質空白で、賈先生の Flat Origami 論文と接続できれば二重に新規性が立つ
+3. **当該先行研究との接続の鍵は Heyting algebra**: Petri net × Heyting algebra は実質空白で、Jia-Mitani 2024 の Flat Origami 論文と接続できれば二重に新規性が立つ
 4. **実装パス**: AlgebraicPetri.jl を使えば structured cospan による合成が即実装可能。Julia + Catlab で東南アジア金融ネットワークのプロトタイプを作れる

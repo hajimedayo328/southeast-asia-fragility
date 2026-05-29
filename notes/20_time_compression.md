@@ -229,7 +229,7 @@ US Fed (2026 ⊤_pub):
 
 ---
 
-## §7 賈先生研究との接続 — 時間軸での
+## §7 先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との接続 — 時間軸での
 
 ### 7.1 Jia 2024 Heyting Origami との対応
 
@@ -249,7 +249,7 @@ US Fed (2026 ⊤_pub):
 → 折り紙でも **「速度 vs 精度のトレードオフ」** が存在。
 これは本プロジェクトの「速度-集中度トレードオフ」と同じ構造の可能性。
 
-賈先生 Heyting Origami の枠組みで時間圧縮の研究をすると、新規貢献候補。
+Jia-Mitani 2024 "Heyting Algebra in Flat Origami" の枠組みで時間圧縮の研究をすると、新規貢献候補。
 
 ---
 

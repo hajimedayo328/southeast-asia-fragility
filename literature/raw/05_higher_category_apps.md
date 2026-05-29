@@ -57,7 +57,7 @@
 - link: arxiv.org 2025-08 リストに掲載（具体IDは未確認）
 - 要旨: 遺伝子制御ネットワーク（GRN）を確率的な圏論的フレームで定式化。
 - 本プロジェクトとの接続: 「ネットワーク × 確率 × 圏論」の応用ケース。ASEAN のインフラ依存ネットを確率的圏で書くアプローチの先例として参照。
-- 引っ掛かりポイント: Jia先生が「LLM以外の社会的・生物的ネットワーク」にも圏論を応用していることの証拠。研究方向としての汎用性。
+- 引っ掛かりポイント: Jia が「LLM以外の社会的・生物的ネットワーク」にも圏論を応用していることの証拠。研究方向としての汎用性。
 
 ---
 
@@ -131,7 +131,7 @@
 - venue: arXiv:1803.05316 / MIT Press
 - link: https://arxiv.org/abs/1803.05316
 - 要旨: 応用圏論の標準教科書。順序集合・データベース・signal flow・hypergraph・operad・topos を7章で。
-- 本プロジェクトとの接続: 「応用圏論で何ができるか」の地図。先生・査読者がここからの距離で実応用論文を評価する基準点。
+- 本プロジェクトとの接続: 「応用圏論で何ができるか」の地図。査読者がここからの距離で実応用論文を評価する基準点。
 - 引っ掛かりポイント: 章6（hypergraph categories）に decorated cospan の説明あり。インフラネットワーク表現の代替候補。
 
 ### [Ghani, Hedges, Winschel, Zahn 2018] Compositional Game Theory
@@ -161,7 +161,7 @@
 ### 仮説2: 「社会システムを fibration で書いた論文」自体が極端に少ない
 - ヒットしたのは: ① Grothendieck Institutions（Diaconescu）= 論理体系統合、② Goguen 流 institution = 仕様統合、③ Spivak の double category（変数共有）。
 - いずれも **「人間社会の制度」を fibration で扱った例ではない**。生物（GRN, Memory Evolutive Systems）・物理（Spivak の dynamical systems）・論理（institution）は揃うが、社会制度の比較に fibration を直接当てた前例は確認できなかった。
-- 含意: ASEAN 論文の唯一性が高い。先生に説明する際の「なぜ未踏か」の根拠。
+- 含意: ASEAN 論文の唯一性が高い。説明する際の「なぜ未踏か」の根拠。
 
 ### 仮説3: 「リープフロッグ = 2-cell」を明示的に書いた論文は確認できない
 - 「リープフロッグ」は経済発展論の概念（Perez, Soete 系）で、これと圏論の 2-morphism を結びつけた論文は今回のサーベイで見つからなかった。

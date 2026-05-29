@@ -232,7 +232,7 @@ Hom_{[Time, H]}(よ(t), Trust) ≅ Trust(t)
 
 ---
 
-## §8 賈先生研究との接続
+## §8 先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との接続
 
 ### Jia 2022-23 Strip Folding as Monoidal Category
 - 折り紙の折り順 = 時間順序

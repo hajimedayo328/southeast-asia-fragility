@@ -231,7 +231,7 @@ EU は SEPA式 (低速・分散) を選べる (歴史的余裕がある)。
 
 ---
 
-## §8 賈先生研究との接続
+## §8 先行研究 (Jia-Mitani / Floridi-Jia-Tohmé 系) との接続
 
 ### Jia 2022-23 Strip Folding as Monoidal Category
 - 折り紙の状態は「折る順序」で決まる = 時間順序

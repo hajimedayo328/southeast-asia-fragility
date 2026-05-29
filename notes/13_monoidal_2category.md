@@ -12,7 +12,7 @@ notes/09 で `𝓚_HPN` を 2-category として構築した。
 - 並列 backbone の合成 (例: Bakong と GCash が並列に存在する地域) を ⊗ で書ける
 - Jia 2022-23 Strip Folding as Monoidal Category の流儀と完全一致
 
-これで賈先生研究系統の **3層** (Strip Folding 2022-23 → Heyting 2024 → LLM 2025) が本プロジェクトに全て接続される。
+これでこの研究系統の **3層** (Strip Folding 2022-23 → Heyting 2024 → LLM 2025) が本プロジェクトに全て接続される。
 
 ---
 
@@ -236,6 +236,6 @@ monoidal 2-category 構造を入れることで:
 - Jia 2022-23 Strip Folding と直接同型
 - 新しい数学的洞察: **⊗ は max 律速、▷ は meet 律速** (合成方向で律速逆転)
 
-これで賈先生研究系統 3層 (Strip Folding / Heyting / LLM) すべてに本プロジェクトが接続された。
+これでこの研究系統 3層 (Strip Folding / Heyting / LLM) すべてに本プロジェクトが接続された。
 
 次は中心交換律の検証 (notes/14)。
