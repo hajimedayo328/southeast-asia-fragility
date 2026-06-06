@@ -1,0 +1,149 @@
+{
+  "description": "5 prediction pairs as Heyting-enriched categories (notes/27). Each side built independently from generating influences via meet-transitive closure (free H-category), so the composition axiom holds by construction. The translation functor F is classified strict / lax / broken. Heyting hom values are author-assigned (notes/27 §7); the code verifies the category axioms and computes F's verdict given those assignments.",
+  "foundation": "Lawvere 1973, Metric spaces / generalized logic / closed categories (TAC Reprints No.1); quantale-enriched categories.",
+  "pairs": [
+    {
+      "name": "Pair 1 — 1997 AFC → 2008 Lehman",
+      "note": "Bailout reach differs: IMF stays ⊤_priv, TARP rises to ⊤_pub → Dev amplifies → expect lax.",
+      "ea_axioms_ok": true,
+      "dev_axioms_ok": true,
+      "verdict": "lax",
+      "is_valid_V_functor": true,
+      "counts": {
+        "equal": 14,
+        "amplified": 2,
+        "attenuated": 0
+      },
+      "distortion": 3,
+      "breaking_pairs": [],
+      "amplifying_pairs": [
+        {
+          "a": "TH",
+          "b": "IMF",
+          "hom_src": "⊤_priv",
+          "hom_tgt": "⊤_bank"
+        },
+        {
+          "a": "BIBF",
+          "b": "IMF",
+          "hom_src": "⊤_priv",
+          "hom_tgt": "⊤_pub"
+        }
+      ]
+    },
+    {
+      "name": "Pair 2 — M-Pesa 2019 → Cloudflare 2025",
+      "note": "Single private backbone outage, identical ranks → expect strict.",
+      "ea_axioms_ok": true,
+      "dev_axioms_ok": true,
+      "verdict": "strict",
+      "is_valid_V_functor": true,
+      "counts": {
+        "equal": 9,
+        "amplified": 0,
+        "attenuated": 0
+      },
+      "distortion": 0,
+      "breaking_pairs": [],
+      "amplifying_pairs": []
+    },
+    {
+      "name": "Pair 3 — GCash monopoly → GAFA-AI monopoly",
+      "note": "National vs global scale: Dev reach broader (⊤_bank) → expect lax.",
+      "ea_axioms_ok": true,
+      "dev_axioms_ok": true,
+      "verdict": "lax",
+      "is_valid_V_functor": true,
+      "counts": {
+        "equal": 8,
+        "amplified": 1,
+        "attenuated": 0
+      },
+      "distortion": 1,
+      "breaking_pairs": [],
+      "amplifying_pairs": [
+        {
+          "a": "GCash",
+          "b": "PHmarket",
+          "hom_src": "⊤_priv",
+          "hom_tgt": "⊤_bank"
+        }
+      ]
+    },
+    {
+      "name": "Pair 4 — Mekong dams → Russian gas",
+      "note": "Hidden denial (⊤_priv) vs overt weaponization (⊤_pub) → Dev amplifies → expect lax.",
+      "ea_axioms_ok": true,
+      "dev_axioms_ok": true,
+      "verdict": "lax",
+      "is_valid_V_functor": true,
+      "counts": {
+        "equal": 8,
+        "amplified": 1,
+        "attenuated": 0
+      },
+      "distortion": 2,
+      "breaking_pairs": [],
+      "amplifying_pairs": [
+        {
+          "a": "ChinaDam",
+          "b": "WaterLever",
+          "hom_src": "⊤_priv",
+          "hom_tgt": "⊤_pub"
+        }
+      ]
+    },
+    {
+      "name": "Pair 5 — Wave Money → TikTok",
+      "note": "EA switch completed (⊤_bank), Dev switch unfinished (⊤_priv) → Dev attenuates → expect broken (functoriality leaks).",
+      "ea_axioms_ok": true,
+      "dev_axioms_ok": true,
+      "verdict": "broken",
+      "is_valid_V_functor": false,
+      "counts": {
+        "equal": 6,
+        "amplified": 0,
+        "attenuated": 3
+      },
+      "distortion": -3,
+      "breaking_pairs": [
+        {
+          "a": "Wave",
+          "b": "KBZPay",
+          "F(a)": "TikTok",
+          "F(b)": "Oracle",
+          "hom_src": "⊤_bank",
+          "hom_tgt": "⊤_priv",
+          "kind": "attenuated"
+        },
+        {
+          "a": "Wave",
+          "b": "MMusers",
+          "F(a)": "TikTok",
+          "F(b)": "USusers",
+          "hom_src": "⊤_bank",
+          "hom_tgt": "⊤_priv",
+          "kind": "attenuated"
+        },
+        {
+          "a": "KBZPay",
+          "b": "MMusers",
+          "F(a)": "Oracle",
+          "F(b)": "USusers",
+          "hom_src": "⊤_bank",
+          "hom_tgt": "⊤_priv",
+          "kind": "attenuated"
+        }
+      ],
+      "amplifying_pairs": []
+    }
+  ],
+  "spectrum": {
+    "Pair 1 — 1997 AFC → 2008 Lehman": "lax",
+    "Pair 2 — M-Pesa 2019 → Cloudflare 2025": "strict",
+    "Pair 3 — GCash monopoly → GAFA-AI monopoly": "lax",
+    "Pair 4 — Mekong dams → Russian gas": "lax",
+    "Pair 5 — Wave Money → TikTok": "broken"
+  },
+  "honest_limits": "Verdicts reflect author-assigned hom matrices, not measured data. What is objective: (1) both sides satisfy the enriched-category axioms, (2) F's strict/lax/broken verdict follows deterministically from the assigned matrices. Replacing assignments with data-derived influence strengths is future work."
+}

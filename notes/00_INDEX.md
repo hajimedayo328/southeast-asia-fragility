@@ -86,7 +86,8 @@
 |---|---|---|---|
 | 24 | monad_side_effects.md | ★★ | **モナド (Writer H)** で副作用累積を厳密化 |
 | 25 | sheaf_local_global.md | ★★★ | **層 (sheaf)** で局所→大域の伝染、1997とCloudflareの同じ H¹ 振る舞い |
-| 26 | translation_functor.md | ★★★ | **翻訳関手 F + Kan拡張**、5ペアを strict/lax で分類 |
+| 26 | translation_functor.md | ★★★ | **翻訳関手 F + Kan拡張**、5ペアを strict/lax で分類 (informal) |
+| 27 | enriched_prediction_category.md | ★★★ | **予言圏を Heyting-enriched category として厳密化** (Lawvere 1973)。射を H 値で定義し循環論法を断つ。F を strict/lax/broken で**計算分類** |
 
 ---
 

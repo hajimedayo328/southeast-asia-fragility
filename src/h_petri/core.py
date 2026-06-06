@@ -93,6 +93,18 @@ class FourLevelHA(HeytingAlgebra):
     def leq(self, a, b) -> bool:
         return self._rank(a) <= self._rank(b)
 
+    def implies(self, a, b):
+        """Heyting relative pseudocomplement a ⇒ b.
+
+        For a totally-ordered (chain) Heyting algebra:
+            a ⇒ b = ⊤   if a ≤ b
+                  = b    otherwise
+        Used by enriched right Kan extensions (notes/27 §5).
+        """
+        if self._rank(a) <= self._rank(b):
+            return self.T_PUB
+        return b
+
 
 # ---------------------------------------------------------------------------
 # Petri Net structures
