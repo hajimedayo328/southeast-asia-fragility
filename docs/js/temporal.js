@@ -590,6 +590,60 @@ function renderPredictionPairs(data) {
   renderForecast2030(data);
 })();
 
+// ---------------- §T10.1: enriched-category computed verdicts (notes/27) ----------------
+
+(async function initEnriched() {
+  let enr = null, kan = null;
+  try {
+    const r1 = await fetch('data/enriched_pairs.json');
+    if (r1.ok) enr = await r1.json();
+    const r2 = await fetch('data/kan_extension.json');
+    if (r2.ok) kan = await r2.json();
+  } catch (e) { /* ignore */ }
+
+  const grid = document.getElementById('enriched-grid');
+  const finding = document.getElementById('finding-enriched');
+  if (!grid || !enr) {
+    if (finding) finding.innerHTML =
+      'data/enriched_pairs.json が読み込めない。<code>python -m h_petri.category.pairs_enriched</code> を実行してください。';
+    return;
+  }
+
+  const gapByName = {};
+  if (kan && kan.pairs) {
+    for (const p of kan.pairs) {
+      gapByName[p.name] = (p.prediction_gap && p.prediction_gap.total_amplification_gap);
+    }
+  }
+
+  const badgeClass = { strict: 'strict', lax: 'lax', broken: 'partial' };
+  const shortName = (n) => n.replace(/^Pair \d+ — /, '');
+
+  grid.innerHTML = enr.pairs.map(p => {
+    const gap = gapByName[p.name];
+    const gapStr = (gap === undefined || gap === null) ? '—' : (gap > 0 ? `+${gap}` : `${gap}`);
+    return `
+      <div class="enr-card enr-${badgeClass[p.verdict] || 'lax'}">
+        <div class="enr-name">${shortName(p.name)}</div>
+        <div class="enr-row">
+          <span class="enr-lbl">F の判定</span>
+          <span class="badge ${badgeClass[p.verdict] || 'lax'}">${p.verdict}</span>
+        </div>
+        <div class="enr-row"><span class="enr-lbl">distortion</span><span class="enr-val">${p.distortion > 0 ? '+' : ''}${p.distortion}</span></div>
+        <div class="enr-row"><span class="enr-lbl">Kan 増幅 gap</span><span class="enr-val">${gapStr}</span></div>
+        <div class="enr-row"><span class="enr-lbl">圏の公理</span><span class="enr-val">${p.ea_axioms_ok && p.dev_axioms_ok ? '✓' : '✗'}</span></div>
+      </div>`;
+  }).join('');
+
+  const adjOk = kan && kan.all_adjunctions_verified;
+  finding.innerHTML =
+    `5ペアとも圏の公理は構成的に成立 (✓)。F の判定: <strong>P2=strict / P1,P3,P4=lax / P5=broken</strong>。` +
+    (adjOk ? ` Kan拡張の随伴 (Lan⊣F*⊣Ran) は<strong>全数チェックで成立</strong> — 値に依存しない検証済みの部分。` : ``) +
+    ` <strong>Kan 増幅 gap は verdict と別軸</strong>: lax だけ正 (P1,3,4)、strict(P2) と broken(P5) は両方 0 (理由は正反対)。` +
+    ` informal な手分類 (上の表) を計算で sharpening した結果、P3 は quasi→lax、P5 は partial→broken に確定。` +
+    ` <em>ただし辺の hom 値は著者割当てなので、これは「割当てを固定した上での一意な判定」</em>。`;
+})();
+
 // ---------------- W: Lag trend scatter ----------------
 
 function renderLagTrend(data) {
