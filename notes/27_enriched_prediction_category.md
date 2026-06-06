@@ -230,6 +230,38 @@ EA/Dev を**独立に**生成子から閉包して F を分類した結果:
 
 出力: `docs/data/enriched_pairs.json`。
 
+### §8.2 右Kan拡張 Ran_F の実装と機械検証 (2026-06-06)
+
+§5 で「計算可能」とだけ書いた Kan拡張を `src/h_petri/category/kan.py` で実装。
+**変分(variance)を手計算で信じない**ため、有限モデル上で随伴を**全数チェック**した:
+
+- copresheaf(共変 V-presheaf)を全列挙(各ペアで EA 26〜106個、Dev 31〜70個)
+- 随伴 `Lan_F ⊣ F* ⊣ Ran_F` の双条件を全組合せで検証(ペア1で 14,840 チェック等)
+- **全ペアで両随伴が成立** ✓ + Kan 結果が copresheaf に収まることも確認 ✓
+
+→ これで「実装した Lan/Ran が**本当に** restriction の左右随伴である」ことが
+**値に依存せず**証明された(hom 値が著者割当てでも、随伴の成立は客観的)。
+偽の数字いじりでなく、本物の Kan拡張だと機械検証できた。
+
+**応用と正直な発見**: 起点 backbone の表現可能 copresheaf `𝓒(origin,−)` を
+Lan(左Kan)と Ran(右Kan)で Dev 側に拡張し、その差(amplification gap)を測った:
+
+| ペア | verdict | amplification gap | 意味 |
+|---|---|---|---|
+| 2 | strict | 0 | 等長、Lan=Ran、予言が tight |
+| 1 | lax | +4 | Dev が rich、予言が under-determined |
+| 3 | lax | +3 | 同上 |
+| 4 | lax | +4 | 同上 |
+| 5 | broken | 0 | **だが逆の理由** — Dev が貧弱(F が減衰) |
+
+⚠️ **当初期待した「gap が verdict を追う」は成り立たなかった**。strict と broken が
+**両方 gap 0**(理由は正反対)。つまり gap は verdict の代理ではなく、**独立な第2軸**:
+> verdict (strict/lax/broken) × Kan gap (0 か正か) の**2軸**で初めて3状態が分離する。
+> 1つの数字に押し込めると、strict と broken の区別が消える。
+
+これは「綺麗な相関」より弱いが、**正直な**結果。安易な単一指標の物語を避けた。
+出力: `docs/data/kan_extension.json`。
+
 ---
 
 ## §9 まとめ

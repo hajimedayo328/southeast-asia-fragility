@@ -1,0 +1,203 @@
+{
+  "description": "Enriched Kan extensions Lan_F ⊣ F* ⊣ Ran_F over the 4-level Heyting algebra (notes/27 §5). The adjunctions are verified EXHAUSTIVELY over every copresheaf on the finite categories — this is what licenses the claim that these are genuine Kan extensions and not number-plugging. Then Lan (optimistic) vs Ran (conservative) extension of a canonical risk presheaf gives a prediction-ambiguity gap per Developed-world object.",
+  "foundation": "Lawvere 1973; quantale-enriched profunctor calculus (Stubbe 2005).",
+  "all_adjunctions_verified": true,
+  "pairs": [
+    {
+      "name": "Pair 1 — 1997 AFC → 2008 Lehman",
+      "verification": {
+        "num_src_copresheaves": 106,
+        "num_tgt_copresheaves": 70,
+        "lan_adjunction_holds": true,
+        "ran_adjunction_holds": true,
+        "lan_lands_in_copresheaves": true,
+        "ran_lands_in_copresheaves": true,
+        "checks_performed": 14840
+      },
+      "verified": true,
+      "verdict": "lax",
+      "prediction_gap": {
+        "origin": "TH",
+        "risk_phi_EA": {
+          "TH": "⊤_pub",
+          "BIBF": "⊤_bank",
+          "KR": "⊤_priv",
+          "IMF": "⊤_priv"
+        },
+        "lan_left_kan": {
+          "ShadowBank": "⊤_pub",
+          "Lehman": "⊤_bank",
+          "AIG": "⊤_priv",
+          "TARP": "⊤_bank"
+        },
+        "ran_right_kan": {
+          "ShadowBank": "⊤_priv",
+          "Lehman": "⊤_priv",
+          "AIG": "⊤_priv",
+          "TARP": "⊤_priv"
+        },
+        "amplification_gap_per_dev_object": {
+          "ShadowBank": 2,
+          "Lehman": 1,
+          "AIG": 0,
+          "TARP": 1
+        },
+        "total_amplification_gap": 4
+      }
+    },
+    {
+      "name": "Pair 2 — M-Pesa 2019 → Cloudflare 2025",
+      "verification": {
+        "num_src_copresheaves": 40,
+        "num_tgt_copresheaves": 40,
+        "lan_adjunction_holds": true,
+        "ran_adjunction_holds": true,
+        "lan_lands_in_copresheaves": true,
+        "ran_lands_in_copresheaves": true,
+        "checks_performed": 3200
+      },
+      "verified": true,
+      "verdict": "strict",
+      "prediction_gap": {
+        "origin": "Safaricom",
+        "risk_phi_EA": {
+          "Safaricom": "⊤_pub",
+          "KEpay": "⊤_priv",
+          "KEeconomy": "⊤_priv"
+        },
+        "lan_left_kan": {
+          "Cloudflare": "⊤_pub",
+          "AIsvc": "⊤_priv",
+          "AImarket": "⊤_priv"
+        },
+        "ran_right_kan": {
+          "Cloudflare": "⊤_pub",
+          "AIsvc": "⊤_priv",
+          "AImarket": "⊤_priv"
+        },
+        "amplification_gap_per_dev_object": {
+          "Cloudflare": 0,
+          "AIsvc": 0,
+          "AImarket": 0
+        },
+        "total_amplification_gap": 0
+      }
+    },
+    {
+      "name": "Pair 3 — GCash monopoly → GAFA-AI monopoly",
+      "verification": {
+        "num_src_copresheaves": 40,
+        "num_tgt_copresheaves": 34,
+        "lan_adjunction_holds": true,
+        "ran_adjunction_holds": true,
+        "lan_lands_in_copresheaves": true,
+        "ran_lands_in_copresheaves": true,
+        "checks_performed": 2720
+      },
+      "verified": true,
+      "verdict": "lax",
+      "prediction_gap": {
+        "origin": "GCash",
+        "risk_phi_EA": {
+          "GCash": "⊤_pub",
+          "Maya": "⊤_priv",
+          "PHmarket": "⊤_priv"
+        },
+        "lan_left_kan": {
+          "OpenAI": "⊤_pub",
+          "Anthropic": "⊤_priv",
+          "AImarket": "⊤_bank"
+        },
+        "ran_right_kan": {
+          "OpenAI": "⊤_priv",
+          "Anthropic": "⊤_priv",
+          "AImarket": "⊤_priv"
+        },
+        "amplification_gap_per_dev_object": {
+          "OpenAI": 2,
+          "Anthropic": 0,
+          "AImarket": 1
+        },
+        "total_amplification_gap": 3
+      }
+    },
+    {
+      "name": "Pair 4 — Mekong dams → Russian gas",
+      "verification": {
+        "num_src_copresheaves": 37,
+        "num_tgt_copresheaves": 31,
+        "lan_adjunction_holds": true,
+        "ran_adjunction_holds": true,
+        "lan_lands_in_copresheaves": true,
+        "ran_lands_in_copresheaves": true,
+        "checks_performed": 2294
+      },
+      "verified": true,
+      "verdict": "lax",
+      "prediction_gap": {
+        "origin": "ChinaDam",
+        "risk_phi_EA": {
+          "ChinaDam": "⊤_pub",
+          "Mekong5": "⊤_bank",
+          "WaterLever": "⊤_priv"
+        },
+        "lan_left_kan": {
+          "RusGas": "⊤_pub",
+          "EU": "⊤_bank",
+          "GasLever": "⊤_pub"
+        },
+        "ran_right_kan": {
+          "RusGas": "⊤_priv",
+          "EU": "⊤_bank",
+          "GasLever": "⊤_priv"
+        },
+        "amplification_gap_per_dev_object": {
+          "RusGas": 2,
+          "EU": 0,
+          "GasLever": 2
+        },
+        "total_amplification_gap": 4
+      }
+    },
+    {
+      "name": "Pair 5 — Wave Money → TikTok",
+      "verification": {
+        "num_src_copresheaves": 26,
+        "num_tgt_copresheaves": 40,
+        "lan_adjunction_holds": true,
+        "ran_adjunction_holds": true,
+        "lan_lands_in_copresheaves": true,
+        "ran_lands_in_copresheaves": true,
+        "checks_performed": 2080
+      },
+      "verified": true,
+      "verdict": "broken",
+      "prediction_gap": {
+        "origin": "Wave",
+        "risk_phi_EA": {
+          "Wave": "⊤_pub",
+          "KBZPay": "⊤_bank",
+          "MMusers": "⊤_bank"
+        },
+        "lan_left_kan": {
+          "TikTok": "⊤_pub",
+          "Oracle": "⊤_bank",
+          "USusers": "⊤_bank"
+        },
+        "ran_right_kan": {
+          "TikTok": "⊤_pub",
+          "Oracle": "⊤_bank",
+          "USusers": "⊤_bank"
+        },
+        "amplification_gap_per_dev_object": {
+          "TikTok": 0,
+          "Oracle": 0,
+          "USusers": 0
+        },
+        "total_amplification_gap": 0
+      }
+    }
+  ],
+  "finding": "The Kan amplification gap (rank(Lan) - rank(Ran) of the representable risk presheaf) is NOT a monotone proxy for the strict/lax/broken verdict. It is nonzero only for the lax pairs (Dev richer than F's image), and zero for BOTH strict (isometric: Lan=Ran) and broken (Dev impoverished). So verdict and Kan-gap are two independent axes; both are needed to separate the three regimes.",
+  "honest_limits": "The adjunction verification is fully objective (exhaustive on the finite model — thousands of copresheaf checks per pair, all passed). The risk presheaf is the canonical representable 𝓒(origin,−) (not tuned), but the underlying hom matrices are author-assigned (notes/27 §7), so the gap numbers inherit that caveat. What is PROVEN regardless of the values: the implemented Lan/Ran are genuinely the left/right adjoints to restriction (Lan_F ⊣ F* ⊣ Ran_F)."
+}
