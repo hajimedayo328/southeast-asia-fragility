@@ -41,10 +41,11 @@
   <h1>東南アジアの脆弱性は<br><span class="accent">先進国の予言</span>である</h1>
   <p class="subtitle">Southeast Asia as a Predictive Mirror — visualizing fragility through Category Theory and Graph Theory.</p>
   <p class="pitch">
-    便利な経路には、必ず見えないコストが貼り付く。<br>
-    随伴 <code>L ⊣ R</code> の数学的構造によって、これは経験則ではなく論理的必然になる。<br>
+    便利な経路には、見えないコストが貼り付きやすい。<br>
+    随伴 <code>L ⊣ R</code> を <strong>レンズ</strong>として使うと、この「便利と代償のペア」を構造的に扱える。<br>
     本プロジェクトは ASEAN10カ国の実データで <strong>L (便利)</strong> と <strong>R (不可視コスト)</strong> のペアを可視化し、
     東南アジアの脆弱性パターンを <strong>先進国の将来リスク</strong> として読み替える。
+    <span class="pitch-caveat">(随伴は「便利→必ず代償」を<strong>証明する</strong>道具ではなく、観察されるパターンを精密に書く<strong>枠組み</strong>として採用している)</span>
   </p>
   <div class="plain-jp">
     <p>「<strong>便利なものを作ると、必ず代償がついてくる</strong>」って感覚あるよね。スマホ便利だけど依存しすぎたら使えなくなった時に詰む、みたいな。</p>
@@ -79,17 +80,18 @@
 <section id="framework">
   <span class="section-num">§ 01 — 枠組み</span>
   <h2>圏論的枠組み: 便利と不可視コストの随伴</h2>
-  <p class="lede">数学的に対称な構造は、社会現象の非対称な振る舞いを正確に映す。</p>
+  <p class="lede">「便利と代償のペア」を、随伴という構造で精密に書き直してみる試み。</p>
 
   <div class="plain-jp">
     <p>抗生物質は楽に病気を治せるけど、使いすぎると <strong>耐性菌が出る</strong>。AI に頼ると楽になるけど、<strong>自分で考える力が落ちる</strong>。自動運転は楽だけど、<strong>緊急時に反応できなくなる</strong>。</p>
-    <p>これらは別々の話に見えて、実は <strong>全部同じ構造</strong>。「便利を取ると、必ずどこかに見えない代償がついてくる」。これを数学では「随伴 (ずいはん)」と呼ぶ。L (便利な方) と R (代償の方) は必ずペアで現れて、片方だけは存在できない。</p>
-    <p>つまり <strong>「便利が存在する=代償が存在する」が数学的な必然</strong>。これは「気をつけよう」じゃなくて、「物理法則に近い決まり事」として扱える。</p>
+    <p>これらは別々の話に見えて、<strong>似た構造</strong>に見える。「便利を取ると、どこかに見えない代償がつきやすい」。圏論の「随伴 (ずいはん)」は、L (便利な方) と R (代償の方) を<strong>ペアで扱う</strong>道具。本プロジェクトはこの随伴を<strong>枠組みとして借りて</strong>、便利と代償をセットで可視化する。</p>
+    <p class="caveat"><strong>正直な注釈:</strong> 「便利があれば<strong>必ず</strong>代償がある」を数学的に<strong>証明したわけではない</strong>。各ドメインで随伴が実在することは示していない。随伴は「観察されるペア構造を整理する見方」として採用しているだけ。"必然"を売りにはしない (これは本プロジェクトの方針)。</p>
   </div>
 
   <p>
-    圏論の随伴 <code>L ⊣ R</code> は、左随伴 (自由・便利) と 右随伴 (制約・コスト) を必ずペアで現出させる構造。
-    片方だけ存在することはない。これにより、「便利が存在すること」は「コストが存在すること」と数学的に同値になる。
+    圏論の随伴 <code>L ⊣ R</code> は、左随伴 (自由・便利) と 右随伴 (制約・コスト) をペアで扱う構造。
+    本プロジェクトではこれを「便利 L と不可視コスト R を同時に追跡する記法」として使う
+    (L だけ・R だけを別々に語るのではなく、必ずセットで見る、という規律を与えてくれる)。
   </p>
 
   <div class="adjunction">
@@ -130,7 +132,7 @@
 
 <!-- ============ DISASTER ============ -->
 <section id="disaster">
-  <span class="section-num">§ 05 — 事例C · 災害</span>
+  <span class="section-num">§ 02 — 事例 · 災害都市</span>
   <h2>災害時の都市インフラ脆弱性</h2>
   <p class="lede">沖積平野の3大都市 (ジャカルタ・マニラ・ハノイ) が抱える共通の脆弱性。</p>
 
@@ -171,7 +173,7 @@
 
 <!-- ============ COMPARISON ============ -->
 <section id="comparison">
-  <span class="section-num">§ 06 — ASEAN10カ国 概観</span>
+  <span class="section-num">§ 03 — ASEAN10カ国 概観</span>
   <h2>ASEAN10の比較指標</h2>
   <p class="lede">経済規模・都市集中・電気アクセス・通信普及・宗教・植民地経路の同時マップ。</p>
 
@@ -213,7 +215,7 @@
 
 <!-- ============ KEY FINDINGS ============ -->
 <section id="findings">
-  <span class="section-num">§ 07 — KEY FINDINGS · 主要発見</span>
+  <span class="section-num">§ 04 — KEY FINDINGS · 主要発見</span>
   <h2>本プロジェクトで見えた 4つのこと</h2>
   <p class="lede">「東南アジアの脆弱性は先進国の予言」を支える 4 つの具体的発見。</p>
 
@@ -279,7 +281,7 @@
 
 <!-- ============ SYNTHESIS ============ -->
 <section id="synthesis">
-  <span class="section-num">§ 08 — 統合と結論</span>
+  <span class="section-num">§ 05 — 統合と結論</span>
   <h2>東南アジアは先進国の予言である</h2>
   <p class="lede">同じ構造、別のスケール、同じ未来。</p>
 
@@ -344,7 +346,7 @@
 
 <!-- ============ NEXT ============ -->
 <section id="next">
-  <span class="section-num">§ 08 — 次の課題</span>
+  <span class="section-num">§ 06 — 次の課題</span>
   <h2>これから詰めること</h2>
   <ul class="clean">
     <li>「両立可能性 2-cell」の数学的厳密定義 (自然変換 or rewriting規則)</li>

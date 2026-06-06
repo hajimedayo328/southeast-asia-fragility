@@ -342,6 +342,15 @@ section h3 {
   color: var(--fg-sub);
 }
 
+.pitch-caveat {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--fg-mute);
+  opacity: 0.85;
+}
+
 /* ---------- Hypothesis Cards ---------- */
 
 .hypothesis {
