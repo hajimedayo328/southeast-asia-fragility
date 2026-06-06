@@ -11,7 +11,7 @@ temporal.html §T7 で5つの「東南アジア → 先進国」予言ペアを�
 | # | EA事象 | → 先進国事象 | ラグ |
 |---|---|---|---|
 | 1 | 1997 AFC | 2008 リーマン / 2010 欧州 | 11/13年 |
-| 2 | 2019 M-Pesa 5h | 2025 Cloudflare 5.5h | 6年 |
+| 2 | 2019 M-Pesa 5h | 2025 Cloudflare 約4h | 6年 |
 | 3 | GCash 85%集中 | GAFA-AI集中 | 4年 |
 | 4 | 中国メコンダム | ロシア天然ガス露呈 | 12年 |
 | 5 | Wave Money崩壊 | TikTok 規制問題 | 3年 |
@@ -78,16 +78,16 @@ temporal.html §T7 で5つの「東南アジア → 先進国」予言ペアを�
 ### 先進国側 (2025 Cloudflare):
 - `Backbone` = Cloudflare 1社
 - `Service` = ChatGPT/Claude/Sora 等の全AI市場
-- `OutageWindow` = 5.5時間
+- `OutageWindow` = 約4時間
 - 影響: Heyting値で `⊤_priv` (民間1社停止)
 
 ### 同型射
 φ: Safaricom → Cloudflare
    ケニア決済 → 世界AI市場
-   5時間 → 5.5時間 (タイムスケール一致)
+   5時間 → 約4時間 (どちらも数時間規模の単一民間backbone障害)
 
-**驚き**: タイムスケール (5h vs 5.5h) と Heyting値階数 (⊤_priv vs ⊤_priv) が **完全に一致**。
-構造的同型として最も強い証拠。
+**観察**: どちらも数時間規模の単一民間backbone障害 (M-Pesa ~5h / Cloudflare ~4h) であり、
+Heyting値階数 (⊤_priv vs ⊤_priv) も同じ。構造的同型として比較的強い証拠。
 
 ---
 
@@ -182,7 +182,7 @@ temporal.html §T7 で5つの「東南アジア → 先進国」予言ペアを�
 | ペア | EA構造 | 先進国構造 | 同型射の存在 | Heyting値階数の対応 |
 |---|---|---|---|---|
 | 1 | meet律速崩壊 | meet律速崩壊 | ✓ | EA: ⊤_priv 維持, Dev: ⊤_pub格上げ |
-| 2 | 単一民間backbone停止 | 単一民間backbone停止 | ✓ | 両方 ⊤_priv (完全一致) |
+| 2 | 単一民間backbone停止 | 単一民間backbone停止 | ✓ | 両方 ⊤_priv (どちらも数時間規模) |
 | 3 | 民間プラットフォーム独占 | 民間プラットフォーム独占 | ✓ | 両方 ⊤_priv |
 | 4 | 上流ノード戦略依存隠蔽 | 上流ノード戦略依存隠蔽 | ✓ | 両方: 平時 ⊤_priv, 危機時 ⊤_pub 暴露 |
 | 5 | 政治変動 backbone 切替 | 政治変動 backbone 切替 | ✓ | 両方: 切替後の Trust 再構築 |
@@ -246,7 +246,7 @@ src/h_petri/pairs/
 
 5つの予言ペアは Open H-Petri Net レベルで同型射を構成できる:
 - ペア1: meet律速崩壊 (両者の差は事後介入の余地)
-- ペア2: 単一民間backbone停止 (完全一致、5h vs 5.5h)
+- ペア2: 単一民間backbone停止 (どちらも数時間規模、M-Pesa ~5h / Cloudflare ~4h)
 - ペア3: 民間独占 (継続中)
 - ペア4: 上流戦略依存隠蔽 (観察粒度補題そのもの)
 - ペア5: 政治変動 backbone 切替

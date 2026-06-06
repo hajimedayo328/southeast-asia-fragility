@@ -146,11 +146,11 @@ ASEAN10 + 先進国を縦軸 v_T、横軸 C でプロット。
 
 ### 5.1 monotone 関手の破綻
 
-M-Pesa が 2019/4/17 に5時間停止した時、Trust 時系列は:
+M-Pesa が 2019年(約5時間)停止した時、Trust 時系列は:
 ```
-Trust(2019-04-16) = ⊤_priv
-Trust(2019-04-17) = ⊥ (信頼崩壊)
-Trust(2019-04-18) = ⊤_priv (回復)
+Trust(障害前) = ⊤_priv
+Trust(障害中) = ⊥ (信頼崩壊)
+Trust(復旧後) = ⊤_priv (回復)
 ```
 
 これは monotone じゃない。関手 `Time → H` として書けない。

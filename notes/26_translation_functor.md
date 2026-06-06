@@ -10,7 +10,7 @@
 
 notes/23 は「同型射の存在」だけ言って、「不一致部分」を扱ってない。
 本プロジェクトの予言ペアは:
-- ペア2 (M-Pesa ↔ Cloudflare): ほぼ完全一致
+- ペア2 (M-Pesa ↔ Cloudflare): どちらも数時間規模の単一民間backbone障害 (M-Pesa ~5h / Cloudflare ~4h)
 - ペア1 (1997 AFC ↔ Lehman): **bailout の到達範囲が違う** (⊤_priv vs ⊤_pub)
 - ペア4 (メコン ↔ ロシア): **政治的非対称性** (中国は否認、ロシアは公然)
 
@@ -73,12 +73,12 @@ F(IMF)       = TARP/QE
 ```
 F(Safaricom)     = Cloudflare
 F(KE economy)    = Global AI market
-F(5h outage)     = 5.5h outage
+F(5h outage)     = ~4h outage
 ```
 
 **自然性 check**:
 - すべての射で自然性が成立 ✓
-- 時間スケール (5h vs 5.5h)、Heyting値階数 (⊤_priv vs ⊤_priv) が一致
+- どちらも数時間規模の単一民間backbone障害 (M-Pesa ~5h / Cloudflare ~4h)、Heyting値階数 (⊤_priv vs ⊤_priv) も同じ
 
 → **F は strict functor**: 完全に自然。
 **忘却部分**: ほぼなし

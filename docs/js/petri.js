@@ -359,9 +359,9 @@ async function initAIDomain() {
     setText(
       'finding-ai-cascade',
       `中点で <strong>民間 LLM (ChatGPT, Claude) だけ Trust が ⊥ に降下</strong>、Llama / GovAI は影響なし。
-       2025-11-18 Cloudflare Workers KV 障害 (Downdetector 11,183 reports / 5.5h) を Petri net 上で再現。
+       2025-11-18 Cloudflare 設定ファイル障害 (Bot Management 設定 / widespread Downdetector reports / 約4時間) を Petri net 上で再現。
        「単一 stalk の障害が全 dependent サービスを同時に落とす」という
-       <strong>M-Pesa 2019 (Kenya 5h) と構造的に同型</strong>な事象 (notes/23 ペア2 / notes/25 sheaf)。`
+       <strong>M-Pesa 2019 (Kenya 5h) と同じく数時間規模の単一民間 backbone 障害</strong>な事象 (notes/23 ペア2 / notes/25 sheaf)。`
     );
   }
 
@@ -509,8 +509,8 @@ async function initSheaf() {
   const cfH0 = cf.map(x => x.h0_meet).join(' → ');
   setText('finding-sheaf-cf',
     `H⁰(meet) 推移: <strong>${cfH0}</strong>。
-     09:30 の Workers KV 障害で全 Cloudflare-fronted AI サービスが ⊥ に同時降下、
-     H⁰(meet) が <strong>⊤_priv → ⊥</strong> に崩壊。約 5.5h 後に復旧。
+     09:30 の設定ファイル障害 (Bot Management 設定) で全 Cloudflare-fronted AI サービスが ⊥ に同時降下、
+     H⁰(meet) が <strong>⊤_priv → ⊥</strong> に崩壊。約4時間後に復旧。
      1997 と <em>H¹ の出方は違うが、共通 stalk 崩壊という構造的事象は同じ</em>。
      これが notes/23 予言ペア2 (M-Pesa 2019 ↔ Cloudflare 2025-11) の sheaf-理論的根拠。`);
 }

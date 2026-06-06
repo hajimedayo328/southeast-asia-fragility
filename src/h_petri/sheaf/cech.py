@@ -144,7 +144,7 @@ def scenario_1997_afc(ha: FourLevelHA) -> dict:
 # ---------------------------------------------------------------------------
 
 def scenario_cloudflare_2025_11(ha: FourLevelHA) -> dict:
-    # Service graph: AI products that share Cloudflare Workers KV vs not.
+    # Service graph: AI products that share Cloudflare CDN vs not.
     cx = Complex(
         nodes=("ChatGPT", "Claude", "Sora", "Perplexity", "Llama", "Bakong"),
         edges=(
@@ -165,12 +165,12 @@ def scenario_cloudflare_2025_11(ha: FourLevelHA) -> dict:
              "Perplexity": ha.T_PRIV, "Llama": ha.T_BANK, "Bakong": ha.T_PUB},
         ),
         (
-            "2025-11-18 09:30 (Workers KV down — all CF-fronted drop to ⊥)",
+            "2025-11-18 09:30 (config-file error — all CF-fronted drop to ⊥)",
             {"ChatGPT": ha.bottom, "Claude": ha.bottom, "Sora": ha.bottom,
              "Perplexity": ha.bottom, "Llama": ha.T_BANK, "Bakong": ha.T_PUB},
         ),
         (
-            "2025-11-18 14:30 (~5.5h, recovery)",
+            "2025-11-18 ~13:30 (~4h, recovery)",
             {"ChatGPT": ha.T_PRIV, "Claude": ha.T_PRIV, "Sora": ha.T_PRIV,
              "Perplexity": ha.T_PRIV, "Llama": ha.T_BANK, "Bakong": ha.T_PUB},
         ),

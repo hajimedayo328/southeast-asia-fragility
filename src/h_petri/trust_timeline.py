@@ -170,7 +170,7 @@ TRUST_TIMELINES: dict[str, dict] = {
             (2011, H.T_PRIV),    # founding
             (2017, H.T_PRIV),    # IPO prep, mainstream
             (2020, H.T_BANK),    # essential CDN, ~20% of web
-            (2025, H.T_PRIV),    # ★ Nov 2025 5.5h outage — ChatGPT/Claude/Sora all down
+            (2025, H.T_PRIV),    # ★ Nov 2025 ~4h outage (config-file error) — ChatGPT/Claude/X down
             (2026, H.T_BANK),
         ],
         "concentration": 0.7,   # single company runs ~20% of web traffic
@@ -321,17 +321,17 @@ PREDICTION_PAIRS = [
         "id": "pair_2",
         "label": "モバイル金融単一障害点 (民間backbone)",
         "ea": {
-            "event": "M-Pesa 5時間停止 (Kenya)",
+            "event": "M-Pesa 約5時間停止 (Kenya)",
             "year": 2019,
             "region": "ケニア",
-            "summary": "Safaricom 1社停止で Kenya 経済の決済が一時停止。GDP 59% が経由する単一ノード。",
+            "summary": "Safaricom 1社停止で Kenya 経済の決済が一時停止。GDPの約4〜5割が経由する単一ノード(市場シェア96.5%)。",
         },
         "developed": [
             {
                 "event": "Cloudflare 障害",
                 "year": 2025,
                 "region": "全世界",
-                "summary": "Cloudflare Workers KV 障害 5.5時間で ChatGPT・Claude・Sora 等同時ダウン。Downdetector 11,183件報告。全Webの20%が単一CDN依存。",
+                "summary": "Cloudflare 設定ファイル障害(Bot Management 設定)約4時間で ChatGPT・Claude・X 等同時ダウン。Downdetector に多数報告。全Webの相当部分が単一CDNに依存。",
                 "lag": 6,
             },
         ],

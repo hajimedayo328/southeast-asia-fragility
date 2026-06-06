@@ -120,7 +120,7 @@ H¹(F) = 0、H⁰(F) = ⊤_priv (全AI市場で並列に動く)。
 
 ### 4.3 09:30 (障害発火): H¹(F) が爆発
 
-Cloudflare Workers KV が全AIサービスの共通 stalk → **同時にダウン**:
+Cloudflare (共通CDN) が全AIサービスの共通 stalk → 設定ファイル障害 (Bot Management 設定) で **同時にダウン**:
 - ChatGPT: ⊥
 - Claude: ⊥
 - Sora: ⊥
@@ -143,13 +143,13 @@ H¹ の意味では「**共通 stalk の崩壊**」= H¹ の構造的爆発。
 
 | 観点 | 1997 AFC | Cloudflare 2025-11 |
 |---|---|---|
-| 共通 stalk | USDペッグ + 短期外貨債 | Cloudflare Workers KV |
+| 共通 stalk | USDペッグ + 短期外貨債 | Cloudflare (共通CDN) |
 | 局所セクション | 各国 backbone Trust | 各AIサービスの可用性 |
 | 障害前 H¹ | 0 (見かけ整合) | 0 (全サービス正常) |
-| 障害発火 | タイバーツ崩壊 | Cloudflare KV 障害 |
+| 障害発火 | タイバーツ崩壊 | Cloudflare 設定ファイル障害 (Bot Management 設定) |
 | 障害後 H¹ | 爆増 (域内伝染) | 爆増 (全AI同時死) |
 | 回復 | 各国個別に Trust 再構築 | Cloudflare 修復で同時回復 |
-| 時間スケール | 数年 | 5.5時間 |
+| 時間スケール | 数年 | 約4時間 |
 
 → **両者は sheaf cohomology の同じ振る舞いを示す**。
 これが notes/23 予言ペア2の数学的根拠。
@@ -234,7 +234,7 @@ H¹(F) = 構造的に潜在する伝染リスク
 
 実例:
 - 1997 AFC: H¹ 急増 = タイバーツ崩壊と同時
-- Cloudflare 2025-11: H¹ 爆発 = Workers KV 障害と同時
+- Cloudflare 2025-11: H¹ 爆発 = 設定ファイル障害 (Bot Management 設定) と同時
 - 両者の構造的同型を sheaf レベルで証明可能
 
 これは Ghrist applied sheaf theory の **金融・社会システムへの拡張** という独自貢献。

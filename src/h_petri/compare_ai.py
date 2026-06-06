@@ -105,15 +105,16 @@ def run(num_queries: int = 3):
         },
         "cloudflare_2025_11_cascade": {
             "description": (
-                "2025-11-18 Cloudflare Workers KV outage took ChatGPT, Claude, Sora, "
-                "and other AI services down for ~5.5 hours, with Downdetector spiking "
-                "to 11,183 reports. Modeled here by depressing TrustInLLM to ⊥ at a "
-                "mid-step for backbones with type=platform_private (since they share "
-                "Cloudflare CDN). Open-consortium and state backbones unaffected."
+                "2025-11-18 Cloudflare configuration-file error (Bot Management) took "
+                "ChatGPT, Claude, X and other services down for ~4 hours (≈4h10m, "
+                "05:20→09:30 EST), with widespread Downdetector reports. Modeled here "
+                "by depressing TrustInLLM to ⊥ at a mid-step for backbones with "
+                "type=platform_private (since they share Cloudflare CDN). "
+                "Open-consortium and state backbones unaffected."
             ),
             "curves": cascade,
             "structural_lesson": (
-                "Pair 2 from notes/23 (M-Pesa 2019 / Kenya 5h → Cloudflare 2025-11 / global 5.5h) "
+                "Pair 2 from notes/23 (M-Pesa 2019 / Kenya ~5h → Cloudflare 2025-11 / global ~4h) "
                 "is reproduced here at the code level: a single private backbone outage "
                 "downgrades the visible Trust of all dependent services."
             ),
