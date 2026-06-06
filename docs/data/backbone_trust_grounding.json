@@ -1,0 +1,66 @@
+{
+  "description": "Data-grounded derivation of the four backbone TrustHub Heyting levels. Each backing tier comes from a documented institutional fact (operator + regulator), source-cited and verified 2026-06-06. A single explicit rule maps the tier to a Heyting level. This promotes the levels from author-assigned (b) to reproducible-from-sourced-facts (c).",
+  "backing_rule": {
+    "central_bank": "⊤_pub",
+    "bank_with_deposit_insurance": "⊤_bank",
+    "licensed_private_bank": "⊤_bank",
+    "non_bank_emi": "⊤_priv",
+    "none": "⊥"
+  },
+  "backbones": [
+    {
+      "backbone": "Bakong (Cambodia)",
+      "operator": "National Bank of Cambodia (the central bank)",
+      "backing_tier": "central_bank",
+      "derived_level": "⊤_pub",
+      "prior_assignment": "⊤_pub",
+      "agrees": true,
+      "sources": [
+        "https://bakong.nbc.gov.kh/en/",
+        "https://www.weforum.org/stories/2021/08/cambodias-digital-currency-ishowing-other-central-banks-the-way/"
+      ],
+      "notes": "Launched Oct 2020 by NBC as the national payments backbone (built with Soramitsu on Hyperledger Iroha)."
+    },
+    {
+      "backbone": "PayNow (Singapore)",
+      "operator": "Participating banks via the Association of Banks in Singapore (ABS)",
+      "backing_tier": "bank_with_deposit_insurance",
+      "derived_level": "⊤_bank",
+      "prior_assignment": "⊤_bank",
+      "agrees": true,
+      "sources": [
+        "https://www.abs.org.sg/e-payments/pay-now",
+        "https://www.sdic.org.sg/di_overview/"
+      ],
+      "notes": "All full banks in Singapore are mandatory members of the SDIC Deposit Insurance Scheme; PayNow rides on those insured bank deposits."
+    },
+    {
+      "backbone": "KBZPay (Myanmar)",
+      "operator": "KBZ Bank (Myanmar's largest privately-owned bank)",
+      "backing_tier": "licensed_private_bank",
+      "derived_level": "⊤_bank",
+      "prior_assignment": "⊤_bank",
+      "agrees": true,
+      "sources": [
+        "https://www.kbzpay.com/en/about",
+        "https://www.kbzbank.com/en/blog/news-en/kbz-bank-introduces-kbzpay-bringing-a-new-digital-wallet-and-p2p-transactions-to-the-masses-across-myanmar/"
+      ],
+      "notes": "Licensed bank (so banking-law tier) but a SINGLE private bank without the deposit-insurance strength of PayNow — weaker ⊤_bank."
+    },
+    {
+      "backbone": "GCash (Philippines)",
+      "operator": "G-Xchange, Inc. (subsidiary of Mynt / Globe Fintech Innovations)",
+      "backing_tier": "non_bank_emi",
+      "derived_level": "⊤_priv",
+      "prior_assignment": "⊤_priv",
+      "agrees": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/GCash",
+        "https://www.bsp.gov.ph/Lists/Directories/Attachments/7/emi.pdf"
+      ],
+      "notes": "Not a bank; a private e-money issuer. No bank-grade deposit insurance on the e-money float."
+    }
+  ],
+  "all_agree_with_prior": true,
+  "honest_limits": "What is grounded: operator/regulator facts (sourced) and the deterministic tier->level mapping. What remains a modelling choice: the 4-tier rule itself (e.g. treating a single licensed private bank and a deposit-insured bank consortium both as ⊤_bank). KBZPay is the weakest ⊤_bank (single bank, weak/unverified deposit insurance, political risk) — flagged in its notes, not silently equated to PayNow."
+}
