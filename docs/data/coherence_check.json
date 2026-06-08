@@ -1,0 +1,50 @@
+{
+  "description": "Coherence check (T2). Verifies the foundational Heyting/lattice laws exhaustively (incl. the adjunction a∧b≤c ⟺ a≤b⇒c that makes `implies` and the Kan extensions correct), that H-Petri firing is monotone, that the Writer H monad agrees with the simulator on accumulated cost, and that meet/join composition agrees across open_net and from_petri.",
+  "C4_foundation": {
+    "passed": true,
+    "num_triples_checked": 64,
+    "heyting_adjunction_ok": true,
+    "failures": []
+  },
+  "C1_firing_monotone": {
+    "passed": true,
+    "violations": []
+  },
+  "C2_monad_equiv_petri": {
+    "passed": true,
+    "rows": [
+      {
+        "backbone": "bakong",
+        "monad_log": "⊤_pub",
+        "petri_join_of_invisibles": "⊤_pub",
+        "match": true
+      },
+      {
+        "backbone": "paynow",
+        "monad_log": "⊤_bank",
+        "petri_join_of_invisibles": "⊤_bank",
+        "match": true
+      },
+      {
+        "backbone": "kbzpay",
+        "monad_log": "⊤_bank",
+        "petri_join_of_invisibles": "⊤_bank",
+        "match": true
+      },
+      {
+        "backbone": "gcash",
+        "monad_log": "⊤_priv",
+        "petri_join_of_invisibles": "⊤_priv",
+        "match": true
+      }
+    ]
+  },
+  "C3_meet_agreement": {
+    "passed": true,
+    "from_petri_meet": "⊤_priv",
+    "open_net_meet": "⊤_priv",
+    "from_petri_join": "⊤_pub",
+    "open_net_join": "⊤_pub"
+  },
+  "overall_coherent": true
+}

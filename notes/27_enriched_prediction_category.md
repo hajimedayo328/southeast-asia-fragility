@@ -294,6 +294,22 @@ category / open_net の4つが同じ meet 構造で繋がることをコード�
 4段階 backing ルール自体もモデル選択。誇張しない。
 出力: `docs/data/finance_enriched_grounded.json`。
 
+### §8.4 T2: 構造の整合性チェック (2026-06-07)
+
+プロジェクトは ∨(コスト累積)と ∧(律速)を別役割で使い、随伴/モナド/Petri/
+enriched/open_net と複数構造が乱立している。これらが**内部矛盾していないか**を
+`src/h_petri/coherence_check.py` で計算照合した:
+
+- **C4 (foundation)**: FourLevelHA が Heyting/束の公理を満たすか**全数検証(64 triples)**。
+  特に **Heyting 随伴 `a∧b ≤ c ⟺ a ≤ (b⇒c)`** が成立 → `implies` と Kan拡張が健全な土台の上 ✓
+- **C1**: H-Petri 発火が不可視層で単調(∨累積)✓
+- **C2**: Writer H モナドの log ≡ Petri シミュレータの不可視層 join(4 backbone とも一致)✓
+- **C3**: meet/join 合成が open_net と from_petri で一致 ✓
+
+→ **全チェック成立。構造は内部矛盾していなかった**。穴は出なかったが、
+「∨ と ∧ が一貫した役割で使われ、別々の構造が同じ Heyting 代数の上で整合している」
+ことを機械検証できた = (c) 級のメタ検証。出力: `docs/data/coherence_check.json`。
+
 ---
 
 ## §9 まとめ
