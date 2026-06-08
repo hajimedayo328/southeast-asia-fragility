@@ -1,0 +1,33 @@
+{
+  "description": "Structural (categorical) conclusion from ASEAN data. Shows backbone TYPE (Heyting backstop depth) is orthogonal to scalar inclusion (η²≈0) and is the fragility-relevant invariant. Reframes the earlier null scalar correlation as evidence that fragility is structural, not scalar.",
+  "S1_type_vs_inclusion_eta2": 0.004,
+  "S1_orthogonal": true,
+  "S1_groups": {
+    "platform": [
+      51.4,
+      51.8,
+      88.4
+    ],
+    "central_bank": [
+      95.6,
+      33.4
+    ],
+    "bank": [
+      97.5,
+      37.3,
+      47.8
+    ]
+  },
+  "S2_type_to_heyting": {
+    "platform": "⊤_priv",
+    "bank": "⊤_bank",
+    "central_bank": "⊤_pub"
+  },
+  "S3_failure_mode_by_type": {
+    "platform": "single private company fails → users bear loss, no public backstop (e.g. M-Pesa / GCash commercial outages)",
+    "bank": "deposit-insured → loss capped by the insurance scheme (e.g. SDIC)",
+    "central_bank": "sovereign / central-bank backstop → political-risk failure mode, not commercial collapse"
+  },
+  "structural_conclusion": "Scalar inclusion ⟂ backbone type (η²≈0). The fragility-relevant invariant is the categorical TYPE = Heyting backstop depth, which a scalar cannot recover. The null scalar correlation is expected; fragility lives on the structural axis. This is the categorical payoff: naming the invariant (backstop / failure mode) that inclusion statistics miss.",
+  "honest_limits": "n=8 (VN/BN lack 2021 account data). Failure-mode labels are institutional facts (backbone_facts) but not a quantified outage dataset; turning S3 into a quantitative test (outage frequency/severity by type) is the next step. η² with small per-group n is itself noisy."
+}
