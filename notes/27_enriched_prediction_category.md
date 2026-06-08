@@ -267,6 +267,33 @@ Lan(左Kan)と Ran(右Kan)で Dev 側に拡張し、その差(amplification gap)
 これは「綺麗な相関」より弱いが、**正直な**結果。安易な単一指標の物語を避けた。
 出力: `docs/data/kan_extension.json`。
 
+### §8.3 T1: 金融 backbone の enriched 圏を H-Petri Net 由来にする (2026-06-07)
+
+ここまでの enriched 圏は辺 hom を**手置き (b)**にしていた。金融 backbone については
+これを **H-Petri Net のシミュレーション出力**に置き換え、構造を1本に繋いだ
+(`src/h_petri/category/from_petri.py`):
+
+```
+backbones/*.py (Petri net 実走) → TrustHub 最終値
+                               → data/backbone_facts.py (出典付き規制ルール) と照合
+                               → enriched 圏 (hom(A,B)=Trust(A), 合成=meet)
+                               → open_net.py 律速逆転 (⊗ join / ▷ meet)
+```
+
+実行結果:
+- **4 backbone とも Petri TrustHub == 規制事実由来の値**(2つの独立ルートが一致)
+  → これらの Trust 値は **(c) 級**(片方が手置きでも、2ルート一致は客観的)
+- enriched 圏の公理が成立 ✓
+- ⊗=⊤_pub / ▷=⊤_priv / rank gap=2 が **open_net.py の JSON と一致** ✓
+
+→ **看板の発見である律速逆転の入力が (c) 級になった**。かつ backbones / data /
+category / open_net の4つが同じ meet 構造で繋がることをコードで確認。
+
+⚠️ **正直なスコープ**: (c) 化できたのは**金融 backbone の enriched 構造(=律速逆転の入力)だけ**。
+5予言ペアの事象間の辺(TH→IMF 等)は backbone Trust そのものではないので **(b) のまま**。
+4段階 backing ルール自体もモデル選択。誇張しない。
+出力: `docs/data/finance_enriched_grounded.json`。
+
 ---
 
 ## §9 まとめ

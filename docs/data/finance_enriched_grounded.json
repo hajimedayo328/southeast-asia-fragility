@@ -1,0 +1,28 @@
+{
+  "description": "T1: the finance-backbone enriched category derived from the H-Petri Net simulation. Trust levels come from simulating each backbone net and are cross-checked against the source-cited regulatory derivation (data/backbone_facts.py); the two routes agree, so the values are (c)-grade. The enriched ⊗/▷ reproduce the bottleneck reversal on these grounded values and match open_net.py. This unifies backbones/ + data/ + category/ + open_net.",
+  "petri_trust": {
+    "bakong": "⊤_pub",
+    "paynow": "⊤_bank",
+    "kbzpay": "⊤_bank",
+    "gcash": "⊤_priv"
+  },
+  "regulatory_trust": {
+    "bakong": "⊤_pub",
+    "paynow": "⊤_bank",
+    "kbzpay": "⊤_bank",
+    "gcash": "⊤_priv"
+  },
+  "petri_matches_regulatory": true,
+  "axioms_valid": true,
+  "bottleneck_reversal": {
+    "parallel_join": "⊤_pub",
+    "cospan_meet": "⊤_priv",
+    "rank_gap": 2
+  },
+  "cross_check_open_net": {
+    "open_parallel": "⊤_pub",
+    "open_cospan": "⊤_priv",
+    "matches": true
+  },
+  "honest_scope": "Grounds ONLY the finance-backbone enriched structure (the bottleneck-reversal inputs), now (c). The 5 prediction pairs' event-to-event edges remain author-assigned (b). The 4-tier backing rule is still a modelling choice. What is newly (c): the Trust values feeding the headline bottleneck-reversal finding, via two agreeing independent routes."
+}
