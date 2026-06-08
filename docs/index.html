@@ -231,6 +231,60 @@
       数学的根拠: Ghrist-Gould-Lopez 2024 "Lattice-Valued Bottleneck Duality"。
       本プロジェクトは Open Petri Net (Baez-Master 2018) の文脈に翻訳し、ASEAN モバイル金融で実コード検証 (<a href="petri.html">Petri net タブ</a>)。
     </p>
+
+    <figure class="concept-fig">
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-label="律速逆転: 並列だと最強で律速、統合だと最弱で律速">
+        <style>
+          .cf-t  { font: 600 13px 'Inter','Noto Sans JP',sans-serif; fill:#1f2933; }
+          .cf-s  { font: 500 11px 'JetBrains Mono',monospace; fill:#52606d; }
+          .cf-bb { font: 600 11px 'JetBrains Mono',monospace; fill:#fff; }
+          .cf-res{ font: 700 14px 'JetBrains Mono',monospace; }
+        </style>
+        <!-- divider -->
+        <line x1="360" y1="20" x2="360" y2="280" stroke="#e4e7eb" stroke-width="1" stroke-dasharray="4 4"/>
+
+        <!-- LEFT: parallel ⊗ -->
+        <text x="30" y="34" class="cf-t">⊗ 並列 — 自分で1つ選べる</text>
+        <rect x="30"  y="52" width="84" height="30" rx="4" fill="#0891b2"/><text x="72"  y="72" class="cf-bb" text-anchor="middle">Bakong</text>
+        <rect x="30"  y="90" width="84" height="30" rx="4" fill="#7c3aed"/><text x="72"  y="110" class="cf-bb" text-anchor="middle">PayNow</text>
+        <rect x="30"  y="128" width="84" height="30" rx="4" fill="#a16207"/><text x="72" y="148" class="cf-bb" text-anchor="middle">KBZPay</text>
+        <rect x="30"  y="166" width="84" height="30" rx="4" fill="#dc2626"/><text x="72" y="186" class="cf-bb" text-anchor="middle">GCash</text>
+        <!-- pick arrow -->
+        <path d="M122 67 C 180 67, 180 124, 232 124" fill="none" stroke="#0891b2" stroke-width="2.5" marker-end="url(#arc)"/>
+        <text x="150" y="100" class="cf-s">最強を選ぶ</text>
+        <rect x="234" y="104" width="96" height="40" rx="5" fill="#ecfdf5" stroke="#0891b2" stroke-width="2"/>
+        <text x="282" y="123" class="cf-res" fill="#0891b2" text-anchor="middle">⊤_pub</text>
+        <text x="282" y="137" class="cf-s" text-anchor="middle">最強で律速</text>
+
+        <!-- RIGHT: integrate ▷ -->
+        <text x="392" y="34" class="cf-t">▷ 統合 — 1つの hub に集約</text>
+        <rect x="392" y="52" width="84" height="30" rx="4" fill="#0891b2"/><text x="434" y="72" class="cf-bb" text-anchor="middle">Bakong</text>
+        <rect x="392" y="90" width="84" height="30" rx="4" fill="#7c3aed"/><text x="434" y="110" class="cf-bb" text-anchor="middle">PayNow</text>
+        <rect x="392" y="128" width="84" height="30" rx="4" fill="#a16207"/><text x="434" y="148" class="cf-bb" text-anchor="middle">KBZPay</text>
+        <rect x="392" y="166" width="84" height="30" rx="4" fill="#dc2626"/><text x="434" y="186" class="cf-bb" text-anchor="middle">GCash</text>
+        <!-- funnel all into hub -->
+        <path d="M484 67  C 540 67, 540 124, 590 124" fill="none" stroke="#9aa5b1" stroke-width="1.8" marker-end="url(#ar2)"/>
+        <path d="M484 105 C 540 105, 540 124, 590 124" fill="none" stroke="#9aa5b1" stroke-width="1.8" marker-end="url(#ar2)"/>
+        <path d="M484 143 C 540 143, 540 124, 590 124" fill="none" stroke="#9aa5b1" stroke-width="1.8" marker-end="url(#ar2)"/>
+        <path d="M484 181 C 540 181, 540 124, 590 124" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#ar)"/>
+        <text x="512" y="214" class="cf-s">全部が同じ hub 経由</text>
+        <rect x="592" y="104" width="96" height="40" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+        <text x="640" y="123" class="cf-res" fill="#dc2626" text-anchor="middle">⊤_priv</text>
+        <text x="640" y="137" class="cf-s" text-anchor="middle">最弱で律速</text>
+
+        <!-- bottom takeaway -->
+        <text x="360" y="262" class="cf-t" text-anchor="middle">同じ4つ。合成の向きが逆だと、律速も真逆。</text>
+        <text x="360" y="280" class="cf-s" text-anchor="middle">便利のために「つなぐ」ほど、全体は一番弱い所に引っ張られる。</text>
+
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#dc2626"/></marker>
+          <marker id="arc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#0891b2"/></marker>
+          <marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,5 L5,2.5 z" fill="#9aa5b1"/></marker>
+        </defs>
+      </svg>
+      <figcaption>図: 律速逆転。左=並列なら強い方を選べる / 右=統合すると弱い方に律速される。</figcaption>
+    </figure>
   </div>
 
   <div class="hypothesis shadow">

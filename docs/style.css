@@ -351,6 +351,28 @@ section h3 {
   opacity: 0.85;
 }
 
+/* ----- concept diagrams (SVG) ----- */
+.concept-fig {
+  margin: 22px 0 6px 0;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.concept-fig svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.concept-fig figcaption {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--fg-mute);
+  text-align: center;
+}
+
 /* ---------- Hypothesis Cards ---------- */
 
 .hypothesis {
