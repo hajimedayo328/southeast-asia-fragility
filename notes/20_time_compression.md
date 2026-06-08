@@ -298,3 +298,30 @@ Future Projection (外挿) で 2030 予測可能
 これで notes/19 (時間圏 universal property) と組み合わさって、「時間軸研究」の **完全な数学的基盤** が固まる。
 
 次は実装 (Timed H-Petri Net + Trust 時系列データ) と HTML可視化。
+
+---
+
+## §10 実データでの検証 (2026-06-07) — 一部ネガティブ
+
+`src/h_petri/empirical/tradeoff_test.py` で、L↔R の**最も単純なスカラー版**を
+実データに当てた。**自分の仮説を falsify する目的**で設計。
+
+**テストしたもの**: 金融包摂の**水準**(account ownership %、World Bank Findex 2021、
+WB API で再検証) ↔ 集中度(top provider share %、B_concentration.json、中信頼)。ASEAN 8カ国。
+
+**結果**: Pearson r = +0.05、Spearman ρ = **−0.08** → **相関ほぼゼロ**。
+→ 「普及が高い国ほど集中も高い」という**単純なスカラー相関は支持されない**。
+PH(包摂51%・集中85%)と ID(包摂52%・集中25%)が同水準で集中真逆 = スカラーでは説明不能。
+
+**重要な区別(誇張しない)**:
+- これは §4 の「**速度** × 集中度 ≥ K」とは**別物**。テストしたのは「**水準** × 集中度」。
+  v×C(速度版)は速度データが要る → **未検証**。今回の null は v×C を反証していない。
+- backbone タイプ別の集中レンジ(bank 55–60 / central 65–70 / platform 25–85)は
+  「platform は両極」を**示唆**するが、platform は n=3 で**統計的には何も言えない** = 仮説の種。
+- 集中度データは中信頼。mobile_money_pct 版は A_findex.json に PH で公式値とのズレ
+  (21.74% vs 29%)があり**未使用**(監査で発覚)。
+
+**意味**: 核の主張の一番素朴な形は実データで**外れた**。「欲しい結論を確認しただけ
+ではない」誠実な証拠。本当のシグナルは(もしあれば)スカラー相関ではなく backbone
+**タイプ**側にある方向を示す(notes/07 の type 分類と整合)。
+出力: `docs/data/tradeoff_empirical.json`。

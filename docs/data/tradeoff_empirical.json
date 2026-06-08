@@ -1,0 +1,63 @@
+{
+  "description": "Empirical test of the simplest scalar form of the L↔R claim: does financial-inclusion level (account ownership, WB-verified 2021) correlate with provider concentration (top share, medium-confidence) across ASEAN? A test designed to be falsifiable.",
+  "data_provenance": {
+    "account_ownership": "World Bank Findex API FX.OWN.TOTL.ZS, 2021, re-verified 2026-06-07",
+    "concentration": "docs/data/B_concentration.json, MEDIUM confidence (media-derived for KH/LA/MM/BN)",
+    "audit_finding": "repo A_findex.json mobile_money_pct(PH)=21.74% disagrees with official Findex ~29%; that field was NOT used here."
+  },
+  "rows": [
+    {
+      "country": "PH",
+      "account_pct": 51.37,
+      "concentration_pct": 85.0,
+      "backbone_type": "platform"
+    },
+    {
+      "country": "TH",
+      "account_pct": 95.58,
+      "concentration_pct": 65.0,
+      "backbone_type": "central_bank"
+    },
+    {
+      "country": "ID",
+      "account_pct": 51.76,
+      "concentration_pct": 25.0,
+      "backbone_type": "platform"
+    },
+    {
+      "country": "MY",
+      "account_pct": 88.37,
+      "concentration_pct": 62.0,
+      "backbone_type": "platform"
+    },
+    {
+      "country": "SG",
+      "account_pct": 97.55,
+      "concentration_pct": 60.0,
+      "backbone_type": "bank"
+    },
+    {
+      "country": "KH",
+      "account_pct": 33.39,
+      "concentration_pct": 70.0,
+      "backbone_type": "central_bank"
+    },
+    {
+      "country": "LA",
+      "account_pct": 37.32,
+      "concentration_pct": 55.0,
+      "backbone_type": "bank"
+    },
+    {
+      "country": "MM",
+      "account_pct": 47.79,
+      "concentration_pct": 60.0,
+      "backbone_type": "bank"
+    }
+  ],
+  "n": 8,
+  "pearson_r": 0.047,
+  "spearman_rho": -0.084,
+  "verdict": "The simple scalar correlation (inclusion level vs concentration) is NOT supported. PH (mid inclusion, extreme concentration) vs ID (same inclusion, low concentration) breaks any clean correlation. The real signal is backbone TYPE, not a scalar — consistent with the project's framing, but the naive 'more adoption -> more concentration' correlation fails.",
+  "honest_limits": "n=8, concentration is medium-confidence, and account ownership is a BROAD inclusion proxy (not mobile-money leapfrog). The leapfrog-precise test needs verified mobile-money% per country (only PH verified so far)."
+}
