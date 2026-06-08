@@ -31,6 +31,7 @@
   <a href="#comparison">比較</a>
   <a href="#findings">主要発見</a>
   <a href="#synthesis">結論</a>
+  <a href="#honesty">数字の信頼度</a>
 </nav>
 
 <main>
@@ -398,9 +399,50 @@
   </div>
 </section>
 
+<!-- ============ HONESTY / DATA QUALITY ============ -->
+<section id="honesty">
+  <span class="section-num">§ 06 — この数字はどこまで信じていい?</span>
+  <h2>正確性の格付け (a) / (b) / (c)</h2>
+  <p class="lede">研究の見栄えより、「どこが本物でどこが仮定か」を先に開示する。</p>
+
+  <div class="plain-jp">
+    <p>このサイトの数字は、全部が同じ重さじゃない。<strong>AIが書いた研究は、もっともらしい嘘を混ぜがち</strong>(実際このプロジェクトでも、存在しない論文や間違った障害データを2回検出・修正した)。だから「どの数字がどれだけ信頼できるか」を3段階で明示する。</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>段階</th><th>意味</th><th>このプロジェクトでの例</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>(a)</strong> 危険</td>
+        <td>AIが直接でっち上げた値・固有名・引用</td>
+        <td>検出して全削除した(架空論文 Curry-Krishnan、誤った Cloudflare 障害データ)</td>
+      </tr>
+      <tr>
+        <td><strong>(b)</strong> 中間</td>
+        <td>プログラムは正しく計算したが、<strong>入力の値は著者が手で置いた</strong>。計算は正確でも前提は主観的</td>
+        <td>予言ペアの strict/lax/broken 判定、sheaf の H¹(辺・各時点の値が手置き)</td>
+      </tr>
+      <tr>
+        <td><strong>(c)</strong> 頼れる</td>
+        <td>ロジック自体を独立検証 or 入力が出典付きの事実</td>
+        <td>backbone の信頼レベル(規制事実から導出)、Kan拡張の随伴(全数チェックで検証)、圏の公理</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>結論</strong>: 土台(backbone 分類)と数学的な検証部分は <strong>(c)</strong>。
+    予言ペアの強弱スペクトラムは <strong>(b)</strong> — 「割当てを固定すれば一意に決まる」レベルで、
+    データで証明された強弱ではない。この区別を曖昧にしないことが、この研究で一番大事にしている所。
+    詳細は <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/27_enriched_prediction_category.md" target="_blank">notes/27 §7</a>。
+  </p>
+</section>
+
 <!-- ============ NEXT ============ -->
 <section id="next">
-  <span class="section-num">§ 06 — 次の課題</span>
+  <span class="section-num">§ 07 — 次の課題</span>
   <h2>これから詰めること</h2>
   <ul class="clean">
     <li>「両立可能性 2-cell」の数学的厳密定義 (自然変換 or rewriting規則)</li>
