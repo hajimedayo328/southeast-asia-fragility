@@ -217,8 +217,8 @@
 <!-- ============ KEY FINDINGS ============ -->
 <section id="findings">
   <span class="section-num">§ 04 — KEY FINDINGS · 主要発見</span>
-  <h2>本プロジェクトで見えた 4つのこと</h2>
-  <p class="lede">「東南アジアの脆弱性は先進国の予言」を支える 4 つの具体的発見。</p>
+  <h2>本プロジェクトで見えた 5つのこと</h2>
+  <p class="lede">「東南アジアの脆弱性は先進国の予言」を支える 5 つの具体的発見。発見5が実データで一番正直。</p>
 
   <div class="hypothesis">
     <span class="hyp-id">発見 1 · 律速逆転 (越境統合の代償)</span>
@@ -330,6 +330,32 @@
       Floridi-Jia-Tohmé 2025 の Kan 拡張ツールセットがそのまま転用可能。
       実装は <a href="petri.html#sheaf">Petri net §P6 (Sheaf)</a> / <a href="petri.html#monad">§P7 (Monad)</a> /
       <a href="temporal.html#translation-functor">時間軸 §T10 (翻訳関手)</a>。
+    </p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">発見 5 · 脆弱性はスカラーでなく構造に乗る (実データ・一番正直)</span>
+    <h3>普及率で予測できない。支配するのは圏論的な「型」</h3>
+    <p class="punchline">
+      核の主張の一番素朴な形を実データに当てたら <strong>外れた</strong>:
+      金融包摂の水準 ↔ 集中度の相関は <strong>ρ ≈ −0.08(ほぼゼロ)</strong>。
+      backbone の<strong>型</strong>は包摂水準の分散を <strong>η² ≈ 0.004(≒0%)しか説明しない</strong>
+      = 型とスカラーは<strong>直交</strong>。
+      → 脆弱性を支配するのは普及率(スカラー)ではなく <strong>圏論的な構造(型)</strong>。
+    </p>
+    <p class="claim">
+      出典付きの実障害イベントで「どう壊れるか」を見ると、故障モードは<strong>2つの構造軸</strong>に分解される:
+      <strong>運用トポロジ</strong>(単一社 → 全停止 / 共有レール → 銀行別に分散)と
+      <strong>Heyting バックストップ型</strong>(民間 ⊤_priv → 利用者が損失 / 中銀・銀行 → system が吸収)。
+      どちらもスカラー普及率と無関係。<strong>圏論はここで元を取る</strong> —
+      「どう壊れ、誰が払うか」の不変量を、金融包摂統計が見えない所で名指しできる。
+    </p>
+    <p class="caveat" style="background:#fef2f2;border-left:3px solid #dc2626;padding:10px 14px;font-size:0.85rem;color:#52606d;">
+      <strong>正直な限界:</strong> n=8(国)・障害イベントは各セル数件で<strong>統計でなく図示レベル</strong>。
+      この n では2軸を分離しきれない。型間の障害<strong>頻度は主張しない</strong>(Bakong=0件は中銀の自己報告 +
+      英語報道過小 = 開示バイアス)。主張は「<strong>how/who(モード)</strong>」だけで「how often」は外す。
+      コード: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/empirical/" target="_blank">src/h_petri/empirical/</a>
+      (データは World Bank Findex API で再検証、集中度は中信頼)。
     </p>
   </div>
 </section>
