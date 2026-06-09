@@ -1,0 +1,131 @@
+{
+  "description": "S3 quantified. Sourced backbone-outage events classified by structural axes (backstop type, operational topology). Failure SCOPE tracks topology, LOSS-BEARER tracks backstop — both orthogonal to scalar adoption. Moves the structural conclusion from definition to documented pattern.",
+  "events": [
+    {
+      "event": "M-Pesa 2019 national outage",
+      "backbone": "M-Pesa",
+      "region": "KE(参考)",
+      "type": "platform",
+      "topology": "single",
+      "duration_h": 5,
+      "cause": "internal_tech",
+      "scope": "total",
+      "loss_bearer": "users",
+      "source": "TechCabal / The Exchange / Tuko"
+    },
+    {
+      "event": "M-Pesa 2024-01 outages x2",
+      "backbone": "M-Pesa",
+      "region": "KE(参考)",
+      "type": "platform",
+      "topology": "single",
+      "duration_h": 2,
+      "cause": "maintenance/internal",
+      "scope": "total",
+      "loss_bearer": "users",
+      "source": "TechCabal / Techpoint"
+    },
+    {
+      "event": "GCash 2023-05 balance loss",
+      "backbone": "GCash",
+      "region": "PH",
+      "type": "platform",
+      "topology": "single",
+      "duration_h": 4,
+      "cause": "phishing/internal",
+      "scope": "total",
+      "loss_bearer": "users",
+      "source": "Inquirer / NPC / GMA"
+    },
+    {
+      "event": "GCash 2024-11 reconciliation",
+      "backbone": "GCash",
+      "region": "PH",
+      "type": "platform",
+      "topology": "single",
+      "duration_h": 24,
+      "cause": "reconciliation_bug",
+      "scope": "total",
+      "loss_bearer": "users(restored)",
+      "source": "BusinessWorld / GMA / DICT (re-verified 2026-06-07)"
+    },
+    {
+      "event": "MoMo 2023-10 outage",
+      "backbone": "MoMo",
+      "region": "VN",
+      "type": "platform",
+      "topology": "single",
+      "duration_h": 12,
+      "cause": "internal/maintenance",
+      "scope": "total",
+      "loss_bearer": "users",
+      "source": "Vietnam.vn"
+    },
+    {
+      "event": "PromptPay/ITMX 2022-Q4 (17 incidents)",
+      "backbone": "PromptPay",
+      "region": "TH",
+      "type": "central_bank",
+      "topology": "federated",
+      "duration_h": 3,
+      "cause": "shared_rail_capacity",
+      "scope": "distributed",
+      "loss_bearer": "banks/system",
+      "source": "Nation Thailand / Bangkok Post / ITMX (re-verified 2026-06-07)"
+    },
+    {
+      "event": "PromptPay/ITMX 2023-Q1 (4 incidents)",
+      "backbone": "PromptPay",
+      "region": "TH",
+      "type": "central_bank",
+      "topology": "federated",
+      "duration_h": 2,
+      "cause": "shared_rail_capacity",
+      "scope": "distributed",
+      "loss_bearer": "banks/system",
+      "source": "Bangkok Post"
+    },
+    {
+      "event": "InstaPay/PESONet survives CrowdStrike 2024-07",
+      "backbone": "InstaPay",
+      "region": "PH",
+      "type": "central_bank",
+      "topology": "federated",
+      "duration_h": 0,
+      "cause": "external_shock_resilient",
+      "scope": "none",
+      "loss_bearer": "none",
+      "source": "Philstar / Rappler / BSP"
+    },
+    {
+      "event": "Bakong (no documented body outage)",
+      "backbone": "Bakong",
+      "region": "KH",
+      "type": "central_bank",
+      "topology": "federated",
+      "duration_h": null,
+      "cause": "none_documented",
+      "scope": "none_documented",
+      "loss_bearer": "n/a",
+      "source": "NBC only — DISCLOSURE-BIAS FLAGGED"
+    }
+  ],
+  "scope_by_topology": {
+    "single": {
+      "total": 5
+    },
+    "federated": {
+      "distributed": 2
+    }
+  },
+  "loss_bearer_by_type": {
+    "platform": {
+      "users": 5
+    },
+    "central_bank": {
+      "banks/system": 2
+    }
+  },
+  "structural_conclusion": "Failure mode decomposes into two structural axes: SCOPE~topology (single→total, federated→distributed) and LOSS-BEARER~backstop (platform/⊤_priv→users, federated/central→banks/system). Scalar inclusion predicts neither; the categorical structure governs how a backbone fails and who pays.",
+  "honest_limits": "Small n (a few events per cell). FREQUENCY across types is confounded by disclosure bias (Bakong=0 is NBC-self-reported; KH/VN under-covered in English media) and is NOT claimed. Only the MODE (how/who, not how often) is asserted. Two events (GCash reconciliation, PromptPay 2022) re-verified 2026-06-07; the rest are from literature/raw/10's sourced list."
+}

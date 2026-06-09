@@ -347,3 +347,29 @@ PH(包摂51%・集中85%)と ID(包摂52%・集中25%)が同水準で集中真�
 
 ⚠️ 限界: n=8、S3 は制度的事実であって定量 outage データセットではない(型別の障害頻度・
 深刻度の定量化が次)。η² も小群で noisy。出力: `docs/data/structural_conclusion.json`。
+
+### §10.2 S3 を実 outage データで定量化 (2026-06-07)
+
+S3(故障モードは型の関手)を、出典付きの実障害イベントで定量化した
+(`src/h_petri/empirical/failure_modes.py`、literature/raw/10 ベース、GCash reconciliation
+と PromptPay/ITMX 2022 を再検証)。documented events を構造軸でクロス集計:
+
+- **SCOPE × 運用トポロジ**: single-operator(platform)→ **total** 全停止(5/5)、
+  federated 共有レール(PromptPay/ITMX)→ **distributed** 銀行別に分散(2/2)
+- **LOSS-BEARER × バックストップ型**: platform(⊤_priv)→ **users** が損失負担(5/5)、
+  federated/central → **banks/system**(2/2)
+
+**構造的結論(S3、データ支持版)**:
+> 故障モードは **2つの構造軸**に分解される — SCOPE は運用トポロジ(単一社 vs 共有レール)に、
+> LOSS-BEARER は Heyting バックストップ型に効く。**どちらもスカラー普及率と無関係**。
+> つまり「どう壊れ、誰が損するか」を支配するのは圏論的構造であってスカラーではない。
+
+⚠️ **正直な限界**:
+- 小 n(各セル 2〜5件)。**統計でなく図示レベル**。
+- この n では **2軸が分離しきれない**(platform=single=民間、PromptPay=federated=中銀義務が
+  偶々揃ってる)。「2つの独立軸」は**仮説**であって、分離証明ではない。
+- **頻度は型間で比較しない**(literature/raw/10 自身が警告: Bakong=0件は NBC 自己報告 +
+  KH/VN の英語報道過小 = 開示バイアス)。主張は「**how/who**(モード)」だけ、「**how often**」は外す。
+
+→ それでも S3 は「制度的定義」から「**出典付きの観測パターン**」に一歩進んだ。
+出力: `docs/data/failure_modes.json`。
