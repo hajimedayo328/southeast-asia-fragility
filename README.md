@@ -6,6 +6,10 @@
 研究方向の整理・共有用プロジェクト (work in progress, draft)
 
 公開デモ: https://hajimedayo328.github.io/southeast-asia-fragility/
+**最初に読むなら**: [STORY.md](STORY.md) — 理論→実証→撤回まで含めた研究の弧を1本で
+
+> このプロジェクトの差別化は「全主張に検証の刻印が付いている」こと:
+> 検証済 (c) / 著者割当て (b) / 撤回済 を明示し、捏造の検出・修正履歴(4件)も公開している。
 
 ---
 
