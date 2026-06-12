@@ -1,0 +1,53 @@
+{
+  "description": "Wave-3 (Findex 2025 / survey 2024) time-axis test. Velocity is not a persistent country trait; the wallet-level corner is now occupied in-region by ID — which acquired QRIS+BI-FAST (shared central-bank rail) exactly in the window — an out-of-sample hit for the level-split (stalk) conclusion of §10.5.",
+  "data_provenance": {
+    "findex_2024": "WB API mobileaccount.t.d source=28, fetched 2026-06-12",
+    "bi_fast": "launched 2021-12-21 by Bank Indonesia; 123 banks by 2024 (BI press release / Vixio / Central Banking, verified 2026-06-12)"
+  },
+  "values_2024": {
+    "ID": 22.01,
+    "KH": 16.89,
+    "LA": 11.84,
+    "MM": null,
+    "MY": 44.5,
+    "PH": 28.8,
+    "SG": 56.47,
+    "TH": 41.68,
+    "VN": 38.72
+  },
+  "velocity_2017_2021": {
+    "ID": 1.54,
+    "KH": 0.23,
+    "MM": 7.08,
+    "MY": 4.28,
+    "PH": 4.3,
+    "SG": 5.26,
+    "TH": 12.93
+  },
+  "velocity_2021_2024": {
+    "ID": 4.24,
+    "KH": 3.43,
+    "LA": 2.12,
+    "MY": 5.51,
+    "PH": 2.35,
+    "SG": 8.62,
+    "TH": -6.1
+  },
+  "velocity_persistence_spearman": -0.2,
+  "wallet_corner_2124": {
+    "fast_countries": {
+      "ID": 4.24,
+      "MY": 5.51,
+      "SG": 8.62
+    },
+    "fast_AND_wallet_decentralized": [
+      "ID"
+    ],
+    "resolution": "ID accelerated (1.54→4.24pp/yr) while staying wallet-decentralized (top share 25-31%) — but the acceleration window coincides with the arrival of shared central-bank infrastructure (QRIS 2020, BI-FAST Dec-2021). Wallet-level bound falsified in-region; rail-level reading strengthened: a natural experiment where the slow rail-less country became fast upon acquiring a single shared rail."
+  },
+  "anomalies": {
+    "TH": "60.0→41.7 (-6.1pp/yr): real decline vs Findex reclassification unresolved — flagged, not interpreted, excluded from conclusions.",
+    "MM": "2024 null — survey not conducted (civil war); measurement availability is itself political."
+  },
+  "honest_limits": "n small as always; 'fast' threshold 4pp/yr author-chosen (ID 4.24 is just above it); the ID natural experiment is one country (no counterfactual); TH anomaly unresolved and could affect persistence rho."
+}
