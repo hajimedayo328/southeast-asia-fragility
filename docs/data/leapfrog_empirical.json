@@ -1,0 +1,65 @@
+{
+  "description": "Leapfrog-precise robustness test for KEY FINDING 5: mobile-money adoption (Findex 2021, triple-verified) vs provider concentration. Designed so it COULD overturn the published finding.",
+  "data_provenance": {
+    "mobile_money": "Findex 2021 mobileaccount.t.d — triple-verified 2026-06-12 (WB API = OWID = repo A_findex.json, all 21.74 for PH etc.)",
+    "audit_correction": "earlier '21.74 vs official ~29' flag was a false positive (news-summary figure); primary sources agree on 21.74.",
+    "concentration": "B_concentration.json, medium confidence"
+  },
+  "rows": [
+    {
+      "country": "ID",
+      "mobile_money_pct": 9.29,
+      "concentration_pct": 25.0,
+      "backbone_type": "platform"
+    },
+    {
+      "country": "KH",
+      "mobile_money_pct": 6.6,
+      "concentration_pct": 70.0,
+      "backbone_type": "central_bank"
+    },
+    {
+      "country": "LA",
+      "mobile_money_pct": 5.48,
+      "concentration_pct": 55.0,
+      "backbone_type": "bank"
+    },
+    {
+      "country": "MM",
+      "mobile_money_pct": 29.03,
+      "concentration_pct": 60.0,
+      "backbone_type": "bank"
+    },
+    {
+      "country": "MY",
+      "mobile_money_pct": 27.98,
+      "concentration_pct": 62.0,
+      "backbone_type": "platform"
+    },
+    {
+      "country": "PH",
+      "mobile_money_pct": 21.74,
+      "concentration_pct": 85.0,
+      "backbone_type": "platform"
+    },
+    {
+      "country": "SG",
+      "mobile_money_pct": 30.6,
+      "concentration_pct": 60.0,
+      "backbone_type": "bank"
+    },
+    {
+      "country": "TH",
+      "mobile_money_pct": 59.99,
+      "concentration_pct": 65.0,
+      "backbone_type": "central_bank"
+    }
+  ],
+  "n": 8,
+  "pearson_r": 0.266,
+  "spearman_rho": 0.18,
+  "eta2_type_vs_mobile_money": 0.109,
+  "finding5_robust": true,
+  "verdict": "Weak/no correlation on the mobile-money proxy as well — Finding 5 (fragility is structural, not scalar) is robust across BOTH inclusion proxies.",
+  "honest_limits": "n=8 (VN not in the 2021 wave, BN never surveyed); concentration is medium-confidence; SPEED (v×C) remains untested — this is adoption LEVEL, not adoption velocity."
+}

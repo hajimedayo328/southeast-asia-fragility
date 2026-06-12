@@ -3,7 +3,7 @@
   "data_provenance": {
     "account_ownership": "World Bank Findex API FX.OWN.TOTL.ZS, 2021, re-verified 2026-06-07",
     "concentration": "docs/data/B_concentration.json, MEDIUM confidence (media-derived for KH/LA/MM/BN)",
-    "audit_finding": "repo A_findex.json mobile_money_pct(PH)=21.74% disagrees with official Findex ~29%; that field was NOT used here."
+    "audit_correction_2026_06_12": "An earlier audit note claimed A_findex.json mobile_money_pct(PH)=21.74% disagreed with an official ~29%. FALSE POSITIVE: the ~29% was a news-summary figure; WB API (mobileaccount.t.d) and OWID/Findex both confirm 21.74%. A_findex.json was correct. See leapfrog_empirical.json for the mobile-money-precise test."
   },
   "rows": [
     {

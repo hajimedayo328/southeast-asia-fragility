@@ -10,9 +10,12 @@ DATA PROVENANCE (the honest part):
 - Account ownership (% age 15+, 2021) = the inclusion / L proxy.
   Source: World Bank Global Findex via the WB data API
   (api.worldbank.org/v2/.../FX.OWN.TOTL.ZS, date=2021), RE-VERIFIED 2026-06-07.
-  NOTE: an audit found the repo's docs/data/A_findex.json 'mobile_money_pct'
-  for PH (21.74%) disagrees with the official Findex figure (~29%), so we do
-  NOT use that field; we use account ownership pulled fresh from the WB API.
+  CORRECTION (2026-06-12): an earlier audit note here claimed A_findex.json's
+  mobile_money_pct for PH (21.74%) "disagrees with the official ~29%". That
+  audit flag was a FALSE POSITIVE: the ~29% came from a news-summary (secondary
+  source); primary verification (WB API mobileaccount.t.d AND OWID/Findex)
+  both give 21.74% — A_findex.json was correct. The mobile-money-precise test
+  now lives in leapfrog_test.py using those triple-verified values.
 - Concentration (top-provider share %) = the R proxy.
   Source: docs/data/B_concentration.json — MEDIUM confidence (GSMA + central
   bank + media estimates; KH/LA/MM/BN are media-derived). Treat as illustrative.
@@ -104,7 +107,13 @@ def main():
         "data_provenance": {
             "account_ownership": "World Bank Findex API FX.OWN.TOTL.ZS, 2021, re-verified 2026-06-07",
             "concentration": "docs/data/B_concentration.json, MEDIUM confidence (media-derived for KH/LA/MM/BN)",
-            "audit_finding": "repo A_findex.json mobile_money_pct(PH)=21.74% disagrees with official Findex ~29%; that field was NOT used here.",
+            "audit_correction_2026_06_12": (
+                "An earlier audit note claimed A_findex.json mobile_money_pct(PH)=21.74% "
+                "disagreed with an official ~29%. FALSE POSITIVE: the ~29% was a news-summary "
+                "figure; WB API (mobileaccount.t.d) and OWID/Findex both confirm 21.74%. "
+                "A_findex.json was correct. See leapfrog_empirical.json for the "
+                "mobile-money-precise test."
+            ),
         },
         "rows": [{"country": c, "account_pct": a, "concentration_pct": s, "backbone_type": b} for c, a, s, b in rows],
         "n": len(rows),

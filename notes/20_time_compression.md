@@ -318,8 +318,11 @@ PH(包摂51%・集中85%)と ID(包摂52%・集中25%)が同水準で集中真�
   v×C(速度版)は速度データが要る → **未検証**。今回の null は v×C を反証していない。
 - backbone タイプ別の集中レンジ(bank 55–60 / central 65–70 / platform 25–85)は
   「platform は両極」を**示唆**するが、platform は n=3 で**統計的には何も言えない** = 仮説の種。
-- 集中度データは中信頼。mobile_money_pct 版は A_findex.json に PH で公式値とのズレ
-  (21.74% vs 29%)があり**未使用**(監査で発覚)。
+- 集中度データは中信頼。
+- ~~mobile_money_pct 版は A_findex.json に PH で公式値とのズレ(21.74% vs 29%)があり未使用(監査で発覚)~~
+  **← この監査主張は偽陽性だった(2026-06-12 訂正)**。「29%」はニュース要約(二次情報)で、
+  一次ソース(WB API mobileaccount.t.d / OWID)は両方 **21.74%** = A_findex.json が正しかった。
+  「監査・訂正そのものも検証対象」という教訓。mobile_money 版テストは §10.3。
 
 **意味**: 核の主張の一番素朴な形は実データで**外れた**。「欲しい結論を確認しただけ
 ではない」誠実な証拠。本当のシグナルは(もしあれば)スカラー相関ではなく backbone
@@ -373,3 +376,23 @@ S3(故障モードは型の関手)を、出典付きの実障害イベントで�
 
 → それでも S3 は「制度的定義」から「**出典付きの観測パターン**」に一歩進んだ。
 出力: `docs/data/failure_modes.json`。
+
+### §10.3 leapfrog 精密版 — 発見5 の robustness テスト (2026-06-12)
+
+§10 の account ownership は銀行口座込みの広いプロキシだった。leapfrog 固有の
+**mobile money 普及率**(Findex 2021)で同じテストをやり直した
+(`src/h_petri/empirical/leapfrog_test.py`)。**発見5 を倒せる設計**
+(mobile money 版で相関が出たら発見5 は要修正)。
+
+**データの三重検証**: mobile money 値は WB API(mobileaccount.t.d, source=28)=
+OWID(Findex由来)= リポの A_findex.json の3ルートが**全一致**(PH 21.74% 等)。
+この過程で §10 の監査主張(「公式29%とズレ」)が**偽陽性**と判明し訂正した(上記)。
+
+**結果**: Pearson r = **+0.27**、Spearman ρ = **+0.18** → やはり弱い。
+type → mobile money の η² = **0.109**(同じ中銀型で TH 60.0% vs KH 6.6%)→ 直交性も再現。
+
+**robustness 判定**: 発見5(脆弱性はスカラーでなく構造に乗る)は
+**account / mobile money の両プロキシに対して頑健**。倒しに行って倒れなかった。
+
+⚠️ 変わらない限界: n=8、集中度は中信頼、**速度版(v×C)は依然未検証**(これは普及の
+「水準」であって「速さ」ではない)。出力: `docs/data/leapfrog_empirical.json`。
