@@ -73,7 +73,13 @@
       "top_share_pct": 60,
       "top3_combined_pct": 95,
       "backbone_type": "bank",
-      "notes": "KBZPay (KBZ Bank) 19M users 2024, 43% adult population, 2.1B tx in 2024 - now larger than Wave Money. Wave Money ~30% (telco-origin, formerly 80% pre-2021). Ooredoo Money small. Backbone shifted from telco (Wave) to bank (KBZ) post-coup."
+      "notes": "CORRECTED 2026-06-12: earlier note said the backbone 'shifted from Wave to KBZ post-coup' - overstated. Sourced reality: the coup cancelled Ant's $73.5M investment, Telenor sold its 51% to Yoma at a distressed $53M, app MAU halved (2M+ to 1M, kr-asia) - a forced OWNERSHIP TRANSFER; Wave SURVIVED under local ownership (Sept 2023 Yoma overview: 61k agents, 90% coverage; GSMA cites ~80% MFS share, figure possibly pre-coup). KBZPay (bank) leads the app-wallet segment (19M users claim, 2.1B tx 2024). Post-coup #1 in TOTAL MFS volume is segment-dependent and unverified; top_share_pct=60 (KBZPay, app-wallet) kept as loader value with LOW confidence.",
+      "confidence": "low",
+      "contested_alternative": {
+        "top_provider": "Wave Money",
+        "backbone_type": "platform",
+        "note": "~80% per GSMA MFS framing (possibly pre-coup); post-coup share unpublished"
+      }
     },
     "BN": {
       "country_name": "Brunei",
@@ -103,8 +109,8 @@
     },
     {
       "id": "H3",
-      "statement": "Telco-backbone is effectively extinct in ASEAN-10 as of 2025-2026: Wave Money (MM) lost dominance to KBZ Bank post-2021 coup; ViettelPay (VN) remains marginal. Telco-led mobile money model has been displaced by either platform super-apps or central-bank rails.",
-      "evidence": "No ASEAN-10 country has telco as #1 in 2025. Contrasts with East Africa (M-Pesa Kenya). Implication: M-Pesa template did not transfer to ASEAN."
+      "statement": "WEAKENED 2026-06-12 (was: 'telco-backbone effectively extinct; Wave lost dominance to KBZ'). Corrected: Wave Money survived the coup under local (Yoma) ownership and remains a major MFS player; whether telco-origin backbones are displaced in MM is segment-dependent and unverified. The narrower defensible claim: no ASEAN-10 country has an M-Pesa-style telco monopoly as its undisputed #1 rail.",
+      "evidence": "Wave Money: forced ownership transfer 2021-22 (Ant cancelled, Telenor->Yoma), service continued (61k agents, Sept 2023). KBZPay leads app-wallet segment. ViettelPay (VN) marginal. Contrast with Kenya (M-Pesa 96.5%) still holds in the weaker form."
     },
     {
       "id": "H4",

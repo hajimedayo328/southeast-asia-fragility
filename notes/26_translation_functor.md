@@ -119,20 +119,23 @@ F(中国の否認)     = ?
 → F は **lax functor**: 政治的非対称性が翻訳されない。
 **忘却部分**: 政治的隠蔽 vs 公然の戦略差
 
-### ペア5: Wave Money崩壊 ↔ TikTok 規制問題
+### ペア5: Wave Money 強制オーナーシップ転換 ↔ TikTok divestment 要求
+
+⚠️ 訂正 (2026-06-12): 旧記述「崩壊 / KBZPay 移行」は誇張(notes/23 §7 訂正参照)。
+実像は「外資の強制退出 + 地場へのオーナーシップ転換(Telenor→Yoma 完了、サービス存続)」。
 
 ```
-F(クーデター 2021)       = 米中対立 2024
-F(Wave Money)            = TikTok
-F(KBZPay 移行)           = Oracle 所有候補
+F(クーデター 2021)            = 米中対立 2024
+F(Wave Money)                 = TikTok
+F(Telenor→Yoma 売却完了)      = ByteDance→米資本 (未解決)
 ```
 
 **自然性 check**:
-- 「政治変動 → backbone 切替」は自然 ✓
-- ただし Wave Money は **完了**、TikTok は **未確定** (時点が違う)
+- 「政治圧力 → backbone オーナーシップ強制転換」は自然 ✓
+- ただし EA は転換**完了**、Dev は**未解決**(時点が違う)— この構造は訂正後も不変
 
-→ F は **partial functor**: Dev側の射が未完成。
-**忘却部分**: 切替後の Trust 再構築の不確実性
+→ F は **partial functor**: Dev側の射が未完成(訂正前と同じ判定、根拠がより正確になった)。
+**忘却部分**: 転換後の Trust 再構築の不確実性
 
 ---
 

@@ -458,3 +458,23 @@ UPI 47.7% は閾値50%に対し borderline。Findex mobileaccount 指標は UPI/
 捕捉しない(IND 10.4% / BRA 27.0%)— 指標が「口座の型」を測ってて「機能」を
 測ってない、というそれ自体が「構造が大事」の傍証。
 出力: `docs/data/corner_test.json`。
+
+### §10.6 集中度データの検証 → 3件目の捏造検出と MM 感度分析 (2026-06-12)
+
+中信頼だった B_concentration の裏取りを実施:
+- **ID(pivotal な「唯一の分散国」)**: 確認 ✓ — トップシェアは調査により OVO 31% / GoPay 25%、
+  どの調査でも単独50%未満。corner テストの土台は実データで頑健
+- **KH**: Bakong がレールとして支配的なのは確認(2024年に608Mトランザクション、GDP比330%の
+  取扱高)。「70%」の正確な値は引き続き中信頼
+- **MM**: **3件目の捏造を検出** — 「Wave Money 崩壊→KBZPay 移行完了」は誇張。実像は
+  強制オーナーシップ転換(Ant破談・Telenor→Yoma $53M投げ売り・MAU半減、サービスは存続)。
+  notes/23 §7 を訂正。**訂正後の方がペア5(↔TikTok divestment)はむしろ綺麗**:
+  両方「政治圧力で backbone の所有権が動く」= **stalk 結論と同型**(変わるのは stalk でなく
+  その後ろに立つ者)。enriched verdict (broken) は訂正後も不変
+- **MM 感度分析**(`empirical/mm_sensitivity.py`): MM を bank/60 と platform/80 の両方で
+  全主要統計を再計算 → **3つの弱相関・η²⟂・空の角、全て両シナリオで成立**。
+  主要結論は contested な MM に依存しない
+
+捏造パターンの教訓(3件目): 事件は実在しても「**結末**」(崩壊・代替・完了)が
+盛られうる。結末動詞は事件名と同じ重さで裏取りする。
+出力: `docs/data/mm_sensitivity.json`。

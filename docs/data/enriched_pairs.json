@@ -94,8 +94,8 @@
       ]
     },
     {
-      "name": "Pair 5 — Wave Money → TikTok",
-      "note": "EA switch completed (⊤_bank), Dev switch unfinished (⊤_priv) → Dev attenuates → expect broken (functoriality leaks).",
+      "name": "Pair 5 — Wave Money ownership transfer → TikTok divestment",
+      "note": "EA ownership transfer completed (Telenor→Yoma, ⊤_bank-backed local owner), Dev transfer unresolved (⊤_priv) → Dev attenuates → expect broken (functoriality leaks).",
       "ea_axioms_ok": true,
       "dev_axioms_ok": true,
       "verdict": "broken",
@@ -109,9 +109,9 @@
       "breaking_pairs": [
         {
           "a": "Wave",
-          "b": "KBZPay",
+          "b": "Yoma",
           "F(a)": "TikTok",
-          "F(b)": "Oracle",
+          "F(b)": "USowner",
           "hom_src": "⊤_bank",
           "hom_tgt": "⊤_priv",
           "kind": "attenuated"
@@ -126,9 +126,9 @@
           "kind": "attenuated"
         },
         {
-          "a": "KBZPay",
+          "a": "Yoma",
           "b": "MMusers",
-          "F(a)": "Oracle",
+          "F(a)": "USowner",
           "F(b)": "USusers",
           "hom_src": "⊤_bank",
           "hom_tgt": "⊤_priv",
@@ -143,7 +143,7 @@
     "Pair 2 — M-Pesa 2019 → Cloudflare 2025": "strict",
     "Pair 3 — GCash monopoly → GAFA-AI monopoly": "lax",
     "Pair 4 — Mekong dams → Russian gas": "lax",
-    "Pair 5 — Wave Money → TikTok": "broken"
+    "Pair 5 — Wave Money ownership transfer → TikTok divestment": "broken"
   },
   "honest_limits": "Verdicts reflect author-assigned hom matrices, not measured data. What is objective: (1) both sides satisfy the enriched-category axioms, (2) F's strict/lax/broken verdict follows deterministically from the assigned matrices. Replacing assignments with data-derived influence strengths is future work."
 }

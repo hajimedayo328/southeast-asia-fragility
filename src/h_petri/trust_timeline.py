@@ -100,7 +100,7 @@ TRUST_TIMELINES: dict[str, dict] = {
         "data": [
             (2017, H.BOTTOM),
             (2018, H.T_PRIV),
-            (2022, H.T_BANK),   # KBZ Bank single-dominant, replaced Wave Money
+            (2022, H.T_BANK),   # KBZPay (bank) rose in app-wallet segment post-coup; Wave survived under Yoma (segment leadership contested)
             (2024, H.T_BANK),
         ],
         "concentration": 0.6,
@@ -376,12 +376,12 @@ PREDICTION_PAIRS = [
     },
     {
         "id": "pair_5",
-        "label": "政治変動による backbone 強制切替",
+        "label": "政治変動による backbone オーナーシップ強制転換",
         "ea": {
-            "event": "Wave Money 崩壊 (Myanmar)",
+            "event": "Wave Money 強制オーナーシップ転換 (Myanmar)",
             "year": 2021,
             "region": "ミャンマー",
-            "summary": "クーデター後、80% シェアだった Wave Money (telco backbone) が縮退、KBZPay (銀行 backbone) が代替。1事件で backbone タイプが変わる。",
+            "summary": "クーデターで Ant Group の出資($73.5M)が破談、Telenor が51%を$53Mの投げ売りで Yoma に売却、アプリMAUは半減(2M+→1M)。※崩壊はしておらず Yoma 傘下で存続(2026-06-12訂正: 旧記述「崩壊しKBZPayが代替」は誇張)。構造的事実は「政治ショックが backbone の外資を強制退出させ、オーナーシップを転換させた」こと。",
         },
         "developed": [
             {
@@ -417,7 +417,11 @@ CRISIS_EVENTS = [
      "note": "Sovereign debt crisis pressured EU banking framework."},
     {"year": 2021, "label": "Myanmar coup",
      "affected": ["KBZPay (MM)"],
-     "note": "Telco-dominant Wave Money collapsed; KBZPay (bank) took over."},
+     "note": "Forced ownership transfer at Wave Money (Ant deal cancelled, "
+             "Telenor sold 51% to Yoma at a distressed price, app MAU halved); "
+             "Wave survived under local ownership. KBZPay grew in the "
+             "app-wallet segment. (Corrected 2026-06-12: earlier 'collapsed / "
+             "taken over' wording was overstated.)"},
     {"year": 2019, "label": "M-Pesa outage",
      "affected": [],
      "note": "5-hour Safaricom outage caused ~KES billions in economic loss "

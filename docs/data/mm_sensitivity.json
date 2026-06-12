@@ -1,0 +1,25 @@
+{
+  "description": "Sensitivity of the headline empirical conclusions to the contested Myanmar assignment (bank/60 vs platform/80). All key statistics recomputed under both scenarios.",
+  "scenarios": {
+    "A_current (MM=bank, conc60)": {
+      "spearman_account_vs_conc": -0.084,
+      "spearman_mmlevel_vs_conc": 0.18,
+      "spearman_speed_vs_conc": -0.054,
+      "eta2_type_vs_account": 0.004,
+      "fast_AND_decentralized": []
+    },
+    "B_contested (MM=platform, conc80)": {
+      "spearman_account_vs_conc": -0.262,
+      "spearman_mmlevel_vs_conc": 0.238,
+      "spearman_speed_vs_conc": 0.214,
+      "eta2_type_vs_account": 0.017,
+      "fast_AND_decentralized": []
+    }
+  },
+  "robustness_checks": {
+    "all_three_correlations_stay_weak(|rho|<0.4)": true,
+    "type_orthogonal_to_inclusion(eta2<0.15)": true,
+    "corner_stays_empty(no fast&decentralized)": true
+  },
+  "all_conclusions_robust": true
+}

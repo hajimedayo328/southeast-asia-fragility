@@ -160,7 +160,7 @@
       }
     },
     {
-      "name": "Pair 5 — Wave Money → TikTok",
+      "name": "Pair 5 — Wave Money ownership transfer → TikTok divestment",
       "verification": {
         "num_src_copresheaves": 26,
         "num_tgt_copresheaves": 40,
@@ -176,22 +176,22 @@
         "origin": "Wave",
         "risk_phi_EA": {
           "Wave": "⊤_pub",
-          "KBZPay": "⊤_bank",
+          "Yoma": "⊤_bank",
           "MMusers": "⊤_bank"
         },
         "lan_left_kan": {
           "TikTok": "⊤_pub",
-          "Oracle": "⊤_bank",
+          "USowner": "⊤_bank",
           "USusers": "⊤_bank"
         },
         "ran_right_kan": {
           "TikTok": "⊤_pub",
-          "Oracle": "⊤_bank",
+          "USowner": "⊤_bank",
           "USusers": "⊤_bank"
         },
         "amplification_gap_per_dev_object": {
           "TikTok": 0,
-          "Oracle": 0,
+          "USowner": 0,
           "USusers": 0
         },
         "total_amplification_gap": 0

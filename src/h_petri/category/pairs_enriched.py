@@ -77,16 +77,25 @@ PAIRS = [
                 "→ Dev amplifies → expect lax.",
     },
     {
-        "name": "Pair 5 — Wave Money → TikTok",
-        "ea_objs": ["Wave", "KBZPay", "MMusers"],
-        "ea_gen": {("Wave", "MMusers"): PRIV, ("Wave", "KBZPay"): BANK,
-                   ("KBZPay", "MMusers"): BANK},
-        "dev_objs": ["TikTok", "Oracle", "USusers"],
-        "dev_gen": {("TikTok", "USusers"): PRIV, ("TikTok", "Oracle"): PRIV,
-                    ("Oracle", "USusers"): PRIV},
-        "F": {"Wave": "TikTok", "KBZPay": "Oracle", "MMusers": "USusers"},
-        "note": "EA switch completed (⊤_bank), Dev switch unfinished (⊤_priv) "
-                "→ Dev attenuates → expect broken (functoriality leaks).",
+        # CORRECTED 2026-06-12: the earlier framing 'Wave Money collapsed,
+        # users migrated to KBZPay' was overstated. Sourced reality: the coup
+        # cancelled Ant's $73.5M investment, Telenor sold its 51% to Yoma at a
+        # distressed $53M, app MAU halved — a FORCED OWNERSHIP TRANSFER, with
+        # the service surviving under local ownership. The Dev analogue
+        # (TikTok divestment pressure: ByteDance → US owner candidates) maps
+        # MORE cleanly onto this corrected reading: EA transfer COMPLETED
+        # (Telenor→Yoma), Dev transfer UNRESOLVED.
+        "name": "Pair 5 — Wave Money ownership transfer → TikTok divestment",
+        "ea_objs": ["Wave", "Yoma", "MMusers"],
+        "ea_gen": {("Wave", "MMusers"): PRIV, ("Wave", "Yoma"): BANK,
+                   ("Yoma", "MMusers"): BANK},
+        "dev_objs": ["TikTok", "USowner", "USusers"],
+        "dev_gen": {("TikTok", "USusers"): PRIV, ("TikTok", "USowner"): PRIV,
+                    ("USowner", "USusers"): PRIV},
+        "F": {"Wave": "TikTok", "Yoma": "USowner", "MMusers": "USusers"},
+        "note": "EA ownership transfer completed (Telenor→Yoma, ⊤_bank-backed "
+                "local owner), Dev transfer unresolved (⊤_priv) → Dev "
+                "attenuates → expect broken (functoriality leaks).",
     },
 ]
 

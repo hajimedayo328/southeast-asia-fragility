@@ -14,7 +14,7 @@ temporal.html §T7 で5つの「東南アジア → 先進国」予言ペアを�
 | 2 | 2019 M-Pesa 5h | 2025 Cloudflare 約4h | 6年 |
 | 3 | GCash 85%集中 | GAFA-AI集中 | 4年 |
 | 4 | 中国メコンダム | ロシア天然ガス露呈 | 12年 |
-| 5 | Wave Money崩壊 | TikTok 規制問題 | 3年 |
+| 5 | Wave Money 強制オーナーシップ転換 (※旧「崩壊」は誇張、§7訂正参照) | TikTok divestment 要求 | 3年 |
 
 これらが **「構造的に同型」** と主張してきた。本ノートで Petri net レベルで **同型射** を具体構成する。
 
@@ -147,33 +147,45 @@ Heyting値階数 (⊤_priv vs ⊤_priv) も同じ。構造的同型として比�
 
 ---
 
-## §7 ペア5: Wave Money崩壊 ↔ TikTok 規制問題
+## §7 ペア5: Wave Money 強制オーナーシップ転換 ↔ TikTok divestment 要求
+
+⚠️ **訂正 (2026-06-12)**: 当初の記述「Wave Money 崩壊 → ユーザーは KBZPay に移行」は
+**誇張だった**(捏造パターン: 実在の事件に劇的な結末を盛った)。出典付きの実像:
+- クーデターで Ant Group の出資 ($73.5M) が**破談**、Telenor が51%を**$53Mの投げ売りで
+  Yoma に売却**、アプリMAUは**半減**(2M+→1M、kr-asia)
+- **Wave Money は崩壊しておらず Yoma 傘下で存続**(2023/9 Yoma資料: エージェント6.1万・
+  国土90%カバー)。KBZPay はアプリウォレット部門で成長(別セグメント)
+- 構造的事実 = 「**政治ショックが外資を強制退出させ、backbone のオーナーシップを転換**」
+
+→ 訂正後の方が TikTok とのペアは**むしろ綺麗**: 両方とも「政治圧力による backbone の
+強制的オーナーシップ転換」(EA は完了 Telenor→Yoma、Dev は未解決 ByteDance→米資本)。
 
 ### 共通構造
-場所: `Backbone1`, `Backbone2`, `Users`, `Regulator`
-遷移: `Use_BB1`, `Crisis`, `Switch_to_BB2`, `Recover`
+場所: `Backbone`, `ForeignOwner`, `NewOwner`, `Users`, `Regulator`
+遷移: `Use`, `PoliticalShock`, `ForcedTransfer`, `ContinueService`
 不可視場所: `BackboneTrust` (Heyting値、変動する)
 
-### EA側 (Wave Money):
-- `Backbone1` = Wave Money (Yoma+Ant、telco)
-- 2021年クーデター → `Crisis` (政治変動)
-- `Backbone2` = KBZPay (銀行型)
-- `Switch_to_BB2`: ユーザーは KBZPay に移行
-- `BackboneTrust(BB1)`: `⊤_priv` → `⊥` (政治信頼崩壊)
+### EA側 (Wave Money、訂正版):
+- `Backbone` = Wave Money (telco系 MFS)
+- 2021年クーデター → `PoliticalShock`
+- `ForeignOwner` = Telenor (51%) + Ant (出資予定) → **両方退出**
+- `NewOwner` = Yoma (地場コングロマリット) — `ForcedTransfer` **完了** ($53M 投げ売り)
+- `BackboneTrust`: `⊤_priv` → 一時降下 (MAU半減) → 地場所有で部分回復
 
 ### 先進国側 (TikTok):
-- `Backbone1` = TikTok (ByteDance、中国)
-- 2024 divestment 要求 → `Crisis` (国家安全保障)
-- `Backbone2` = 米国所有候補 (Oracle? Microsoft?)
-- `Switch_to_BB2`: 未確定だが、強制移行可能性
-- `BackboneTrust(BB1)`: `⊤_priv` (民間SNS) → `⊥` (国家承認なし) の方向
+- `Backbone` = TikTok (ByteDance、中国資本)
+- 2024 divestment 法 → `PoliticalShock` (国家安全保障)
+- `NewOwner` = 米国所有候補 (Oracle 等) — `ForcedTransfer` **未解決**
+- `BackboneTrust`: `⊤_priv` → 宙吊り (国家承認待ち)
 
-### 同型射
+### 同型射 (訂正版)
 φ: クーデター → 米中対立
    Wave Money → TikTok
-   KBZPay → 米国所有候補
+   Telenor/Ant (退出する外資) → ByteDance (退出を迫られる外資)
+   Yoma (受け皿) → 米国所有候補 (受け皿)
 
-**両者**: 「政治変動でbackbone自体が切り替わる」構造。
+**両者**: 「政治圧力で backbone の**所有権**が強制的に動く」構造。
+切り替わるのは backbone 自体ではなく**その後ろに立つ者** — §10.5 の stalk 結論と同型。
 
 ---
 
@@ -185,7 +197,7 @@ Heyting値階数 (⊤_priv vs ⊤_priv) も同じ。構造的同型として比�
 | 2 | 単一民間backbone停止 | 単一民間backbone停止 | ✓ | 両方 ⊤_priv (どちらも数時間規模) |
 | 3 | 民間プラットフォーム独占 | 民間プラットフォーム独占 | ✓ | 両方 ⊤_priv |
 | 4 | 上流ノード戦略依存隠蔽 | 上流ノード戦略依存隠蔽 | ✓ | 両方: 平時 ⊤_priv, 危機時 ⊤_pub 暴露 |
-| 5 | 政治変動 backbone 切替 | 政治変動 backbone 切替 | ✓ | 両方: 切替後の Trust 再構築 |
+| 5 | 政治圧力でオーナーシップ強制転換 (完了) | 同 (未解決) | ✓ | 両方: 転換後の Trust 再構築 |
 
 → **5ペアすべてが Open Petri Net レベルで同型** (φ_P, φ_T の構成可能性として)。
 
@@ -249,7 +261,7 @@ src/h_petri/pairs/
 - ペア2: 単一民間backbone停止 (どちらも数時間規模、M-Pesa ~5h / Cloudflare ~4h)
 - ペア3: 民間独占 (継続中)
 - ペア4: 上流戦略依存隠蔽 (観察粒度補題そのもの)
-- ペア5: 政治変動 backbone 切替
+- ペア5: 政治圧力による backbone オーナーシップ強制転換 (訂正版、§7)
 
 これで「東南アジアの脆弱性は先進国の予言」が、**圏論的同型としての構造的可能性** として根拠を持つ。
 

@@ -719,7 +719,7 @@ function renderLagTrend(data) {
     'finding-lag-trend',
     `平均ラグ: <strong>${avg}年</strong>。線形回帰の傾き: <strong>${slope.toFixed(3)} 年/年</strong>
      (負なら時代が進むほどラグが縮む → 「予言の到達速度が加速」)。
-     最古ペア (1997 AFC) のラグ 11-13年に対し、最新ペア (2021 Wave Money崩壊) のラグは 3年。
+     最古ペア (1997 AFC) のラグ 11-13年に対し、最新ペア (2021 Wave Money オーナーシップ転換) のラグは 3年。
      <strong>4倍速になってる</strong>。`
   );
 }
