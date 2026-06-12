@@ -1,0 +1,82 @@
+{
+  "description": "Direct test of the v×C trade-off (notes/20 §4). Velocity from two Findex waves (2017→2021, WB API both), concentration as before. Tests BOTH readings: correlation (a line) and inequality (an excluded high-v/low-C corner) — a trade-off is a bound, not a slope.",
+  "rows": [
+    {
+      "country": "ID",
+      "mm_2017": 3.12,
+      "mm_2021": 9.29,
+      "velocity_pp_per_yr": 1.54,
+      "concentration_pct": 25.0
+    },
+    {
+      "country": "KH",
+      "mm_2017": 5.66,
+      "mm_2021": 6.6,
+      "velocity_pp_per_yr": 0.23,
+      "concentration_pct": 70.0
+    },
+    {
+      "country": "MM",
+      "mm_2017": 0.69,
+      "mm_2021": 29.03,
+      "velocity_pp_per_yr": 7.08,
+      "concentration_pct": 60.0
+    },
+    {
+      "country": "MY",
+      "mm_2017": 10.88,
+      "mm_2021": 27.98,
+      "velocity_pp_per_yr": 4.28,
+      "concentration_pct": 62.0
+    },
+    {
+      "country": "PH",
+      "mm_2017": 4.52,
+      "mm_2021": 21.74,
+      "velocity_pp_per_yr": 4.3,
+      "concentration_pct": 85.0
+    },
+    {
+      "country": "SG",
+      "mm_2017": 9.55,
+      "mm_2021": 30.6,
+      "velocity_pp_per_yr": 5.26,
+      "concentration_pct": 60.0
+    },
+    {
+      "country": "TH",
+      "mm_2017": 8.26,
+      "mm_2021": 59.99,
+      "velocity_pp_per_yr": 12.93,
+      "concentration_pct": 65.0
+    }
+  ],
+  "n": 7,
+  "excluded": {
+    "LA": "2017 null",
+    "VN": "2021 null",
+    "BN": "never surveyed"
+  },
+  "correlation_reading": {
+    "pearson_r": 0.207,
+    "spearman_rho": -0.054,
+    "verdict": "null — the linear 'faster⇒more concentrated' fails, like both level proxies"
+  },
+  "inequality_reading": {
+    "fast_countries_v_ge_4": [
+      "MM",
+      "MY",
+      "PH",
+      "SG",
+      "TH"
+    ],
+    "decentralized_countries_conc_lt_50": [
+      "ID"
+    ],
+    "fast_AND_decentralized": [],
+    "excluded_corner_empty": true,
+    "verdict": "Consistent with the bound: every fast adopter (v≥4pp/yr: TH, MM, SG, PH, MY) has top-share ≥60%; the only decentralized market (ID, 25%) is slow (1.5pp/yr). BUT with one decentralized country in n=7 the empty corner is weak evidence — hypothesis-consistent, not confirmed."
+  },
+  "structural_note": "A trade-off is an inequality (excluded region), not a correlation. The three null correlations (account, mobile-money level, velocity) all reinforce Finding 5; the surviving candidate form of notes/20 §4 is the BOUND 'fast ⇒ concentrated', which the data does not contradict.",
+  "honest_limits": "n=7; one decentralized observation; concentration medium-confidence; thresholds (v≥4, conc<50) are author-chosen. Out-of-region data (e.g. India UPI, Brazil Pix, Kenya) needed to really test the corner."
+}
