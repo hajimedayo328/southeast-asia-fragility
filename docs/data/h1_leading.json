@@ -1,0 +1,59 @@
+{
+  "description": "H¹ leading-indicator construction. Feeding a documented pre-crisis observable (short-term debt/reserves, end-June 1997, RBA RDP9805/BIS) through the named Guidotti-Greenspan rule (ratio<=1) into the Trust sheaf makes H¹ light up BEFORE the July 1997 onset (6 inconsistent edges vs 0 nominal) — exactly on the vulnerable/sound boundary.",
+  "observable": {
+    "ratios_jun97": {
+      "TH": 1.1,
+      "ID": 1.6,
+      "KR": 3.0,
+      "MY": 0.6,
+      "PH": 0.7,
+      "SG": 0.2
+    },
+    "source": "RBA RDP 9805 Table 9 (BIS-based), verified 2026-06-13",
+    "rule": "Guidotti-Greenspan (ratio <= 1), formalized 1999",
+    "sg_caveat": "SG not in Table 9; ratio<1 assumed (flagged)"
+  },
+  "h1_nominal_jun97": 0,
+  "h1_adjusted_jun97": 6,
+  "hidden_inconsistency_gap": 6,
+  "adjusted_edges": [
+    {
+      "a": "TH",
+      "va": "⊤_priv",
+      "b": "MY",
+      "vb": "⊤_bank"
+    },
+    {
+      "a": "TH",
+      "va": "⊤_priv",
+      "b": "PH",
+      "vb": "⊤_bank"
+    },
+    {
+      "a": "MY",
+      "va": "⊤_bank",
+      "b": "ID",
+      "vb": "⊤_priv"
+    },
+    {
+      "a": "ID",
+      "va": "⊤_priv",
+      "b": "PH",
+      "vb": "⊤_bank"
+    },
+    {
+      "a": "KR",
+      "va": "⊤_priv",
+      "b": "MY",
+      "vb": "⊤_bank"
+    },
+    {
+      "a": "SG",
+      "va": "⊤_bank",
+      "b": "ID",
+      "vb": "⊤_priv"
+    }
+  ],
+  "verdict": "H¹ CAN be made leading when fed fundamentals through the G-G rule: adjusted H¹ = 6 pre-onset vs nominal 0, and the inconsistent edges sit on the vulnerable/sound boundary, consistent with the actual contagion severity pattern (KR/ID/TH severe, MY/PH milder). Yesterday's 'coincident' verdict stands for market-visible inputs.",
+  "honest_limits": "Retrodiction (G-G rule postdates the crisis); one episode; no false-positive analysis; BIS publication lag; SG ratio assumed; the Trust mapping (ratio>1 -> effective T_priv) is one chosen rule, though a NAMED one from the early-warning literature rather than author-tuned."
+}
