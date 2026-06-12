@@ -65,7 +65,8 @@
       "top_share_pct": 55,
       "top3_combined_pct": 85,
       "backbone_type": "bank",
-      "notes": "BCEL One (state-owned commercial bank) dominates urban QR. U-Money (Unitel/Viettel telco) #2, LDB and JDB smaller. Mobile money +20% YoY but absolute volumes low. Limited regulator data - figures are media-derived estimates."
+      "notes": "BCEL One (state-owned commercial bank) dominates urban QR. U-Money (Unitel/Viettel telco) #2, LDB and JDB smaller. Mobile money +20% YoY but absolute volumes low. Limited regulator data - figures are media-derived estimates. VERIFICATION 2026-06-12: BCEL OnePay leadership qualitatively confirmed (multiple sources name it the most popular system), but the 55% figure has NO published market-share source and is unverifiable - treat as low confidence.",
+      "confidence": "low"
     },
     "MM": {
       "country_name": "Myanmar",

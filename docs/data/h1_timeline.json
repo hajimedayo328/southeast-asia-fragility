@@ -1,0 +1,60 @@
+{
+  "description": "H¹ timeline over the documented 1997-98 contagion chronology. Settles notes/25's open either/or: within the model H¹ is a COINCIDENT contagion meter, not a leading indicator — it never moves before the 1997-07 onset. The time-derivative-predictability hypothesis is retired (its validation target, the lag trend, was withdrawn).",
+  "timeline": [
+    {
+      "snapshot": "1996-12 (baseline)",
+      "h1": 0,
+      "delta_h1": null,
+      "h0_meet": "⊤_bank"
+    },
+    {
+      "snapshot": "1997-03 (pre-crisis)",
+      "h1": 0,
+      "delta_h1": 0,
+      "h0_meet": "⊤_bank"
+    },
+    {
+      "snapshot": "1997-06 (eve of crisis)",
+      "h1": 0,
+      "delta_h1": 0,
+      "h0_meet": "⊤_bank"
+    },
+    {
+      "snapshot": "1997-07 (THB floats — onset)",
+      "h1": 4,
+      "delta_h1": 4,
+      "h0_meet": "⊤_priv"
+    },
+    {
+      "snapshot": "1997-08 (IDR floats)",
+      "h1": 7,
+      "delta_h1": 3,
+      "h0_meet": "⊤_priv"
+    },
+    {
+      "snapshot": "1997-12 (KR crisis / IMF)",
+      "h1": 2,
+      "delta_h1": -5,
+      "h0_meet": "⊤_priv"
+    },
+    {
+      "snapshot": "1998-06 (ID collapse deepens)",
+      "h1": 6,
+      "delta_h1": 4,
+      "h0_meet": "⊥"
+    },
+    {
+      "snapshot": "1998-09 (MY capital controls)",
+      "h1": 4,
+      "delta_h1": -2,
+      "h0_meet": "⊥"
+    }
+  ],
+  "h1_moved_before_onset": false,
+  "verdict": {
+    "leading_indicator": false,
+    "coincident_meter": true,
+    "time_derivative_hypothesis": "RETIRED (validation target withdrawn 2026-06-12)"
+  },
+  "honest_limits": "Trust levels are author-assigned (b); only the event ORDERING is (c)-grade chronology. The conclusion is about the model's logical structure: even granting the assignments, the leading reading does not follow. A real leading-indicator test would need a pre-crisis observable (e.g. short-term external debt ratios) mapped to Trust — future work, and notes/25 §3.1's '見かけは安定' hints at it but no such input exists in the model today."
+}
