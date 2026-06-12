@@ -346,9 +346,30 @@
     <div class="finding"><strong>わかったこと:</strong> <span id="finding-sheaf-cf">データ読込中...</span></div>
   </div>
 
+  <div class="hypothesis">
+    <span class="hyp-id">検証 P6-C · H¹ は前兆か同時か → 両方やった (2026-06)</span>
+    <h3>市場の目には同時指標。ファンダメンタルズを入れると先行指標になる</h3>
+    <p class="punchline">
+      ①教科書的年表(THB 7月→IDR 8月→KR 12月)で検証: <strong>市場可視の Trust 入力では
+      H¹ は発火前に一切動かない = 同時指標</strong>(「前兆」主張は撤回)。
+      ②そこで危機に<strong>先行する観測量</strong> — 短期外債/外貨準備(1997年6月末、RBA/BIS:
+      KR 3.0 / ID 1.6 / TH 1.1 / MY 0.6 / PH 0.7)— を
+      <strong>Guidotti-Greenspan ルール</strong>(比率≤1)で Trust に接続すると:
+      <strong>名目 H¹=0 のまま、実態調整 H¹=6 が発火前に立つ</strong>。
+      不整合エッジは脆弱国 {TH,ID,KR} と健全国 {MY,PH,SG} の境界にぴったり —
+      実際の被害の濃淡とも整合。「⊤_priv が ⊤_bank を演じる」のデータ駆動版。
+    </p>
+    <p class="caveat" style="background:#fef2f2;border-left:3px solid #dc2626;padding:10px 14px;font-size:0.85rem;color:#52606d;">
+      <strong>正直な限界:</strong> これは retrodiction — Guidotti-Greenspan ルールは危機<strong>後</strong>の
+      1999年に定式化されたもので、「当時リアルタイムで予言できた」とは主張しない。
+      1エピソードのみ・偽陽性分析(高比率で危機が来なかった国・年)未実施・SG比率は仮定。
+      コード: <code>sheaf/h1_timeline.py</code> / <code>sheaf/h1_leading.py</code>。
+    </p>
+  </div>
+
   <p>
     実装: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/sheaf/cech.py" target="_blank"><code>src/h_petri/sheaf/cech.py</code></a> /
-    出力: <code>docs/data/sheaf_h1.json</code> / 理論: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25</a>。
+    出力: <code>docs/data/sheaf_h1.json</code>, <code>h1_timeline.json</code>, <code>h1_leading.json</code> / 理論: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25</a>。
   </p>
 </section>
 
