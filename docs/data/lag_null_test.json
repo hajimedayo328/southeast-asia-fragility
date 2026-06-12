@@ -1,0 +1,59 @@
+{
+  "description": "Null-model test of the §T8 lag-shrinkage claim. Simulates IID lags with right-truncation at the 2026 observation horizon and compares the observed Spearman(year, lag) against the null distribution. Also reports the window-utilization diagnostic lag/(horizon-year).",
+  "observed": {
+    "pairs": [
+      [
+        1997,
+        11
+      ],
+      [
+        1997,
+        13
+      ],
+      [
+        2010,
+        12
+      ],
+      [
+        2019,
+        6
+      ],
+      [
+        2020,
+        4
+      ],
+      [
+        2021,
+        3
+      ]
+    ],
+    "spearman_year_lag": -0.899,
+    "window_utilization": [
+      0.38,
+      0.45,
+      0.75,
+      0.86,
+      0.67,
+      0.6
+    ],
+    "spearman_year_utilization": 0.464
+  },
+  "null_models": {
+    "uniform": {
+      "null_median_spearman": -0.754,
+      "null_5th_percentile": -0.971,
+      "fraction_of_null_runs_leq_observed": 0.211,
+      "observed_within_central_90pct": true
+    },
+    "empirical": {
+      "null_median_spearman": -0.574,
+      "null_5th_percentile": -0.939,
+      "fraction_of_null_runs_leq_observed": 0.071,
+      "observed_within_central_90pct": true
+    }
+  },
+  "verdict": "NOT SUPPORTED beyond truncation: the observed negative lag trend lies inside what IID lags + the observation-window cutoff mechanically produce; and window utilization RISES for newer events (opposite of acceleration). §T8's '4x faster' framing must be withdrawn/weakened.",
+  "standing_limitations": "Selection bias (pairs chosen post-hoc) is untestable statistically and remains; n=6; horizon fixed at 2026; lag definitions depend on which Dev event is paired.",
+  "seed": 42,
+  "n_sim": 20000
+}

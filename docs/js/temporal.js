@@ -717,10 +717,11 @@ function renderLagTrend(data) {
 
   setText(
     'finding-lag-trend',
-    `平均ラグ: <strong>${avg}年</strong>。線形回帰の傾き: <strong>${slope.toFixed(3)} 年/年</strong>
-     (負なら時代が進むほどラグが縮む → 「予言の到達速度が加速」)。
-     最古ペア (1997 AFC) のラグ 11-13年に対し、最新ペア (2021 Wave Money オーナーシップ転換) のラグは 3年。
-     <strong>4倍速になってる</strong>。`
+    `平均ラグ: <strong>${avg}年</strong>。線形回帰の傾き: <strong>${slope.toFixed(3)} 年/年</strong> (見かけは負)。
+     <strong>ただし null モデル検証 (2026-06-12) でこのトレンドは撤回</strong>:
+     ラグが年と無関係 (IID) でも観測窓の打ち切りだけで中央値 ρ≈−0.6〜−0.75 の負トレンドが出る。
+     観測値 ρ=−0.90 は null の範囲内 (P=0.07〜0.21)、窓利用率はむしろ年とともに上昇 (+0.46)。
+     「加速」はこのデータからは主張できない — 検証可能になるのは 2030 予測の的中/不発を待ってから。`
   );
 }
 

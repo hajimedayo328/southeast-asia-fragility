@@ -277,22 +277,31 @@
 
 <!-- ============ LAG TREND ============ -->
 <section id="lag-trend">
-  <span class="section-num">§ T8 — LAG SHRINKING · 予言の到達速度</span>
-  <h2>「予言が実現するまでの年数」は時代とともに短くなってる</h2>
+  <span class="section-num">§ T8 — LAG SHRINKING · 予言の到達速度 (検証で撤回)</span>
+  <h2>ラグは縮小して「見える」— が、null モデル検証で主張できなくなった</h2>
 
   <div class="plain-jp">
-    <p>予言ペアのラグ年数を横軸=東南アジア事象の年、縦軸=ラグ年数 でプロットすると、
-    <strong>新しいペアほどラグが短い</strong>傾向。1997→2008は11年だったが、2021→2024は3年。</p>
-    <p>これは「情報・技術の伝播速度が上がってる」+「先進国も東南アジアと同じスケールで脆くなってる」両方を示唆。</p>
+    <p>予言ペアのラグは <strong>11 → 13 → 12 → 6 → 4 → 3年</strong> と、新しいペアほど短く見える。
+    当初これを「先進国が東南アジア化する速度が加速」と読んでいた。</p>
+    <p class="caveat"><strong>自己検証の結果、撤回(2026-06-12):</strong>
+    この見かけの縮小には<strong>打ち切りバイアス</strong>がある — 2021年の事象は観測地平(2026)まで
+    <strong>最大5年のラグしか観測できない</strong>が、1997年の事象は29年まで可能。
+    null モデル(ラグが年と無関係な IID + 打ち切り)を 20,000回シミュレーションすると、
+    <strong>何の加速がなくても中央値 ρ≈−0.6〜−0.75 の負トレンドが機械的に出る</strong>。
+    観測値(ρ=−0.90)は null の範囲内(P=0.07〜0.21)で、5%水準で棄却できない。
+    さらに<strong>窓利用率 lag/(2026−年) は年とともに上昇</strong>(ρ=+0.46)— 加速とは逆向き。
+    → 「予言の到達が加速・4倍速」は<strong>このデータからは主張できない</strong>。
+    検証コード: <code>src/h_petri/empirical/lag_null_test.py</code> / 結果: <code>lag_null_test.json</code></p>
   </div>
 
   <div class="hypothesis">
-    <span class="hyp-id">仮説 T8 · ラグ縮小</span>
-    <h3>EA事象年 vs ラグ年数</h3>
+    <span class="hyp-id">仮説 T8 · ラグ縮小 (null 検証により不支持)</span>
+    <h3>EA事象年 vs ラグ年数 — 見かけのトレンドと、その種明かし</h3>
     <p class="punchline">
-      ラグが <strong>11年 → 13年 → 12年 → 6年 → 4年 → 3年</strong> と縮小傾向。
-      予言が「30年後」じゃなく「数年後」になりつつある。
-      先進国が東南アジア化する速度が加速してる可能性。
+      下のグラフの負のトレンドは本物に見える。でもその大部分は
+      <strong>「新しい事象ほど短いラグしか観測できない」という観測窓の幾何学</strong>で説明がつく。
+      事後選択バイアス(ペアは著者選定)も統計では除けない。
+      ラグ縮小を主張するには、未来の到来(2030 予測の的中/不発)を待つしかない。
     </p>
     <div class="chart-box"><canvas id="chart-lag-trend"></canvas></div>
     <div class="finding"><strong>わかったこと:</strong> <span id="finding-lag-trend">データ読込中...</span></div>
