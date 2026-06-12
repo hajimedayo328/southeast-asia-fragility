@@ -337,8 +337,9 @@
     <span class="hyp-id">発見 5 · 脆弱性はスカラーでなく構造に乗る (実データ・一番正直)</span>
     <h3>普及率で予測できない。支配するのは圏論的な「型」</h3>
     <p class="punchline">
-      核の主張の一番素朴な形を実データに当てたら <strong>外れた</strong>:
-      金融包摂の水準 ↔ 集中度の相関は <strong>ρ ≈ −0.08(ほぼゼロ)</strong>。
+      核の主張の一番素朴な形を実データに当てたら <strong>外れた</strong> — 3回とも:
+      包摂水準 ↔ 集中度 <strong>ρ ≈ −0.08</strong>、mobile money 水準 <strong>ρ ≈ +0.18</strong>、
+      普及<strong>速度</strong>(Findex 2017→2021) <strong>ρ ≈ −0.05</strong>。
       backbone の<strong>型</strong>は包摂水準の分散を <strong>η² ≈ 0.004(≒0%)しか説明しない</strong>
       = 型とスカラーは<strong>直交</strong>。
       → 脆弱性を支配するのは普及率(スカラー)ではなく <strong>圏論的な構造(型)</strong>。
@@ -350,12 +351,23 @@
       どちらもスカラー普及率と無関係。<strong>圏論はここで元を取る</strong> —
       「どう壊れ、誰が払うか」の不変量を、金融包摂統計が見えない所で名指しできる。
     </p>
+    <p class="claim">
+      <strong>域外テスト(インド UPI / ブラジル Pix / ケニア)での精密化:</strong>
+      「速い AND 分散」は<strong>アプリのレベルでは存在する</strong>(Pix は史上最速 —
+      1年で成人の67% — なのに支配的アプリなし)。でも<strong>レールのレベルでは例外なし</strong>:
+      速い普及は世界中どこでも単一共有レール(Pix=中央銀行 / UPI=NPCI / M-Pesa=Safaricom)に乗ってる。
+      <br>→ <strong>「stalk(共有の土台)を無くす」という選択肢はメニューに存在しない。
+      選べるのは stalk の後ろに誰が立つか(⊤_pub / コンソーシアム / ⊤_priv)だけ。</strong>
+      これが本プロジェクトの sheaf 分析・予言ペア(M-Pesa↔Cloudflare)と1本の線で繋がる。
+    </p>
     <p class="caveat" style="background:#fef2f2;border-left:3px solid #dc2626;padding:10px 14px;font-size:0.85rem;color:#52606d;">
       <strong>正直な限界:</strong> n=8(国)・障害イベントは各セル数件で<strong>統計でなく図示レベル</strong>。
       この n では2軸を分離しきれない。型間の障害<strong>頻度は主張しない</strong>(Bakong=0件は中銀の自己報告 +
       英語報道過小 = 開示バイアス)。主張は「<strong>how/who(モード)</strong>」だけで「how often」は外す。
+      域外テストも限界あり: 速度の単位がケース間で完全には揃わない・Pix のアプリ別シェアは未公表(設計からの推論)・
+      UPI トップアプリ 47.7% は閾値50%に対し borderline。
       コード: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/empirical/" target="_blank">src/h_petri/empirical/</a>
-      (データは World Bank Findex API で再検証、集中度は中信頼)。
+      (データは World Bank Findex API で再検証・mobile money は三重検証、集中度は中信頼)。
     </p>
   </div>
 </section>

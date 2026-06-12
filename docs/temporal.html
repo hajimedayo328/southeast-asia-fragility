@@ -118,6 +118,31 @@
     <div class="chart-box"><canvas id="chart-tradeoff"></canvas></div>
     <div class="finding"><strong>わかったこと:</strong> <span id="finding-tradeoff">データ読込中...</span></div>
   </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">検証 T3-B · v×C を実データでテストした結果 (2026-06)</span>
+    <h3>相関は3回 null、でも「不等式」として生き残った</h3>
+    <div class="plain-jp">
+      <p>上の散布は著者割当ての Trust 時系列によるもの。<strong>実データ</strong>(World Bank Findex、
+      速度 = 2017→2021 の mobile money 普及速度)でテストした結果:</p>
+      <ul class="clean">
+        <li><strong>相関読みは3回とも null</strong>: 包摂水準 ρ≈−0.08 / mobile money 水準 ρ≈+0.18 / 速度 ρ≈−0.05。
+        「速い国ほど集中」という<strong>直線(slope)は実データに存在しない</strong></li>
+        <li><strong>不等式読み(排除領域)は生存</strong>: 速い国(v≥4pp/年: TH 12.9, MM 7.1, SG, PH, MY)は
+        全て集中度60%以上。唯一の分散国 ID(25%)は遅い(1.5pp/年)。「速い AND 分散」の角が空</li>
+        <li><strong>域外の最強反例(Pix/UPI)で精密化</strong>: アプリレベルの bound は死亡
+        (Pix = 1年で成人67%・支配的アプリなし)。でも<strong>レールレベルは例外なし</strong> —
+        速い普及は必ず単一共有レール(Pix=中央銀行 / UPI=NPCI / M-Pesa=Safaricom / PromptPay=ITMX)に乗る</li>
+      </ul>
+      <p class="caveat"><strong>結論と限界:</strong> トレードオフは相関(直線)ではなく
+      <strong>不等式(排除領域)</strong>として定式化すべき主張だった。精密化された形:
+      「速さはレール1本 = stalk 1本を要求する。選べるのは stalk を無くすことではなく、
+      stalk の後ろに誰が立つか(⊤_pub / コンソーシアム / ⊤_priv)だけ」。
+      限界: n=7、分散国1つ、速度単位がケース間で不揃い、Pix アプリ別シェア未公表。
+      データ: <code>speed_empirical.json</code> / <code>corner_test.json</code> /
+      <code>leapfrog_empirical.json</code>(notes/20 §10〜§10.5)。</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ BOTTLENECK REVERSAL × TIME ============ -->
