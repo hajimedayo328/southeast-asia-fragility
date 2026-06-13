@@ -290,7 +290,9 @@ backbones/*.py (Petri net 実走) → TrustHub 最終値
 category / open_net の4つが同じ meet 構造で繋がることをコードで確認。
 
 ⚠️ **正直なスコープ**: (c) 化できたのは**金融 backbone の enriched 構造(=律速逆転の入力)だけ**。
-5予言ペアの事象間の辺(TH→IMF 等)は backbone Trust そのものではないので **(b) のまま**。
+5予言ペアの事象間の辺(TH→IMF 等)は backbone Trust そのものではないので **(b) のまま**
+(→ **notes/29** で同じ規律による (c) 化を試行。判定は **under-determined**＝出典付きの等しく
+defensible な読みの間で反転し、頑健はペア2のみと判明)。
 4段階 backing ルール自体もモデル選択。誇張しない。
 出力: `docs/data/finance_enriched_grounded.json`。
 

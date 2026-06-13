@@ -1,0 +1,209 @@
+{
+  "description": "Grounded sensitivity test of the 5 prediction-pair verdicts. Each contested influence edge is re-grounded from a SOURCED legal backing tier (same scheme as backbone_facts.py) via hom(A,B)=tier(A)∨tier(B); uncontested edges keep author values. Ambiguous nodes (Maya, Yoma) are enumerated over both defensible readings. Verdicts are computed, not asserted.",
+  "rule": "hom(A,B) = tier(A) ∨ tier(B);  NONINST = ⊥;  reground only edges anchored on a contested institution.",
+  "sources": {
+    "OpenAI": [
+      "https://openai.com/our-structure/",
+      "https://www.aljazeera.com/economy/2025/10/28/openai-restructures-into-public-benefit-firm-microsoft-takes-27-stake"
+    ],
+    "Anthropic": [
+      "https://www.anthropic.com/news/the-long-term-benefit-trust",
+      "https://time.com/6983420/anthropic-structure-openai-incentives/"
+    ],
+    "GCash": [
+      "https://en.wikipedia.org/wiki/GCash",
+      "https://www.bworldonline.com/banking-finance/2024/08/15/613988/gcash-hesitant-on-digital-bank-license/"
+    ],
+    "Maya": [
+      "https://www.rappler.com/business/paymaya-gets-digital-bank-license/",
+      "https://www.maya.ph/stories/maya-is-1-of-the-6-bsp-licensed-digital-banks-in-the-philippines-today"
+    ],
+    "Yoma": [
+      "https://www.globenewswire.com/en/news-release/2022/01/17/2367508/0/en/Telenor-Group-agrees-to-sell-its-stake-in-Wave-Money-to-Yoma-Strategic.html",
+      "https://en.wikipedia.org/wiki/Yoma_Bank"
+    ],
+    "IMF": [
+      "https://www.imf.org/en/About",
+      "https://www.imf.org/external/np/exr/facts/asia.htm"
+    ]
+  },
+  "pairs": [
+    {
+      "name": "Pair 1 — 1997 AFC → 2008 Lehman",
+      "author_verdict": "lax",
+      "groundable": true,
+      "ambiguous_nodes": [],
+      "grounded_verdicts": [
+        "strict"
+      ],
+      "robust": false,
+      "readings": [
+        {
+          "reading": {},
+          "rationale": {},
+          "verdict": "strict",
+          "distortion": 0,
+          "edge_changes": [
+            {
+              "side": "EA",
+              "edge": "BIBF->IMF",
+              "author": "⊤_priv",
+              "grounded": "⊤_pub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pair 2 — M-Pesa 2019 → Cloudflare 2025",
+      "author_verdict": "strict",
+      "groundable": true,
+      "ambiguous_nodes": [],
+      "grounded_verdicts": [
+        "strict"
+      ],
+      "robust": true,
+      "readings": [
+        {
+          "reading": {},
+          "rationale": {},
+          "verdict": "strict",
+          "distortion": 0,
+          "edge_changes": []
+        }
+      ]
+    },
+    {
+      "name": "Pair 3 — GCash monopoly → GAFA-AI monopoly",
+      "author_verdict": "lax",
+      "groundable": true,
+      "ambiguous_nodes": [
+        "Maya"
+      ],
+      "grounded_verdicts": [
+        "broken",
+        "strict"
+      ],
+      "robust": false,
+      "readings": [
+        {
+          "reading": {
+            "Maya": "⊤_priv"
+          },
+          "rationale": {
+            "Maya": "consumer e-wallet / non-bank EMI reading"
+          },
+          "verdict": "strict",
+          "distortion": 0,
+          "edge_changes": [
+            {
+              "side": "Dev",
+              "edge": "OpenAI->AImarket",
+              "author": "⊤_bank",
+              "grounded": "⊤_priv"
+            }
+          ]
+        },
+        {
+          "reading": {
+            "Maya": "⊤_bank"
+          },
+          "rationale": {
+            "Maya": "Maya Bank holds a BSP digital-bank licence (since Sep-2021)"
+          },
+          "verdict": "broken",
+          "distortion": -3,
+          "edge_changes": [
+            {
+              "side": "EA",
+              "edge": "Maya->PHmarket",
+              "author": "⊤_priv",
+              "grounded": "⊤_bank"
+            },
+            {
+              "side": "EA",
+              "edge": "GCash->Maya",
+              "author": "⊤_priv",
+              "grounded": "⊤_bank"
+            },
+            {
+              "side": "Dev",
+              "edge": "OpenAI->AImarket",
+              "author": "⊤_bank",
+              "grounded": "⊤_priv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pair 4 — Mekong dams → Russian gas",
+      "author_verdict": "lax",
+      "groundable": false,
+      "reason": "edges carry coercive-leverage semantics (resource denial / weaponization), not a financial backstop tier; the tier->Heyting rule is semantically inapplicable.",
+      "readings": [],
+      "robust": null
+    },
+    {
+      "name": "Pair 5 — Wave Money ownership transfer → TikTok divestment",
+      "author_verdict": "broken",
+      "groundable": true,
+      "ambiguous_nodes": [
+        "Yoma"
+      ],
+      "grounded_verdicts": [
+        "broken",
+        "strict"
+      ],
+      "robust": false,
+      "readings": [
+        {
+          "reading": {
+            "Yoma": "⊤_priv"
+          },
+          "rationale": {
+            "Yoma": "acquirer of record = Yoma Strategic Holdings, a non-bank SGX-listed conglomerate (via Yoma MFS Holdings, 2022)"
+          },
+          "verdict": "strict",
+          "distortion": 0,
+          "edge_changes": [
+            {
+              "side": "EA",
+              "edge": "Wave->Yoma",
+              "author": "⊤_bank",
+              "grounded": "⊤_priv"
+            },
+            {
+              "side": "EA",
+              "edge": "Yoma->MMusers",
+              "author": "⊤_bank",
+              "grounded": "⊤_priv"
+            }
+          ]
+        },
+        {
+          "reading": {
+            "Yoma": "⊤_bank"
+          },
+          "rationale": {
+            "Yoma": "the Yoma/FMI group also contains Yoma Bank, a CBM-licensed commercial bank"
+          },
+          "verdict": "broken",
+          "distortion": -3,
+          "edge_changes": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "groundable": 4,
+    "total": 5,
+    "robust": [
+      "Pair 2 — M-Pesa 2019 → Cloudflare 2025"
+    ],
+    "ungroundable": [
+      "Pair 4 — Mekong dams → Russian gas"
+    ]
+  },
+  "honest_limits": "This does NOT prove the author's verdicts 'wrong'. It proves they are UNDER-DETERMINED: across equally-defensible, sourced legal-tier readings the verdict flips (Pair 3 spans strict<->broken). The single robust verdict is Pair 2 (both nodes unambiguously non-bank). The edge rule (∨ of tiers) and the 5-tier scheme are themselves modelling choices, inherited transparently from backbone_facts.py."
+}
