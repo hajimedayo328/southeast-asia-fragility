@@ -99,8 +99,9 @@ def main():
     print("  ・不整合エッジは『比率>1 国 (TH/ID/KR) と <1 国 (MY/PH/SG) の境界』に立つ —")
     print("    これは実際の伝染経路・被害の濃淡 (KR/ID/TH 重傷、MY/PH 相対的に軽傷) と整合。")
     print("  ・ただし RETRODICTION: G-G ルールは1999年(危機後)に定式化されたもの。")
-    print("    『当時リアルタイムで予言できた』とは主張しない。偽陽性分析(高H¹で危機が")
-    print("    来なかった国・年)も未実施 — 本物の早期警戒検証はそこが必要。")
+    print("    『当時リアルタイムで予言できた』とは主張しない。文献ベースの偽陽性分析は")
+    print("    empirical/false_positive_test.py で実施(MY が in-sample 偽陰性)。真の偽陽性")
+    print("    (高比率で危機が来なかった国・年)は非危機国パネルが必要で、なお未実施。")
 
     bundle = {
         "description": (
@@ -127,8 +128,10 @@ def main():
             "Yesterday's 'coincident' verdict stands for market-visible inputs."
         ),
         "honest_limits": (
-            "Retrodiction (G-G rule postdates the crisis); one episode; no "
-            "false-positive analysis; BIS publication lag; SG ratio assumed; "
+            "Retrodiction (G-G rule postdates the crisis); one episode; "
+            "false-positive analysis now done (empirical/false_positive_test.py: "
+            "Malaysia is an in-sample FALSE NEGATIVE; true FP rate still needs a "
+            "non-crisis panel); BIS publication lag; SG ratio assumed; "
             "the Trust mapping (ratio>1 -> effective T_priv) is one chosen rule, "
             "though a NAMED one from the early-warning literature rather than "
             "author-tuned."

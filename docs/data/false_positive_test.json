@@ -1,0 +1,80 @@
+{
+  "description": "Literature-grounded false-positive / false-negative check for the §5.5 H¹ leading-indicator claim. (A) places the short-term-debt/reserves indicator in the EWS literature; (B) runs an in-episode confusion matrix on §5.5's own 5 countries and finds Malaysia is a false negative.",
+  "part_A_literature": {
+    "frankel_saravelos_2012": "Reviewing 80+ EWS papers, reserves + real exchange rate are the two most useful leading indicators; reserves relative to short-term debt is the best reserve measure (4/5 reserve measures significant at 5% in >=half of crisis-intensity measures). J.Int.Econ 87(2):216-231 / NBER w16047. Verified 2026-06-14 (RePEc/CEPR).",
+    "kaminsky_lizondo_reinhart_1998": "Canonical signals-approach 15 indicators do NOT include short-term-debt/reserves; reserves enter only as growth and M2/reserves. KLR: measuring reserves 'in terms of short-term or external debt' cuts data points and loses significance. => no calibrated noise-to-signal ratio exists for the §5.5 indicator. IMF Staff Papers 45(1). Verified.",
+    "berg_borensztein_pattillo_2005": "EWS out-of-sample performance is mixed; only one long-horizon model beat guesswork. Single-threshold rules misfire out of sample as a rule. IMF Staff Papers 52(3). Verified.",
+    "implication": "The §5.5 indicator is the literature's FAVOURITE reserve measure (supports 'useful') but has NO established false-positive rate (signals approach drops it), so §5.5 cannot borrow a low-FP number; and generic EWS evidence says expect false alarms out of sample."
+  },
+  "part_B_in_episode": {
+    "ratios_jun97": {
+      "KR": 3.0,
+      "ID": 1.6,
+      "TH": 1.1,
+      "MY": 0.6,
+      "PH": 0.7
+    },
+    "ratios_source": "RBA RDP 9805 Table 9 (end-June 1997), verified verbatim",
+    "gdp98_per_capita_pct": {
+      "ID": -16,
+      "TH": -12,
+      "MY": -10,
+      "KR": -8,
+      "PH": -3
+    },
+    "gdp98_source": "Representative cross-country 1998 real per-capita GDP changes for the Asian crisis; ordering ID>TH>MY≈KR>>PH is robust, exact decimals vary by source/vintage (headline aggregate Malaysia ≈ -7.4%).",
+    "signal_rule": "short-term-debt/reserves > 1 (Guidotti-Greenspan)",
+    "severity_rule_primary": "1998 per-capita GDP fall <= -7%",
+    "confusion_primary": {
+      "TP": 3,
+      "FP": 0,
+      "FN": 1,
+      "TN": 1
+    },
+    "false_negative_rate": 0.25,
+    "false_negatives": [
+      "MY"
+    ],
+    "robustness": {
+      "-5": {
+        "counts": {
+          "TP": 3,
+          "FP": 0,
+          "FN": 1,
+          "TN": 1
+        },
+        "MY": "FN",
+        "KR": "TP"
+      },
+      "-7": {
+        "counts": {
+          "TP": 3,
+          "FP": 0,
+          "FN": 1,
+          "TN": 1
+        },
+        "MY": "FN",
+        "KR": "TP"
+      },
+      "-9": {
+        "counts": {
+          "TP": 2,
+          "FP": 1,
+          "FN": 1,
+          "TN": 1
+        },
+        "MY": "FN",
+        "KR": "FP"
+      }
+    },
+    "fx_drop_context_pct": {
+      "ID": -80,
+      "KR": -50,
+      "TH": -50,
+      "MY": -40,
+      "PH": -40
+    }
+  },
+  "verdict": "On §5.5's own 5 countries the G-G rule scores TP=3 (KR/ID/TH), TN=1 (PH) and ONE FALSE NEGATIVE: Malaysia (ratio 0.6 'sound' yet 1998 GDP ~-10%, deeper than Korea). Robust across -5..-9% severity cutoffs. The §5.5 boundary tracks the external-liquidity channel, not total crisis damage. Combined with (A) -- favourite reserve measure but no calibrated FP rate, and generic EWS false-alarm evidence -- §5.5 should be downgraded further: a single-channel indicator with an in-sample false negative, on top of the existing retrodiction + one-episode caveats.",
+  "honest_limits": "This sample (5 crisis-participant countries) can show a false NEGATIVE (Malaysia) but CANNOT measure the false-POSITIVE rate (ratio>1 yet no crisis), because there are no non-crisis country/years in it -- that still needs a panel (the unbuilt 'self-panel' option). GDP-fall figures are secondary representative values (±a few points by source); the matrix is driven by the robust ordering, not single decimals. The Malaysia reading ('sound on liquidity, hit via another channel') is an interpretation consistent with Malaysia avoiding an IMF programme, not a decomposition of its 1998 contraction. G-G rule itself postdates the crisis (1999)."
+}
