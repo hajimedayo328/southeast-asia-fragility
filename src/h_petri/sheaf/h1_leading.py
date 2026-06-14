@@ -101,7 +101,8 @@ def main():
     print("  ・ただし RETRODICTION: G-G ルールは1999年(危機後)に定式化されたもの。")
     print("    『当時リアルタイムで予言できた』とは主張しない。文献ベースの偽陽性分析は")
     print("    empirical/false_positive_test.py で実施(MY が in-sample 偽陰性)。真の偽陽性")
-    print("    (高比率で危機が来なかった国・年)は非危機国パネルが必要で、なお未実施。")
+    print("    (高比率で危機が来なかった国・年)は非危機国パネルで実測済 ——")
+    print("    empirical/false_positive_panel.py(WDI113カ国, notes30): 偽警報率75%/NtS0.46/lift1.88。")
 
     bundle = {
         "description": (
@@ -130,8 +131,10 @@ def main():
         "honest_limits": (
             "Retrodiction (G-G rule postdates the crisis); one episode; "
             "false-positive analysis now done (empirical/false_positive_test.py: "
-            "Malaysia is an in-sample FALSE NEGATIVE; true FP rate still needs a "
-            "non-crisis panel); BIS publication lag; SG ratio assumed; "
+            "Malaysia is an in-sample FALSE NEGATIVE; true FP rate now MEASURED on a "
+            "113-country WDI panel in empirical/false_positive_panel.py / notes 30: "
+            "75% false-alarm share, FPR 16%, noise-to-signal 0.46, lift 1.88); "
+            "BIS publication lag; SG ratio assumed; "
             "the Trust mapping (ratio>1 -> effective T_priv) is one chosen rule, "
             "though a NAMED one from the early-warning literature rather than "
             "author-tuned."

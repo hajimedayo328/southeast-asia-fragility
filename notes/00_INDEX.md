@@ -1,7 +1,7 @@
 # 00. ノート全体地図 (Index)
 
 **作成日**: 2026-05-25
-**目的**: 26本のノートを1ページで見渡す。次セッション or 提出時の「ナビ」。
+**目的**: 30本のノートを1ページで見渡す。次セッション or 提出時の「ナビ」。
 
 ---
 
@@ -88,6 +88,14 @@
 | 25 | sheaf_local_global.md | ★★★ | **層 (sheaf)** で局所→大域の伝染、1997とCloudflareの同じ H¹ 振る舞い |
 | 26 | translation_functor.md | ★★★ | **翻訳関手 F + Kan拡張**、5ペアを strict/lax で分類 (informal) |
 | 27 | enriched_prediction_category.md | ★★★ | **予言圏を Heyting-enriched category として厳密化** (Lawvere 1973)。射を H 値で定義し循環論法を断つ。F を strict/lax/broken で**計算分類** |
+
+### Phase 9: 自己批判・実証検証 (提出前の頑健化)
+
+| # | ノート | ランク | 一行サマリ |
+|---|---|---|---|
+| 28 | false_positive_analysis.md | ★★★ | §5.6 偽陽性=文献(A)+5カ国混同行列(B)。**マレーシア偽陰性**を検出 |
+| 29 | edge_grounding_sensitivity.md | ★★★ | 予言ペア辺をグラウンディング。**判定 under-determined、頑健はペア2のみ** |
+| 30 | false_positive_panel.md | ★★★ | **真の偽陽性パネル**(WDI実データ113カ国)。偽警報率75%/FPR16%/NtS0.46/lift1.88 |
 
 ---
 

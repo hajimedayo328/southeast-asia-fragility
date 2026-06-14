@@ -154,9 +154,10 @@ def main():
     print("      the EXTERNAL-LIQUIDITY channel, not total crisis damage.")
     print("  → §5.5 should be DOWNGRADED further: not just retrodiction + one")
     print("    episode, but a single-channel indicator with an in-sample false")
-    print("    negative. True false-POSITIVE analysis (ratio>1 yet NO crisis) still")
-    print("    needs a non-crisis country/year panel — not in this 5-country sample,")
-    print("    because every country here is a crisis participant.")
+    print("    negative. True false-POSITIVE analysis (ratio>1 yet NO crisis) is NOT")
+    print("    possible in this 5-country sample (all crisis participants); it is now")
+    print("    done in false_positive_panel.py (113-country WDI panel, notes 30):")
+    print("    75% false-alarm share, FPR 16%, noise-to-signal 0.46, lift 1.88.")
 
     bundle = {
         "description": (
@@ -222,8 +223,9 @@ def main():
         "honest_limits": (
             "This sample (5 crisis-participant countries) can show a false NEGATIVE "
             "(Malaysia) but CANNOT measure the false-POSITIVE rate (ratio>1 yet no "
-            "crisis), because there are no non-crisis country/years in it -- that still "
-            "needs a panel (the unbuilt 'self-panel' option). GDP-fall figures are "
+            "crisis), because there are no non-crisis country/years in it -- that panel "
+            "is now BUILT in false_positive_panel.py (113-country WDI panel, notes 30: "
+            "75% false-alarm share, FPR 16%, noise-to-signal 0.46, lift 1.88). GDP-fall figures are "
             "secondary representative values (±a few points by source); the matrix is "
             "driven by the robust ordering, not single decimals. The Malaysia reading "
             "('sound on liquidity, hit via another channel') is an interpretation "

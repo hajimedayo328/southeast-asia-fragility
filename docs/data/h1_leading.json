@@ -55,5 +55,5 @@
     }
   ],
   "verdict": "H¹ CAN be made leading when fed fundamentals through the G-G rule: adjusted H¹ = 6 pre-onset vs nominal 0, and the inconsistent edges sit on the vulnerable/sound boundary, consistent with the actual contagion severity pattern (KR/ID/TH severe, MY/PH milder). Yesterday's 'coincident' verdict stands for market-visible inputs.",
-  "honest_limits": "Retrodiction (G-G rule postdates the crisis); one episode; false-positive analysis now done (empirical/false_positive_test.py: Malaysia is an in-sample FALSE NEGATIVE; true FP rate still needs a non-crisis panel); BIS publication lag; SG ratio assumed; the Trust mapping (ratio>1 -> effective T_priv) is one chosen rule, though a NAMED one from the early-warning literature rather than author-tuned."
+  "honest_limits": "Retrodiction (G-G rule postdates the crisis); one episode; false-positive analysis now done (empirical/false_positive_test.py: Malaysia is an in-sample FALSE NEGATIVE; true FP rate now MEASURED on a 113-country WDI panel in empirical/false_positive_panel.py / notes 30: 75% false-alarm share, FPR 16%, noise-to-signal 0.46, lift 1.88); BIS publication lag; SG ratio assumed; the Trust mapping (ratio>1 -> effective T_priv) is one chosen rule, though a NAMED one from the early-warning literature rather than author-tuned."
 }

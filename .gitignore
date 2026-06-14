@@ -20,3 +20,6 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 *.egg-info/
+
+# Large regenerable World Bank raw cache (rebuild via fetch_wb_panel.py)
+docs/data/panel_raw/

@@ -1,0 +1,889 @@
+{
+  "description": "True false-positive panel for the §5.6 Guidotti–Greenspan H¹ leading indicator. Builds a non-crisis-inclusive country/year panel from World Bank WDI (short-term-debt/reserves = the G-G ratio) and evaluates the ratio>1 signal against a mechanical currency-crash outcome reproduced from WDI exchange rates, under two published crash rules (Frankel–Rose 25/10 and Laeven–Valencia 30/10), with full threshold/horizon sensitivity.",
+  "preregistered_design": {
+    "universe": "all WDI DRS countries with short-term-debt/reserves, 1975-2022",
+    "signal": "ratio = DT.DOD.DSTC.IR.ZS/100 ; fires when ratio>theta",
+    "primary_theta": 1.0,
+    "thetas": [
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "crash_rules": {
+      "FR_25_10": {
+        "min_depreciation": 0.25,
+        "min_acceleration": 0.1
+      },
+      "LV_30_10": {
+        "min_depreciation": 0.3,
+        "min_acceleration": 0.1
+      }
+    },
+    "primary_rule": "LV_30_10",
+    "outcome": "a crash ONSET occurs in window (t, t+k]; a crash year is flagged when the 1-yr OR 2-yr cumulative depreciation clears (D, A); evaluated only on TRANQUIL years (t not itself a crash year) and only if FX covers t-1..t+k",
+    "primary_horizon_years": 2,
+    "horizons": [
+      1,
+      2,
+      3
+    ],
+    "metrics": [
+      "FPR=FP/(FP+TN)",
+      "false_alarm_share=FP/(FP+TP)",
+      "recall=TP/(TP+FN)",
+      "noise_to_signal=FPR/recall",
+      "base_rate",
+      "lift=precision/base_rate"
+    ]
+  },
+  "data_provenance": {
+    "signal": "World Bank WDI DT.DOD.DSTC.IR.ZS (Short-term debt % of total reserves), fetched live 2026-06-15, cached docs/data/panel_raw/",
+    "exchange_rate": "World Bank WDI PA.NUS.FCRF (LCU/US$, period average)",
+    "fetcher": "src/h_petri/empirical/fetch_wb_panel.py"
+  },
+  "panel_coverage": {
+    "signal_countries": 113,
+    "signal_country_years": 4402,
+    "year_min": 1975,
+    "year_max": 2022,
+    "ss5_5_countries_present": [
+      "THA",
+      "IDN",
+      "PHL"
+    ],
+    "ss5_5_countries_absent": [
+      "KOR",
+      "MYS"
+    ]
+  },
+  "crash_chronologies": {
+    "FR_25_10": {
+      "crash_country_years": 1142,
+      "distinct_episodes": 501
+    },
+    "LV_30_10": {
+      "crash_country_years": 966,
+      "distinct_episodes": 418
+    }
+  },
+  "sanity_known_crises": {
+    "THA": [
+      1998
+    ],
+    "IDN": [
+      1979,
+      1983,
+      1987,
+      1998
+    ],
+    "KOR": [
+      1981,
+      1998,
+      2009
+    ],
+    "MEX": [
+      1977,
+      1982,
+      1995,
+      2016
+    ],
+    "ARG": [
+      1976,
+      1981,
+      1987,
+      2002,
+      2013
+    ],
+    "TUR": [
+      1978,
+      1984,
+      1988,
+      1991,
+      1998,
+      2001,
+      2015,
+      2018,
+      2022
+    ],
+    "RUS": [
+      1998,
+      2015
+    ],
+    "BRA": [
+      1976,
+      1987,
+      1999,
+      2015,
+      2020
+    ]
+  },
+  "primary_result": {
+    "FR_25_10": {
+      "counts": {
+        "TP": 178,
+        "FP": 453,
+        "FN": 352,
+        "TN": 2378
+      },
+      "metrics": {
+        "N": 3361,
+        "base_rate": 0.158,
+        "signal_fires": 631,
+        "false_positive_rate_FPR": 0.16,
+        "false_alarm_share": 0.718,
+        "recall_TPR": 0.336,
+        "precision": 0.282,
+        "noise_to_signal_KLR": 0.476,
+        "lift": 1.789
+      },
+      "eligible_tranquil": 3361,
+      "dropped_no_fx_window": 324,
+      "excluded_in_crisis": 717,
+      "false_positive_examples": [
+        [
+          "AGO",
+          2001,
+          1.98
+        ],
+        [
+          "AGO",
+          2002,
+          3.22
+        ],
+        [
+          "AGO",
+          2003,
+          1.69
+        ],
+        [
+          "ARG",
+          1991,
+          1.82
+        ],
+        [
+          "ARG",
+          1992,
+          1.41
+        ],
+        [
+          "ARG",
+          1995,
+          1.34
+        ],
+        [
+          "ARG",
+          1996,
+          1.19
+        ],
+        [
+          "ARG",
+          1997,
+          1.43
+        ],
+        [
+          "ARG",
+          1998,
+          1.25
+        ],
+        [
+          "ARG",
+          1999,
+          1.12
+        ],
+        [
+          "ARG",
+          2004,
+          1.35
+        ],
+        [
+          "ARG",
+          2005,
+          1.25
+        ],
+        [
+          "BDI",
+          2001,
+          4.92
+        ],
+        [
+          "BDI",
+          2002,
+          1.63
+        ],
+        [
+          "BGR",
+          2008,
+          1.02
+        ],
+        [
+          "BLR",
+          2001,
+          3.35
+        ],
+        [
+          "BLR",
+          2002,
+          2.37
+        ],
+        [
+          "BLR",
+          2003,
+          3.1
+        ],
+        [
+          "BLR",
+          2004,
+          3.51
+        ],
+        [
+          "BLR",
+          2005,
+          2.61
+        ],
+        [
+          "BLR",
+          2006,
+          3.16
+        ],
+        [
+          "BLR",
+          2017,
+          1.33
+        ],
+        [
+          "BLR",
+          2018,
+          1.33
+        ],
+        [
+          "BLR",
+          2019,
+          1.09
+        ],
+        [
+          "BLR",
+          2020,
+          1.35
+        ]
+      ],
+      "n_false_positives": 453,
+      "n_true_positives": 178
+    },
+    "LV_30_10": {
+      "counts": {
+        "TP": 163,
+        "FP": 487,
+        "FN": 298,
+        "TN": 2503
+      },
+      "metrics": {
+        "N": 3451,
+        "base_rate": 0.134,
+        "signal_fires": 650,
+        "false_positive_rate_FPR": 0.163,
+        "false_alarm_share": 0.749,
+        "recall_TPR": 0.354,
+        "precision": 0.251,
+        "noise_to_signal_KLR": 0.461,
+        "lift": 1.877
+      },
+      "eligible_tranquil": 3451,
+      "dropped_no_fx_window": 324,
+      "excluded_in_crisis": 627,
+      "false_positive_examples": [
+        [
+          "AGO",
+          2001,
+          1.98
+        ],
+        [
+          "AGO",
+          2002,
+          3.22
+        ],
+        [
+          "AGO",
+          2003,
+          1.69
+        ],
+        [
+          "ALB",
+          1994,
+          2.6
+        ],
+        [
+          "ARG",
+          1991,
+          1.82
+        ],
+        [
+          "ARG",
+          1992,
+          1.41
+        ],
+        [
+          "ARG",
+          1995,
+          1.34
+        ],
+        [
+          "ARG",
+          1996,
+          1.19
+        ],
+        [
+          "ARG",
+          1997,
+          1.43
+        ],
+        [
+          "ARG",
+          1998,
+          1.25
+        ],
+        [
+          "ARG",
+          1999,
+          1.12
+        ],
+        [
+          "ARG",
+          2004,
+          1.35
+        ],
+        [
+          "ARG",
+          2005,
+          1.25
+        ],
+        [
+          "BDI",
+          2001,
+          4.92
+        ],
+        [
+          "BDI",
+          2002,
+          1.63
+        ],
+        [
+          "BGR",
+          2008,
+          1.02
+        ],
+        [
+          "BLR",
+          2001,
+          3.35
+        ],
+        [
+          "BLR",
+          2002,
+          2.37
+        ],
+        [
+          "BLR",
+          2003,
+          3.1
+        ],
+        [
+          "BLR",
+          2004,
+          3.51
+        ],
+        [
+          "BLR",
+          2005,
+          2.61
+        ],
+        [
+          "BLR",
+          2006,
+          3.16
+        ],
+        [
+          "BLR",
+          2017,
+          1.33
+        ],
+        [
+          "BLR",
+          2018,
+          1.33
+        ],
+        [
+          "BLR",
+          2019,
+          1.09
+        ]
+      ],
+      "n_false_positives": 487,
+      "n_true_positives": 163
+    }
+  },
+  "sensitivity": {
+    "FR_25_10": {
+      "theta=0.5,k=1": {
+        "counts": {
+          "TP": 158,
+          "FP": 1107,
+          "FN": 135,
+          "TN": 2062
+        },
+        "metrics": {
+          "N": 3462,
+          "base_rate": 0.085,
+          "signal_fires": 1265,
+          "false_positive_rate_FPR": 0.349,
+          "false_alarm_share": 0.875,
+          "recall_TPR": 0.539,
+          "precision": 0.125,
+          "noise_to_signal_KLR": 0.648,
+          "lift": 1.476
+        }
+      },
+      "theta=0.5,k=2": {
+        "counts": {
+          "TP": 281,
+          "FP": 960,
+          "FN": 249,
+          "TN": 1871
+        },
+        "metrics": {
+          "N": 3361,
+          "base_rate": 0.158,
+          "signal_fires": 1241,
+          "false_positive_rate_FPR": 0.339,
+          "false_alarm_share": 0.774,
+          "recall_TPR": 0.53,
+          "precision": 0.226,
+          "noise_to_signal_KLR": 0.64,
+          "lift": 1.436
+        }
+      },
+      "theta=0.5,k=3": {
+        "counts": {
+          "TP": 374,
+          "FP": 843,
+          "FN": 348,
+          "TN": 1695
+        },
+        "metrics": {
+          "N": 3260,
+          "base_rate": 0.221,
+          "signal_fires": 1217,
+          "false_positive_rate_FPR": 0.332,
+          "false_alarm_share": 0.693,
+          "recall_TPR": 0.518,
+          "precision": 0.307,
+          "noise_to_signal_KLR": 0.641,
+          "lift": 1.388
+        }
+      },
+      "theta=1.0,k=1": {
+        "counts": {
+          "TP": 102,
+          "FP": 537,
+          "FN": 191,
+          "TN": 2632
+        },
+        "metrics": {
+          "N": 3462,
+          "base_rate": 0.085,
+          "signal_fires": 639,
+          "false_positive_rate_FPR": 0.169,
+          "false_alarm_share": 0.84,
+          "recall_TPR": 0.348,
+          "precision": 0.16,
+          "noise_to_signal_KLR": 0.487,
+          "lift": 1.886
+        }
+      },
+      "theta=1.0,k=2": {
+        "counts": {
+          "TP": 178,
+          "FP": 453,
+          "FN": 352,
+          "TN": 2378
+        },
+        "metrics": {
+          "N": 3361,
+          "base_rate": 0.158,
+          "signal_fires": 631,
+          "false_positive_rate_FPR": 0.16,
+          "false_alarm_share": 0.718,
+          "recall_TPR": 0.336,
+          "precision": 0.282,
+          "noise_to_signal_KLR": 0.476,
+          "lift": 1.789
+        }
+      },
+      "theta=1.0,k=3": {
+        "counts": {
+          "TP": 235,
+          "FP": 390,
+          "FN": 487,
+          "TN": 2148
+        },
+        "metrics": {
+          "N": 3260,
+          "base_rate": 0.221,
+          "signal_fires": 625,
+          "false_positive_rate_FPR": 0.154,
+          "false_alarm_share": 0.624,
+          "recall_TPR": 0.325,
+          "precision": 0.376,
+          "noise_to_signal_KLR": 0.472,
+          "lift": 1.698
+        }
+      },
+      "theta=1.5,k=1": {
+        "counts": {
+          "TP": 72,
+          "FP": 339,
+          "FN": 221,
+          "TN": 2830
+        },
+        "metrics": {
+          "N": 3462,
+          "base_rate": 0.085,
+          "signal_fires": 411,
+          "false_positive_rate_FPR": 0.107,
+          "false_alarm_share": 0.825,
+          "recall_TPR": 0.246,
+          "precision": 0.175,
+          "noise_to_signal_KLR": 0.435,
+          "lift": 2.07
+        }
+      },
+      "theta=1.5,k=2": {
+        "counts": {
+          "TP": 127,
+          "FP": 280,
+          "FN": 403,
+          "TN": 2551
+        },
+        "metrics": {
+          "N": 3361,
+          "base_rate": 0.158,
+          "signal_fires": 407,
+          "false_positive_rate_FPR": 0.099,
+          "false_alarm_share": 0.688,
+          "recall_TPR": 0.24,
+          "precision": 0.312,
+          "noise_to_signal_KLR": 0.413,
+          "lift": 1.979
+        }
+      },
+      "theta=1.5,k=3": {
+        "counts": {
+          "TP": 170,
+          "FP": 235,
+          "FN": 552,
+          "TN": 2303
+        },
+        "metrics": {
+          "N": 3260,
+          "base_rate": 0.221,
+          "signal_fires": 405,
+          "false_positive_rate_FPR": 0.093,
+          "false_alarm_share": 0.58,
+          "recall_TPR": 0.235,
+          "precision": 0.42,
+          "noise_to_signal_KLR": 0.393,
+          "lift": 1.895
+        }
+      },
+      "theta=2.0,k=1": {
+        "counts": {
+          "TP": 63,
+          "FP": 256,
+          "FN": 230,
+          "TN": 2913
+        },
+        "metrics": {
+          "N": 3462,
+          "base_rate": 0.085,
+          "signal_fires": 319,
+          "false_positive_rate_FPR": 0.081,
+          "false_alarm_share": 0.803,
+          "recall_TPR": 0.215,
+          "precision": 0.197,
+          "noise_to_signal_KLR": 0.376,
+          "lift": 2.334
+        }
+      },
+      "theta=2.0,k=2": {
+        "counts": {
+          "TP": 106,
+          "FP": 210,
+          "FN": 424,
+          "TN": 2621
+        },
+        "metrics": {
+          "N": 3361,
+          "base_rate": 0.158,
+          "signal_fires": 316,
+          "false_positive_rate_FPR": 0.074,
+          "false_alarm_share": 0.665,
+          "recall_TPR": 0.2,
+          "precision": 0.335,
+          "noise_to_signal_KLR": 0.371,
+          "lift": 2.127
+        }
+      },
+      "theta=2.0,k=3": {
+        "counts": {
+          "TP": 138,
+          "FP": 176,
+          "FN": 584,
+          "TN": 2362
+        },
+        "metrics": {
+          "N": 3260,
+          "base_rate": 0.221,
+          "signal_fires": 314,
+          "false_positive_rate_FPR": 0.069,
+          "false_alarm_share": 0.561,
+          "recall_TPR": 0.191,
+          "precision": 0.439,
+          "noise_to_signal_KLR": 0.363,
+          "lift": 1.984
+        }
+      }
+    },
+    "LV_30_10": {
+      "theta=0.5,k=1": {
+        "counts": {
+          "TP": 146,
+          "FP": 1155,
+          "FN": 108,
+          "TN": 2143
+        },
+        "metrics": {
+          "N": 3552,
+          "base_rate": 0.072,
+          "signal_fires": 1301,
+          "false_positive_rate_FPR": 0.35,
+          "false_alarm_share": 0.888,
+          "recall_TPR": 0.575,
+          "precision": 0.112,
+          "noise_to_signal_KLR": 0.609,
+          "lift": 1.569
+        }
+      },
+      "theta=0.5,k=2": {
+        "counts": {
+          "TP": 258,
+          "FP": 1019,
+          "FN": 203,
+          "TN": 1971
+        },
+        "metrics": {
+          "N": 3451,
+          "base_rate": 0.134,
+          "signal_fires": 1277,
+          "false_positive_rate_FPR": 0.341,
+          "false_alarm_share": 0.798,
+          "recall_TPR": 0.56,
+          "precision": 0.202,
+          "noise_to_signal_KLR": 0.609,
+          "lift": 1.512
+        }
+      },
+      "theta=0.5,k=3": {
+        "counts": {
+          "TP": 342,
+          "FP": 911,
+          "FN": 285,
+          "TN": 1812
+        },
+        "metrics": {
+          "N": 3350,
+          "base_rate": 0.187,
+          "signal_fires": 1253,
+          "false_positive_rate_FPR": 0.335,
+          "false_alarm_share": 0.727,
+          "recall_TPR": 0.545,
+          "precision": 0.273,
+          "noise_to_signal_KLR": 0.613,
+          "lift": 1.458
+        }
+      },
+      "theta=1.0,k=1": {
+        "counts": {
+          "TP": 96,
+          "FP": 562,
+          "FN": 158,
+          "TN": 2736
+        },
+        "metrics": {
+          "N": 3552,
+          "base_rate": 0.072,
+          "signal_fires": 658,
+          "false_positive_rate_FPR": 0.17,
+          "false_alarm_share": 0.854,
+          "recall_TPR": 0.378,
+          "precision": 0.146,
+          "noise_to_signal_KLR": 0.451,
+          "lift": 2.04
+        }
+      },
+      "theta=1.0,k=2": {
+        "counts": {
+          "TP": 163,
+          "FP": 487,
+          "FN": 298,
+          "TN": 2503
+        },
+        "metrics": {
+          "N": 3451,
+          "base_rate": 0.134,
+          "signal_fires": 650,
+          "false_positive_rate_FPR": 0.163,
+          "false_alarm_share": 0.749,
+          "recall_TPR": 0.354,
+          "precision": 0.251,
+          "noise_to_signal_KLR": 0.461,
+          "lift": 1.877
+        }
+      },
+      "theta=1.0,k=3": {
+        "counts": {
+          "TP": 221,
+          "FP": 423,
+          "FN": 406,
+          "TN": 2300
+        },
+        "metrics": {
+          "N": 3350,
+          "base_rate": 0.187,
+          "signal_fires": 644,
+          "false_positive_rate_FPR": 0.155,
+          "false_alarm_share": 0.657,
+          "recall_TPR": 0.352,
+          "precision": 0.343,
+          "noise_to_signal_KLR": 0.441,
+          "lift": 1.834
+        }
+      },
+      "theta=1.5,k=1": {
+        "counts": {
+          "TP": 68,
+          "FP": 354,
+          "FN": 186,
+          "TN": 2944
+        },
+        "metrics": {
+          "N": 3552,
+          "base_rate": 0.072,
+          "signal_fires": 422,
+          "false_positive_rate_FPR": 0.107,
+          "false_alarm_share": 0.839,
+          "recall_TPR": 0.268,
+          "precision": 0.161,
+          "noise_to_signal_KLR": 0.401,
+          "lift": 2.253
+        }
+      },
+      "theta=1.5,k=2": {
+        "counts": {
+          "TP": 115,
+          "FP": 303,
+          "FN": 346,
+          "TN": 2687
+        },
+        "metrics": {
+          "N": 3451,
+          "base_rate": 0.134,
+          "signal_fires": 418,
+          "false_positive_rate_FPR": 0.101,
+          "false_alarm_share": 0.725,
+          "recall_TPR": 0.249,
+          "precision": 0.275,
+          "noise_to_signal_KLR": 0.406,
+          "lift": 2.06
+        }
+      },
+      "theta=1.5,k=3": {
+        "counts": {
+          "TP": 159,
+          "FP": 257,
+          "FN": 468,
+          "TN": 2466
+        },
+        "metrics": {
+          "N": 3350,
+          "base_rate": 0.187,
+          "signal_fires": 416,
+          "false_positive_rate_FPR": 0.094,
+          "false_alarm_share": 0.618,
+          "recall_TPR": 0.254,
+          "precision": 0.382,
+          "noise_to_signal_KLR": 0.372,
+          "lift": 2.042
+        }
+      },
+      "theta=2.0,k=1": {
+        "counts": {
+          "TP": 59,
+          "FP": 266,
+          "FN": 195,
+          "TN": 3032
+        },
+        "metrics": {
+          "N": 3552,
+          "base_rate": 0.072,
+          "signal_fires": 325,
+          "false_positive_rate_FPR": 0.081,
+          "false_alarm_share": 0.818,
+          "recall_TPR": 0.232,
+          "precision": 0.182,
+          "noise_to_signal_KLR": 0.347,
+          "lift": 2.539
+        }
+      },
+      "theta=2.0,k=2": {
+        "counts": {
+          "TP": 97,
+          "FP": 225,
+          "FN": 364,
+          "TN": 2765
+        },
+        "metrics": {
+          "N": 3451,
+          "base_rate": 0.134,
+          "signal_fires": 322,
+          "false_positive_rate_FPR": 0.075,
+          "false_alarm_share": 0.699,
+          "recall_TPR": 0.21,
+          "precision": 0.301,
+          "noise_to_signal_KLR": 0.358,
+          "lift": 2.255
+        }
+      },
+      "theta=2.0,k=3": {
+        "counts": {
+          "TP": 129,
+          "FP": 191,
+          "FN": 498,
+          "TN": 2532
+        },
+        "metrics": {
+          "N": 3350,
+          "base_rate": 0.187,
+          "signal_fires": 320,
+          "false_positive_rate_FPR": 0.07,
+          "false_alarm_share": 0.597,
+          "recall_TPR": 0.206,
+          "precision": 0.403,
+          "noise_to_signal_KLR": 0.341,
+          "lift": 2.154
+        }
+      }
+    }
+  },
+  "verdict": "On a real 113-country non-crisis-inclusive panel (LV_30_10 rule, theta=1, k=2y): the Guidotti–Greenspan signal (ratio>1) fires in 650/3451 country-years; 75% of firings are false alarms (no crash within 2y) and it misses 65% of crises (recall=0.354). Yet it is NOT noise: noise-to-signal=0.461 (<1) and lift=1.877 — a firing lifts 2-yr crisis odds from the 13% base rate to 25%. So the true false-POSITIVE rate the 5-country in-episode test (false_positive_test.py) structurally could not measure is now MEASURED: a genuine-but-weak, false-alarm-dominated single-threshold signal — simultaneously consistent with Frankel–Saravelos ('best reserve measure') and Berg–Borensztein–Pattillo ('false alarms are the rule'). §5.6's cautious rating stands, now on measured numbers rather than an absent one. The 65% of crises with ratio<=1 are the Malaysia-type false negative at panel scale.",
+  "honest_limits": "WDI/DRS is NOT the BIS-based RBA end-June-1997 measure of §5.5 (Korea and Malaysia are absent here; overlapping values differ). The crash rules REPRODUCE the Frankel–Rose and Laeven–Valencia thresholds on WDI FX data; they are not L&V's verbatim curated list (edge cases differ). Country-years are serially correlated (effective N < count). A mechanical crash rule cannot detect crises averted by capital controls (Malaysia 1998), matching the single-channel caveat. High-inflation country-years can still trip the rule despite the acceleration term."
+}
