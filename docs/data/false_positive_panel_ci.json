@@ -1,0 +1,106 @@
+{
+  "description": "Block-bootstrap-by-country 95% confidence intervals for the false-positive panel headline metrics. Countries are the resampling unit (each country-year's cell is within-country), so the CIs respect serial correlation and test whether lift>1 and noise-to-signal<1 survive sampling uncertainty.",
+  "method": {
+    "resample_unit": "country (with replacement)",
+    "n_bootstrap": 5000,
+    "seed": 42,
+    "spec": "theta=1.0, k=2y",
+    "ci": "2.5/97.5 percentile"
+  },
+  "results": {
+    "FR_25_10": {
+      "n_countries": 113,
+      "point_counts": {
+        "TP": 178,
+        "FP": 453,
+        "FN": 352,
+        "TN": 2378
+      },
+      "ci": {
+        "false_alarm_share": {
+          "point": 0.718,
+          "ci95": [
+            0.664,
+            0.767
+          ]
+        },
+        "false_positive_rate_FPR": {
+          "point": 0.16,
+          "ci95": [
+            0.125,
+            0.199
+          ]
+        },
+        "recall_TPR": {
+          "point": 0.336,
+          "ci95": [
+            0.267,
+            0.41
+          ]
+        },
+        "noise_to_signal_KLR": {
+          "point": 0.476,
+          "ci95": [
+            0.386,
+            0.585
+          ]
+        },
+        "lift": {
+          "point": 1.789,
+          "ci95": [
+            1.534,
+            2.09
+          ]
+        }
+      }
+    },
+    "LV_30_10": {
+      "n_countries": 113,
+      "point_counts": {
+        "TP": 163,
+        "FP": 487,
+        "FN": 298,
+        "TN": 2503
+      },
+      "ci": {
+        "false_alarm_share": {
+          "point": 0.749,
+          "ci95": [
+            0.698,
+            0.796
+          ]
+        },
+        "false_positive_rate_FPR": {
+          "point": 0.163,
+          "ci95": [
+            0.129,
+            0.202
+          ]
+        },
+        "recall_TPR": {
+          "point": 0.354,
+          "ci95": [
+            0.282,
+            0.426
+          ]
+        },
+        "noise_to_signal_KLR": {
+          "point": 0.461,
+          "ci95": [
+            0.375,
+            0.569
+          ]
+        },
+        "lift": {
+          "point": 1.877,
+          "ci95": [
+            1.594,
+            2.193
+          ]
+        }
+      }
+    }
+  },
+  "verdict": "Block-bootstrap-by-country (113 countries, B=5000). Under the primary spec (ratio>1, k=2y, LV_30_10): lift point 1.877 CI [1.594, 2.193] (excludes 1) and noise-to-signal point 0.461 CI [0.375, 0.569] (excludes 1). False-alarm share CI [0.698, 0.796] stays high. So the 'genuine-but-weak, false-alarm-dominated' reading is statistically supported — the signal beats chance but remains a noisy single-threshold indicator.",
+  "honest_limits": "Percentile bootstrap (no bias correction); the country block ignores any cross-country contagion in the SAME crisis (e.g. 1997-98 Asia, 1980s Latin America), which would make true CIs a little wider. Same data caveats as false_positive_panel.py (WDI/DRS != BIS; mechanical crash rules, not the L&V list)."
+}
