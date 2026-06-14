@@ -172,6 +172,9 @@ function setText(id, html) {
   // ----- Sheaf H¹ (§P6) -----
   await initSheaf();
 
+  // ----- False-positive panel (§P6-D) -----
+  await initFPPanel();
+
   // ----- Writer H monad (§P7) -----
   await initMonad();
 })();
@@ -513,6 +516,76 @@ async function initSheaf() {
      H⁰(meet) が <strong>⊤_priv → ⊥</strong> に崩壊。約4時間後に復旧。
      1997 と <em>H¹ の出方は違うが、共通 stalk 崩壊という構造的事象は同じ</em>。
      これが notes/23 予言ペア2 (M-Pesa 2019 ↔ Cloudflare 2025-11) の sheaf-理論的根拠。`);
+}
+
+// ---------------------------------------------------------------------------
+// False-positive panel (§P6-D) — reads false_positive_panel.json + _ci.json
+// ---------------------------------------------------------------------------
+
+async function initFPPanel() {
+  if (!document.getElementById('chart-fp-panel')) return;
+  let p, ci = null;
+  try {
+    const r1 = await fetch('data/false_positive_panel.json');
+    if (!r1.ok) throw new Error('panel');
+    p = await r1.json();
+    const r2 = await fetch('data/false_positive_panel_ci.json');
+    if (r2.ok) ci = await r2.json();
+  } catch (err) {
+    setText('finding-fp-panel',
+      'data/false_positive_panel.json が読み込めない。<code>python src/h_petri/empirical/false_positive_panel.py</code> を実行してください。');
+    return;
+  }
+
+  const rule = p.preregistered_design.primary_rule;   // 'LV_30_10'
+  const m = p.primary_result[rule].metrics;
+  const c = p.primary_result[rule].counts;
+  const cov = p.panel_coverage;
+  const base = m.base_rate, prec = m.precision;
+  const pct = x => +(x * 100).toFixed(1);
+
+  const ctx = document.getElementById('chart-fp-panel');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['全平穏年 (ベースレート)', '比率>1 が発火した後'],
+      datasets: [
+        { label: '2年内に通貨危機', data: [pct(base), pct(prec)],
+          backgroundColor: '#dc2626', borderWidth: 0 },
+        { label: '危機なし (空振り)', data: [pct(1 - base), pct(1 - prec)],
+          backgroundColor: '#e5e7eb', borderWidth: 0 },
+      ],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', align: 'end' },
+        title: { display: true,
+          text: `Guidotti-Greenspan 発火で2年内危機率 ${pct(base)}% → ${pct(prec)}% (lift ${m.lift})` },
+        tooltip: { callbacks: { label: x => `${x.dataset.label}: ${x.parsed.x}%` } },
+      },
+      scales: {
+        x: { stacked: true, max: 100, title: { display: true, text: '% of country-years' } },
+        y: { stacked: true },
+      },
+    },
+  });
+
+  const liftCI = ci?.results?.[rule]?.ci?.lift?.ci95;
+  const ntsCI = ci?.results?.[rule]?.ci?.noise_to_signal_KLR?.ci95;
+  const absent = (cov.ss5_5_countries_absent || []).join(' / ');
+  const ciTxt = liftCI
+    ? `国単位ブートストラップ 95%CI: lift <strong>[${liftCI[0]}, ${liftCI[1]}]</strong>・noise-to-signal <strong>[${ntsCI[0]}, ${ntsCI[1]}]</strong> がともに 1 を除外 = <strong>弱いが統計的に有意</strong>。`
+    : '';
+  setText('finding-fp-panel',
+    `実データ <strong>${cov.signal_countries} カ国</strong> (${cov.year_min}-${cov.year_max}, 平穏 ${m.N} 国年)。
+     混同行列 TP=${c.TP} / FP=${c.FP} / FN=${c.FN} / TN=${c.TN}。
+     発火 ${m.signal_fires} 回のうち <strong>偽警報 ${Math.round(m.false_alarm_share * 100)}%</strong>、
+     recall <strong>${Math.round(m.recall_TPR * 100)}%</strong> (危機の多くは比率≤1 で来る = 偽陰性)。
+     noise-to-signal <strong>${m.noise_to_signal_KLR}</strong>・lift <strong>${m.lift}</strong>。${ciTxt}
+     <em>「弱いが本物・偽警報支配」— Frankel–Saravelos(有用な準備指標)と Berg–Pattillo(単一閾値は誤報が常)の両方に整合。${absent ? `なお §5.5 の ${absent} は WDI 欠損。` : ''}</em>`);
 }
 
 // ---------------------------------------------------------------------------

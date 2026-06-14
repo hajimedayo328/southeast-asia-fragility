@@ -362,14 +362,36 @@
     <p class="caveat" style="background:#fef2f2;border-left:3px solid #dc2626;padding:10px 14px;font-size:0.85rem;color:#52606d;">
       <strong>正直な限界:</strong> これは retrodiction — Guidotti-Greenspan ルールは危機<strong>後</strong>の
       1999年に定式化されたもので、「当時リアルタイムで予言できた」とは主張しない。
-      1エピソードのみ・偽陽性分析(高比率で危機が来なかった国・年)未実施・SG比率は仮定。
+      1エピソードのみ・SG比率は仮定。<strong>偽陽性分析は完了</strong>(下 P6-D: 非危機国パネルで実測)。
       コード: <code>sheaf/h1_timeline.py</code> / <code>sheaf/h1_leading.py</code>。
+    </p>
+  </div>
+
+  <div class="hypothesis">
+    <span class="hyp-id">検証 P6-D · 真の偽陽性パネル → 「弱いが本物」 (2026-06)</span>
+    <h3>非危機国を含む 113 カ国で測ると、比率&gt;1 は弱いが本物の早期警戒</h3>
+    <p class="punchline">
+      P6-C / §5.6 が「5カ国(全員が危機当事国)では測れない」と残した<strong>真の偽陽性率</strong>を、
+      World Bank WDI の<strong>実データ 113 カ国・1975-2022</strong>で実測した。シグナル=短期外債/準備&gt;1、
+      危機=為替からの機械的通貨暴落、早期警戒の作法で平穏年のみ評価。
+      結果: Guidotti-Greenspan が発火した後 2 年内に危機が来るのは <strong>約 25%</strong>
+      (平穏年ベースの 13% の<strong>約 2 倍</strong> = lift 1.88) — <strong>弱いが本物のシグナル</strong>。
+      だが裏を返せば<strong>発火の約 75% は空振り(偽警報)</strong>、さらに危機の 65% は比率≤1 で来る
+      (= P6-C のマレーシア型偽陰性をパネル規模で見たもの)。
+    </p>
+    <div class="chart-box"><canvas id="chart-fp-panel"></canvas></div>
+    <div class="finding"><strong>わかったこと:</strong> <span id="finding-fp-panel">データ読込中...</span></div>
+    <p class="caveat" style="background:#fef2f2;border-left:3px solid #dc2626;padding:10px 14px;font-size:0.85rem;color:#52606d;">
+      <strong>正直な限界:</strong> WDI/DRS は §5.5 の BIS 基準とは<strong>別物</strong>(<strong>韓国・マレーシアは欠損</strong>、
+      重なる値も相違)。∴ これは「§5.5 の数値の拡張」ではなく「Guidotti-Greenspan <strong>ルール自体の大規模検証</strong>」。
+      危機判定は Frankel-Rose / Laeven-Valencia <strong>ルールの機械再現</strong>であって L&amp;V キュレート済みリストの転記ではない。
+      コード: <code>empirical/false_positive_panel.py</code> + <code>false_positive_panel_ci.py</code>。
     </p>
   </div>
 
   <p>
     実装: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/src/h_petri/sheaf/cech.py" target="_blank"><code>src/h_petri/sheaf/cech.py</code></a> /
-    出力: <code>docs/data/sheaf_h1.json</code>, <code>h1_timeline.json</code>, <code>h1_leading.json</code> / 理論: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25</a>。
+    出力: <code>docs/data/sheaf_h1.json</code>, <code>h1_timeline.json</code>, <code>h1_leading.json</code>, <code>false_positive_panel.json</code> / 理論: <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/25_sheaf_local_global.md" target="_blank">notes/25</a>, <a href="https://github.com/hajimedayo328/southeast-asia-fragility/blob/main/notes/30_false_positive_panel.md" target="_blank">notes/30</a>。
   </p>
 </section>
 
