@@ -1223,3 +1223,51 @@ a:hover {
   .core-claim { padding: 18px 20px; }
   .method-honesty { padding: 16px 18px; }
 }
+
+/* ---------- Collapsible appendix (details) — temporal 等の重い理論を畳む ---------- */
+
+details.appendix-fold {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin: 24px 0;
+  background: var(--line-soft);
+}
+details.appendix-fold > summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--fg-sub);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+details.appendix-fold > summary::-webkit-details-marker { display: none; }
+details.appendix-fold > summary::before {
+  content: "▶";
+  font-size: 0.7rem;
+  color: var(--fg-mute);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+details.appendix-fold[open] > summary::before { transform: rotate(90deg); }
+details.appendix-fold > summary:hover { color: var(--fg); }
+details.appendix-fold > summary .fold-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--fg-mute);
+  border: 1px solid var(--line);
+  margin-left: auto;
+  font-weight: 600;
+  white-space: nowrap;
+}
+details.appendix-fold > .fold-body {
+  padding: 4px 20px 12px 20px;
+}
