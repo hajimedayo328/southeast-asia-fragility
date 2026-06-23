@@ -1106,3 +1106,120 @@ a:hover {
   }
   .adjunction .arrow { transform: rotate(90deg); }
 }
+
+/* ---------- Core spine (§00 — index lead / 5-min reader path) ---------- */
+
+.core-claim {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+  line-height: 1.62;
+  padding: 24px 28px;
+  margin: 8px 0 36px 0;
+  border-left: 4px solid var(--accent-r);
+  background: var(--line-soft);
+  border-radius: 0 6px 6px 0;
+}
+.core-claim strong { color: var(--accent-r); font-weight: 600; }
+.core-claim em { font-style: italic; }
+
+.core-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 24px 0 32px 0;
+}
+.core-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent-l);
+  border-radius: 4px;
+  padding: 20px 22px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+.core-card .core-k {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-l);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.core-card h3 {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+.core-card p {
+  font-size: 0.9rem;
+  color: var(--fg-sub);
+  margin: 0 0 14px 0;
+  line-height: 1.65;
+  flex: 1;
+}
+.core-card p strong { color: var(--fg); font-weight: 600; }
+.core-card a {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--accent-l);
+  margin-top: auto;
+}
+
+.method-honesty {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-r);
+  border-radius: 0 4px 4px 0;
+  background: var(--bg);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.method-honesty .mh-head {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-r);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.method-honesty p {
+  margin: 0 0 12px 0;
+  font-size: 0.92rem;
+  color: var(--fg);
+  line-height: 1.75;
+}
+.method-honesty p strong { color: var(--accent-r); font-weight: 600; }
+.method-honesty a { font-family: var(--mono); font-size: 0.78rem; }
+
+.core-route {
+  font-size: 0.88rem;
+  color: var(--fg-mute);
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* ---------- Tier chips (core / context / appendix / rigor) ---------- */
+
+.tier {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.tier.core     { background: #fef2f2; color: var(--accent-r); border: 1px solid #fecaca; }
+.tier.context  { background: var(--line-soft); color: var(--fg-sub); border: 1px solid var(--line); }
+.tier.appendix { background: var(--bg); color: var(--fg-mute); border: 1px solid var(--line); }
+.tier.rigor    { background: #eff6ff; color: var(--accent-l); border: 1px solid #bfdbfe; }
+
+@media (max-width: 600px) {
+  .core-claim { padding: 18px 20px; }
+  .method-honesty { padding: 16px 18px; }
+}
