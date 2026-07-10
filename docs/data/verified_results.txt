@@ -47,3 +47,16 @@ w>=3: |V|=64 |E|=253 tri=443 tet=456  beta0=1 beta1=1 beta2=0
 w>=2: |V|=126 |E|=1329 tri=7308 tet=26765  beta0=1 beta1=0 beta2=2
 tetra-depth(w>=2): caught n=103 mean=1565.9 med=1520 / missed n=150 mean=1243.7 med=977
 diff(missed-caught)=-322.2 permutation p=0.0458 (B=5000; 注:同一国の複数エピソードは独立でない)
+
+TETRA-DEPTH CONFOUND CONTROL 2026-07-10 (w>=2 complex, evaluable eps=253)
+confound size: spearman(depth, onset_count) across 91 countries = +0.802
+wave(year onsets>=20): eps=47 catch_rate=0.426 / non-wave eps=206 catch_rate=0.403
+stratified perm (onset-count bins only):    diff=-322.2 p=0.4606
+stratified perm (count bins x wave):        diff=-322.2 p=0.6654
+(raw unstratified was diff=-322.2 p=0.0458)
+
+OUT-OF-SAMPLE 2026-07-10 (train<2000 n=1440, test>=2000 n=2011, LV_30_10 k=2)
+train theta=1.0: TP=132 FP=310 FN=171 TN=827 FPR=0.273 recall=0.436 lift=1.419
+train theta*=0.60: TP=184 FP=452 FN=119 TN=685 FPR=0.398 recall=0.607 lift=1.375
+TEST  theta=1.0: TP=31 FP=177 FN=127 TN=1676 FPR=0.096 recall=0.196 lift=1.897
+TEST  theta*=0.60: TP=48 FP=411 FN=110 TN=1442 FPR=0.222 recall=0.304 lift=1.331
