@@ -59,12 +59,12 @@
   },
   "crash_chronologies": {
     "FR_25_10": {
-      "crash_country_years": 1142,
-      "distinct_episodes": 501
+      "crash_country_years": 1141,
+      "distinct_episodes": 500
     },
     "LV_30_10": {
-      "crash_country_years": 966,
-      "distinct_episodes": 418
+      "crash_country_years": 965,
+      "distinct_episodes": 417
     }
   },
   "sanity_known_crises": {

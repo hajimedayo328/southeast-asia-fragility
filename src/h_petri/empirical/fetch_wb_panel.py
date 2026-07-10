@@ -41,6 +41,8 @@ API = "https://api.worldbank.org/v2"
 SERIES = {
     "st_debt_reserves": "DT.DOD.DSTC.IR.ZS",
     "fx_lcu_per_usd": "PA.NUS.FCRF",
+    "broad_money_reserves": "FM.LBL.BMNY.IR.ZS",
+    "reserves_months_imports": "FI.RES.TOTL.MO",
 }
 DATE_RANGE = "1975:2022"
 OUT = Path(__file__).resolve().parents[3] / "docs" / "data" / "panel_raw"

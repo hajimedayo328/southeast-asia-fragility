@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!-- Hallmark · macrostructure: Stat-Led · tone: austere-academic · anchor hue: cool (Apple blue 250) · custom theme (CLAUDE.md C) -->
+<!-- Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>研究メモ — 通貨危機EWSの較正</title>
+<style>
+:root{
+  --color-paper: oklch(1.0 0 0);
+  --color-paper-2: oklch(0.984 0.002 250);
+  --color-paper-3: oklch(0.965 0.004 250);
+  --color-ink: oklch(0.20 0.005 250);
+  --color-ink-soft: oklch(0.38 0.006 250);
+  --color-accent: oklch(0.55 0.15 250);
+  --color-accent-soft: oklch(0.55 0.15 250 / 0.08);
+  --color-warn: oklch(0.56 0.15 30);
+  --color-warn-soft: oklch(0.56 0.15 30 / 0.07);
+  --color-muted: oklch(0.56 0.01 250);
+  --color-line: oklch(0.91 0.004 250);
+  --color-line-soft: oklch(0.95 0.003 250);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, "Menlo", monospace;
+
+  --space-2: 2px; --space-4: 4px; --space-8: 8px; --space-12: 12px;
+  --space-16: 16px; --space-24: 24px; --space-32: 32px; --space-48: 48px;
+  --space-64: 64px; --space-96: 96px;
+
+  --text-xs: 0.78rem; --text-sm: 0.88rem; --text-base: 1.0rem;
+  --text-lg: 1.18rem; --text-xl: 1.5rem; --text-2xl: 2.0rem;
+  --text-3xl: 2.6rem; --text-display: 3.4rem;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.6s;
+  --measure: 42rem;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+html, body{ overflow-x: clip; }
+html{ -webkit-text-size-adjust: 100%; }
+body{
+  font-family: var(--font-sans);
+  font-weight: 380;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  line-height: 1.7;
+  letter-spacing: 0.006em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap{ max-width: 52rem; margin: 0 auto; padding: 0 var(--space-24); }
+main{ padding: var(--space-96) 0 var(--space-64); }
+section{ margin-top: var(--space-96); }
+
+/* ---- typographic scale ---- */
+h1{
+  font-size: var(--text-display);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+h2{
+  font-size: var(--text-2xl);
+  font-weight: 560;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+h3{
+  font-size: var(--text-lg);
+  font-weight: 560;
+  letter-spacing: -0.008em;
+}
+p{ max-width: var(--measure); }
+strong{ font-weight: 600; }
+
+.eyebrow{
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-16);
+}
+.section-num{
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* ---- header ---- */
+.masthead{
+  padding-bottom: var(--space-32);
+  border-bottom: 1px solid var(--color-line);
+}
+.masthead .kicker{
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-weight: 500;
+  margin-bottom: var(--space-24);
+  display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-16);
+}
+.masthead .kicker span{ white-space: nowrap; }
+.masthead .dot{ color: var(--color-line); }
+.lede{
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+  margin-top: var(--space-24);
+  max-width: 40rem;
+  letter-spacing: -0.004em;
+}
+.lede b{ color: var(--color-ink); font-weight: 560; }
+
+/* ---- problem: opposition cards ---- */
+.step{ margin-top: var(--space-32); }
+.step h3{ margin-bottom: var(--space-8); }
+.step p{ color: var(--color-ink-soft); }
+
+.oppo{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+}
+.card{
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  padding: var(--space-24);
+  background: var(--color-paper);
+}
+.card .tag{
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-12);
+}
+.card.pro{ background: var(--color-accent-soft); border-color: oklch(0.55 0.15 250 / 0.25); }
+.card.pro .tag{ color: var(--color-accent); }
+.card.con{ background: var(--color-warn-soft); border-color: oklch(0.56 0.15 30 / 0.22); }
+.card.con .tag{ color: var(--color-warn); }
+.card .claim{ font-size: var(--text-base); font-weight: 500; line-height: 1.55; }
+.card .src{ font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-12); font-family: var(--font-mono); }
+
+.gap{
+  margin-top: var(--space-24);
+  padding: var(--space-24);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-paper-3);
+  border-radius: 0 10px 10px 0;
+}
+.gap p{ font-size: var(--text-lg); font-weight: 460; letter-spacing: -0.006em; }
+
+/* ---- goal ---- */
+.goals{ margin-top: var(--space-32); display: grid; gap: var(--space-16); }
+.goal{
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+.goal .n{
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-accent);
+  line-height: 1.2;
+}
+.goal h3{ margin-bottom: var(--space-4); }
+.goal p{ color: var(--color-ink-soft); font-size: var(--text-base); }
+.note{ font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-8); }
+
+/* ---- stats ---- */
+.stat-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-16);
+  margin-top: var(--space-32);
+}
+.stat{
+  padding: var(--space-24) var(--space-16);
+  border-top: 2px solid var(--color-ink);
+}
+.stat .v{
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.stat .v small{ font-size: var(--text-lg); font-weight: 500; color: var(--color-muted); }
+.stat .l{ font-size: var(--text-sm); color: var(--color-ink-soft); margin-top: var(--space-12); }
+.stat .ci{ font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-4); font-family: var(--font-mono); }
+
+.matrix{
+  margin-top: var(--space-32);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.matrix table{ width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.matrix caption{
+  text-align: left; padding: var(--space-16) var(--space-24);
+  font-size: var(--text-sm); color: var(--color-muted);
+  background: var(--color-paper-2); border-bottom: 1px solid var(--color-line);
+}
+.matrix td, .matrix th{ padding: var(--space-12) var(--space-16); text-align: left; border-bottom: 1px solid var(--color-line-soft); }
+.matrix th{ font-weight: 560; color: var(--color-ink-soft); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+.matrix td{ font-variant-numeric: tabular-nums; }
+.matrix tr:last-child td{ border-bottom: none; }
+.matrix .num{ font-family: var(--font-mono); font-weight: 500; }
+.verify{ font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-16); }
+.verify b{ color: var(--color-accent); font-weight: 560; }
+
+/* ---- venue strip ---- */
+.venue{
+  margin-top: var(--space-32);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--color-line);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.venue div{ background: var(--color-paper); padding: var(--space-24); }
+.venue .k{ font-size: var(--text-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-8); }
+.venue .val{ font-size: var(--text-base); font-weight: 560; }
+.venue .val em{ font-style: normal; color: var(--color-accent); }
+
+/* ---- ask ---- */
+.ask{ margin-top: var(--space-32); display: grid; gap: var(--space-16); }
+.ask .q{
+  display: grid; grid-template-columns: 1.6rem 1fr; gap: var(--space-16);
+  padding: var(--space-24);
+  background: var(--color-paper-3);
+  border-radius: 12px;
+  align-items: start;
+}
+.ask .q .m{ color: var(--color-accent); font-size: var(--text-xl); line-height: 1.1; font-weight: 600; }
+.ask .q h3{ margin-bottom: var(--space-4); }
+.ask .q p{ font-size: var(--text-sm); color: var(--color-ink-soft); }
+
+/* ---- footer / refs ---- */
+footer{
+  margin-top: var(--space-96);
+  padding-top: var(--space-32);
+  border-top: 1px solid var(--color-line);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+footer h4{ font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-soft); margin-bottom: var(--space-16); font-weight: 600; }
+footer ul{ list-style: none; display: grid; gap: var(--space-8); }
+footer li{ line-height: 1.5; }
+footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
+
+/* ---- reveal (safe: default visible, animate only on preference) ---- */
+@media (prefers-reduced-motion: no-preference){
+  .reveal{ animation: fadeUp var(--dur) var(--ease-out) both; }
+  section:nth-of-type(2) .reveal{ animation-delay: .04s; }
+}
+@keyframes fadeUp{ from{ opacity: 0; transform: translateY(12px); } to{ opacity: 1; transform: none; } }
+
+/* ---- responsive ---- */
+@media (max-width: 760px){
+  :root{ --text-display: 2.3rem; --text-3xl: 1.9rem; --text-2xl: 1.6rem; }
+  main{ padding: var(--space-48) 0; }
+  section{ margin-top: var(--space-64); }
+  .oppo{ grid-template-columns: 1fr; }
+  .stat-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .venue{ grid-template-columns: 1fr; }
+}
+@media (max-width: 400px){
+  .stat-grid{ grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead reveal">
+    <div class="kicker">
+      <span>研究メモ</span><span class="dot">·</span>
+      <span>2026-07-10</span>
+    </div>
+    <h1>最有力の危機指標は、<br>まだ較正されていない。</h1>
+    <p class="lede">
+      通貨危機の早期警戒指標のうち最も有名な<b>「短期対外債務 ÷ 外貨準備」(Guidotti–Greenspan ルール)</b>は、
+      有用だという研究と、もう効かないという研究が<b>対立したまま</b>。しかも、その決着に必要な
+      <b>較正済みの偽陽性率</b>を誰も出していない。それを 113 カ国のパネルで出す。
+    </p>
+  </header>
+
+  <!-- ============ PROBLEM ============ -->
+  <section>
+    <div class="eyebrow reveal">問題設定</div>
+    <h2 class="reveal">「有名なのに、効くかどうか未決着」という空白</h2>
+
+    <div class="step reveal">
+      <h3>① 指標</h3>
+      <p>新興国が通貨危機を起こす前触れを測る指標のひとつが、1年以内に返す対外債務を外貨準備でどれだけ賄えるか。
+        比が 1 を割ると「準備不足」の警告。中央銀行の準備適正度の基準として広く使われている。</p>
+    </div>
+
+    <div class="step reveal">
+      <h3>② 評価が真っ二つに割れている</h3>
+      <div class="oppo">
+        <div class="card pro">
+          <div class="tag">有用説</div>
+          <div class="claim">準備は危機の先行指標の首位。なかでも「短期債務との比」が最良の測り方。</div>
+          <div class="src">Frankel &amp; Saravelos 2012 · J. Int. Econ. 87(2)</div>
+        </div>
+        <div class="card con">
+          <div class="tag">失効説</div>
+          <div class="claim">2000 年代の準備急増で、短期債務による危機予測力は「消えた」。</div>
+          <div class="src">Aydın &amp; Tunç 2025 · Applied Econ. Letters 32(12)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step reveal">
+      <h3>③ 決着材料の不在</h3>
+      <p>この論争を裁くには「危機でない国・年でどれだけ誤警報を出すか(偽陽性率)」を較正した数字が要る。
+        だが古典的な較正枠組み(KLR signals approach, 1998)が調べた指標群に、<strong>この比率は入っていない</strong>
+        ── 原典を確認済み。最も論争的な指標に、標準的な較正値が存在しない。</p>
+      <div class="gap">
+        <p>つまり: <strong>有名 × 論争中 × 較正なし</strong>。ここが埋めるべき空白。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GOAL ============ -->
+  <section>
+    <div class="eyebrow reveal">目的</div>
+    <h2 class="reveal">較正値を出して論争を分解し、残る失敗を構造につなげる</h2>
+    <div class="goals">
+      <div class="goal reveal">
+        <div class="n">1</div>
+        <div>
+          <h3>較正済み偽陽性率を 113 カ国パネルで提供する</h3>
+          <p>1975–2022 の全 DRS 対象国・全年(手選びなし・事前登録デザイン)で、この指標の誤警報率・的中率を測り、
+            有用説と失効説を時期・閾値で定量分解する。</p>
+        </div>
+      </div>
+      <div class="goal reveal">
+        <div class="n">2</div>
+        <div>
+          <h3>最良スカラーでも残る「取りこぼし」を構造に帰属させる</h3>
+          <p>単一の数値指標では捉えきれない失敗(危機の取りこぼし)が、国ごとの数字でなく
+            <strong>国家間の構造</strong>に落ちることを示し、ネットワーク型の早期警戒につなげる。</p>
+          <p class="note">※ この構造パートの作り込みは今後の論点(下記)。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CRISIS DEFINITION (FX) ============ -->
+  <section>
+    <div class="eyebrow reveal">方法 — 危機の定義</div>
+    <h2 class="reveal">「危機」は為替(FX)の急落で機械的に決める</h2>
+    <div class="step reveal">
+      <p>通貨危機を主観で選ばず、<strong>対ドル為替レート(FX)の年次の急落</strong>で定義する。
+        減価率が閾値(Frankel–Rose 25% / Laeven–Valencia 30%、いずれも前年から +10% の加速を伴う)を
+        超えた年を「通貨クラッシュ＝危機」とする。指標が効くとは、この
+        <strong>FXクラッシュの 2 年前までに警告を出せる</strong>こと。</p>
+      <p class="note">主観判断を排し、公表ルールを為替データへ機械適用するので、誰が再現しても同じ危機年になる。
+        既存の危機リスト(Laeven–Valencia)に沿うが、その手作業の個別判断は加えていない ── そこは限界として明記する。</p>
+    </div>
+  </section>
+
+  <!-- ============ CURRENT RESULTS ============ -->
+  <section>
+    <div class="eyebrow reveal">現状 — すでに出ている結果</div>
+    <h2 class="reveal">較正と指標対決まで完了。「後継」は一度も勝たなかった</h2>
+
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <div class="v">113<small> カ国</small></div>
+        <div class="l">1975–2022・国年 n=3,451</div>
+      </div>
+      <div class="stat reveal">
+        <div class="v">16.3<small>%</small></div>
+        <div class="l">偽陽性率 FPR</div>
+        <div class="ci">95%CI [12.9, 20.2]</div>
+      </div>
+      <div class="stat reveal">
+        <div class="v">1.88<small>×</small></div>
+        <div class="l">リフト(偶然比)</div>
+        <div class="ci">95%CI [1.59, 2.19]</div>
+      </div>
+      <div class="stat reveal">
+        <div class="v">35<small>%</small></div>
+        <div class="l">再現率 — 65%は取りこぼす</div>
+        <div class="ci">危機の見逃し FN=298</div>
+      </div>
+    </div>
+
+    <div class="matrix reveal">
+      <table>
+        <caption>混同行列(主設定: 閾値=1.0, 予測地平=2年, LV 危機ルール)</caption>
+        <thead>
+          <tr><th></th><th>危機あり</th><th>危機なし</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>警告あり</th><td class="num">TP 163</td><td class="num">FP 487</td></tr>
+          <tr><th>警告なし</th><td class="num">FN 298</td><td class="num">TN 2,503</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="verify reveal">
+      発火の 75% が誤警報。「本物だが弱い信号」──偶然より効くが、単一閾値の限界も同時に定量化。
+      <b>全数値は 2026-07-10 に実データから再計算して検証済み(正本: docs/data/verified_results.txt)。</b>
+    </p>
+
+    <div class="matrix reveal">
+      <table>
+        <caption>指標対決 — 閾値フリー AUC(0.5=偶然。3指標共通サンプル n=3,091・危機395)</caption>
+        <thead>
+          <tr><th>指標</th><th>AUC</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>準備の輸入月数(低いほど危険)</th><td class="num">0.630</td></tr>
+          <tr><th>G-G 短期外債 ÷ 準備</th><td class="num">0.627</td></tr>
+          <tr><th>broad money ÷ 準備(文献の「乗り換え先」)</th><td class="num">0.590</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="verify reveal">
+      「G-Gの後継」とされた broad money は、危機ルール2種×予測地平3種の<b>全6仕様で一度もG-Gを上回らない</b>(方向100%一貫・有意差はLVルール2〜3年のみ)。
+      そして見逃した危機298件で、G-G比が警告水準(&gt;1)だった例は<b>ゼロ</b>(median 0.29)──取りこぼされる危機は指標の軸のはるか下で起きる。
+      <b>指標の乗り換えでは解決しない。どれも弱い(AUC 0.59〜0.63)。</b>
+    </p>
+  </section>
+
+  <!-- ============ NEXT ============ -->
+  <section>
+    <div class="eyebrow reveal">今後の論点</div>
+    <h2 class="reveal">研究の背骨をどう作るか</h2>
+    <div class="ask">
+      <div class="q reveal">
+        <div class="m">→</div>
+        <div>
+          <h3>構造・ネットワークパートをどこまで作るか</h3>
+          <p>実証コアは完了(較正・直交性・指標対決)。確認済み: 取りこぼしは指標軸と直交し、危機は強く同時多発する(過分散7.96)が、同時多発性と見逃しは無関係。残る論点は「取りこぼされた危機が国家間の伝播構造に乗るか」の実証で、これは future work に置いて執筆に進むのが現実的。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / REFS ============ -->
+  <footer class="reveal">
+    <h4>主要文献(著者・掲載誌まで原典照合済み)</h4>
+    <ul>
+      <li>Frankel, J. &amp; Saravelos, G. (2012). Are Leading Indicators of Financial Crises Useful? <em>Journal of International Economics</em> 87(2), 216–231.</li>
+      <li>Aydın, S. &amp; Tunç, C. (2025). A farewell to Greenspan–Guidotti rule. <em>Applied Economics Letters</em> 32(12), 1769–1773.</li>
+      <li>Kaminsky, G., Lizondo, S. &amp; Reinhart, C. (1998). Leading Indicators of Currency Crises. <em>IMF Staff Papers</em> 45(1), 1–48.</li>
+      <li>Kaminsky, G. (2003). Varieties of Currency Crises. <em>NBER Working Paper</em> 10193.</li>
+    </ul>
+    <p class="fin">通貨危機の早期警戒指標 較正研究 · 研究メモ</p>
+  </footer>
+
+</main>
+</body>
+</html>

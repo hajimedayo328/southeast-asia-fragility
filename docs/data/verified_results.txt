@@ -1,0 +1,49 @@
+VERIFIED RESULTS 2026-07-10 (recomputed from real WDI files in one run)
+rule=LV_30_10 theta=1.0 k=2y
+1. G-G confusion TP=163 FP=487 FN=298 TN=2503 FPR=0.163 recall=0.354 lift=1.877
+2. FN ratios n=298 median=0.287 frac>1.0=0.000
+3. crisis clustering onsets=417 dispersion=7.96
+4. common_n=3378 crises=436 G-G_AUC=0.6401 BM_AUC=0.5949 diff=-0.0453
+5. bootstrap B=2000 CI95[-0.0877,-0.0001] p=0.0490
+6. 1970s n=214 crises=22 GG=0.698 BM=0.769
+6. 1980s n=528 crises=136 GG=0.643 BM=0.545
+6. 1990s n=671 crises=128 GG=0.577 BM=0.506
+6. 2000s n=951 crises=53 GG=0.621 BM=0.625
+6. 2010s n=927 crises=92 GG=0.563 BM=0.532
+6. 2020s n=87 crises=5 GG=0.822 BM=0.624
+
+ROBUSTNESS 2026-07-10: diff = AUC(BM) - AUC(GG), country-block bootstrap
+LV_30_10 k=1 n=3468 crises=237 GG=0.6513 BM=0.6113 diff=-0.0399 CI[-0.0794,+0.0016] p=0.0625
+LV_30_10 k=2 n=3378 crises=436 GG=0.6401 BM=0.5949 diff=-0.0453 CI[-0.0878,-0.0011] p=0.0425
+LV_30_10 k=3 n=3287 crises=600 GG=0.6355 BM=0.5875 diff=-0.0480 CI[-0.0936,-0.0015] p=0.0475
+FR_25_10 k=1 n=3382 crises=277 GG=0.6247 BM=0.5996 diff=-0.0252 CI[-0.0667,+0.0154] p=0.2100
+FR_25_10 k=2 n=3292 crises=506 GG=0.6183 BM=0.5804 diff=-0.0379 CI[-0.0798,+0.0039] p=0.0825
+FR_25_10 k=3 n=3201 crises=696 GG=0.6153 BM=0.5721 diff=-0.0433 CI[-0.0919,+0.0027] p=0.0600
+seed-check LV_30_10 k=2 seed=999 B=2000: diff=-0.0453 CI[-0.0912,-0.0022] p=0.0350
+
+THREE-INDICATOR 2026-07-10 (LV_30_10 k=2, common n=3091 crises=395)
+GG(stdebt/res)=0.6268  BM(broadmoney/res)=0.5904  RM(-months_imports)=0.6300
+
+RANK-COMBO 2026-07-10 (LV_30_10 k=2, 3-indicator common n=3091 crises=395)
+spearman-corr: GG-BM=+0.428 GG-RM=+0.443 BM-RM=+0.562
+AUC GG alone = 0.6268
+AUC BM alone = 0.5904
+AUC RM alone = 0.6300
+AUC GG+BM = 0.6217
+AUC GG+RM = 0.6471
+AUC BM+RM = 0.6208
+AUC GG+BM+RM = 0.6352
+best_single=0.6300  best_combo=GG+RM=0.6471  delta=+0.0171
+bootstrap(GG+RM - GG) B=800: CI[-0.0089,+0.0489] p=0.1525
+
+EPISODE SEVERITY 2026-07-10 (LV_30_10 k=2, evaluable onsets=253)
+caught(warned) n=103 median_depr=0.738 mean=28.198 p90=2.400
+missed         n=150 median_depr=0.461 mean=1.392 p90=1.098
+median diff (missed-caught)=-0.277 permutation p=0.0000 (B=5000)
+
+SIMPLICIAL CO-CRISIS 2026-07-10 (edge: onsets within ±1y, clique complex filled to tetrahedra)
+w>=4: |V|=29 |E|=54 tri=30 tet=6  beta0=1 beta1=1 beta2=0
+w>=3: |V|=64 |E|=253 tri=443 tet=456  beta0=1 beta1=1 beta2=0
+w>=2: |V|=126 |E|=1329 tri=7308 tet=26765  beta0=1 beta1=0 beta2=2
+tetra-depth(w>=2): caught n=103 mean=1565.9 med=1520 / missed n=150 mean=1243.7 med=977
+diff(missed-caught)=-322.2 permutation p=0.0458 (B=5000; 注:同一国の複数エピソードは独立でない)
