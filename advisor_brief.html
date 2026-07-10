@@ -379,8 +379,8 @@ footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
 
   <!-- ============ CURRENT RESULTS ============ -->
   <section>
-    <div class="eyebrow reveal">現状 — すでに出ている結果</div>
-    <h2 class="reveal">較正と指標対決まで完了。「後継」は一度も勝たなかった</h2>
+    <div class="eyebrow reveal">現状 — 実証完了</div>
+    <h2 class="reveal">結論: 指標は死んだのではなく、鳴らなくなった</h2>
 
     <div class="stat-grid">
       <div class="stat reveal">
@@ -439,6 +439,30 @@ footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
       そして見逃した危機298件で、G-G比が警告水準(&gt;1)だった例は<b>ゼロ</b>(median 0.29)──取りこぼされる危機は指標の軸のはるか下で起きる。
       <b>指標の乗り換えでは解決しない。どれも弱い(AUC 0.59〜0.63)。</b>
     </p>
+
+    <div class="matrix reveal">
+      <table>
+        <caption>時間で分けた検証(out-of-sample) — 2000年より前で調整し、2000年以降で採点</caption>
+        <thead>
+          <tr><th></th><th>再現率(捕捉)</th><th>リフト(信頼性)</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>訓練: 〜1999(n=1,440)</th><td class="num">43.6%</td><td class="num">1.42×</td></tr>
+          <tr><th>検証: 2000〜(n=2,011)</th><td class="num">19.6%</td><td class="num">1.90×</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="verify reveal">
+      2000年以降、警報が鳴る回数は半減以下──各国が外貨準備を積み、比率が閾値に届かなくなった(ルールの空洞化)。
+      だが<b>鳴ったときの信頼性はむしろ上がる</b>(1.42×→1.90×)。閾値を最適に引き直しても捕捉率は3割止まり。
+      <b>「別れを告げる」(2025)は早い──指標は死んだのではなく、鳴らなくなった。</b>これが失効説への本研究の回答。
+    </p>
+    <p class="verify reveal">
+      盲点の正体も系統的: 警告できた危機は減価中央値<b>74%</b>(壊滅型)、見逃した危機は<b>46%</b>(十分深刻・p&lt;0.0001)。
+      指標は対外債務チャネルの大惨事だけを見ており、別経路の中規模危機に盲目。3指標を合成しても救えない(最良+0.017・有意差なし)。
+      なお「見逃しが国家間の伝播構造に乗る」仮説は2通り(同時多発性・共危機ネットワークの位相的深さ)で検証し、
+      <b>どちらも交絡統制後に棄却</b>──nullも正直に記録した。
+    </p>
   </section>
 
   <!-- ============ NEXT ============ -->
@@ -449,8 +473,8 @@ footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
       <div class="q reveal">
         <div class="m">→</div>
         <div>
-          <h3>構造・ネットワークパートをどこまで作るか</h3>
-          <p>実証コアは完了(較正・直交性・指標対決)。確認済み: 取りこぼしは指標軸と直交し、危機は強く同時多発する(過分散7.96)が、同時多発性と見逃しは無関係。残る論点は「取りこぼされた危機が国家間の伝播構造に乗るか」の実証で、これは future work に置いて執筆に進むのが現実的。</p>
+          <h3>次は執筆 — 英語 extended abstract(2.5〜3頁)</h3>
+          <p>実証は完了(較正・OOS・直交性・深刻度・合成不能・指標対決)。ネットワーク化は2つの検証がnullだったため future work に明記(over-claimしない)。数値は全て docs/data/verified_results.txt(生出力の正本)から転記する。残る人間タスク: 指導教員への発表意向の相談と渡航支援の確認。</p>
         </div>
       </div>
     </div>
