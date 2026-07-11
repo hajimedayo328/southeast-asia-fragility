@@ -465,6 +465,45 @@ footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
     </p>
   </section>
 
+  <!-- ============ PHASE 2 ============ -->
+  <section>
+    <div class="eyebrow reveal">新結果 — 見逃しの正体(Phase 2)</div>
+    <h2 class="reveal">危機は「家計簿」だけでなく「取引相手」から来る</h2>
+
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <div class="v">0.673</div>
+        <div class="l">貿易炎上指数の単独AUC — G-G自身(0.58〜0.64)を上回る</div>
+      </div>
+      <div class="stat reveal">
+        <div class="v">+0.083</div>
+        <div class="l">G-Gへの追加寄与(時系列外検証)</div>
+        <div class="ci">95%CI [+0.033, +0.137] · p=0.0025</div>
+      </div>
+      <div class="stat reveal">
+        <div class="v">0.653</div>
+        <div class="l">G-Gの盲域(比率≤1)でのAUC — 体温計が平熱と言う場所で見える</div>
+      </div>
+      <div class="stat reveal">
+        <div class="v">6<small>/6</small></div>
+        <div class="l">危機ルール×予測地平の全仕様で有意</div>
+      </div>
+    </div>
+
+    <p class="verify reveal">
+      新しいメーターは単純: <b>「自分の貿易額のうち、いま通貨危機中の国との取引が何割か」</b>(IMF二国間貿易×113カ国、判定基準は結果を見る前に事前固定)。
+      これが高い国は1〜2年内に自分も危機に入りやすい。最も効くのが<b>G-Gが平熱と診断している国</b>──
+      見逃されていた危機の相当部分は「本人の家計は健全、でも取引先が燃えていて巻き込まれた」型だった。
+    </p>
+    <p class="verify reveal">
+      疑ってかかった検証をすべて生き残った: 「世界中が燃えている時代」効果を統制しても残る(p=0.005)、
+      「近所(同地域)が燃えている」より強い、同一通貨圏(CFA等)の道連れを除外しても残る(+0.076)。
+      対照的に<b>銀行与信版の同じ検定は不合格</b>──検定は何でも通すわけではない。
+      なお「貿易で危機が伝わる」現象自体は Glick–Rose (1999) 以来の既知で、本研究の新規性は
+      <b>較正済み基準線への追加寄与を事前固定の基準で測り、「地域選好を拾っているだけ」という古典的批判に定量で答えた</b>点にある。
+    </p>
+  </section>
+
   <!-- ============ NEXT ============ -->
   <section>
     <div class="eyebrow reveal">今後の論点</div>
@@ -473,8 +512,8 @@ footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
       <div class="q reveal">
         <div class="m">→</div>
         <div>
-          <h3>次は執筆 — 英語 extended abstract(2.5〜3頁)</h3>
-          <p>実証は完了(較正・OOS・直交性・深刻度・合成不能・指標対決)。ネットワーク化は2つの検証がnullだったため future work に明記(over-claimしない)。数値は全て docs/data/verified_results.txt(生出力の正本)から転記する。残る人間タスク: 指導教員への発表意向の相談と渡航支援の確認。</p>
+          <h3>ここからの選択肢(未決定)</h3>
+          <p>実証は較正(Phase 1)と貿易ネットワーク(Phase 2)まで完了し、数値は全て docs/data/verified_results.txt(生出力の正本)にある。この先は選択肢: (a)人手整備の公式危機リスト(Laeven–Valencia)での再現、(b)先行研究の全文精読(Glick–Rose 1999等)、(c)論文/学会発表としてまとめる、(d)警報機の実装をさらに進める。どれをどの順でやるかは未定。</p>
         </div>
       </div>
     </div>
@@ -488,6 +527,7 @@ footer .fin{ margin-top: var(--space-32); font-size: var(--text-xs); }
       <li>Aydın, S. &amp; Tunç, C. (2025). A farewell to Greenspan–Guidotti rule. <em>Applied Economics Letters</em> 32(12), 1769–1773.</li>
       <li>Kaminsky, G., Lizondo, S. &amp; Reinhart, C. (1998). Leading Indicators of Currency Crises. <em>IMF Staff Papers</em> 45(1), 1–48.</li>
       <li>Kaminsky, G. (2003). Varieties of Currency Crises. <em>NBER Working Paper</em> 10193.</li>
+      <li>Glick, R. &amp; Rose, A. (1999). Contagion and trade: Why are currency crises regional? <em>Journal of International Money and Finance</em> 18(4), 603–617.</li>
     </ul>
     <p class="fin">通貨危機の早期警戒指標 較正研究 · 研究メモ</p>
   </footer>
