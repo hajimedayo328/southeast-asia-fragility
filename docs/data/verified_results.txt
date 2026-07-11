@@ -76,3 +76,26 @@ main: GG alone test=0.5891 | GG+SS+CF test=0.6004 delta=+0.0113
       train: GG=0.5919 model=0.5952; weights GG,SS,CF=['1.103', '0.096', '0.576']
       bootstrap B=800: CI[-0.0007,+0.0216] p=0.0600
 pre-registered success = delta>=+0.03 AND CI excludes 0
+
+PHASE2 EXP2 2026-07-11 (IMTS trade_fire=partner-trade-weighted crisis state; LV_30_10 k=2)
+sample n=3316 (train<2000 n=1328 crises=280 / test>=2000 n=1988 crises=156)
+sanity: GG-only logistic test AUC=0.5841 vs raw GG=0.5841
+solo AUC full-sample: trade_fire=0.6729; blind region(test&GG<=1, n=1781 crises=125): TF AUC=0.6526
+main: GG alone test=0.5841 | GG+TF test=0.6667 delta=+0.0826; weights GG,TF=['1.633', '1.127']
+      bootstrap B=800: CI[+0.0329,+0.1373] p=0.0025
+secondary(declared) GG+TF+SS+CF on BIS∩trade sample n=2633: GG test=0.5916 model test=0.6855 delta=+0.0939; weights=['1.177', '0.993', '0.108', '-0.409']
+pre-registered success = delta>=+0.03 AND CI excludes 0
+
+PHASE2 EXP2-CONFOUND 2026-07-11 (TF vs time-effect GF=global crisis share, RF=regional share)
+solo AUC: TF=0.6729 GF=0.6384 RF=0.6624
+test AUC: GG=0.5841 | GG+GF=0.5796 | GG+RF=0.6158 | GG+TF=0.6667 | GG+GF+TF=0.6734 | GG+GF+RF+TF=0.6691
+weights GG+GF+TF: ['1.635', '-0.957', '1.553'] (order GG,GF,TF)
+KEY: (GG+GF+TF)-(GG+GF) bootstrap B=800: CI[+0.0369,+0.1574] p=0.0050
+
+PHASE2 EXP2-ROBUST 2026-07-11 (GG+TF vs GG, OOS delta across rule x horizon)
+LV_30_10 k=1 n=3416: GG=0.5988 GG+TF=0.6886 delta=+0.0898 CI[+0.0337,+0.1486] p=0.0150
+LV_30_10 k=2 n=3316: GG=0.5841 GG+TF=0.6667 delta=+0.0826 CI[+0.0346,+0.1351] p=0.0000
+LV_30_10 k=3 n=3216: GG=0.5705 GG+TF=0.6345 delta=+0.0641 CI[+0.0333,+0.1010] p=0.0000
+FR_25_10 k=1 n=3338: GG=0.5696 GG+TF=0.6709 delta=+0.1014 CI[+0.0467,+0.1539] p=0.0050
+FR_25_10 k=2 n=3238: GG=0.5604 GG+TF=0.6326 delta=+0.0722 CI[+0.0324,+0.1122] p=0.0100
+FR_25_10 k=3 n=3138: GG=0.5480 GG+TF=0.5895 delta=+0.0415 CI[+0.0175,+0.0650] p=0.0050
