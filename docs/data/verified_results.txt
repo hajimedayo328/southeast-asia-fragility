@@ -99,3 +99,10 @@ LV_30_10 k=3 n=3216: GG=0.5705 GG+TF=0.6345 delta=+0.0641 CI[+0.0333,+0.1010] p=
 FR_25_10 k=1 n=3338: GG=0.5696 GG+TF=0.6709 delta=+0.1014 CI[+0.0467,+0.1539] p=0.0050
 FR_25_10 k=2 n=3238: GG=0.5604 GG+TF=0.6326 delta=+0.0722 CI[+0.0324,+0.1122] p=0.0100
 FR_25_10 k=3 n=3138: GG=0.5480 GG+TF=0.5895 delta=+0.0415 CI[+0.0175,+0.0650] p=0.0050
+
+PHASE2 EXP2-XZONE 2026-07-11 (currency-zone control: exclude partners with >=90% identical dUSD changes; LV_30_10 k=2)
+same-currency pairs detected=572 (CIV zone size=17)
+TF(状態): n=3316 solo=0.6729 GG=0.5841 GG+F=0.6667 delta=+0.0826 CI[+0.0319,+0.1344] p=0.0033
+TF_xzone(通貨圏除外): n=3316 solo=0.6668 GG=0.5841 GG+F=0.6604 delta=+0.0763 CI[+0.0283,+0.1245] p=0.0033
+TF_onset(発生): n=3316 solo=0.6171 GG=0.5841 GG+F=0.6165 delta=+0.0323 CI[+0.0156,+0.0490] p=0.0000
+TF_xzone_onset: n=3316 solo=0.6130 GG=0.5841 GG+F=0.6118 delta=+0.0277 CI[+0.0133,+0.0408] p=0.0000
