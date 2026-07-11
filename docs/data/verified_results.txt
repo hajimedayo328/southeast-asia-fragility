@@ -106,3 +106,16 @@ TF(状態): n=3316 solo=0.6729 GG=0.5841 GG+F=0.6667 delta=+0.0826 CI[+0.0319,+0
 TF_xzone(通貨圏除外): n=3316 solo=0.6668 GG=0.5841 GG+F=0.6604 delta=+0.0763 CI[+0.0283,+0.1245] p=0.0033
 TF_onset(発生): n=3316 solo=0.6171 GG=0.5841 GG+F=0.6165 delta=+0.0323 CI[+0.0156,+0.0490] p=0.0000
 TF_xzone_onset: n=3316 solo=0.6130 GG=0.5841 GG+F=0.6118 delta=+0.0277 CI[+0.0133,+0.0408] p=0.0000
+
+PHASE2 EXP2-NGUYEN 2026-07-11 (independent replication: human-curated crisis list Nguyen-Castro-Wood 2022, Econ Modelling)
+extraction: episodes mapped=401 onsets, spot-checks THA1997/MEX1994/IDN1997/KOR1997/RUS1998 all correct
+sample n=3351 (train n=1565 crises=286 / test n=1786 crises=104)
+sanity GG-only=0.6191 vs raw GG=0.6192
+solo TF=0.6437; blind region(test&GG<=1, n=1560): TF=0.6011
+main: GG=0.6192 | GG+TF=0.6438 delta=+0.0246 CI[-0.0040,+0.0582] p=0.1067
+
+PHASE2 EXP2-NGUYEN-DIAG 2026-07-11 (labels=curated Nguyen, partner fire=FX-rule crash state)
+n=3354 test crises=104: GG=0.6192 | GG+TF_fxfire=0.6893 delta=+0.0700 CI[+0.0286,+0.1203] p=0.0000
+
+PHASE2 EXP2-NGUYEN-DIAG2 2026-07-11 (labels=FX-rule, partner fire=curated Nguyen state)
+n=3316 test crises=156: GG=0.5841 | GG+TF_nfire=0.6715 delta=+0.0874 CI[+0.0438,+0.1364] p=0.0033
