@@ -60,3 +60,19 @@ train theta=1.0: TP=132 FP=310 FN=171 TN=827 FPR=0.273 recall=0.436 lift=1.419
 train theta*=0.60: TP=184 FP=452 FN=119 TN=685 FPR=0.398 recall=0.607 lift=1.375
 TEST  theta=1.0: TP=31 FP=177 FN=127 TN=1676 FPR=0.096 recall=0.196 lift=1.897
 TEST  theta*=0.60: TP=48 FP=411 FN=110 TN=1442 FPR=0.222 recall=0.304 lift=1.331
+
+PHASE2 EXP1 2026-07-11 (BIS LBS: SS=-FXadj_flow/stock_t-1 winsor±1 minstock50USDmn, CF=creditor-weighted crisis; LV_30_10 k=2)
+sample n=2666 (train<2000 n=882 crises=220 / test>=2000 n=1784 crises=149)
+solo AUC full-sample: sudden_stop=0.5168 creditor_fire=0.5473
+main: GG alone test AUC=0.5891 | GG+SS+CF logistic test AUC=0.5711 delta=-0.0179
+      (train AUC: GG=0.5919 model=0.5198; logit weights GG,SS,CF=['-0.121', '0.033', '0.182'])
+      bootstrap(country-block,test,fixed weights) B=800: CI[-0.1074,+0.0769] p=0.7300
+secondary (test & GG<=1, n=1587 crises=118): SS AUC=0.5188 CF AUC=0.5938
+pre-registered success = delta>=+0.03 AND CI excludes 0
+
+PHASE2 EXP1-FIX 2026-07-11 (train-ECDF scaled logistic; same sample/features)
+sanity: GG-only logistic test AUC=0.5890 vs raw GG AUC=0.5891 (should match)
+main: GG alone test=0.5891 | GG+SS+CF test=0.6004 delta=+0.0113
+      train: GG=0.5919 model=0.5952; weights GG,SS,CF=['1.103', '0.096', '0.576']
+      bootstrap B=800: CI[-0.0007,+0.0216] p=0.0600
+pre-registered success = delta>=+0.03 AND CI excludes 0
