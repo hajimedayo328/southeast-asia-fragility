@@ -140,3 +140,9 @@ PHASE2 EXP3-XM 2026-07-12 (mechanism: export-weighted vs import-weighted fire; n
 corr(TFx,TFm)=+0.695; solo AUC: TFx(客の火事)=0.6585 TFm(仕入先の火事)=0.6707
 test AUC: GG=0.5850 | GG+TFx=0.6457 | GG+TFm=0.6716 | GG+TFx+TFm=0.6725
 weights GG+TFx+TFm: ['1.599', '0.387', '0.837'] (order GG,TFx,TFm)
+
+PHASE2 EXP4-2HOP 2026-07-12 (mirror-completed trade matrix; n=3427 train=1435 test=1992, exploratory/all cells)
+corr(TF1,TF2)=+0.394; solo AUC: TF1=0.6561 TF2=0.6342
+test AUC: GG=0.5825 | GG+TF1=0.6538 | GG+TF2=0.5784 | GG+TF1+TF2=0.6648
+weights GG,TF1,TF2=['1.641', '1.225', '-1.017']
+2hop added value: (GG+TF1+TF2)-(GG+TF1) bootstrap B=600: CI[+0.0012,+0.0207] p=0.0333
