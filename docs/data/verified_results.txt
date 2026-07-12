@@ -135,3 +135,8 @@ q=20%: GG-rank  TP=40 FN=116 recall=0.256 lift=1.31 | GG+TF-rank TP=48 FN=108 re
 q=30%: GG-rank  TP=59 FN=97 recall=0.378 lift=1.28 | GG+TF-rank TP=69 FN=87 recall=0.442 lift=1.50
 blind-region(GG<=1) crises in test=125: caught by GG+TF-rank(q=20%)=18 (14.4%)
 recall diff(GG+TF - GG) at q=20%, year-block bootstrap B=1000: CI[+0.0055,+0.0979] p=0.0480
+
+PHASE2 EXP3-XM 2026-07-12 (mechanism: export-weighted vs import-weighted fire; n=3303 train=1316 test=1987)
+corr(TFx,TFm)=+0.695; solo AUC: TFx(客の火事)=0.6585 TFm(仕入先の火事)=0.6707
+test AUC: GG=0.5850 | GG+TFx=0.6457 | GG+TFm=0.6716 | GG+TFx+TFm=0.6725
+weights GG+TFx+TFm: ['1.599', '0.387', '0.837'] (order GG,TFx,TFm)
