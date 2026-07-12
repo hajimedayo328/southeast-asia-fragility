@@ -119,3 +119,19 @@ n=3354 test crises=104: GG=0.6192 | GG+TF_fxfire=0.6893 delta=+0.0700 CI[+0.0286
 
 PHASE2 EXP2-NGUYEN-DIAG2 2026-07-11 (labels=FX-rule, partner fire=curated Nguyen state)
 n=3316 test crises=156: GG=0.5841 | GG+TF_nfire=0.6715 delta=+0.0874 CI[+0.0438,+0.1364] p=0.0033
+
+PHASE2 ALARM 2026-07-12 (operational alarm: logistic(GG,TF) vs GG theta=1; primary=equal-train-FPR)
+train FPR target(GG theta=1)=0.2844 -> tau=-1.1167
+train GG theta=1  : TP=130 FP=298 FN=150 TN=750 FPR=0.284 recall=0.464 lift=1.44
+train GG+TF alarm: TP=140 FP=298 FN=140 TN=750 FPR=0.284 recall=0.500 lift=1.52
+TEST  GG theta=1  : TP=31 FP=176 FN=125 TN=1656 FPR=0.096 recall=0.199 lift=1.91
+TEST  GG+TF alarm: TP=22 FP=103 FN=134 TN=1729 FPR=0.056 recall=0.141 lift=2.24
+blind-region catches: GG-missed crises in test=125, caught by new alarm=4 (3.2%)
+recall diff(new-GG) bootstrap B=1000: CI[-0.1250,+0.0000] p=0.0860
+
+PHASE2 ALARM-REL 2026-07-12 (per-year relative alarm on TEST: fire on top q% of that year's scores; all q reported)
+q=10%: GG-rank  TP=25 FN=131 recall=0.160 lift=1.69 | GG+TF-rank TP=32 FN=124 recall=0.205 lift=2.17
+q=20%: GG-rank  TP=40 FN=116 recall=0.256 lift=1.31 | GG+TF-rank TP=48 FN=108 recall=0.308 lift=1.57
+q=30%: GG-rank  TP=59 FN=97 recall=0.378 lift=1.28 | GG+TF-rank TP=69 FN=87 recall=0.442 lift=1.50
+blind-region(GG<=1) crises in test=125: caught by GG+TF-rank(q=20%)=18 (14.4%)
+recall diff(GG+TF - GG) at q=20%, year-block bootstrap B=1000: CI[+0.0055,+0.0979] p=0.0480
