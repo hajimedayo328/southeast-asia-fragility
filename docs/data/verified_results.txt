@@ -184,3 +184,11 @@ PHASE2 EXP9-QUARTERLY 2026-07-13 (SSQ=worst-quarter withdrawal rate vs annual-ne
 sample n=2636 (train crises=216/test=147)
 solo AUC: SSQ(四半期最悪)=0.4849 vs SS(年間純額)=0.5189
 test AUC: GG+TF=0.6862 | +SSQ=0.6862 delta=-0.0001 CI[-0.0003,+0.0002] p=0.6567 weights=['1.192', '0.978', '-0.005']
+
+CASCADE v1 2026-07-13 (design notes/35; criteria fixed before run)
+fit(pre-2000): weights GG,PF=['1.547', '1.822'] / no-contagion GG=['1.546'] rho=0.608
+observed(same universe): mean onsets/yr=5.48 dispersion D=3.29
+FULL model sim(500 reps): mean/yr=7.92 D 5-95%=[0.93,1.89] median=1.38
+NO-CONTAGION sim: mean/yr=7.82 D 5-95%=[0.67,1.32] median=0.93
+(a1) obs D inside full-model 90% band: FAIL
+(a2) obs D outside no-contagion 90% band: PASS
