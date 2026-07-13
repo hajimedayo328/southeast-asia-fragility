@@ -179,3 +179,8 @@ OV(割高さ): n=1233 (train crises=68/test=72) solo=0.4863
   GG+TF=0.6326 | +feat=0.6262 delta=-0.0064 CI[-0.0277,+0.0141] p=0.6033 weights=['0.783', '0.486', '0.240']
 CA(経常赤字): n=3027 (train crises=243/test=147) solo=0.5144
   GG+TF=0.6511 | +feat=0.6461 delta=-0.0049 CI[-0.0148,+0.0055] p=0.3667 weights=['1.469', '0.960', '-0.213']
+
+PHASE2 EXP9-QUARTERLY 2026-07-13 (SSQ=worst-quarter withdrawal rate vs annual-net SS; bar +0.03 vs GG+TF, CI excl 0)
+sample n=2636 (train crises=216/test=147)
+solo AUC: SSQ(四半期最悪)=0.4849 vs SS(年間純額)=0.5189
+test AUC: GG+TF=0.6862 | +SSQ=0.6862 delta=-0.0001 CI[-0.0003,+0.0002] p=0.6567 weights=['1.192', '0.978', '-0.005']
