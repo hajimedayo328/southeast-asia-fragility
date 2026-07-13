@@ -167,3 +167,15 @@ BANKING: n=3474 (train crises=144/test=19) solo TF=0.5912
   GG=0.5987 | GG+TF=0.5912 delta=-0.0075 CI[-0.1237,+0.1464] p=0.9167
 DEBT: n=2145 (train crises=138/test=48) solo TF=0.5321
   GG=0.4718 | GG+TF=0.4673 delta=-0.0045 CI[-0.0368,+0.0296] p=0.8233
+
+PHASE2 EXP7-CREDIT 2026-07-13 (credit boom CB=credit%GDP(t)-credit%GDP(t-3); pre-registered: delta>=+0.03 vs GG+TF, CI excl 0)
+sample n=2551 (train n=884 crises=174 / test n=1667 crises=131)
+solo AUC: credit_boom=0.4738
+test AUC: GG=0.5890 | GG+TF=0.6611 | GG+TF+CB=0.6523 delta=-0.0087; weights=['1.520', '1.150', '-0.477']
+bootstrap B=600: CI[-0.0244,+0.0059] p=0.2200
+
+PHASE2 EXP8 2026-07-13 (REER overvaluation OV=REER/mean(t-5..t-1)-1; CA=-current acct %GDP; each vs GG+TF; bar +0.03 & CI excl 0)
+OV(割高さ): n=1233 (train crises=68/test=72) solo=0.4863
+  GG+TF=0.6326 | +feat=0.6262 delta=-0.0064 CI[-0.0277,+0.0141] p=0.6033 weights=['0.783', '0.486', '0.240']
+CA(経常赤字): n=3027 (train crises=243/test=147) solo=0.5144
+  GG+TF=0.6511 | +feat=0.6461 delta=-0.0049 CI[-0.0148,+0.0055] p=0.3667 weights=['1.469', '0.960', '-0.213']
