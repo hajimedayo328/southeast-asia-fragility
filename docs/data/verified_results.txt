@@ -210,3 +210,10 @@ CASCADE v2 COUNTERFACTUAL 2026-07-13 (THA1997を消す; N=4000, 共通乱数; ta
   MYS: P(98年までに危機) base=0.000 -> THAなし=0.000  Δ=+0.000
   PHL: P(98年までに危機) base=0.098 -> THAなし=0.097  Δ=-0.002
   注: 模型上のTHA→隣国の直接+間接伝染効果のみ。嵐(共通ショック)は両系で同一
+
+CASCADE v3 2026-07-13 (AR(1) storm; calibrate mean/D/lag1; validate max-wave & calm-years [untargeted, fixed beforehand])
+observed: mean=5.41 D=3.08 lag1=0.37 | max_wave=18 calm_years(<=1)=7
+calibrated: phi=0.5 sigma=0.556 delta=-0.471
+check targeted: medianD=3.05 (obs 3.08) median_lag1=0.29 (obs 0.37)
+validate (i) max_wave 90%=[12,28] obs=18 -> PASS
+validate (ii) calm_years 90%=[2,11] obs=7 -> PASS
