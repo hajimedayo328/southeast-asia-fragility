@@ -217,3 +217,13 @@ calibrated: phi=0.5 sigma=0.556 delta=-0.471
 check targeted: medianD=3.05 (obs 3.08) median_lag1=0.29 (obs 0.37)
 validate (i) max_wave 90%=[12,28] obs=18 -> PASS
 validate (ii) calm_years 90%=[2,11] obs=7 -> PASS
+
+CASCADE STORM-ID 2026-07-13 (implied yearly storm eta_hat vs observable global factors; exploratory, ALL pairs reported)
+top storm years: [(1998, 1.77), (1982, 1.2), (1994, 1.04), (2009, 0.98), (2016, 0.95), (1990, 0.94)]
+  FF水準(t-1): n=46 r=+0.156 (n.s.)
+  FF2年変化(t-1): n=46 r=-0.246 (n.s.)
+  ドル1年変化(t-1): n=45 r=+0.254 (n.s.)
+  ドル2年変化(t-1): n=45 r=+0.272 (n.s.)
+  油価1年変化(t-1): n=46 r=-0.210 (n.s.)
+  油価2年変化(t-1): n=46 r=-0.241 (n.s.)
+  注: eta_hatは模型の残差(モデルが説明できない年次共通成分)。相関は探索的・約45点の年次系列
