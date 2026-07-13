@@ -192,3 +192,21 @@ FULL model sim(500 reps): mean/yr=7.92 D 5-95%=[0.93,1.89] median=1.38
 NO-CONTAGION sim: mean/yr=7.82 D 5-95%=[0.67,1.32] median=0.93
 (a1) obs D inside full-model 90% band: FAIL
 (a2) obs D outside no-contagion 90% band: PASS
+
+CASCADE v2 2026-07-13 (timing fixed; common shock eta~N(0,tau); calibrate delta->mean, tau->D; validate on untargeted moments)
+observed: mean=5.41/yr D=3.08 max_wave=18 lag1_autocorr=0.37
+calibrated: tau=0.7 delta=-0.502; fit weights GG,PF=['1.602', '1.892'] rho=0.608
+FULL: medianD=3.51 | max_wave 90%=[13,31] obs=18 -> PASS | lag1 90%=[-0.17,0.29] obs=0.37 -> FAIL
+2x2 median D (excess dispersion D-1):
+  full           : D=3.51 (excess +2.51)
+  storm_only     : D=3.21 (excess +2.21)
+  contagion_only : D=1.41 (excess +0.41)
+  neither        : D=0.97 (excess -0.03)
+amplification: contagion adds +0.30 on top of storms (storms alone +2.21 vs neither -0.03); interaction=-0.13
+
+CASCADE v2 COUNTERFACTUAL 2026-07-13 (THA1997を消す; N=4000, 共通乱数; tau=0.7 delta=-0.502)
+  KOR: P(98年までに危機) base=0.000 -> THAなし=0.000  Δ=+0.000
+  IDN: P(98年までに危機) base=0.136 -> THAなし=0.133  Δ=-0.002
+  MYS: P(98年までに危機) base=0.000 -> THAなし=0.000  Δ=+0.000
+  PHL: P(98年までに危機) base=0.098 -> THAなし=0.097  Δ=-0.002
+  注: 模型上のTHA→隣国の直接+間接伝染効果のみ。嵐(共通ショック)は両系で同一
