@@ -232,3 +232,12 @@ CASCADE STORM-FORMULA 2026-07-13 (eta = formula(dollar,oil,FF); R2 full=0.154 [n
 obs(restricted years n=45): mean=5.42 D=3.14 lag1=0.37
   A:決定論(式のみ): D90%=[3.49,5.83]✗ lag1 90%=[0.25,0.55]✓ -> FAIL
   B:式+残差ノイズ: D90%=[7.18,23.75]✗ lag1 90%=[-0.15,0.28]✗ -> FAIL
+
+CASCADE STORM-MONTHLY 2026-07-13 (quarterly world onset counts vs factors; lags 0-4q ALL reported; autocorr-adjusted n_eff)
+monthly fx countries=203, monthly onsets=625
+sanity 発火集中月トップ: [('1981-05', 31), ('1994-01', 18), ('1976-05', 15), ('1985-02', 15), ('2008-10', 13)]
+  ドル12m変化: lag0: r=+0.376**(n=173,neff=104) | lag1: r=+0.231**(n=173,neff=104) | lag2: r=+0.139(n=173,neff=105) | lag3: r=+0.038(n=173,neff=105) | lag4: r=+0.027(n=173,neff=105)
+  油価12m変化: lag0: r=-0.280**(n=196,neff=122) | lag1: r=-0.170(n=195,neff=122) | lag2: r=-0.065(n=194,neff=122) | lag3: r=+0.051(n=193,neff=121) | lag4: r=+0.199**(n=192,neff=120)
+  FF水準: lag0: r=+0.239**(n=196,neff=106) | lag1: r=+0.238**(n=195,neff=106) | lag2: r=+0.252**(n=194,neff=105) | lag3: r=+0.197**(n=193,neff=105) | lag4: r=+0.229**(n=192,neff=104)
+  VIX: lag0: r=+0.371**(n=144,neff=81) | lag1: r=+0.212(n=143,neff=80) | lag2: r=+0.016(n=142,neff=79) | lag3: r=-0.011(n=141,neff=78) | lag4: r=-0.059(n=140,neff=78)
+  (**=自己相関調整後もp<0.05相当。ラグk=要因がk四半期先行)
