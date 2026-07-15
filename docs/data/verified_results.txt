@@ -253,3 +253,21 @@ mirror pairs=100242 median gap=-0.089; top discrepancy: St. Lucia, Djibouti, Lib
   TF重み=自己申告(現行): n=3316 GG=0.5841 GG+TF=0.6667 delta=+0.0826 CI[+0.0346,+0.1351]
   TF重み=ミラー最小(保守): n=3284 GG=0.5841 GG+TF=0.6158 delta=+0.0316 CI[+0.0126,+0.0525]
   TF重み=ミラー最大: n=3426 GG=0.5825 GG+TF=0.6545 delta=+0.0720 CI[+0.0285,+0.1172]
+
+MARKET-GRAPH BRIDGE 2026-07-15 (advisor: connect with market-graph project. Historical market graph 1977-2025, 11 FRED macro nodes, 36m rolling corr, thr=0.5 fixed)
+graph sanity: β1 at 2020Q1=3.7, 2008Q4=5.7, 1998Q3=1.0 (穴の数)
+  β1(構造の穴・主指標): lag0: r=-0.021(neff=115) | lag1: r=-0.055(neff=114) | lag2: r=-0.078(neff=114) | lag3: r=-0.046(neff=114) | lag4: r=-0.055(neff=113)
+  density: lag0: r=+0.017(neff=111) | lag1: r=-0.002(neff=110) | lag2: r=-0.020(neff=110) | lag3: r=-0.009(neff=109) | lag4: r=-0.026(neff=109)
+  max_k_core: lag0: r=+0.067(neff=119) | lag1: r=+0.060(neff=118) | lag2: r=+0.014(neff=118) | lag3: r=+0.049(neff=117) | lag4: r=+0.062(neff=116)
+  isolated: lag0: r=-0.032(neff=111) | lag1: r=-0.025(neff=111) | lag2: r=-0.009(neff=110) | lag3: r=-0.008(neff=110) | lag4: r=-0.012(neff=109)
+MAIN TEST (n=196 quarters): R2(GSI)=0.273 | R2(β1)=0.000 | R2(GSI+β1)=0.273 delta=+0.000
+  year-block bootstrap B=1000: ΔR2 CI[+0.000,+0.021] -> PASS(CI excludes 0)
+  coef(GSI,β1)=['3.618', '-0.007']
+
+MARKET-GRAPH BRIDGE-FIX 2026-07-15 (前ブロックの合格判定は無効: ΔR2は変数追加で必ず≥0のため『CIが0を除外』は自動成立する欠陥基準だった。ブロック順列検定でやり直し)
+observed ΔR2(GSI+β1 − GSI) = +0.0000 (R2: GSI=0.273 → GSI+β1=0.273; β1単独R2=0.000, 係数≈-0.007)
+block-permutation null (B=2000, 年ブロックで β1 を入替): 帰無中央値=+0.0021, 95%点=+0.0178
+p = 0.963 -> FAIL (市場グラフ構造は嵐を説明しない)
+  記述統計でも全ラグ0-4で |r|<0.08(β1・density・k-core・isolated 全て)。実質完全なnull
+  読み: market-graph の主張(位相的穴がショックに先行)は日次・41銘柄・15日先行という時間スケール。
+        本研究の嵐は四半期〜年スケール。**2桁違う時間スケールの現象であり、この形では接続しない**
