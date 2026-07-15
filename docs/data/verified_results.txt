@@ -246,3 +246,10 @@ CASCADE STORM-FORMULA-Q 2026-07-13 (GSI=z-composite[dollar,FF,-oil,VIX]; eta~GSI
   A:決定論(式のみ): D90%=[2.18,3.86]✓ lag1=[0.19,0.54]✓ -> PASS
   B:式+AR残差: 必要残差σ=0.244 (v3の自由嵐σ=0.556) -> 式が運ぶ嵐の分散シェア≈81%
      D90%=[2.22,4.28] lag1=[0.18,0.58] obs=(3.19,0.37)
+
+EXP-MIRROR 2026-07-15 (advisor feedback: official data may lie. Trade mirror audit + robustness)
+mirror pairs=100242 median gap=-0.089; top discrepancy: St. Lucia, Djibouti, Liberia, Ethiopia, Haiti, Cameroon
+  (注: 食い違い=操作の証拠とは限らない。再輸出ハブ(香港型)や運賃計上差も混入)
+  TF重み=自己申告(現行): n=3316 GG=0.5841 GG+TF=0.6667 delta=+0.0826 CI[+0.0346,+0.1351]
+  TF重み=ミラー最小(保守): n=3284 GG=0.5841 GG+TF=0.6158 delta=+0.0316 CI[+0.0126,+0.0525]
+  TF重み=ミラー最大: n=3426 GG=0.5825 GG+TF=0.6545 delta=+0.0720 CI[+0.0285,+0.1172]
