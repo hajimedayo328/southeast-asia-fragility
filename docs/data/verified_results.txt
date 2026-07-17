@@ -380,3 +380,10 @@ INFER-1 2026-07-16 (主結果に査読者級推論: 二方向クラスタCI[CGM]
 delta(OOS AUC)=+0.0826 | se: 国=0.0259 年=0.0321 iid=0.0183 → 二方向se=0.0370
 (a) 二方向95%CI [+0.0100,+0.1551] z=2.23 p=0.0257 -> PASS
 (b) DM検定(Brier, 21年): dbar=+0.00730 DM=+3.72 p=0.0013 -> PASS
+
+IDENT-2 2026-07-17 (地理の対決: TF_dist=逆距離重みの火事[CEPII] vs TF_obs=観測貿易。ネスト検定・CI 0除外で合格)
+n=3261 solo AUC: TF_dist=0.6661 TF_obs=0.6749
+test AUC: GG=0.5806 | GG+TF_dist=0.6054 | GG+TF_obs=0.6663 | GG+両方=0.6662
+増分(GG+TF_dist+TF_obs)-(GG+TF_dist)=+0.0608 CI[+0.0158,+0.1083] p=0.0080
+weights(GG,TF_dist,TF_obs)=['1.574', '-0.080', '1.192']
+-> PASS: 観測された取引関係は純地理を超える情報を持つ
