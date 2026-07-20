@@ -1,0 +1,284 @@
+{
+ "fixed_on": "2026-07-20",
+ "definitions": {
+  "collapse_lane": "GG+TF_m ECDF logistic (trained on full 1978-2024 history), rank pct among candidates",
+  "attack_lane": "reserves months of prior-year imports (monthly IL), ascending rank pct",
+  "red": "lane rank pct <= 0.10",
+  "dual_red": "both lanes rank pct <= 0.20",
+  "judgment": "For each listed country: crash onset (12m-30%+10pp monthly rule, established codebase) occurring within 12 months of its asof month = HIT. Judge on/after 2027-08-01 with same code."
+ },
+ "n_candidates": {
+  "collapse": 93,
+  "attack": 87
+ },
+ "collapse_red": [
+  {
+   "iso": "LBN",
+   "name": "Lebanon",
+   "collapse_score": -1.6859572801262885,
+   "gg": 0.57189224904354,
+   "tf": 0.004009929172113503,
+   "rm_months": 6.966323808365275,
+   "asof": "2026-03",
+   "collapse_rank_pct": 0.0,
+   "attack_rank_pct": 0.5862068965517241
+  },
+  {
+   "iso": "ZWE",
+   "name": "Zimbabwe",
+   "collapse_score": -1.7034732157002639,
+   "gg": 8.18016391442169,
+   "tf": 0,
+   "rm_months": 0.6675360036189656,
+   "asof": "2026-02",
+   "collapse_rank_pct": 0.010752688172043012,
+   "attack_rank_pct": 0.0
+  },
+  {
+   "iso": "COL",
+   "name": "Colombia",
+   "collapse_score": -1.740756870623634,
+   "gg": 0.307809907463449,
+   "tf": 0.011213396039367142,
+   "rm_months": 12.513003799390512,
+   "asof": "2025-12",
+   "collapse_rank_pct": 0.021505376344086023,
+   "attack_rank_pct": 0.8275862068965517
+  },
+  {
+   "iso": "MOZ",
+   "name": "Mozambique",
+   "collapse_score": -1.805712839208395,
+   "gg": 0.315334245073026,
+   "tf": 0.008297209382932127,
+   "rm_months": 4.802951974937766,
+   "asof": "2025-08",
+   "collapse_rank_pct": 0.03225806451612903,
+   "attack_rank_pct": 0.3218390804597701
+  },
+  {
+   "iso": "TUN",
+   "name": "Tunisia",
+   "collapse_score": -1.8350140634233352,
+   "gg": 1.7049079528292699,
+   "tf": 0,
+   "rm_months": 4.091999179602187,
+   "asof": "2025-10",
+   "collapse_rank_pct": 0.043010752688172046,
+   "attack_rank_pct": 0.28735632183908044
+  },
+  {
+   "iso": "ARG",
+   "name": "Argentina",
+   "collapse_score": -1.8436498858841466,
+   "gg": 1.6435612434016,
+   "tf": 0,
+   "rm_months": 5.717255840047831,
+   "asof": "2026-05",
+   "collapse_rank_pct": 0.053763440860215055,
+   "attack_rank_pct": 0.39080459770114945
+  },
+  {
+   "iso": "DJI",
+   "name": "Djibouti",
+   "collapse_score": -1.8648249225580544,
+   "gg": 1.48573370102743,
+   "tf": 0,
+   "rm_months": 0.8458237613379452,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.06451612903225806,
+   "attack_rank_pct": 0.022988505747126436
+  },
+  {
+   "iso": "MUS",
+   "name": "Mauritius",
+   "collapse_score": -1.8937721994466923,
+   "gg": 1.31146377732836,
+   "tf": 0,
+   "rm_months": 20.951131735786102,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.07526881720430108,
+   "attack_rank_pct": 0.9425287356321839
+  },
+  {
+   "iso": "TUR",
+   "name": "Turkiye",
+   "collapse_score": -1.931700731694574,
+   "gg": 1.14519671079131,
+   "tf": 0,
+   "rm_months": 1.8630203566143748,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.08602150537634409,
+   "attack_rank_pct": 0.04597701149425287
+  },
+  {
+   "iso": "BLR",
+   "name": "Belarus",
+   "collapse_score": -1.938609389663223,
+   "gg": 1.11407307036789,
+   "tf": 0,
+   "rm_months": 2.622158152301863,
+   "asof": "2026-05",
+   "collapse_rank_pct": 0.0967741935483871,
+   "attack_rank_pct": 0.13793103448275862
+  }
+ ],
+ "attack_red": [
+  {
+   "iso": "ZWE",
+   "name": "Zimbabwe",
+   "collapse_score": -1.7034732157002639,
+   "gg": 8.18016391442169,
+   "tf": 0,
+   "rm_months": 0.6675360036189656,
+   "asof": "2026-02",
+   "collapse_rank_pct": 0.010752688172043012,
+   "attack_rank_pct": 0.0
+  },
+  {
+   "iso": "BOL",
+   "name": "Bolivia",
+   "collapse_score": -2.4820098821872874,
+   "gg": 0.321370601890194,
+   "tf": 0,
+   "rm_months": 0.6962025875252178,
+   "asof": "2026-04",
+   "collapse_rank_pct": 0.46236559139784944,
+   "attack_rank_pct": 0.011494252873563218
+  },
+  {
+   "iso": "DJI",
+   "name": "Djibouti",
+   "collapse_score": -1.8648249225580544,
+   "gg": 1.48573370102743,
+   "tf": 0,
+   "rm_months": 0.8458237613379452,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.06451612903225806,
+   "attack_rank_pct": 0.022988505747126436
+  },
+  {
+   "iso": "GUY",
+   "name": "Guyana",
+   "collapse_score": -2.9731433875900466,
+   "gg": 0.0631128372284584,
+   "tf": 2.4683590595126885e-06,
+   "rm_months": 1.6630940349769803,
+   "asof": "2026-03",
+   "collapse_rank_pct": 0.7849462365591398,
+   "attack_rank_pct": 0.034482758620689655
+  },
+  {
+   "iso": "TUR",
+   "name": "Turkiye",
+   "collapse_score": -1.931700731694574,
+   "gg": 1.14519671079131,
+   "tf": 0,
+   "rm_months": 1.8630203566143748,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.08602150537634409,
+   "attack_rank_pct": 0.04597701149425287
+  },
+  {
+   "iso": "KGZ",
+   "name": "Kyrgyz Republic",
+   "collapse_score": -2.4683372342950936,
+   "gg": 0.31396163901826,
+   "tf": 1.346816836890675e-06,
+   "rm_months": 1.9966350379887012,
+   "asof": "2025-03",
+   "collapse_rank_pct": 0.45161290322580644,
+   "attack_rank_pct": 0.05747126436781609
+  },
+  {
+   "iso": "LCA",
+   "name": "St. Lucia",
+   "collapse_score": -2.7179750951064836,
+   "gg": 0.195853463588227,
+   "tf": 0,
+   "rm_months": 2.0405511947867354,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.6344086021505376,
+   "attack_rank_pct": 0.06896551724137931
+  },
+  {
+   "iso": "LBR",
+   "name": "Liberia",
+   "collapse_score": -3.2223071268178396,
+   "gg": 0.000179323071454364,
+   "tf": 0,
+   "rm_months": 2.233219477279277,
+   "asof": "2025-08",
+   "collapse_rank_pct": 0.956989247311828,
+   "attack_rank_pct": 0.08045977011494253
+  },
+  {
+   "iso": "MDV",
+   "name": "Maldives",
+   "collapse_score": -2.6354166323811317,
+   "gg": 0.237152902278319,
+   "tf": 0,
+   "rm_months": 2.249677407641134,
+   "asof": "2026-05",
+   "collapse_rank_pct": 0.5483870967741935,
+   "attack_rank_pct": 0.09195402298850575
+  }
+ ],
+ "dual_red": [
+  {
+   "iso": "ZWE",
+   "name": "Zimbabwe",
+   "collapse_score": -1.7034732157002639,
+   "gg": 8.18016391442169,
+   "tf": 0,
+   "rm_months": 0.6675360036189656,
+   "asof": "2026-02",
+   "collapse_rank_pct": 0.010752688172043012,
+   "attack_rank_pct": 0.0
+  },
+  {
+   "iso": "DJI",
+   "name": "Djibouti",
+   "collapse_score": -1.8648249225580544,
+   "gg": 1.48573370102743,
+   "tf": 0,
+   "rm_months": 0.8458237613379452,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.06451612903225806,
+   "attack_rank_pct": 0.022988505747126436
+  },
+  {
+   "iso": "TUR",
+   "name": "Turkiye",
+   "collapse_score": -1.931700731694574,
+   "gg": 1.14519671079131,
+   "tf": 0,
+   "rm_months": 1.8630203566143748,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.08602150537634409,
+   "attack_rank_pct": 0.04597701149425287
+  },
+  {
+   "iso": "BLR",
+   "name": "Belarus",
+   "collapse_score": -1.938609389663223,
+   "gg": 1.11407307036789,
+   "tf": 0,
+   "rm_months": 2.622158152301863,
+   "asof": "2026-05",
+   "collapse_rank_pct": 0.0967741935483871,
+   "attack_rank_pct": 0.13793103448275862
+  },
+  {
+   "iso": "SLV",
+   "name": "El Salvador",
+   "collapse_score": -2.108700548851354,
+   "gg": 0.715060494222988,
+   "tf": 0,
+   "rm_months": 3.4758808237876893,
+   "asof": "2026-06",
+   "collapse_rank_pct": 0.1827956989247312,
+   "attack_rank_pct": 0.19540229885057472
+  }
+ ]
+}
