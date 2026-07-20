@@ -266,15 +266,113 @@ S.append(slide('⑮ で、いまどこが危ない？(2024年末データ)',
 '2024年の火元：エジプト・ナイジェリア・アルゼンチン・エチオピア・ロシア等12カ国。',
 'このリストは日付つきで公開保存済み——2027-28年に答え合わせができる(過去実績: 当てずっぽうの1.5〜2倍)。'))
 
+S.append(slide('⑯ 警報を「年1回」から「毎月」に作り替えた',
+'''<svg viewBox="0 0 660 240">
+<g text-anchor="middle">
+<rect x="50" y="45" width="180" height="90" rx="12" fill="#eef2f6" stroke="#b7c2cd"/>
+<text x="140" y="80" font-size="15" fill="#66778a" font-weight="700">旧: 年1回更新</text>
+<text x="140" y="105" font-size="12" fill="#66778a">前年末の情報で1年見張る</text>
+<text x="260" y="95" font-size="26" fill="#1c2733">→</text>
+<rect x="290" y="45" width="180" height="90" rx="12" fill="#e7f0e9" stroke="#4a8f5c"/>
+<text x="380" y="80" font-size="15" fill="#4a8f5c" font-weight="700">新: 毎月更新</text>
+<text x="380" y="105" font-size="12" fill="#66778a">月末ごとに再計算</text>
+</g>
+<g text-anchor="middle" font-size="13">
+<rect x="500" y="40" width="42" height="86" rx="4" fill="#4a8f5c"/><text x="521" y="145" fill="#1c2733">3ヶ月先</text><text x="521" y="65" fill="#fff" font-weight="700">+.043</text>
+<rect x="552" y="52" width="42" height="74" rx="4" fill="#6da97c"/><text x="573" y="145" fill="#1c2733">6ヶ月</text><text x="573" y="75" fill="#fff" font-weight="700">+.037</text>
+<rect x="604" y="86" width="42" height="40" rx="4" fill="#a3c9ad"/><text x="625" y="145" fill="#1c2733">12ヶ月</text><text x="625" y="105" fill="#fff" font-weight="700">+.020</text>
+</g>
+<text x="330" y="185" font-size="15" fill="#1c2733" text-anchor="middle" font-weight="700">毎月見る方が判別力+0.04。近い先の予告ほど得をする(右の棒)</text>
+<text x="330" y="212" font-size="13" fill="#66778a" text-anchor="middle">理由は次のスライド——「火事は速く燃え広がり、速く消える」から</text>
+</svg>''',
+'月末ごとに計算し直す警報は、年1回更新に統計的にはっきり勝った(4.6万国月で検証)。',
+'鮮度の利得は3ヶ月先>6ヶ月>12ヶ月。逆に、準備や嵐の指標を月次で足しても改善なし——月次化の勝ち分はすべて「火事の鮮度」。'))
+
+S.append(slide('⑰ 火の半減期は約3.8ヶ月',
+'''<svg viewBox="0 0 660 240">
+<g text-anchor="middle">
+<circle cx="120" cy="80" r="44" fill="#d64545"/><text x="120" y="90" font-size="26" fill="#fff">🔥</text>
+<text x="120" y="150" font-size="14" fill="#1c2733" font-weight="700">当月の火 100%</text>
+<circle cx="280" cy="88" r="36" fill="#e06c6c"/><text x="280" y="97" font-size="21" fill="#fff">🔥</text>
+<text x="280" y="150" font-size="14" fill="#1c2733">1-3ヶ月前 78%</text>
+<circle cx="430" cy="98" r="24" fill="#ea9a9a"/><text x="430" y="106" font-size="15" fill="#fff">🔥</text>
+<text x="430" y="150" font-size="14" fill="#1c2733">4-6ヶ月前 32%</text>
+<circle cx="560" cy="106" r="12" fill="#f2cccc"/>
+<text x="560" y="150" font-size="14" fill="#66778a">7-12ヶ月前 ≈0</text>
+</g>
+<text x="330" y="195" font-size="16" fill="#1c2733" text-anchor="middle" font-weight="700">隣の火事の「予告力」は約3.8ヶ月で半分に減る</text>
+<text x="330" y="220" font-size="13" fill="#66778a" text-anchor="middle">年次データで見つけた「火事は当年しか効かない」の正体。月ごとに測って初めて出た数字</text>
+</svg>''',
+'古い火事はもう怖くない——予告力は数ヶ月で燃え尽きる。',
+'だから警報は毎月更新に値する。%は「7-12ヶ月前の火」を床にした判別力の残存率。'))
+
+S.append(slide('⑱ 危機には「長い前兆」がある',
+'''<svg viewBox="0 0 660 250">
+<line x1="60" y1="70" x2="600" y2="70" stroke="#b7c2cd" stroke-width="3"/>
+<circle cx="600" cy="70" r="16" fill="#d64545"/><text x="600" y="47" font-size="14" fill="#d64545" text-anchor="middle" font-weight="700">危機</text>
+<g fill="#f0a24a">
+<circle cx="170" cy="70" r="8"/><circle cx="220" cy="70" r="8"/><circle cx="270" cy="70" r="8"/><circle cx="320" cy="70" r="8"/><circle cx="370" cy="70" r="8"/><circle cx="420" cy="70" r="8"/><circle cx="470" cy="70" r="8"/><circle cx="520" cy="70" r="8"/><circle cx="565" cy="70" r="8"/>
+</g>
+<text x="170" y="105" font-size="13" fill="#f0a24a" text-anchor="middle" font-weight="700">↑最初の点灯</text>
+<text x="170" y="125" font-size="13" fill="#66778a" text-anchor="middle">中央値21ヶ月前</text>
+<text x="380" y="105" font-size="13" fill="#66778a" text-anchor="middle">直前2年の83%の月で点灯(中央値)</text>
+<g text-anchor="middle">
+<rect x="80" y="155" width="150" height="62" rx="10" fill="#eef2f6"/><text x="155" y="180" font-size="13" fill="#66778a">点いたばかり</text><text x="155" y="205" font-size="17" fill="#1c2733" font-weight="700">的中 3.5%</text>
+<rect x="255" y="155" width="150" height="62" rx="10" fill="#f7e8d8"/><text x="330" y="180" font-size="13" fill="#66778a">4-11ヶ月連続</text><text x="330" y="205" font-size="17" fill="#1c2733" font-weight="700">5.3%</text>
+<rect x="430" y="155" width="150" height="62" rx="10" fill="#fdeeee" stroke="#d64545"/><text x="505" y="180" font-size="13" fill="#d64545">12ヶ月以上連続</text><text x="505" y="205" font-size="17" fill="#d64545" font-weight="700">9.6%</text>
+</g>
+<text x="330" y="242" font-size="13" fill="#66778a" text-anchor="middle">※「連続月数」を材料として式に足しても改善ゼロ——持続の情報はスコアの高さに織り込み済みだった</text>
+</svg>''',
+'警報は直前に鳴るサイレンではない。危ない国は危機の2年近く前から光り続ける。',
+'点いた瞬間の警報はほぼ当たらない(3.5%＝ほぼ偶然)。「ずっと赤い国」こそ本物(9.6%・偶然の3.3倍)。'))
+
+S.append(slide('⑲ 見逃しの正体は「順位負け」だった',
+'''<svg viewBox="0 0 660 250">
+<g text-anchor="middle">
+<rect x="60" y="50" width="240" height="150" rx="12" fill="#fdeeee" stroke="#d64545"/>
+<text x="180" y="85" font-size="15" fill="#d64545" font-weight="700">見逃した危機96件の中身</text>
+<rect x="85" y="105" width="190" height="34" rx="6" fill="#d64545"/><text x="180" y="128" font-size="13" fill="#fff">98% 兆候はあったが順位負け</text>
+<rect x="85" y="150" width="30" height="34" rx="6" fill="#b7c2cd"/><text x="200" y="173" font-size="13" fill="#66778a">2% 完全に静かな死</text>
+</g>
+<polyline points="380,190 420,155 470,135 520,120 570,95" stroke="#3572d8" stroke-width="4" fill="none"/>
+<g fill="#3572d8"><circle cx="380" cy="190" r="5"/><circle cx="420" cy="155" r="5"/><circle cx="470" cy="135" r="5"/><circle cx="520" cy="120" r="5"/><circle cx="570" cy="95" r="5"/></g>
+<g font-size="11" fill="#66778a" text-anchor="middle">
+<text x="380" y="215">5%監視</text><text x="420" y="215">10%</text><text x="470" y="215">20%</text><text x="520" y="215">30%</text><text x="570" y="215">50%</text>
+<text x="380" y="180">22%</text><text x="425" y="145">31%</text><text x="475" y="125">41%</text><text x="525" y="110">50%</text><text x="575" y="85">69%</text>
+</g>
+<text x="475" y="60" font-size="14" fill="#3572d8" text-anchor="middle" font-weight="700">監視枠を広げると捕捉率は上がるが…</text>
+<text x="330" y="243" font-size="13" fill="#66778a" text-anchor="middle">危機の半分を捕まえるには世界の3割を監視する必要がある(枠を広げるほど的中率は薄まる)</text>
+</svg>''',
+'見逃される危機は「見えない」のではない——兆候はあるのに、他国より目立たない中位圏で起きる。',
+'制約は情報の不在ではなく「上位10%しか見張れない」という予算。※「兆候あり」の判定は甘めなので割り引いて読むこと。'))
+
+S.append(slide('⑳ 月次の警戒リスト(2026年7月固定)',
+'''<svg viewBox="0 0 660 240">
+<text x="330" y="35" font-size="16" fill="#1c2733" text-anchor="middle" font-weight="700">二車線とも上位2割 =「二重赤」5カ国</text>
+<g text-anchor="middle" font-size="15">
+<rect x="45" y="55" width="110" height="60" rx="10" fill="#d64545"/><text x="100" y="90" fill="#fff" font-weight="700">ジンバブエ</text>
+<rect x="165" y="55" width="110" height="60" rx="10" fill="#d64545"/><text x="220" y="90" fill="#fff" font-weight="700">ジブチ</text>
+<rect x="285" y="55" width="110" height="60" rx="10" fill="#d64545"/><text x="340" y="90" fill="#fff" font-weight="700">トルコ</text>
+<rect x="405" y="55" width="110" height="60" rx="10" fill="#d64545"/><text x="460" y="90" fill="#fff" font-weight="700">ベラルーシ</text>
+<rect x="525" y="55" width="110" height="60" rx="10" fill="#eaa4a4"/><text x="580" y="83" fill="#fff" font-weight="700">エルサルバドル</text><text x="580" y="103" font-size="10" fill="#fff">※ドル化国(下記)</text>
+</g>
+<text x="330" y="150" font-size="14" fill="#1c2733" text-anchor="middle">崩壊車線上位: レバノン(リビアの火)・ジンバブエ・コロンビア(アルゼンチンの火)・モザンビーク…</text>
+<text x="330" y="175" font-size="14" fill="#1c2733" text-anchor="middle">攻撃車線最薄: ジンバブエ0.7ヶ月・ボリビア0.7・ジブチ0.8・ガイアナ1.7・トルコ1.9…</text>
+<text x="330" y="215" font-size="12" fill="#66778a" text-anchor="middle">エルサルバドルは自国通貨が無い(2001年からドル化)ので構造的にほぼ当たり得ない——機械の出力なので削らず残し、答え合わせでは当方に不利に数える</text>
+</svg>''',
+'判定ルールごとGitHubに公開固定した——2027年8月以降、同じコードで機械的に答え合わせする。',
+'年次で二重赤だったベラルーシ・ジブチ・トルコは月次でも残留。前回リスト最下位のボリビアは実際に2026年2月に危機入りした。'))
+
 S.append('''<div class="slide title"><h1>まとめ</h1>
-<div class="art"><svg viewBox="0 0 660 190">
+<div class="art"><svg viewBox="0 0 660 235">
 <g font-size="17" fill="#1c2733">
 <text x="40" y="45">1. 有名な警報は死んでいない——<tspan font-weight="700">鳴らなくなっただけ</tspan></text>
 <text x="40" y="85">2. 見逃しの一部は<tspan font-weight="700">取引相手からのもらい事故</tspan>——順位で見張れば拾える</text>
 <text x="40" y="125">3. 大波の主犯は<tspan font-weight="700">世界の嵐</tspan>(ドル・金利・資源・恐怖)——伝染は犠牲者を選ぶ役</text>
 <text x="40" y="160">4. <tspan font-weight="700">貯金は攻撃を防ぐが救わない</tspan>——生死は貿易近傍、型は為替制度が決める</text>
+<text x="40" y="195">5. 警報は<tspan font-weight="700">毎月動かす</tspan>——火の半減期は約4ヶ月、危ない国は2年前から光る</text>
 </g>
-<text x="40" y="185" font-size="13" fill="#66778a">まだ分からないこと: 見逃しの86%・嵐の残り2割・「皆が逃げたら成立する」原理的に予測不能な危機</text>
+<text x="40" y="220" font-size="13" fill="#66778a">まだ分からないこと: 嵐の残り2割・「順位負け」する中位圏の危機の拾い方・原理的に予測不能な危機の境界</text>
 </svg></div>
 <p class="cap">数字は全部、生の計算出力つきで公開してある——疑ってかかれる形で。</p>
 <p class="sub">詳細版: advisor_brief.html ／ 正本: docs/data/verified_results.txt (GitHub)</p></div>''')
