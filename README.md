@@ -5,6 +5,22 @@
 
 研究方向の整理・共有用プロジェクト (work in progress, draft)
 
+---
+
+## 🔔 現在の研究 (2026): 通貨危機の早期警報システム
+
+このリポジトリの現行の中心は**通貨危機EWS研究**(50年×113カ国、月次警報まで到達)。
+
+- **一枚まとめ(平易)**: [advisor_brief.html](advisor_brief.html) ／ **図解スライド23枚**: [kamishibai.html](kamishibai.html)
+- **全実験の生出力(正本)**: [docs/data/verified_results.txt](docs/data/verified_results.txt) — 全ての数字はここから
+- **研究ログ**: notes/33〜50 (事前登録→実行→結果を各ファイルに固定)
+- **公開警戒リスト(答え合わせ可能)**: [docs/data/nowcast_monthly_2026_07.json](docs/data/nowcast_monthly_2026_07.json)
+  — 判定は2027-08以降に `fetch_er_monthly.py` → `judge_nowcast.py --final` で機械実行
+- 主要な発見: 貿易火事指数(7重検証済) / 火の半減期≈3.8ヶ月 / 警報の月次化(+0.04) /
+  準備の三部作(抑止○・防衛✗) / 見逃しの正体=速い燃焼 / 天井+0.03弱は情報の限界(ML敗北)
+
+以下は本リポジトリの出発点だった圏論プロジェクトの記録(現在は上記EWS研究に合流)。
+
 公開デモ: https://hajimedayo328.github.io/southeast-asia-fragility/
 **最初に読むなら**: [STORY.md](STORY.md) — 理論→実証→撤回まで含めた研究の弧を1本で
 
