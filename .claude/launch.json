@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "docs-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8741", "--directory", "docs"],
+      "cwd": "C:/Users/hajim/repos/southeast-asia-fragility",
+      "port": 8741
+    }
+  ]
+}
