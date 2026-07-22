@@ -363,6 +363,26 @@ S.append(slide('⑳ 月次の警戒リスト(2026年7月固定)',
 '判定ルールごとGitHubに公開固定した——2027年8月以降、同じコードで機械的に答え合わせする。',
 '年次で二重赤だったベラルーシ・ジブチ・トルコは月次でも残留。前回リスト最下位のボリビアは実際に2026年2月に危機入りした。'))
 
+S.append(slide('㉑ 最後の謎「見逃し」の正体：速い燃焼',
+'''<svg viewBox="0 0 660 250">
+<text x="180" y="32" font-size="15" fill="#66778a" text-anchor="middle" font-weight="700">危機の前月、通貨はもう…</text>
+<polyline points="60,70 120,74 180,80 240,92 300,110 340,130" stroke="#d64545" stroke-width="5" fill="none"/>
+<circle cx="340" cy="130" r="14" fill="#d64545"/><text x="340" y="108" font-size="13" fill="#d64545" text-anchor="middle" font-weight="700">危機(正式認定)</text>
+<text x="200" y="165" font-size="14" fill="#1c2733" text-anchor="middle">前月時点で3ヶ月に7〜9%すでに下落中</text>
+<text x="200" y="186" font-size="13" fill="#66778a" text-anchor="middle">(平時の中央値は0%。見逃された危機も同じだった)</text>
+<g text-anchor="middle">
+<rect x="420" y="55" width="200" height="70" rx="10" fill="#fdeeee" stroke="#d64545"/>
+<text x="520" y="82" font-size="14" fill="#d64545" font-weight="700">遅い層(予知)</text>
+<text x="520" y="104" font-size="12" fill="#1c2733">家計簿+火事 / 2年前から</text>
+<rect x="420" y="140" width="200" height="70" rx="10" fill="#eef3fb" stroke="#3572d8"/>
+<text x="520" y="167" font-size="14" fill="#3572d8" font-weight="700">速い層(検知)</text>
+<text x="520" y="189" font-size="12" fill="#1c2733">為替自身の滑り出し / 中央値9ヶ月前</text>
+</g>
+<text x="330" y="238" font-size="14" fill="#1c2733" text-anchor="middle" font-weight="700">二層合わせて危機の92%をカバー(遅10%+速5%の監視枠19%)——「完全に静かな突然死」はほぼ無い</text>
+</svg>''',
+'見逃された危機も「見えなかった」のではない——為替自身が数ヶ月前から滑り出していた。',
+'ただし速い層は「もう始まった崩壊の検知」であって予知ではない。帳簿・火事・政治・戦争・履歴で説明できない見逃しの正体がこれで、消去法が完成した。'))
+
 S.append('''<div class="slide title"><h1>まとめ</h1>
 <div class="art"><svg viewBox="0 0 660 235">
 <g font-size="17" fill="#1c2733">
