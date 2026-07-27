@@ -715,3 +715,8 @@ TTB-HORIZON 2026-07-22 (notes/51主検定。n=15業種, French49×BEA3.7ESI×Koe
     Util   TTB= 86m booms=  9 path(k=1..5)={1: 0.001, 2: -0.021, 3: -0.107, 4: 0.043, 5: 0.026}
     Whlsl  TTB= 37m booms= 13 path(k=1..5)={1: -0.001, 2: -0.014, 3: -0.013, 4: 0.005, 5: -0.023}
     Trans  TTB= 23m booms= 19 path(k=1..5)={1: -0.046, 2: -0.012, 3: 0.007, 4: -0.014, 5: -0.016}
+
+PROFIT-LAG 2026-07-22 (notes/53。利益6.16D(1998-2025)×ブーム3.7ESI×Koeva。n=3業種・短サンプル注意)
+  Oil(TTB23m,k*=4,booms5) / Util(TTB86m,k*=2,booms4) / Trans(TTB23m,k*=4,booms6)
+  主検定: Spearman rho(TTB, k*_profit)=-0.500 並べ替えp=1.000
+  -> FAIL: 集計業種レベルでは利益でもラグは観測不能
