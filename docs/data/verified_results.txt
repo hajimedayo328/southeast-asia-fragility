@@ -674,3 +674,44 @@ FORGETTING-CYCLE 2026-07-22 (notes/52。episodes=241, 主検定対象n=91(54カ�
   主検定: Spearman rho(tau,G)=+0.256 国単位並べ替えp=0.026
   -> PASS: 再発は在庫の再建にペースを合わせる(豚サイクル成立)
   頑健性(τ<=Gフィルタ除去・打切り相関対策): n=114 rho=+0.049 p=0.297 -> 消滅: 主結果は打切り人工物の疑い
+
+TTB-HORIZON 2026-07-22 (notes/51主検定。n=15業種, French49×BEA3.7ESI×Koeva Table1)
+  Food(TTB24m,k*=3) / Beer(TTB24m,k*=2) / Soda(TTB24m,k*=5) / Txtls(TTB24m,k*=4) / Paper(TTB23m,k*=2) / Chems(TTB23m,k*=4) / Oil(TTB23m,k*=1) / FabPr(TTB14m,k*=3) / Mach(TTB18m,k*=1) / ElcEq(TTB24m,k*=1) / Autos(TTB28m,k*=2) / Aero(TTB28m,k*=1) / Util(TTB86m,k*=3) / Whlsl(TTB37m,k*=5) / Trans(TTB23m,k*=1)
+  主検定: Spearman rho(TTB, k*)=+0.268 並べ替えp=0.148
+  -> FAIL: 株式には翻訳されない(株価の先回り織り込みと整合)
+    Food   TTB= 24m booms= 11 path(k=1..5)={1: 0.057, 2: 0.026, 3: -0.023, 4: 0.002, 5: 0.018}
+    Beer   TTB= 24m booms= 11 path(k=1..5)={1: 0.045, 2: -0.027, 3: -0.008, 4: 0.004, 5: 0.015}
+    Soda   TTB= 24m booms= 11 path(k=1..5)={1: 0.023, 2: 0.064, 3: 0.101, 4: 0.019, 5: -0.063}
+    Txtls  TTB= 24m booms= 10 path(k=1..5)={1: -0.066, 2: -0.04, 3: -0.065, 4: -0.088, 5: -0.027}
+    Paper  TTB= 23m booms= 11 path(k=1..5)={1: 0.017, 2: -0.057, 3: -0.018, 4: -0.02, 5: -0.038}
+    Chems  TTB= 23m booms=  8 path(k=1..5)={1: -0.022, 2: -0.019, 3: -0.04, 4: -0.065, 5: -0.044}
+    Oil    TTB= 23m booms= 10 path(k=1..5)={1: -0.041, 2: -0.036, 3: -0.033, 4: 0.021, 5: 0.07}
+    FabPr  TTB= 14m booms=  9 path(k=1..5)={1: -0.036, 2: -0.06, 3: -0.082, 4: -0.064, 5: -0.021}
+    Mach   TTB= 18m booms= 12 path(k=1..5)={1: -0.071, 2: -0.007, 3: -0.018, 4: -0.06, 5: -0.018}
+    ElcEq  TTB= 24m booms=  9 path(k=1..5)={1: -0.017, 2: 0.028, 3: 0.0, 4: 0.046, 5: -0.01}
+    Autos  TTB= 28m booms= 10 path(k=1..5)={1: -0.007, 2: -0.036, 3: 0.026, 4: 0.033, 5: 0.01}
+    Aero   TTB= 28m booms= 10 path(k=1..5)={1: -0.049, 2: 0.031, 3: 0.007, 4: 0.07, 5: 0.02}
+    Util   TTB= 86m booms=  9 path(k=1..5)={1: 0.001, 2: -0.021, 3: -0.107, 4: 0.043, 5: 0.026}
+    Whlsl  TTB= 37m booms= 13 path(k=1..5)={1: -0.001, 2: -0.014, 3: -0.013, 4: 0.005, 5: -0.023}
+    Trans  TTB= 23m booms= 19 path(k=1..5)={1: -0.046, 2: -0.012, 3: 0.007, 4: -0.014, 5: -0.016}
+  (上のTTB-HORIZONはFood/Beer/SodaがBEA小売系列に誤マッチ。下の修正版が正)
+
+TTB-HORIZON 2026-07-22 (notes/51主検定。n=15業種, French49×BEA3.7ESI×Koeva Table1)
+  Food(TTB24m,k*=2) / Beer(TTB24m,k*=2) / Soda(TTB24m,k*=5) / Txtls(TTB24m,k*=4) / Paper(TTB23m,k*=2) / Chems(TTB23m,k*=4) / Oil(TTB23m,k*=1) / FabPr(TTB14m,k*=3) / Mach(TTB18m,k*=1) / ElcEq(TTB24m,k*=1) / Autos(TTB28m,k*=2) / Aero(TTB28m,k*=1) / Util(TTB86m,k*=3) / Whlsl(TTB37m,k*=5) / Trans(TTB23m,k*=1)
+  主検定: Spearman rho(TTB, k*)=+0.275 並べ替えp=0.145
+  -> FAIL: 株式には翻訳されない(株価の先回り織り込みと整合)
+    Food   TTB= 24m booms= 15 path(k=1..5)={1: -0.004, 2: -0.031, 3: -0.005, 4: 0.029, 5: 0.016}
+    Beer   TTB= 24m booms= 15 path(k=1..5)={1: 0.021, 2: -0.029, 3: -0.002, 4: 0.007, 5: -0.008}
+    Soda   TTB= 24m booms= 15 path(k=1..5)={1: 0.04, 2: -0.051, 3: 0.031, 4: 0.037, 5: -0.065}
+    Txtls  TTB= 24m booms= 10 path(k=1..5)={1: -0.066, 2: -0.04, 3: -0.065, 4: -0.088, 5: -0.027}
+    Paper  TTB= 23m booms= 11 path(k=1..5)={1: 0.017, 2: -0.057, 3: -0.018, 4: -0.02, 5: -0.038}
+    Chems  TTB= 23m booms=  8 path(k=1..5)={1: -0.022, 2: -0.019, 3: -0.04, 4: -0.065, 5: -0.044}
+    Oil    TTB= 23m booms= 10 path(k=1..5)={1: -0.041, 2: -0.036, 3: -0.033, 4: 0.021, 5: 0.07}
+    FabPr  TTB= 14m booms=  9 path(k=1..5)={1: -0.036, 2: -0.06, 3: -0.082, 4: -0.064, 5: -0.021}
+    Mach   TTB= 18m booms= 12 path(k=1..5)={1: -0.071, 2: -0.007, 3: -0.018, 4: -0.06, 5: -0.018}
+    ElcEq  TTB= 24m booms=  9 path(k=1..5)={1: -0.017, 2: 0.028, 3: 0.0, 4: 0.046, 5: -0.01}
+    Autos  TTB= 28m booms= 10 path(k=1..5)={1: -0.007, 2: -0.036, 3: 0.026, 4: 0.033, 5: 0.01}
+    Aero   TTB= 28m booms= 10 path(k=1..5)={1: -0.049, 2: 0.031, 3: 0.007, 4: 0.07, 5: 0.02}
+    Util   TTB= 86m booms=  9 path(k=1..5)={1: 0.001, 2: -0.021, 3: -0.107, 4: 0.043, 5: 0.026}
+    Whlsl  TTB= 37m booms= 13 path(k=1..5)={1: -0.001, 2: -0.014, 3: -0.013, 4: 0.005, 5: -0.023}
+    Trans  TTB= 23m booms= 19 path(k=1..5)={1: -0.046, 2: -0.012, 3: 0.007, 4: -0.014, 5: -0.016}
