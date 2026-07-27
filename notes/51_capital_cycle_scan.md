@@ -43,7 +43,7 @@ Luo(2分類・集計)とSchaal(理論)の間に落ちている。
 ## データ調達状況 (2026-07-22)
 
 - [x] **French 49業種月次リターン**: 取得済み data_raw/ff49/ (1926〜2026-05, CRSP 202605版)
-- [ ] **BEA業種別投資(Table 3.7系)**: ブロック中。平置きURL(AllFATables/FixedAssets.zip)は全滅、
+- [x] **BEA業種別投資**: 取得済み data_raw/bea_FAAt307ESI.json (Table 3.7ESI, 1947-2024, APIキー=ユーザーGO済みで.env管理)。旧記述: ブロック中。平置きURL(AllFATables/FixedAssets.zip)は全滅、
   iTableのバックエンド(apps.bea.gov/iTablecore/data/app/*)はセッション必須で直叩き不可。
   再開の選択肢: (a) BEA APIキー無料登録(ユーザー作業・即時発行) /
   (b) FREDがミラーするBEA系列のID探し / (c) ブラウザ操作でiTableからCSVダウンロード
