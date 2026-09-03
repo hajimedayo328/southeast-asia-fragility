@@ -725,3 +725,9 @@ PROFIT-LAG-v2 2026-09-04 (notes/53 v2。営業余剰スプライス1947-2024。n
   Food(TTB24m,k*=4,booms14) / Oil(TTB23m,k*=1,booms10) / Chems(TTB23m,k*=5,booms8) / FabPr(TTB14m,k*=4,booms8) / Mach(TTB18m,k*=5,booms12) / ElcEq(TTB24m,k*=2,booms8) / Autos(TTB28m,k*=2,booms9) / Util(TTB86m,k*=2,booms8) / Whlsl(TTB37m,k*=5,booms12) / Trans(TTB23m,k*=5,booms18) / Txtls(TTB24m,k*=3,booms8) / Paper(TTB23m,k*=2,booms11)
   主検定: Spearman rho(TTB, k*_profit)=-0.224 並べ替えp=0.783
   -> FAIL: 集計業種レベルでは利益でもラグ不可読
+
+MEMORY-COBWEB 2026-09-04 (notes/54。半導体PPI 1967-2025年次・相対成長。booms=5)
+  ブーム後の平均相対成長: k=1:+0.009 k=2:+0.004 k=3:-0.002 k=4:-0.003
+  谷ラグ分布(k=1..4): [1, 2, 1, 1] (TTB予測はk=2)
+  主検定: k=2平均=+0.004, 負の割合=2/5, 符号検定p=0.812
+  -> FAIL
