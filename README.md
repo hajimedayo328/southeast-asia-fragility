@@ -11,6 +11,7 @@
 
 このリポジトリの現行の中心は**通貨危機EWS研究**(50年×113カ国、月次警報まで到達)。
 
+- **研究総括(全プログラムの到達点)**: [RESEARCH_SUMMARY.md](RESEARCH_SUMMARY.md)
 - **一枚まとめ(平易)**: [advisor_brief.html](advisor_brief.html) ／ **図解スライド23枚**: [kamishibai.html](kamishibai.html)
 - **全実験の生出力(正本)**: [docs/data/verified_results.txt](docs/data/verified_results.txt) — 全ての数字はここから
 - **研究ログ**: notes/33〜50 (事前登録→実行→結果を各ファイルに固定)
